@@ -23,10 +23,10 @@ for key, (fname, alt) in M['images'].items():
 json.dump(meta, open(IMG / 'meta.json', 'w'), ensure_ascii=False, indent=1)
 for key, (fname, start, end, alt) in M['videos'].items():
     src = str(RAW / fname); dur = str(end - start)
-    vf = 'scale=600:-2,fps=30'
+    vf = 'scale=%d:-2,fps=30' % M.get('_video_scale', {}).get(key, 600)
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(start), '-t', dur, '-i', src, '-an', '-vf', vf, '-c:v', 'libx264', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-crf', '29', '-preset', 'slow', '-movflags', '+faststart', str(VID / f'{key}.mp4')], check=True)
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(start), '-t', dur, '-i', src, '-an', '-vf', vf, '-c:v', 'libvpx-vp9', '-b:v', '0', '-crf', '43', '-row-mt', '1', '-deadline', 'good', str(VID / f'{key}.webm')], check=True)
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(start + 0.5), '-i', src, '-frames:v', '1', '-vf', 'scale=720:-2', '-q:v', '4', str(VID / f'{key}-poster.jpg')], check=True)
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(start + (end - start) / 2), '-i', src, '-frames:v', '1', '-vf', 'scale=720:-2', '-q:v', '4', str(VID / f'{key}-poster.jpg')], check=True)
     meta.setdefault('_videos', {})[key] = {'alt': alt}
 json.dump(meta, open(IMG / 'meta.json', 'w'), ensure_ascii=False, indent=1)
 print(len(meta) - 1, 'imágenes')

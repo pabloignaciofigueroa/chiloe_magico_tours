@@ -9,3 +9,5 @@ dossier/*.html
 dossier/shots/
 dossier/pages/
 dossier/png/
+tools/__pycache__/
+content/__pycache__/

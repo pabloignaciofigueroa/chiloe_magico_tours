@@ -206,8 +206,8 @@
    "Pasarela sobre el humedal del lago Cucao"
   ],
   "parque-bosque": [
-   "081_CnpuJx0JfXn_2.jpg",
-   "Bosque de arrayanes del Parque Nacional Chiloé"
+   "118_CjLtz3ppWg-_1.jpg",
+   "Ramas de árboles nativos a contraluz en el Parque Nacional Chiloé"
   ],
   "parque-muelle": [
    "098_CnPzH5BpGOm_2.jpg",
@@ -311,11 +311,11 @@
   ],
   "nieve": [
    "030_Czg_A1gJXfI_6.jpg",
-   "Grupo de viajeros en la nieve junto a la van"
+   "Grupo de viajeros en la nieve junto a la van, en el viaje a Bariloche"
   ],
   "nieve-2": [
    "030_Czg_A1gJXfI_5.jpg",
-   "Viajera con los brazos abiertos en la nieve"
+   "Viajera con los brazos abiertos en la nieve, en el viaje a Bariloche"
   ],
   "valdivia": [
    "016_C66lvC4rqe__1.jpg",
@@ -340,6 +340,10 @@
   "minga-bueyes": [
    "011_DFeNTBstlH7_1.jpg",
    "Bueyes chilotes en el camino de Isla Lemuy"
+  ],
+  "lemuy-bosque": [
+   "081_CnpuJx0JfXn_2.jpg",
+   "Bosque de árboles cubiertos de musgo en Isla Lemuy"
   ]
  },
  "videos": {
@@ -361,5 +365,8 @@
    18,
    "Las vans de la agencia en la rampa del transbordador"
   ]
+ },
+ "_video_scale": {
+  "isla": 720
  }
 }

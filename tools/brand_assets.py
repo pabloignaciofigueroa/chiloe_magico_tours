@@ -102,3 +102,9 @@ hvb = f'-10 -270 {iso_h + 30 + wlen + 20:.0f} 340'
 (OUT / 'logotipo-h-white.svg').write_text(svg(horiz('#fff', '#fff', '#fff', '#fff'), hvb))
 (OUT / 'logotipo-h-ink.svg').write_text(svg(horiz('#1d2421', '#1d2421', '#1d2421', '#d0342c'), hvb))
 print('ok', VB, VBI, hvb)
+
+# silueta de la isla (máscara del momento memorable)
+ibx = [bbox(c) for c in contours(P['isla'])]
+x0 = min(b[0] for b in ibx); y0 = min(b[1] for b in ibx); x1 = max(b[2] for b in ibx); y1 = max(b[3] for b in ibx)
+(OUT / 'isla.svg').write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x0-2:.0f} {y0-2:.0f} {x1-x0+4:.0f} {y1-y0+4:.0f}"><path fill="#000" fill-rule="evenodd" d="{P["isla"]}"/></svg>\n')
+print('isla', x1 - x0, y1 - y0)
