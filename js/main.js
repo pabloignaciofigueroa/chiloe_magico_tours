@@ -52,13 +52,14 @@
 
   /* ---------- cabecera ---------- */
   const hdr = $('[data-hdr]');
+  const menu = $('[data-menu]');
   let lastY = 0;
   function onScrollHdr(y) {
     if (!hdr) return;
     hdr.classList.toggle('is-solid', y > (document.body.classList.contains('home') ? innerHeight * .8 : 10));
-    const menuOpen = !$('[data-menu]').hidden;
-    hdr.classList.toggle('is-hidden', !menuOpen && y > 400 && y > lastY + 4);
-    if (y < lastY - 4) hdr.classList.remove('is-hidden');
+    const d = y - lastY;
+    if (Math.abs(d) < 6) return;
+    hdr.classList.toggle('is-hidden', !(menu && !menu.hidden) && y > 400 && d > 0);
     lastY = y;
   }
   addEventListener('scroll', () => onScrollHdr(scrollY), { passive: true });
@@ -84,7 +85,7 @@
   /* ---------- mapa diferido ---------- */
   $$('[data-map]').forEach(m => {
     const f = $('iframe', m);
-    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { io.disconnect(); f.src = f.dataset.src; f.addEventListener('load', () => m.classList.add('is-loaded'), { once: true }); } }, { rootMargin: '60% 0px' });
+    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { io.disconnect(); f.setAttribute('tabindex', '-1'); f.src = f.dataset.src; f.addEventListener('load', () => { m.classList.add('is-loaded'); f.removeAttribute('tabindex'); }, { once: true }); } }, { rootMargin: '60% 0px' });
     io.observe(m);
   });
 
@@ -103,17 +104,31 @@
     es: { prevSlideMessage: 'Anterior', nextSlideMessage: 'Siguiente', firstSlideMessage: 'Primera', lastSlideMessage: 'Última', slideLabelMessage: '{{index}} de {{slidesLength}}', containerRoleDescriptionMessage: 'carrusel', itemRoleDescriptionMessage: 'diapositiva' },
     en: { prevSlideMessage: 'Previous', nextSlideMessage: 'Next', firstSlideMessage: 'First', lastSlideMessage: 'Last', slideLabelMessage: '{{index}} of {{slidesLength}}', containerRoleDescriptionMessage: 'carousel', itemRoleDescriptionMessage: 'slide' },
   };
+  const nativeNav = el => { const sec = el.closest('section'); if (!sec) return;
+    const step = d => el.scrollBy({ left: d * el.clientWidth * .8, behavior: 'auto' });
+    const p = $('[data-prev]', sec), n = $('[data-next]', sec); if (p) p.onclick = () => step(-1); if (n) n.onclick = () => step(1); };
   function initSwiper(el) {
-    if (el.swiper || reduce.matches) { el.classList.add('is-native'); return; }
+    if (el.swiper || reduce.matches) { el.classList.add('is-native'); nativeNav(el); return; }
     loadSwiper().then(Swiper => {
       const kind = el.dataset.swiper;
       const sec = el.closest('section');
       const opts = { slidesPerView: 'auto', spaceBetween: kind === 'gallery' ? 16 : 24, grabCursor: true, speed: 900, a11y: A11Y[root.lang === 'en' ? 'en' : 'es'], keyboard: { enabled: true, onlyInViewport: true }, freeMode: kind !== 'reviews' ? { enabled: true, momentumRatio: .6 } : false };
       if (kind === 'reviews' && sec) opts.navigation = { prevEl: $('[data-prev]', sec), nextEl: $('[data-next]', sec) };
       const sw = new Swiper(el, opts);
-      sw.__a11y = lang => { Object.assign(sw.params.a11y, A11Y[lang]); sw.a11y && sw.a11y.destroy && (sw.a11y.destroy(), sw.a11y.init()); };
+      sw.__a11y = lang => {
+        const m = A11Y[lang]; Object.assign(sw.params.a11y, m);
+        el.setAttribute('aria-roledescription', m.containerRoleDescriptionMessage);
+        sw.slides.forEach((s, i) => { s.setAttribute('aria-roledescription', m.itemRoleDescriptionMessage); s.setAttribute('aria-label', m.slideLabelMessage.replace('{{index}}', i + 1).replace('{{slidesLength}}', sw.slides.length)); });
+      };
+      el.addEventListener('focusin', e => {
+        el.scrollLeft = 0;
+        const s = e.target.closest('.swiper-slide'); if (!s) return;
+        const r = s.getBoundingClientRect(), c = { left: 8, right: innerWidth - 8 };
+        if (r.left < c.left || r.right > c.right) sw.slideTo(sw.slides.indexOf(s), 0);
+      });
+      el.addEventListener('scroll', () => { if (el.scrollLeft) el.scrollLeft = 0; });
       window.__swipers.push(sw);
-    }).catch(() => el.classList.add('is-native'));
+    }).catch(() => { el.classList.add('is-native'); nativeNav(el); });
   }
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { io.unobserve(en.target); initSwiper(en.target); } }), { rootMargin: '80% 0px' });
@@ -175,18 +190,18 @@
   }
 
   /* ---------- menú (dialog accesible) ---------- */
-  const menu = $('[data-menu]'), openBtn = $('[data-menu-open]'), closeBtn = $('[data-menu-close]');
+  const openBtn = $('[data-menu-open]'), closeBtn = $('[data-menu-close]');
   let lastFocus = null;
   const outside = () => $$('body > *').filter(el => el !== menu && el.tagName !== 'SCRIPT');
   function openMenu() {
-    lastFocus = document.activeElement; menu.hidden = false;
+    lastFocus = menu.contains(document.activeElement) ? openBtn : document.activeElement; menu.hidden = false; openBtn.setAttribute('aria-expanded', 'true');
     outside().forEach(el => el.inert = true);
     document.body.style.overflow = 'hidden'; window.__lenis && window.__lenis.stop();
     if (window.gsap && !reduce.matches) { gsap.killTweensOf([menu, '.menu__link']); gsap.fromTo(menu, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: .9, ease: EASE }); gsap.fromTo('.menu__link', { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: .9, ease: EASE, stagger: .04, delay: .15 }); }
     closeBtn.focus();
   }
   function closeMenu() {
-    const done = () => { menu.hidden = true; outside().forEach(el => el.inert = false); document.body.style.overflow = ''; window.__lenis && window.__lenis.start(); lastFocus && lastFocus.focus(); };
+    const done = () => { menu.hidden = true; openBtn.setAttribute('aria-expanded', 'false'); outside().forEach(el => el.inert = false); document.body.style.overflow = ''; window.__lenis && window.__lenis.start(); lastFocus && lastFocus.focus(); };
     if (window.gsap && !reduce.matches) { gsap.killTweensOf([menu, '.menu__link']); gsap.to(menu, { clipPath: 'inset(0 0 100% 0)', duration: .6, ease: 'expo.inOut', onComplete: done }); } else done();
   }
   if (menu) {
@@ -205,6 +220,23 @@
     b.addEventListener('pointerleave', () => { b.style.transform = ''; });
   });
 
+  /* ---------- conservar lo que se está leyendo al cambiar el ancho ---------- */
+  let anchor = null, anchorTop = 0, rzRaf = 0, remT = 0;
+  const remember = () => {
+    if (menu && !menu.hidden) return;
+    const hit = document.elementFromPoint(innerWidth / 2, innerHeight * .35);
+    const el = hit && hit.closest('main p, main li, main h1, main h2, main h3, main figure, main section, main article, footer');
+    if (el) { anchor = el; anchorTop = el.getBoundingClientRect().top; }
+  };
+  function restore() {
+    if (!anchor || !anchor.isConnected) return;
+    const y = Math.max(0, scrollY + anchor.getBoundingClientRect().top - anchorTop);
+    window.__lenis ? window.__lenis.scrollTo(y, { immediate: true, force: true }) : scrollTo(0, y);
+  }
+  addEventListener('scroll', () => { clearTimeout(remT); remT = setTimeout(remember, 150); }, { passive: true });
+  remember();
+  addEventListener('resize', () => { cancelAnimationFrame(rzRaf); rzRaf = requestAnimationFrame(() => { if (!window.ScrollTrigger) restore(); }); });
+
   /* ---------- GSAP + Lenis ---------- */
   window.addEventListener('load', () => {
     if (!window.gsap || !window.ScrollTrigger) return;
@@ -212,7 +244,7 @@
     if (!reduce.matches && window.Lenis) {
       const lenis = new Lenis({ duration: 1.15, easing: t => 1 - Math.pow(2, -10 * t), smoothWheel: true });
       window.__lenis = lenis;
-      lenis.on('scroll', e => { ScrollTrigger.update(); onScrollHdr(e.scroll); });
+      lenis.on('scroll', () => ScrollTrigger.update());
       gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
       $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const t = $(a.getAttribute('href')); if (t && !a.classList.contains('skip')) { e.preventDefault(); lenis.scrollTo(t, { offset: -80 }); } }));
     }
@@ -234,10 +266,6 @@
       return () => {};
     });
     ScrollTrigger.addEventListener('refreshInit', () => onScrollHdr(scrollY));
-    /* conservar posición al cruzar el quiebre (rotar tablet) */
-    let ratio = 0;
-    const save = () => { const h = document.documentElement.scrollHeight - innerHeight; ratio = h > 0 ? scrollY / h : 0; };
-    addEventListener('scroll', save, { passive: true });
-    matchMedia('(max-width: 1000px)').addEventListener('change', () => requestAnimationFrame(() => { ScrollTrigger.refresh(); const h = document.documentElement.scrollHeight - innerHeight; window.__lenis ? window.__lenis.scrollTo(ratio * h, { immediate: true }) : scrollTo(0, ratio * h); }));
+    ScrollTrigger.addEventListener('refresh', restore);
   });
 })();

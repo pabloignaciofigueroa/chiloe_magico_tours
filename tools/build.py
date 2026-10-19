@@ -124,9 +124,9 @@ def header(current, wa_text):
   </a>
   <nav class="hdr__nav" aria-label="Principal" data-aria-en="Main"><ul>{links}</ul></nav>
   <div class="hdr__tools">
-    <button class="lang" type="button" data-lang-toggle aria-label="Cambiar idioma a inglés" data-aria-en="Switch language to Spanish"><span class="lang__es">ES</span><span class="lang__sep">·</span><span class="lang__en">EN</span></button>
+    <button class="lang" type="button" data-lang-toggle><span class="sr">{L("Idioma:", "Language:")} </span><span class="lang__es" lang="es">ES</span><span class="lang__sep" aria-hidden="true">·</span><span class="lang__en" lang="en">EN</span></button>
     {btn(L("Reservar", "Book"), wa_link(wa_text), "btn btn--sm btn--red hdr__cta", True)}
-    <button class="burger" type="button" data-menu-open aria-haspopup="dialog" aria-controls="menu" aria-label="Abrir menú" data-aria-en="Open menu"><span></span><span></span></button>
+    <button class="burger" type="button" data-menu-open aria-expanded="false" aria-haspopup="dialog" aria-controls="menu" aria-label="Abrir menú" data-aria-en="Open menu"><span></span><span></span></button>
   </div>
 </header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú" data-aria-en="Menu" hidden data-menu>
@@ -174,9 +174,9 @@ def footer(page):
 
 
 def wa_float(text):
-    return (f'<a class="wa" href="{wa_link(text)}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" data-aria-en="Message us on WhatsApp">'
+    return (f'<aside aria-label="WhatsApp"><a class="wa" href="{wa_link(text)}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" data-aria-en="Message us on WhatsApp">'
             '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5l-.7-.4z"/></svg>'
-            f'<span class="wa__t">{L("Escríbenos", "Message us")}</span></a>')
+            f'<span class="wa__t">{L("Escríbenos", "Message us")}</span></a></aside>')
 
 
 def ld_business():
@@ -411,6 +411,7 @@ def tours_index():
   <p class="lead" lang="es">{q(SITE["cupos"], P)} 😉</p>
 </section>
 <section class="sec tours-grid">
+  <h2 class="sr">{L("Todos los tours", "All tours")}</h2>
   <div class="chips" role="group" aria-label="Filtrar por experiencia" data-aria-en="Filter by experience"><button type="button" class="chip" data-filter="all" aria-pressed="true">{L("Todos", "All")}</button>{filt}</div>
   <ul class="grid3" data-filter-grid>{cards}</ul>
 </section>
