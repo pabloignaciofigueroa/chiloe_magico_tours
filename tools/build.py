@@ -226,25 +226,6 @@ def tour_card(t, page, sizes='(max-width: 760px) 80vw, 30vw'):
 </article>'''
 
 
-def reviews_block(page, items, title=True):
-    slides = ''
-    for r in items:
-        frm = f' · <span lang="es">desde {e(r["from"])}</span>' if r.get('from') else ''
-        tour = f' · <a href="{tour_href(TOURS[r["tour"]])}">{e(TOURS[r["tour"]]["short"])}</a>' if r.get('tour') else ''
-        slides += (f'<figure class="rev swiper-slide"><div class="rev__stars" role="img" aria-label="5 de 5 estrellas" data-aria-en="5 out of 5 stars">★★★★★</div>'
-                   f'<blockquote lang="{r["lang"]}">“{q(r["text"], page)}”</blockquote>'
-                   f'<figcaption><strong>{e(r["name"])}</strong>{frm} · {L("vía Google", "via Google")}{tour}</figcaption></figure>')
-    head = (f'<header class="sec__head"><p class="kicker">{L("Testimonios", "Reviews")}</p>'
-            f'<h2 class="h2" data-lines><span class="line"><span>{SITE["rating"]} ★ </span></span><span class="line"><span>{L("en Google", "on Google")}</span></span></h2>'
-            f'<p class="lead">{L(f"{SITE["reviews_count"]} reseñas leídas el 19 de octubre de 2026. Las citas van en su idioma original.", f"{SITE["reviews_count"]} reviews read on 19 October 2026. Quotes are shown in their original language.")}</p></header>') if title else ''
-    return f'''<section class="sec reviews" aria-label="Testimonios" data-aria-en="Reviews">
-  {head}
-  <div class="swiper reviews__sw" data-swiper="reviews"><div class="swiper-wrapper">{slides}</div></div>
-  <div class="reviews__nav"><button class="arrow" type="button" data-prev aria-label="Reseña anterior" data-aria-en="Previous review">←</button><button class="arrow" type="button" data-next aria-label="Reseña siguiente" data-aria-en="Next review">→</button>
-  <a class="u-link" href="https://www.google.com/maps/place/Turismo+Chilo%C3%A9+M%C3%A1gico/@-42.4816941,-73.7642726,17z" target="_blank" rel="noopener">{L("Ver todas en Google Maps", "See all on Google Maps")}</a></div>
-</section>'''
-
-
 def medallion(name, key, i, size='m'):
     inner = img(key, '220px') if key else f'<span class="med__n" aria-hidden="true">{i:02d}</span>'
     pid = f'arc{abs(hash(name)) % 10**7}'
@@ -254,40 +235,172 @@ def medallion(name, key, i, size='m'):
             f'<span class="sr">{e(name)}</span></li>')
 
 
+# ------------------------------------------------------------------ v2: todo a sangre
+# Punto focal por imagen (object-position) para recortes a pantalla completa.
+FOCUS = {
+    'brujos-columpio': '50% 22%', 'brujos-columpio-2': '50% 30%', 'almas': '50% 35%', 'parque-bosque': '50% 40%',
+    'curanto-destape': '50% 45%', 'tocoihue': '50% 40%', 'caleuche': '50% 55%', 'curaco': '50% 60%', 'curaco-2': '50% 50%',
+    'mechuque': '50% 55%', 'palafitos': '50% 60%', 'punihuil-navega': '50% 40%', 'tenaun': '50% 35%', 'brujos-vuelo': '50% 45%',
+    'yayanes-puente': '50% 45%', 'huillinco-columpio': '50% 40%', 'aucar-isla': '50% 55%', 'curanto-fuego': '50% 50%',
+    'nercon': '50% 40%', 'brujos-alas': '50% 40%', 'punihuil-islote': '50% 50%', 'minga': '50% 55%',
+}
+
+
+def bimg(key, sizes='100vw', eager=False):
+    """Imagen a sangre: cubre su contenedor con el punto focal de la foto."""
+    pos = FOCUS.get(key, '50% 50%')
+    return img(key, sizes, 'bleed__img', eager, f'data-pos="{pos}"').replace(
+        'style="background-image', f'style="object-position:{pos};background-image', 1)
+
+
+def bleed_hero(key, title_html, kicker='', lead='', crumbs='', size='full', extra=''):
+    """Encabezado de página a pantalla completa, con el título sobre el paisaje."""
+    return f'''<section class="bhero bhero--{size}" data-hero>
+  <div class="bhero__media" data-parallax-hero>{bimg(key, "100vw", True)}</div>
+  <div class="bhero__shade" aria-hidden="true"></div>
+  {crumbs}
+  <div class="bhero__in">
+    {f'<p class="kicker kicker--light">{kicker}</p>' if kicker else ''}
+    {title_html}
+    {f'<div class="bhero__lead">{lead}</div>' if lead else ''}
+    {extra}
+  </div>
+</section>'''
+
+
+def crumbs_html(items):
+    parts = ' › '.join(items)
+    return f'<nav class="crumbs crumbs--light" aria-label="Migas de pan" data-aria-en="Breadcrumbs">{parts}</nav>'
+
+
+def tile(key, href, title, sub='', tag='', cls='', sizes='(max-width:760px) 100vw, 50vw', attrs=''):
+    """Paisaje de borde a borde con el texto encima (no hay tarjeta ni marco)."""
+    return f'''<a class="tile {cls}" href="{href}" {attrs}>
+  <div class="tile__media" data-parallax>{bimg(key, sizes)}</div>
+  <div class="tile__shade" aria-hidden="true"></div>
+  <div class="tile__in">
+    {f'<p class="tile__tag">{tag}</p>' if tag else ''}
+    <h3 class="tile__t">{title}</h3>
+    {f'<p class="tile__s">{sub}</p>' if sub else ''}
+  </div>
+</a>'''
+
+
+def tour_title_inline(t):
+    a, s, b = t['title']
+    return f'<span lang="es">{e(a)} <em class="script">{e(s)}</em> {e(b)}</span>'
+
+
+def tour_price_inline(t):
+    if t.get('price_from'):
+        return f'{L("Desde", "From")} {clp(t["price_from"])} CLP'
+    return L('Precio por confirmar', 'Price to be confirmed')
+
+
+def tour_tile(t, P, cls='', sizes='(max-width:760px) 100vw, 50vw'):
+    sub = f'{L("Día completo · 10:00–19:00", "Full day · 10am–7pm")} · {tour_price_inline(t)}'
+    return tile(t['card'] if t['card'] != t['hero'] else t['hero'], tour_href(t), tour_title_inline(t), sub, L(t['tag']), cls, sizes)
+
+
+def trio(tiles_html, cls=''):
+    return f'<ul class="trio {cls}">' + ''.join(f'<li>{x}</li>' for x in tiles_html) + '</ul>'
+
+
+def booking_cta(page, text, key='punihuil-bahia'):
+    return f'''<section class="bcta" aria-label="Reservar" data-aria-en="Book">
+  <div class="bcta__media" data-parallax>{bimg(key)}</div>
+  <div class="bcta__shade" aria-hidden="true"></div>
+  <div class="bcta__in">
+    <p class="bcta__big" lang="es" data-lines><span class="line"><span>{q(SITE["cierre"], page)}</span></span></p>
+    <div class="cta__row">{btn(L("Reservar por WhatsApp", "Book on WhatsApp"), wa_link(text), "btn btn--red", True)}
+    <a class="u-link u-link--light" href="tel:+{SITE["wa"]}">{SITE["wa_display"]}</a></div>
+    <p class="cta__note" lang="es">{q(SITE["cupos"], page)}</p>
+  </div>
+</section>'''
+
+
+def reviews_block(page, items, title=True, key='ancud-atardecer'):
+    slides = ''
+    for r in items:
+        frm = f' · <span lang="es">desde {e(r["from"])}</span>' if r.get('from') else ''
+        tour = f' · <a href="{tour_href(TOURS[r["tour"]])}">{e(TOURS[r["tour"]]["short"])}</a>' if r.get('tour') else ''
+        slides += (f'<figure class="rev swiper-slide"><div class="rev__stars" role="img" aria-label="5 de 5 estrellas" data-aria-en="5 out of 5 stars">★★★★★</div>'
+                   f'<blockquote lang="{r["lang"]}">“{q(r["text"], page)}”</blockquote>'
+                   f'<figcaption><strong>{e(r["name"])}</strong>{frm} · {L("vía Google", "via Google")}{tour}</figcaption></figure>')
+    head = (f'<header class="reviews__head"><p class="kicker kicker--light">{L("Testimonios", "Reviews")}</p>'
+            f'<h2 class="h2 h2--light" data-lines><span class="line"><span>{SITE["rating"]} ★ </span></span><span class="line"><span>{L("en Google", "on Google")}</span></span></h2>'
+            f'<p class="lead lead--light">{L(f"{SITE["reviews_count"]} reseñas leídas el 19 de octubre de 2026. Las citas van en su idioma original.", f"{SITE["reviews_count"]} reviews read on 19 October 2026. Quotes are shown in their original language.")}</p></header>') if title else ''
+    return f'''<section class="reviews" aria-label="Testimonios" data-aria-en="Reviews">
+  <div class="reviews__media" data-parallax>{bimg(key)}</div>
+  <div class="reviews__shade" aria-hidden="true"></div>
+  <div class="reviews__body">
+  {head}
+  <div class="swiper reviews__sw" data-swiper="reviews" data-drag><div class="swiper-wrapper">{slides}</div></div>
+  <div class="reviews__nav"><button class="arrow arrow--light" type="button" data-prev aria-label="Reseña anterior" data-aria-en="Previous review">←</button><button class="arrow arrow--light" type="button" data-next aria-label="Reseña siguiente" data-aria-en="Next review">→</button>
+  <a class="u-link u-link--light" href="https://www.google.com/maps/place/Turismo+Chilo%C3%A9+M%C3%A1gico/@-42.4816941,-73.7642726,17z" target="_blank" rel="noopener">{L("Ver todas en Google Maps", "See all on Google Maps")}</a></div>
+  </div>
+</section>'''
+
+
 def map_block(page):
     return f'''<div class="map" data-map>
   <a class="map__fallback" href="https://www.google.com/maps/place/Turismo+Chilo%C3%A9+M%C3%A1gico/@-42.4816941,-73.7642726,17z" target="_blank" rel="noopener">
-    {img("palafitos", "(max-width: 760px) 100vw, 50vw")}
+    {bimg("palafitos", "(max-width: 760px) 100vw, 50vw")}
     <span class="map__cta">{L("Abrir mapa · Gamboa 351, Castro", "Open map · Gamboa 351, Castro")}</span>
   </a>
   <iframe title="Mapa: Gamboa 351, Castro" data-title-en="Map: Gamboa 351, Castro" data-src="https://www.openstreetmap.org/export/embed.html?bbox=-73.7702%2C-42.4846%2C-73.7582%2C-42.4786&amp;layer=mapnik&amp;marker=-42.4816941%2C-73.7642726" loading="lazy" referrerpolicy="no-referrer"></iframe>
 </div>'''
 
 
-def booking_cta(page, text):
-    return f'''<section class="sec cta" aria-label="Reservar" data-aria-en="Book">
-  <p class="cta__big" lang="es" data-lines><span class="line"><span>{q(SITE["cierre"], page)}</span></span></p>
-  <div class="cta__row">{btn(L("Reservar por WhatsApp", "Book on WhatsApp"), wa_link(text), "btn btn--red", True)}
-  <a class="u-link" href="tel:+{SITE["wa"]}">{SITE["wa_display"]}</a></div>
-  <p class="cta__note" lang="es">{q(SITE["cupos"], page)}</p>
-</section>'''
+def sticky_split(key, inner_html, side='right', extra_keys=()):
+    """Texto que corre junto a un paisaje fijo que toca el borde de la pantalla (sticky, sin pin)."""
+    more = trio([f'<div class="tile tile--pic" data-parallax>{bimg(k, "(max-width:760px) 100vw, 50vw")}</div>' for k in extra_keys]) if extra_keys else ''
+    return f'''<section class="ssplit ssplit--{side}">
+  <div class="ssplit__media"><div class="ssplit__stick" data-parallax>{bimg(key, "(max-width:760px) 100vw, 50vw")}</div></div>
+  <div class="ssplit__txt">{inner_html}</div>
+</section>{more}'''
 
 
 # ------------------------------------------------------------------ HOME
 def home():
     P = '/'
-    tours = ''.join(f'<div class="swiper-slide">{tour_card(t, P)}</div>' for t in D.TOURS if not t.get('thin'))
-    dests = ''.join(f'<li><a class="dest" href="{dest_href(d)}" data-card><div class="dest__ring">{img(d["img"], "(max-width:760px) 44vw, 18vw")}</div>'
-                    f'<span class="dest__name" lang="es">{e(d["name"])}</span></a></li>' for d in D.DESTINOS)
-    exps = ''.join(f'<li><a class="exp" href="{exp_href(x)}" data-hover-img="{x["img"]}"><span class="exp__n">0{i+1}</span>'
-                   f'<span class="exp__name">{L(x["name"])}</span><span class="exp__q" lang="es">{q(x["quote"], P)}</span></a></li>'
-                   for i, x in enumerate(D.EXPERIENCIAS))
-    exp_imgs = ''.join(f'<div class="exp__img" data-hover-key="{x["img"]}">{img(x["img"], "30vw")}</div>' for x in D.EXPERIENCIAS)
-    pkgs = ''.join(f'''<li class="pkg">{media(p["imgs"][0], "(max-width:760px) 90vw, 30vw", "pkg__media", ratio="4/5") if p["imgs"] else '<div class="pkg__type" aria-hidden="true">❄</div>'}
-      <p class="kicker">{L(p["days"])}</p><h3 class="h4" lang="es">{e(p["name"])}</h3>
-      <p class="pkg__t" lang="es">{q(p["text"], P)}</p></li>''' for p in D.PAQUETES)
-    guia = ''.join(f'<li><a class="gcard" href="/guia/{g["slug"]}/" data-card>{media(g["img"], "(max-width:760px) 90vw, 30vw", "gcard__media", ratio="4/3")}'
-                   f'<h3 class="h4">{L(g["title"])}</h3><span class="u-link">{L("Leer", "Read")}</span></a></li>' for g in D.GUIA[:3])
+    tours = [t for t in D.TOURS if not t.get('thin')]
+    n = len(tours)
+    panels = ''
+    for i, t in enumerate(tours):
+        stops = ' · '.join(e(s) for s in t['stops'][:5])
+        if t['stops']:
+            COPY.append((P, ' · '.join(t['stops'][:5]), t['afiche'] + ' rótulos de paradas', None))
+        a, s, b = t['title']
+        COPY.append((P, f'{a} {s} {b}', '[DEST-H7] títulos de afiche', None))
+        panels += f'''<article class="tpanel" data-tpanel>
+  <div class="tpanel__media" data-tpanel-media>{bimg(t["hero"], "100vw")}</div>
+  <div class="tpanel__shade" aria-hidden="true"></div>
+  <p class="tpanel__n" aria-hidden="true">{i+1:02d}<span>/{n:02d}</span></p>
+  <div class="tpanel__in">
+    <p class="tpanel__tag">{L(t["tag"])}</p>
+    <h3 class="tpanel__t" lang="es"><span>{e(a)}</span> <em class="script">{e(s)}</em> <span>{e(b)}</span></h3>
+    <p class="tpanel__hook" lang="es">{q(t["hook"], P)}</p>
+    {f'<p class="tpanel__stops" lang="es">{stops}</p>' if stops else ''}
+    <p class="tpanel__meta">{L("Día completo · 10:00–19:00 aprox.", "Full day · 10am–7pm approx.")} · {tour_price_inline(t)}</p>
+    <div class="tpanel__ctas">{btn(L("Ver el tour", "See the tour"), tour_href(t), "btn btn--light")}{btn(L("Reservar", "Book"), wa_link(f"Hola! Quiero reservar el {t['short']}. Fecha: ___ Personas: ___"), "btn btn--red", True)}</div>
+  </div>
+</article>'''
+    # destinos: el paisaje entero cambia según el destino elegido
+    dbg = ''.join(f'<div class="dx__bg{" is-on" if i == 0 else ""}" data-dx-bg="{d["slug"]}">{bimg(d["img"])}</div>' for i, d in enumerate(D.DESTINOS))
+    dlist = ''.join(f'<li><a class="dx__link{" is-on" if i == 0 else ""}" href="{dest_href(d)}" data-dx="{d["slug"]}" lang="es">{e(d["name"])}</a></li>' for i, d in enumerate(D.DESTINOS))
+    dtxt = ''.join(f'<p class="dx__txt{" is-on" if i == 0 else ""}" data-dx-txt="{d["slug"]}" lang="es">{q(d["intro"], P)}</p>' for i, d in enumerate(D.DESTINOS))
+    # experiencias: mosaico de borde a borde
+    mosaic = ''.join(tile(x['img'], exp_href(x), L(x['name']), f'<span lang="es">{q(x["quote"], P)}</span>', f'0{i+1}', f'mos__t mos__t--{i+1}',
+                          '(max-width:760px) 100vw, 60vw') for i, x in enumerate(D.EXPERIENCIAS))
+    pk_tiles = []
+    for p in D.PAQUETES:
+        sub = f'<span lang="es">{q(p["text"], P)}</span>'
+        if p['imgs']:
+            pk_tiles.append(tile(p['imgs'][0], '/paquetes/', f'<span lang="es">{e(p["name"])}</span>', sub, L(p['days'])))
+        else:
+            pk_tiles.append(f'<a class="tile tile--flat" href="/paquetes/"><div class="tile__in"><p class="tile__tag">{L(p["days"])}</p><h3 class="tile__t" lang="es">{e(p["name"])}</h3><p class="tile__s">{sub}</p></div><span class="tile__flake" aria-hidden="true">❄</span></a>')
+    g_tiles = [tile(g['img'], f'/guia/{g["slug"]}/', L(g['title']), L('Leer', 'Read'), L('Guía de Chiloé', 'Chiloé guide')) for g in D.GUIA[:3]]
     content = f'''
 <section class="hero" data-hero>
   <div class="hero__media" data-parallax-hero>{img("huillinco-columpio", "100vw", "", True)}</div>
@@ -296,19 +409,15 @@ def home():
     <img class="hero__logo" src="/brand/logo/logo-sticker.svg" width="1912" height="1065" alt="Turismo Chiloé Mágico" data-alt-en="Turismo Chiloé Mágico">
     <h1 class="hero__t" lang="es" data-lines><span class="line"><span>{q(Q("Nuestro archipiélago es mágico", "[BIO]"), P)}</span></span><span class="line line--script"><span>{q(Q("¡Ven a descubrirlo!", "[BIO]"), P)}</span></span></h1>
     <p class="hero__sub" lang="es">{q(SITE["bio1"], P)}</p>
-    <div class="hero__ctas">{btn(L("Ver tours", "See tours"), "/tours/", "btn btn--light")}{btn(L("Reservar por WhatsApp", "Book on WhatsApp"), wa_link("Hola! Quiero consultar por los tours"), "btn btn--red", True)}</div>
+    <div class="hero__ctas">{btn(L("Ver tours", "See tours"), "#tours", "btn btn--light")}{btn(L("Reservar por WhatsApp", "Book on WhatsApp"), wa_link("Hola! Quiero consultar por los tours"), "btn btn--red", True)}</div>
   </div>
-  <p class="hero__cap" lang="es">Columpio del lago Huillinco · <span class="sr">foto</span>@chiloemagicotour</p>
-</section>
-
-<section class="trust" aria-label="Datos de confianza" data-aria-en="Trust facts">
-  <ul>
-    <li><strong>{SITE["rating"]} ★</strong><span>{L(f"Google · {SITE['reviews_count']} reseñas", f"Google · {SITE['reviews_count']} reviews")}</span></li>
-    <li><strong>{L("Lu a Do", "Mon–Sun")}</strong><span>{L("Tours todos los días", "Tours every day")}</span></li>
-    <li><strong>16</strong><span>{L("pasajeros máx. por van, con su guía", "passengers max. per van, with their guide")}</span></li>
-    <li><strong>+20</strong><span>{L("años de servicio, según la agencia", "years of service, as stated by the agency")}</span></li>
-    <li><strong>10:00</strong><span>{L("salida frente a la Plaza de Armas de Castro", "departure facing Castro's main square")}</span></li>
+  <ul class="hero__trust" aria-label="Datos de confianza" data-aria-en="Trust facts">
+    <li><strong>{SITE["rating"]} ★</strong> {L(f"Google · {SITE['reviews_count']} reseñas", f"Google · {SITE['reviews_count']} reviews")}</li>
+    <li><strong>{L("Lu a Do", "Mon–Sun")}</strong> {L("tours todos los días", "tours every day")}</li>
+    <li><strong>16</strong> {L("pasajeros máx. por van", "passengers max. per van")}</li>
+    <li><strong>10:00</strong> {L("salida frente a la Plaza de Armas", "departure facing the main square")}</li>
   </ul>
+  <p class="hero__cap" lang="es">Columpio del lago Huillinco · @chiloemagicotour</p>
 </section>
 
 <section class="isla" aria-label="Navegación en Puñihuil" data-aria-en="Sailing in Puñihuil" data-isla>
@@ -323,63 +432,74 @@ def home():
   </div>
 </section>
 
-<section class="sec tours-home">
-  <header class="sec__head sec__head--row">
-    <div><p class="kicker">{L("Nuestros tours disponibles", "Our available tours")}</p>
-    <h2 class="h2" data-lines><span class="line"><span>{L("Tours de día completo", "Full-day tours")}</span></span></h2></div>
-    <p class="lead" lang="es">{q(Q("Todos nuestros tours incluyen traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos 🌿", "[IG-007]"), P)}</p>
-  </header>
-  <div class="swiper tours__sw" data-swiper="cards" data-drag><div class="swiper-wrapper">{tours}</div></div>
-  <div class="tours__foot">{btn(L("Ver todos los tours", "See all tours"), "/tours/", "btn btn--ink")}</div>
-</section>
-
-<section class="sec dests">
-  <header class="sec__head"><p class="kicker">{L("Explora por destino", "Explore by destination")}</p>
-  <h2 class="h2" data-lines><span class="line"><span>{L("El archipiélago,", "The archipelago,")}</span></span><span class="line"><span>{L("isla por isla", "island by island")}</span></span></h2></header>
-  <ul class="dests__list">{dests}</ul>
-</section>
-
-<section class="sec exps" data-hover-zone>
-  <header class="sec__head"><p class="kicker">{L("Explora por experiencia", "Explore by experience")}</p></header>
-  <ul class="exps__list">{exps}</ul>
-  <div class="exps__float" aria-hidden="true">{exp_imgs}</div>
-</section>
-
-<section class="sec why">
-  <div class="why__media">
-    <video class="why__v" muted playsinline loop preload="none" data-lazy-video data-poster="/assets/video/vans-poster.jpg" aria-label="{e(META['_videos']['vans']['alt'])}" data-aria-en="{e(ALT_EN['vid:vans'])}"><source data-src="/assets/video/vans.webm" type="video/webm"><source data-src="/assets/video/vans.mp4" type="video/mp4"></video>
+<section class="htours" id="tours" aria-label="Nuestros tours" data-aria-en="Our tours" data-htours>
+  <div class="htours__stick">
+    <div class="htours__track" data-htrack>
+      <div class="tpanel tpanel--intro">
+        <p class="kicker kicker--light">{L("Nuestros tours disponibles", "Our available tours")}</p>
+        <h2 class="h2 h2--light" data-lines><span class="line"><span>{L("Tours de", "Full-day")}</span></span><span class="line"><span>{L("día completo", "tours")}</span></span></h2>
+        <p class="lead lead--light" lang="es">{q(Q("Todos nuestros tours incluyen traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos 🌿", "[IG-007]"), P)}</p>
+        <p class="tpanel__hint" aria-hidden="true">{L("Sigue bajando →", "Keep scrolling →")}</p>
+      </div>
+      {panels}
+      <div class="tpanel tpanel--outro">
+        <p class="script tpanel__script" lang="es">{q(SITE["slogan"], P)}</p>
+        {btn(L("Ver los 8 tours", "See all 8 tours"), "/tours/", "btn btn--light")}
+      </div>
+    </div>
+    <div class="htours__bar" aria-hidden="true"><span data-hbar></span></div>
   </div>
-  <div class="why__txt">
-    <p class="kicker">{L("Por qué viajar con nosotros", "Why travel with us")}</p>
-    <h2 class="h3" lang="es" data-lines><span class="line"><span>{q(Q("¡NO DEJES QUE TE LO CUENTEN…!", "[IG-007]", fix="recorte del remate «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR…»"), P)}</span></span></h2>
-    <p lang="es" class="why__p">{q(SITE["servicio"], P)}</p>
+</section>
+
+<section class="dx" data-dx aria-label="Explora por destino" data-aria-en="Explore by destination">
+  <div class="dx__bgs" aria-hidden="true">{dbg}</div>
+  <div class="dx__shade" aria-hidden="true"></div>
+  <div class="dx__in">
+    <p class="kicker kicker--light">{L("Explora por destino", "Explore by destination")}</p>
+    <ul class="dx__list">{dlist}</ul>
+    <div class="dx__side">{dtxt}<a class="u-link u-link--light" href="/destinos/">{L("Todos los destinos", "All destinations")}</a></div>
+  </div>
+</section>
+
+<section class="mos" aria-label="Explora por experiencia" data-aria-en="Explore by experience">
+  <header class="mos__head"><p class="kicker">{L("Explora por experiencia", "Explore by experience")}</p>
+  <h2 class="h2" data-lines><span class="line"><span>{L("Bosque, mar,", "Forest, sea,")}</span></span><span class="line line--script"><span>{L("curanto y brujos", "curanto and witches")}</span></span></h2></header>
+  <div class="mos__grid">{mosaic}</div>
+</section>
+
+<section class="why" aria-label="Por qué viajar con nosotros" data-aria-en="Why travel with us">
+  <div class="why__media" data-parallax>{bimg("muelle-luz-sendero")}</div>
+  <div class="why__shade" aria-hidden="true"></div>
+  <div class="why__in">
+    <p class="kicker kicker--light">{L("Por qué viajar con nosotros", "Why travel with us")}</p>
+    <h2 class="h2 h2--light" lang="es" data-lines><span class="line"><span>{q(Q("¡NO DEJES QUE TE LO CUENTEN…!", "[IG-007]", fix="recorte del remate «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR…»"), P)}</span></span></h2>
+    <p class="why__p" lang="es">{q(SITE["servicio"], P)}</p>
     <ul class="why__list">
       <li lang="es">{q(SITE["vans"], P)}</li>
       <li lang="es">{q(SITE["van16"], P)}</li>
       <li lang="es">{q(SITE["salida"], P)} ⛪️</li>
-      <li lang="es">{q(SITE["horario_tour"], P)}</li>
     </ul>
   </div>
 </section>
 
-<section class="sec pkgs">
-  <header class="sec__head sec__head--row"><div><p class="kicker">{L("Paquetes de varios días", "Multi-day packages")}</p>
+<section class="pkgs" aria-label="Paquetes de varios días" data-aria-en="Multi-day packages">
+  <header class="pkgs__head"><div><p class="kicker">{L("Paquetes de varios días", "Multi-day packages")}</p>
   <h2 class="h2" data-lines><span class="line"><span>{L("Más allá de la isla", "Beyond the island")}</span></span></h2></div>
   <p class="lead" lang="es">{q(SITE["privados"], P)}</p></header>
-  <ul class="pkgs__list">{pkgs}</ul>
-  <div class="tours__foot">{btn(L("Arma tu viaje a medida", "Plan a custom trip"), "/paquetes/#a-medida", "btn btn--ink")}</div>
+  {trio(pk_tiles, "trio--tall")}
+  <p class="pkgs__foot">{btn(L("Arma tu viaje a medida", "Plan a custom trip"), "/paquetes/#a-medida", "btn btn--ink")}</p>
 </section>
 
 {reviews_block(P, D.REVIEWS)}
 
-<section class="sec guia-home">
-  <header class="sec__head"><p class="kicker">{L("Guía de Chiloé", "Chiloé guide")}</p>
-  <h2 class="h2" data-lines><span class="line"><span>{L("Lo que cuentan", "What they tell")}</span></span><span class="line line--script"><span>{L("en el camino", "along the way")}</span></span></h2></header>
-  <ul class="guia__list">{guia}</ul>
+<section class="guia-home" aria-label="Guía de Chiloé" data-aria-en="Chiloé guide">
+  <header class="pkgs__head"><div><p class="kicker">{L("Guía de Chiloé", "Chiloé guide")}</p>
+  <h2 class="h2" data-lines><span class="line"><span>{L("Lo que cuentan", "What they tell")}</span></span><span class="line line--script"><span>{L("en el camino", "along the way")}</span></span></h2></div></header>
+  {trio(g_tiles)}
 </section>
 
-<section class="sec contact-home">
-  <div class="contact__txt">
+<section class="visit">
+  <div class="visit__txt">
     <p class="kicker">{L("Visítanos", "Visit us")}</p>
     <h2 class="h3" lang="es">{q(SITE["address_short"], P)}</h2>
     <p lang="es">{q(SITE["hours"], P)}</p>
@@ -398,28 +518,30 @@ def home():
          content, 'home', preload=preload_img('huillinco-columpio'))
 
 
+def h1_lines(*parts, light=True):
+    out = ''
+    for txt, script in parts:
+        out += f'<span class="line{" line--script" if script else ""}"><span>{txt}</span></span>'
+    return f'<h1 class="h1{" h1--light" if light else ""}" data-lines>{out}</h1>'
+
+
 # ------------------------------------------------------------------ TOURS
 def tours_index():
     P = '/tours/'
     filt = ''.join(f'<button type="button" class="chip" data-filter="{x["slug"]}" aria-pressed="false">{L(x["name"])}</button>' for x in D.EXPERIENCIAS)
-    cards = ''.join(f'<li data-exp="{" ".join(t["exp"])}">{tour_card(t, P, "(max-width:760px) 90vw, 30vw")}</li>' for t in D.TOURS)
-    content = f'''
-<section class="phead">
-  <p class="kicker">{L("Tours", "Tours")}</p>
-  <h1 class="h1" lang="es" data-lines><span class="line"><span>NUESTROS TOURS</span></span><span class="line line--script"><span>disponibles</span></span></h1>
-  <p class="lead" lang="es">{q(SITE["horario_tour"], P)}</p>
-  <p class="lead" lang="es">{q(SITE["cupos"], P)} 😉</p>
-</section>
-<section class="sec tours-grid">
+    cards = ''.join(f'<li data-exp="{" ".join(t["exp"])}">{tour_tile(t, P)}</li>' for t in D.TOURS)
+    COPY.append((P, 'NUESTROS TOURS disponibles', '[DEST-H7_001] "NUESTROS TOURS DISPONIBLES"', 'Se separa "disponibles" en cursiva'))
+    content = f'''{bleed_hero("muelle-luz-oceano", '<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>NUESTROS TOURS</span></span><span class="line line--script"><span>disponibles</span></span></h1>', L("Tours", "Tours"),
+        f'<p lang="es">{q(SITE["horario_tour"], P)}</p><p lang="es">{q(SITE["cupos"], P)} 😉</p>')}
+<section class="tgrid">
   <h2 class="sr">{L("Todos los tours", "All tours")}</h2>
   <div class="chips" role="group" aria-label="Filtrar por experiencia" data-aria-en="Filter by experience"><button type="button" class="chip" data-filter="all" aria-pressed="true">{L("Todos", "All")}</button>{filt}</div>
-  <ul class="grid3" data-filter-grid>{cards}</ul>
+  <ul class="tiles2" data-filter-grid>{cards}</ul>
 </section>
-{booking_cta(P, "Hola! Quiero consultar por los tours")}'''
-    COPY.append((P, 'NUESTROS TOURS disponibles', '[DEST-H7_001] "NUESTROS TOURS DISPONIBLES"', 'Se separa "disponibles" en cursiva'))
+{booking_cta(P, "Hola! Quiero consultar por los tours", "ancud-atardecer")}'''
     page(P, 'Tours en Chiloé desde Castro · Turismo Chiloé Mágico', 'Chiloé tours from Castro · Turismo Chiloé Mágico',
          'Siete tours de día completo desde Castro con traslado, guiado, almuerzo y bebestibles.',
-         'Seven full-day tours from Castro with transport, guiding, lunch and drinks.', content)
+         'Seven full-day tours from Castro with transport, guiding, lunch and drinks.', content, preload=preload_img('muelle-luz-oceano'))
 
 
 def tour_page(t):
@@ -445,22 +567,16 @@ def tour_page(t):
         COPY.append((P, ' / '.join(t['stops']), t['afiche'] + ' rótulos de paradas', None))
     else:
         itin, itin_src = pending(P), ''
-    for s in t['stops']:
-        pass
     body = ''.join(q(b, P, 'p') for b in t['body'])
-    gallery = ''.join(f'<div class="swiper-slide gal__s">{img(k, "(max-width:760px) 80vw, 40vw")}</div>' for k in t['gallery'])
+    gallery = ''.join(f'<div class="swiper-slide gal__s">{bimg(k, "(max-width:760px) 90vw, 60vw")}</div>' for k in t['gallery'])
     extras = ''.join(f'<li lang="es">{q(x, P)}</li>' for x in t.get('extras', []))
     season = (f'<p lang="es">{L("Temporada:", "Season:")} {q(t["season"], P)} · {L("meses exactos por confirmar.", "exact months to be confirmed.")}</p>' if t.get('season') else '')
-    content = f'''
-<nav class="crumbs" aria-label="Migas de pan" data-aria-en="Breadcrumbs"><a href="/">{L("Inicio", "Home")}</a> › <a href="/tours/">Tours</a> › <span aria-current="page" lang="es">{e(t["short"])}</span></nav>
-<section class="thero">
-  <div class="thero__txt">
-    <p class="kicker">{L(t["tag"])} · <span class="stars">★ {SITE["rating"]}</span> <span class="muted">({L(f"{SITE['reviews_count']} reseñas de la agencia", f"{SITE['reviews_count']} agency reviews")})</span></p>
-    {title_afiche(t["title"], P)}
-    <p class="thero__hook" lang="es">{q(t["hook"], P)}</p>
-  </div>
-  {media(t["hero"], "(max-width:760px) 100vw, 46vw", "thero__media", True, "4/5", True)}
-</section>
+    crumbs = crumbs_html([f'<a href="/">{L("Inicio", "Home")}</a>', '<a href="/tours/">Tours</a>', f'<span aria-current="page" lang="es">{e(t["short"])}</span>'])
+    title = title_afiche(t['title'], P, cls='afiche afiche--light')
+    lead_html = (f'<p class="bhero__hook" lang="es">{q(t["hook"], P)}</p>'
+                 f'<p class="bhero__meta"><span class="stars">★ {SITE["rating"]}</span> {L(f"{SITE["reviews_count"]} reseñas de la agencia en Google", f"{SITE["reviews_count"]} agency reviews on Google")} · {tour_price_inline(t)}</p>')
+    ctas = f'<div class="bhero__ctas">{btn(L("Reservar por WhatsApp", "Book on WhatsApp"), wa_link(wa_t), "btn btn--red", True)}</div>'
+    content = f'''{bleed_hero(t["hero"], title, L(t["tag"]), lead_html, crumbs, "full", ctas)}
 
 <section class="tbody">
   <div class="tbody__main">
@@ -481,7 +597,6 @@ def tour_page(t):
     </div>
     <h2 class="h4">{L("Clima y temporada", "Weather and season")}</h2><p lang="es">{q(SITE["clima"], P)}</p>{season}{pending(P)}
     <h2 class="h4">{L("Qué llevar · Políticas de cancelación, clima y mínimo de pasajeros", "What to bring · Cancellation, weather and minimum-group policies")}</h2>{pending(P)}
-    <h2 class="h4">{L("Mapa del punto de salida", "Departure point map")}</h2>{map_block(P)}
   </div>
   <aside class="book" aria-label="Reservar" data-aria-en="Book">
     <div class="book__in">
@@ -499,18 +614,22 @@ def tour_page(t):
 </section>
 <div class="mbar" data-mbar><span>{('<strong>' + clp(t["price_from"]) + '</strong> CLP') if t.get("price_from") else L("Precio por confirmar", "Price to be confirmed")}</span>{btn(L("Reservar", "Book"), wa_link(wa_t), "btn btn--red btn--sm", True)}</div>
 
-{f'<section class="sec gal"><div class="swiper gal__sw" data-swiper="gallery" data-drag><div class="swiper-wrapper">{gallery}</div></div></section>' if t["gallery"] else ''}
-{reviews_block(P, revs, False) if revs else ''}
+{f'<section class="gal" aria-label="Galería" data-aria-en="Gallery"><div class="swiper gal__sw" data-swiper="gallery" data-drag><div class="swiper-wrapper">{gallery}</div></div></section>' if t["gallery"] else ''}
+{reviews_block(P, revs, False, t["hero"]) if revs else ''}
 <section class="sec faq-mini">
   <h2 class="h3">{L("Preguntas frecuentes", "Frequently asked questions")}</h2>
   {faq_items(P, [D.FAQ[i] for i in (5, 6, 7, 10)])}
   <a class="u-link" href="/preguntas-frecuentes/">{L("Ver todas", "See all")}</a>
 </section>
-<section class="sec related">
-  <header class="sec__head"><p class="kicker">{L("Tours relacionados", "Related tours")}</p></header>
-  <ul class="grid3">{''.join(f"<li>{tour_card(x, P)}</li>" for x in rel)}</ul>
+<section class="visit">
+  <div class="visit__txt"><p class="kicker">{L("Punto de salida", "Departure point")}</p><h2 class="h3" lang="es">{q(SITE["address_short"], P)}</h2><p lang="es">{q(SITE["salida"], P)}</p></div>
+  {map_block(P)}
 </section>
-{booking_cta(P, wa_t)}'''
+<section class="related" aria-label="Tours relacionados" data-aria-en="Related tours">
+  <header class="pkgs__head"><p class="kicker">{L("Tours relacionados", "Related tours")}</p></header>
+  {trio([tour_tile(x, P, sizes="(max-width:760px) 100vw, 34vw") for x in rel])}
+</section>
+{booking_cta(P, wa_t, rel[0]["hero"] if rel else "punihuil-bahia")}'''
     page(P, f'{t["short"]} desde Castro · Turismo Chiloé Mágico', f'{t["short"]} from Castro · Turismo Chiloé Mágico',
          f'{t["short"]}: día completo desde Castro con traslado, guiado, almuerzo y bebestibles. Paradas: {", ".join(t["stops"]) or "Isla Mechuque"}.',
          f'{t["short"]}: full day from Castro with transport, guiding, lunch and drinks.', content, 'tour', wa_t, ld, preload_img(t['hero']))
@@ -534,31 +653,26 @@ def faq_items(P, items):
 # ------------------------------------------------------------------ DESTINOS / EXPERIENCIAS
 def destinos():
     P = '/destinos/'
-    items = ''.join(f'<li><a class="bigcard" href="{dest_href(d)}" data-card>{media(d["img"], "(max-width:760px) 90vw, 45vw", "bigcard__media", ratio="4/3")}'
-                    f'<h2 class="h3" lang="es">{e(d["name"])}</h2><p lang="es">{q(d["intro"], P)}</p></a></li>' for d in D.DESTINOS)
-    content = f'''<section class="phead"><p class="kicker">{L("Destinos", "Destinations")}</p>
-<h1 class="h1" data-lines><span class="line"><span>{L("Explora por", "Explore by")}</span></span><span class="line line--script"><span>{L("destino", "destination")}</span></span></h1>
-<p class="lead" lang="es">{q(SITE["diarias"], P)}</p></section>
-<section class="sec"><ul class="grid2">{items}</ul></section>{booking_cta(P, "Hola! Quiero consultar por los tours")}'''
+    tiles = ''.join(f'<li>{tile(d["img"], dest_href(d), f"<span lang=es>{e(d["name"])}</span>", f"<span lang=es>{q(d["intro"], P)}</span>")}</li>' for d in D.DESTINOS)
+    content = f'''{bleed_hero("aucar-isla", h1_lines((L("Explora por", "Explore by"), False), (L("destino", "destination"), True)), L("Destinos", "Destinations"), f'<p lang="es">{q(SITE["diarias"], P)}</p>')}
+<section class="tgrid"><ul class="tiles2">{tiles}</ul></section>{booking_cta(P, "Hola! Quiero consultar por los tours", "punihuil-bahia")}'''
     page(P, 'Destinos en Chiloé · Turismo Chiloé Mágico', 'Destinations in Chiloé · Turismo Chiloé Mágico',
          'Castro, Ancud y Puñihuil, Dalcahue y Quinchao, Chonchi e Isla Lemuy, Cucao y el Parque Nacional Chiloé.',
-         'Castro, Ancud and Puñihuil, Dalcahue and Quinchao, Chonchi and Lemuy Island, Cucao and Chiloé National Park.', content)
+         'Castro, Ancud and Puñihuil, Dalcahue and Quinchao, Chonchi and Lemuy Island, Cucao and Chiloé National Park.', content, preload=preload_img('aucar-isla'))
     for d in D.DESTINOS:
         P = dest_href(d)
         ts = [t for t in D.TOURS if d['slug'] in t['dest']]
         must = ''.join(f'<li lang="es">{e(m)}</li>' for m in d['must'])
         COPY.append((P, ' / '.join(d['must']), 'nombres de lugares de los afiches [DEST-H7] y posts', None))
-        content = f'''<nav class="crumbs" aria-label="Migas de pan" data-aria-en="Breadcrumbs"><a href="/">{L("Inicio", "Home")}</a> › <a href="/destinos/">{L("Destinos", "Destinations")}</a> › <span aria-current="page" lang="es">{e(d["name"])}</span></nav>
-<section class="dhero">{media(d["img"], "100vw", "dhero__media", True, None, True)}<div class="dhero__in"><h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>{e(d["name"].upper())}</span></span></h1></div></section>
-<section class="sec split">
-  <div><p class="lead" lang="es">{q(d["intro"], P)}</p>{''.join(q(b, P, 'p') for b in d["body"])}
+        crumbs = crumbs_html([f'<a href="/">{L("Inicio", "Home")}</a>', f'<a href="/destinos/">{L("Destinos", "Destinations")}</a>', f'<span aria-current="page" lang="es">{e(d["name"])}</span>'])
+        inner = f'''<p class="lead" lang="es">{q(d["intro"], P)}</p>{''.join(q(b, P, 'p') for b in d["body"])}
   <h2 class="h4">{L("Imperdibles", "Must-sees")}</h2><ul class="must">{must}</ul>
   <h2 class="h4">{L("Cómo llegar desde Castro · mejor época", "Getting there from Castro · best season")}</h2>
-  <p lang="es">{q(SITE["salida"], P)}</p>{pending(P)}</div>
-  <div class="split__imgs">{''.join(media(k, "(max-width:760px) 90vw, 35vw", "", ratio="4/5", parallax=True) for k in d["imgs"])}</div>
-</section>
-<section class="sec"><header class="sec__head"><p class="kicker">{L("Tours que pasan por aquí", "Tours that stop here")}</p></header><ul class="grid3">{''.join(f"<li>{tour_card(t, P)}</li>" for t in ts)}</ul></section>
-{booking_cta(P, f"Hola! Quiero conocer {d['name']}")}'''
+  <p lang="es">{q(SITE["salida"], P)}</p>{pending(P)}'''
+        content = f'''{bleed_hero(d["img"], f'<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>{e(d["name"].upper())}</span></span></h1>', L("Destino", "Destination"), '', crumbs)}
+{sticky_split(d["imgs"][0], inner, "right", d["imgs"][1:])}
+<section class="related"><header class="pkgs__head"><p class="kicker">{L("Tours que pasan por aquí", "Tours that stop here")}</p></header>{trio([tour_tile(t, P, sizes="(max-width:760px) 100vw, 34vw") for t in ts])}</section>
+{booking_cta(P, f"Hola! Quiero conocer {d['name']}", d["imgs"][-1])}'''
         page(P, f'{d["name"]} · Turismo Chiloé Mágico', f'{d["name"]} · Turismo Chiloé Mágico',
              f'Qué hacer en {d["name"]}, Chiloé: {", ".join(d["must"])}. Tours desde Castro.', f'Things to do in {d["name"]}, Chiloé. Tours from Castro.',
              content, preload=preload_img(d['img']))
@@ -566,21 +680,19 @@ def destinos():
 
 def experiencias():
     P = '/experiencias/'
-    items = ''.join(f'<li><a class="bigcard" href="{exp_href(x)}" data-card>{media(x["img"], "(max-width:760px) 90vw, 30vw", "bigcard__media", ratio="1/1")}'
-                    f'<h2 class="h3">{L(x["name"])}</h2><p lang="es">{q(x["quote"], P)}</p></a></li>' for x in D.EXPERIENCIAS)
-    content = f'''<section class="phead"><p class="kicker">{L("Experiencias", "Experiences")}</p>
-<h1 class="h1" data-lines><span class="line"><span>{L("Explora por", "Explore by")}</span></span><span class="line line--script"><span>{L("experiencia", "experience")}</span></span></h1>
-<p class="lead" lang="es">{q(SITE["magia"], P)}</p></section><section class="sec"><ul class="grid3">{items}</ul></section>'''
+    tiles = ''.join(f'<li>{tile(x["img"], exp_href(x), L(x["name"]), f"<span lang=es>{q(x["quote"], P)}</span>")}</li>' for x in D.EXPERIENCIAS)
+    content = f'''{bleed_hero("brujos-columpio", h1_lines((L("Explora por", "Explore by"), False), (L("experiencia", "experience"), True)), L("Experiencias", "Experiences"), f'<p lang="es">{q(SITE["magia"], P)}</p>')}
+<section class="tgrid"><ul class="tiles2">{tiles}</ul></section>'''
     page(P, 'Experiencias en Chiloé · Turismo Chiloé Mágico', 'Experiences in Chiloé · Turismo Chiloé Mágico',
-         'Patrimonio e iglesias, naturaleza, navegación, gastronomía chilota y mitos de Chiloé.', 'Heritage churches, nature, boat trips, Chilote food and myths of Chiloé.', content)
+         'Patrimonio e iglesias, naturaleza, navegación, gastronomía chilota y mitos de Chiloé.', 'Heritage churches, nature, boat trips, Chilote food and myths of Chiloé.', content, preload=preload_img('brujos-columpio'))
     for x in D.EXPERIENCIAS:
         P = exp_href(x)
         ts = [t for t in D.TOURS if x['slug'] in t['exp']]
-        content = f'''<nav class="crumbs" aria-label="Migas de pan" data-aria-en="Breadcrumbs"><a href="/">{L("Inicio", "Home")}</a> › <a href="/experiencias/">{L("Experiencias", "Experiences")}</a> › <span aria-current="page">{L(x["name"])}</span></nav>
-<section class="dhero">{media(x["img"], "100vw", "dhero__media", True, None, True)}<div class="dhero__in"><h1 class="h1 h1--light" data-lines><span class="line"><span>{L(x["name"])}</span></span></h1></div></section>
-<section class="sec narrow"><p class="lead" lang="es">{q(x["quote"], P)}</p><p lang="es">{q(x["more"], P)}</p></section>
-<section class="sec"><header class="sec__head"><p class="kicker">{L("Tours con esta experiencia", "Tours with this experience")}</p></header><ul class="grid3">{''.join(f"<li>{tour_card(t, P)}</li>" for t in ts)}</ul></section>
-{booking_cta(P, "Hola! Quiero consultar por los tours")}'''
+        crumbs = crumbs_html([f'<a href="/">{L("Inicio", "Home")}</a>', f'<a href="/experiencias/">{L("Experiencias", "Experiences")}</a>', f'<span aria-current="page">{L(x["name"])}</span>'])
+        content = f'''{bleed_hero(x["img"], h1_lines((L(x["name"]), False)), L("Experiencia", "Experience"), f'<p lang="es">{q(x["quote"], P)}</p>', crumbs)}
+<section class="sec narrow"><p class="lead" lang="es">{q(x["more"], P)}</p></section>
+<section class="related"><header class="pkgs__head"><p class="kicker">{L("Tours con esta experiencia", "Tours with this experience")}</p></header>{trio([tour_tile(t, P, sizes="(max-width:760px) 100vw, 34vw") for t in ts])}</section>
+{booking_cta(P, "Hola! Quiero consultar por los tours", ts[0]["hero"] if ts else "punihuil-bahia")}'''
         page(P, f'{x["name"].es} en Chiloé · Turismo Chiloé Mágico', f'{x["name"].en} in Chiloé · Turismo Chiloé Mágico',
              f'{x["name"].es}: tours de día completo desde Castro.', f'{x["name"].en}: full-day tours from Castro.', content, preload=preload_img(x['img']))
 
@@ -601,17 +713,17 @@ def paquetes():
     P = '/paquetes/'
     items = ''
     for p in D.PAQUETES:
-        imgs = ''.join(media(k, "(max-width:760px) 90vw, 30vw", "", ratio="4/5") for k in p['imgs']) or f'<div class="pkg__type pkg__type--big" aria-hidden="true">❄</div>'
         extra = q(p['extra'], P, 'p') if p.get('extra') else ''
-        items += f'''<article class="pkgrow"><div class="pkgrow__imgs">{imgs}</div><div class="pkgrow__t"><p class="kicker">{L(p["days"])}</p>
-<h2 class="h3" lang="es">{e(p["name"])}</h2>{q(p["text"], P, "p")}{extra}
+        inner = f'''<p class="kicker">{L(p["days"])}</p><h2 class="h2" lang="es">{e(p["name"])}</h2>{q(p["text"], P, "p")}{extra}
 <h3 class="h5">{L("Itinerario día a día, alojamiento, comidas y precio en base doble", "Day-by-day itinerary, lodging, meals and price per person (double)")}</h3>{pending(P)}
-{btn(L("Cotizar", "Get a quote"), wa_link(f"Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--ink", True)}</div></article>'''
-    content = f'''<section class="phead"><p class="kicker">{L("Paquetes", "Packages")}</p>
-<h1 class="h1" data-lines><span class="line"><span>{L("Viajes de", "Trips of")}</span></span><span class="line line--script"><span>{L("varios días", "several days")}</span></span></h1>
-<p class="lead" lang="es">{q(SITE["privados"], P)}</p>
-<p class="note">{L("Viajes que la agencia ya ha realizado según sus publicaciones. Próximas salidas y valores: por confirmar.", "Trips the agency has already run, according to its posts. Next departures and prices: to be confirmed.")}</p></section>
-<section class="sec">{items}</section>
+<p>{btn(L("Cotizar", "Get a quote"), wa_link(f"Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--ink", True)}</p>'''
+        if p['imgs']:
+            items += sticky_split(p['imgs'][0], inner, 'right' if len(items) % 2 == 0 else 'left', p['imgs'][1:])
+        else:
+            items += f'<section class="ssplit ssplit--flat"><div class="ssplit__media ssplit__media--flat" aria-hidden="true"><span>❄</span></div><div class="ssplit__txt">{inner}</div></section>'
+    content = f'''{bleed_hero("valdivia-2" if META["valdivia-2"]["w"] > 1200 else "ancud-atardecer", h1_lines((L("Viajes de", "Trips of"), False), (L("varios días", "several days"), True)), L("Paquetes", "Packages"),
+        f'<p lang="es">{q(SITE["privados"], P)}</p><p class="note note--light">{L("Viajes que la agencia ya ha realizado según sus publicaciones. Próximas salidas y valores: por confirmar.", "Trips the agency has already run, according to its posts. Next departures and prices: to be confirmed.")}</p>')}
+{items}
 <section class="sec medida" id="a-medida"><div><p class="kicker">{L("A medida", "Custom")}</p><h2 class="h2">{L("Arma tu viaje", "Plan your trip")}</h2>
 <p lang="es">{q(SITE["diarias"], P)}</p></div>{wa_form(P, "a medida")}</section>'''
     page(P, 'Paquetes y viajes de varios días · Turismo Chiloé Mágico', 'Multi-day packages · Turismo Chiloé Mágico',
@@ -626,75 +738,66 @@ def servicios():
         (U('Traslados', 'Transfers'), Q('servicio de turismo, traslado y viajes privados', '[IG-016]'), 'vans'),
         (U('Grupos', 'Groups'), Q('Tremendo grupo nos tocó … que disfrutaron el Tour de La Costa🤩', '[IG-006]', fix='se omite «ayer»'), 'grupo-columpios'),
     ]
-    items = ''.join(f'<li class="srv">{media(k, "(max-width:760px) 90vw, 30vw", "", ratio="4/3")}<h2 class="h3">{L(t)}</h2><p lang="es">{q(x, P)}</p>'
-                    f'<p class="note">{L("Recorridos, vehículos y tarifas: por confirmar con la agencia.", "Routes, vehicles and rates: to be confirmed with the agency.")}</p>'
-                    f'{btn(L("Cotizar", "Get a quote"), wa_link("Hola! Quiero cotizar: " + t.es), "btn btn--ink btn--sm", True)}</li>' for t, x, k in cards)
-    content = f'''<section class="phead"><p class="kicker">{L("Servicios", "Services")}</p>
-<h1 class="h1" data-lines><span class="line"><span>{L("Traslados, privados", "Transfers, private")}</span></span><span class="line line--script"><span>{L("y grupos", "and groups")}</span></span></h1>
-<p class="lead" lang="es">{q(SITE["vans"], P)}</p></section>
-<section class="sec"><ul class="grid3">{items}</ul></section>{booking_cta(P, "Hola! Quiero cotizar un servicio privado")}'''
+    tiles = [tile(k, wa_link("Hola! Quiero cotizar: " + t.es), L(t), f'<span lang="es">{q(x, P)}</span> · {L("Cotizar", "Get a quote")}', '', '', '(max-width:760px) 100vw, 34vw', 'target="_blank" rel="noopener"') for t, x, k in cards]
+    content = f'''{bleed_hero("vans", h1_lines((L("Traslados, privados", "Transfers, private"), False), (L("y grupos", "and groups"), True)), L("Servicios", "Services"), f'<p lang="es">{q(SITE["vans"], P)}</p>')}
+{trio(tiles, "trio--tall")}
+<section class="sec narrow"><p class="note">{L("Recorridos, vehículos y tarifas de cada servicio: por confirmar con la agencia.", "Routes, vehicles and rates for each service: to be confirmed with the agency.")}</p></section>
+{booking_cta(P, "Hola! Quiero cotizar un servicio privado", "muelle-luz-grupo")}'''
     page(P, 'Servicios privados y traslados · Turismo Chiloé Mágico', 'Private services and transfers · Turismo Chiloé Mágico',
-         'Viajes privados, traslados y grupos en vans con aire acondicionado desde Castro.', 'Private trips, transfers and groups in air-conditioned vans from Castro.', content)
+         'Viajes privados, traslados y grupos en vans con aire acondicionado desde Castro.', 'Private trips, transfers and groups in air-conditioned vans from Castro.', content, preload=preload_img('vans'))
 
 
 def nosotros():
     P = '/nosotros/'
     team = ''.join(f'<li><span class="team__n" lang="es">{e(m["name"])}</span><span class="team__r">{L(m["role"])}</span></li>' for m in D.TEAM)
     COPY.append((P, ', '.join(m['name'] for m in D.TEAM), 'nombres en posts y reseñas: ' + ' '.join(m['src'] for m in D.TEAM), None))
-    content = f'''<section class="phead"><p class="kicker">{L("Nosotros", "About us")}</p>
-<h1 class="h1" lang="es" data-lines><span class="line"><span>SOMOS</span></span><span class="line line--script"><span>Chiloé Mágico</span></span></h1>
-<p class="lead" lang="es">{q(SITE["somos"], P)}</p></section>
-<section class="sec split">
-  <div><p lang="es">{q(SITE["anos"], P)}</p><p lang="es">{q(SITE["magia"], P)}</p><p lang="es">{q(SITE["magia2"], P)}</p>
-  <blockquote class="pull" lang="es">“{q(SITE["marketing"], P)}”</blockquote><p lang="es">{q(SITE["irrepetible"], P)}</p></div>
-  <div class="split__imgs">{media("nicolas-enrique", "(max-width:760px) 90vw, 35vw", "", ratio="1/1", parallax=True)}{media("vans", "(max-width:760px) 90vw, 35vw", "", ratio="4/3", parallax=True)}</div>
-</section>
+    inner = f'''<p lang="es">{q(SITE["anos"], P)}</p><p lang="es">{q(SITE["magia"], P)}</p><p lang="es">{q(SITE["magia2"], P)}</p>
+  <blockquote class="pull" lang="es">“{q(SITE["marketing"], P)}”</blockquote><p lang="es">{q(SITE["irrepetible"], P)}</p>
+  <h2 class="h3">{L("Flota", "Fleet")}</h2><p lang="es">{q(SITE["van16"], P)}</p>
+  <h2 class="h3">{L("Registro Sernatur y sellos", "Sernatur registry and certifications")}</h2>
+  <p>{L("Número de registro Sernatur, razón social y sellos:", "Sernatur registry number, legal name and seals:")}</p>{pending(P)}'''
+    content = f'''{bleed_hero("muelle-luz-grupo", '<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>SOMOS</span></span><span class="line line--script"><span>Chiloé Mágico</span></span></h1>', L("Nosotros", "About us"), f'<p lang="es">{q(SITE["somos"], P)}</p>')}
+{sticky_split("nicolas-enrique", inner, "left", ("vans",))}
 <section class="sec team"><header class="sec__head"><p class="kicker">{L("Equipo", "Team")}</p><h2 class="h2">{L("Guías y conductores", "Guides and drivers")}</h2>
 <p class="lead">{L("Nombres tal como aparecen en sus publicaciones y en las reseñas de Google. Fotos del equipo: por confirmar.", "Names as they appear in the agency's posts and Google reviews. Team photos: to be confirmed.")}</p></header>
 <ul class="team__list">{team}</ul>
-<figure class="team__fig">{media("nicolas-enrique", "(max-width:760px) 90vw, 40vw", "", ratio="4/3")}<figcaption lang="es">{q(Q("Nuestro guía Nicolás junto a don Enrique siempre enfocados en brindarle la mejor experiencia a nuestros turistas!", "[IG-023]"), P)}</figcaption></figure></section>
-<section class="sec narrow"><h2 class="h3">{L("Flota", "Fleet")}</h2><p lang="es">{q(SITE["van16"], P)}</p>
-<h2 class="h3">{L("Registro Sernatur y sellos", "Sernatur registry and certifications")}</h2>
-<p>{L("Número de registro Sernatur, razón social y sellos:", "Sernatur registry number, legal name and seals:")}</p>{pending(P)}</section>
-{reviews_block(P, D.REVIEWS[:6])}'''
+<p class="team__cap" lang="es">{q(Q("Nuestro guía Nicolás junto a don Enrique siempre enfocados en brindarle la mejor experiencia a nuestros turistas!", "[IG-023]"), P)}</p></section>
+{reviews_block(P, D.REVIEWS[:6], True, "hueñay-playa")}'''
     page(P, 'Nosotros · Turismo Chiloé Mágico', 'About us · Turismo Chiloé Mágico',
-         'Agencia local de turismo en Castro, Chiloé: guías, conductores y vans para recorrer el archipiélago.', 'Local travel agency in Castro, Chiloé.', content)
+         'Agencia local de turismo en Castro, Chiloé: guías, conductores y vans para recorrer el archipiélago.', 'Local travel agency in Castro, Chiloé.', content, preload=preload_img('muelle-luz-grupo'))
 
 
 def guia():
     P = '/guia/'
-    items = ''.join(f'<li><a class="gcard" href="/guia/{g["slug"]}/" data-card>{media(g["img"], "(max-width:760px) 90vw, 30vw", "gcard__media", ratio="4/3")}<h2 class="h4">{L(g["title"])}</h2></a></li>' for g in D.GUIA)
-    content = f'''<section class="phead"><p class="kicker">{L("Guía de Chiloé", "Chiloé guide")}</p>
-<h1 class="h1" data-lines><span class="line"><span>{L("Historias del", "Stories of the")}</span></span><span class="line line--script"><span>{L("archipiélago", "archipelago")}</span></span></h1>
-<p class="lead">{L("Textos publicados por la agencia en su Instagram.", "Texts published by the agency on its Instagram.")}</p></section>
-<section class="sec"><ul class="grid3">{items}</ul>
-<div class="narrow"><h2 class="h3">{L("Cuándo viajar, clima y cómo llegar a Chiloé", "When to travel, weather and how to reach Chiloé")}</h2><p lang="es">{q(SITE["clima"], P)}</p>{pending(P)}</div></section>'''
+    tiles = ''.join(f'<li>{tile(g["img"], f"/guia/{g["slug"]}/", L(g["title"]), L("Leer", "Read"))}</li>' for g in D.GUIA)
+    content = f'''{bleed_hero("hueñay-playa", h1_lines((L("Historias del", "Stories of the"), False), (L("archipiélago", "archipelago"), True)), L("Guía de Chiloé", "Chiloé guide"), f'<p>{L("Textos publicados por la agencia en su Instagram.", "Texts published by the agency on its Instagram.")}</p>')}
+<section class="tgrid"><ul class="tiles2">{tiles}</ul></section>
+<section class="sec narrow"><h2 class="h3">{L("Cuándo viajar, clima y cómo llegar a Chiloé", "When to travel, weather and how to reach Chiloé")}</h2><p lang="es">{q(SITE["clima"], P)}</p>{pending(P)}</section>'''
     page(P, 'Guía de Chiloé · Turismo Chiloé Mágico', 'Chiloé guide · Turismo Chiloé Mágico',
-         'Curanto, iglesias patrimonio, brujos y almas, la minga y los pingüinos de Puñihuil.', 'Curanto, heritage churches, myths, the minga and Puñihuil penguins.', content)
+         'Curanto, iglesias patrimonio, brujos y almas, la minga y los pingüinos de Puñihuil.', 'Curanto, heritage churches, myths, the minga and Puñihuil penguins.', content, preload=preload_img('hueñay-playa'))
     for g in D.GUIA:
         P = f'/guia/{g["slug"]}/'
         ts = [TOURS[s] for s in g['tours']]
-        content = f'''<nav class="crumbs" aria-label="Migas de pan" data-aria-en="Breadcrumbs"><a href="/">{L("Inicio", "Home")}</a> › <a href="/guia/">{L("Guía", "Guide")}</a> › <span aria-current="page">{L(g["title"])}</span></nav>
-<article class="art"><header class="art__head"><h1 class="h1" data-lines><span class="line"><span>{L(g["title"])}</span></span></h1></header>
-{media(g["img"], "(max-width:760px) 100vw, 60vw", "art__media", True, "16/10", True)}
-<div class="art__body narrow">{''.join(q(p, P, 'p') for p in g["paras"])}<p class="note">{L("Fuente: publicaciones de @chiloemagicotour.", "Source: @chiloemagicotour posts.")}</p></div></article>
-{f'<section class="sec"><header class="sec__head"><p class="kicker">{L("Vívelo en", "Experience it on")}</p></header><ul class="grid3">' + ''.join(f"<li>{tour_card(t, P)}</li>" for t in ts) + '</ul></section>' if ts else ''}'''
+        crumbs = crumbs_html([f'<a href="/">{L("Inicio", "Home")}</a>', f'<a href="/guia/">{L("Guía", "Guide")}</a>', f'<span aria-current="page">{L(g["title"])}</span>'])
+        inner = ''.join(q(p, P, 'p') for p in g["paras"]) + f'<p class="note">{L("Fuente: publicaciones de @chiloemagicotour.", "Source: @chiloemagicotour posts.")}</p>'
+        content = f'''{bleed_hero(g["img"], h1_lines((L(g["title"]), False)), L("Guía de Chiloé", "Chiloé guide"), '', crumbs, "tall")}
+<article class="art"><div class="art__body narrow">{inner}</div></article>
+{f'<section class="related"><header class="pkgs__head"><p class="kicker">{L("Vívelo en", "Experience it on")}</p></header>' + trio([tour_tile(t, P, sizes="(max-width:760px) 100vw, 34vw") for t in ts]) + '</section>' if ts else ''}'''
         page(P, f'{g["title"].es} · Guía de Chiloé', f'{g["title"].en} · Chiloé guide', f'{g["title"].es}: guía de Chiloé de Turismo Chiloé Mágico.',
              f'{g["title"].en}: Chiloé guide by Turismo Chiloé Mágico.', content, preload=preload_img(g['img']))
 
 
 def faq():
     P = '/preguntas-frecuentes/'
-    content = f'''<section class="phead"><p class="kicker">FAQ</p><h1 class="h1" data-lines><span class="line"><span>{L("Preguntas", "Frequently asked")}</span></span><span class="line line--script"><span>{L("frecuentes", "questions")}</span></span></h1></section>
-<section class="sec narrow">{faq_items(P, D.FAQ)}</section>{booking_cta(P, "Hola! Tengo una consulta")}'''
+    content = f'''{bleed_hero("huillinco-pareja", h1_lines((L("Preguntas", "Frequently asked"), False), (L("frecuentes", "questions"), True)), "FAQ", '', '', "tall")}
+<section class="sec narrow">{faq_items(P, D.FAQ)}</section>{booking_cta(P, "Hola! Tengo una consulta", "muelle-luz-oceano")}'''
     page(P, 'Preguntas frecuentes · Turismo Chiloé Mágico', 'FAQ · Turismo Chiloé Mágico',
-         'Salidas, horarios, qué incluye, idioma, grupos y reservas de los tours de Turismo Chiloé Mágico.', 'Departures, times, inclusions, language, groups and bookings.', content)
+         'Salidas, horarios, qué incluye, idioma, grupos y reservas de los tours de Turismo Chiloé Mágico.', 'Departures, times, inclusions, language, groups and bookings.', content, preload=preload_img('huillinco-pareja'))
 
 
 def contacto():
     P = '/contacto/'
-    content = f'''<section class="phead"><p class="kicker">{L("Contacto", "Contact")}</p><h1 class="h1" lang="es" data-lines><span class="line"><span>{q(Q("RESERVA AHORA", "[PIEZA IG-017]"), P)}</span></span></h1>
-<p class="lead" lang="es">{q(SITE["reservas"], P)}: 📲 {SITE["wa_display"]}</p></section>
+    content = f'''{bleed_hero("chonchi", f'<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>{q(Q("RESERVA AHORA", "[PIEZA IG-017]"), P)}</span></span></h1>', L("Contacto", "Contact"), f'<p lang="es">{q(SITE["reservas"], P)}: 📲 {SITE["wa_display"]}</p>', '', "tall")}
 <section class="sec split">
   <div class="contact__list">
     <p><span class="kicker">WhatsApp</span><a class="big-link" href="{wa_link('Hola! Quiero consultar por los tours')}" target="_blank" rel="noopener">{SITE["wa_display"]}</a></p>
@@ -705,10 +808,11 @@ def contacto():
   </div>
   {wa_form(P, "contacto")}
 </section>
-<section class="sec">{map_block(P)}</section>'''
+<section class="visit visit--full">{map_block(P)}</section>'''
     page(P, 'Contacto y reservas · Turismo Chiloé Mágico', 'Contact and bookings · Turismo Chiloé Mágico',
          'WhatsApp +56 9 7890 2625, Gamboa 351, Local Interior 116, frente a la Plaza de Armas de Castro. Lunes a domingo 9:00 a 19:30.',
-         'WhatsApp +56 9 7890 2625, Gamboa 351, Castro. Mon–Sun 9:00–19:30.', content)
+         'WhatsApp +56 9 7890 2625, Gamboa 351, Castro. Mon–Sun 9:00–19:30.', content, preload=preload_img('chonchi'))
+
 
 
 def write_copy():

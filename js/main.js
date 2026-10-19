@@ -112,7 +112,7 @@
     loadSwiper().then(Swiper => {
       const kind = el.dataset.swiper;
       const sec = el.closest('section');
-      const opts = { slidesPerView: 'auto', spaceBetween: kind === 'gallery' ? 16 : 24, grabCursor: true, speed: 900, a11y: A11Y[root.lang === 'en' ? 'en' : 'es'], keyboard: { enabled: true, onlyInViewport: true }, freeMode: kind !== 'reviews' ? { enabled: true, momentumRatio: .6 } : false };
+      const opts = { slidesPerView: 'auto', spaceBetween: kind === 'gallery' ? 6 : 24, grabCursor: true, speed: 900, a11y: A11Y[root.lang === 'en' ? 'en' : 'es'], keyboard: { enabled: true, onlyInViewport: true }, freeMode: kind !== 'reviews' ? { enabled: true, momentumRatio: .6 } : false };
       if (kind === 'reviews' && sec) opts.navigation = { prevEl: $('[data-prev]', sec), nextEl: $('[data-next]', sec) };
       const sw = new Swiper(el, opts);
       sw.__a11y = lang => {
@@ -158,6 +158,16 @@
       a.addEventListener('pointermove', e => { tx = e.clientX + 24; ty = e.clientY - fl.offsetHeight / 2; });
     });
     $('.exps__list', zone).addEventListener('pointerleave', () => { fl.classList.remove('is-on'); cancelAnimationFrame(raf); raf = 0; });
+  });
+
+  /* ---------- destinos: el paisaje cambia con el destino elegido ---------- */
+  $$('[data-dx]').forEach(sec => {
+    const set = slug => {
+      $$('[data-dx-bg]', sec).forEach(x => x.classList.toggle('is-on', x.dataset.dxBg === slug));
+      $$('[data-dx-txt]', sec).forEach(x => x.classList.toggle('is-on', x.dataset.dxTxt === slug));
+      $$('.dx__link', sec).forEach(x => x.classList.toggle('is-on', x.dataset.dx === slug));
+    };
+    $$('.dx__link', sec).forEach(a => { a.addEventListener('pointerenter', () => set(a.dataset.dx)); a.addEventListener('focus', () => set(a.dataset.dx)); });
   });
 
   /* ---------- formularios → WhatsApp ---------- */
@@ -254,12 +264,29 @@
       if (hero) gsap.to(hero, { yPercent: 12, scale: 1.06, ease: 'none', scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: true } });
       $$('[data-parallax] img').forEach(img => gsap.fromTo(img, { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
       $$('[data-card]').forEach((c, i) => gsap.from(c, { y: 60 + (i % 3) * 30, opacity: 0, duration: 1.2, ease: EASE, scrollTrigger: { trigger: c, start: 'top 92%', once: true } }));
+      /* tours: paneles a pantalla completa que avanzan en horizontal (sticky + transform, sin pin) */
+      const hs = $('[data-htours]');
+      if (hs && matchMedia('(min-width: 761px)').matches) {
+        const track = $('[data-htrack]', hs), bar = $('[data-hbar]', hs);
+        hs.classList.add('is-h');
+        const dist = () => Math.max(0, track.scrollWidth - innerWidth);
+        const setH = () => { hs.style.height = (dist() + innerHeight) + 'px'; };
+        setH(); ScrollTrigger.addEventListener('refreshInit', setH);
+        const tw = gsap.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: hs, start: 'top top', end: 'bottom bottom', scrub: .6, invalidateOnRefresh: true, onUpdate: st => { if (bar) bar.style.transform = `scaleX(${st.progress})`; } } });
+        $$('[data-tpanel-media]', hs).forEach(m => gsap.fromTo(m, { xPercent: 5 }, { xPercent: -5, ease: 'none', scrollTrigger: { trigger: m.parentElement, containerAnimation: tw, start: 'left right', end: 'right left', scrub: true } }));
+        hs.addEventListener('focusin', e => {
+          const p = e.target.closest('.tpanel'); if (!p) return;
+          const y = hs.getBoundingClientRect().top + scrollY + p.offsetLeft;
+          window.__lenis ? window.__lenis.scrollTo(y, { immediate: true }) : scrollTo(0, y);
+        });
+        ScrollTrigger.refresh();
+      }
       /* el momento: la isla se abre */
       const isla = $('[data-isla]');
       if (isla) {
         const win = $('[data-isla-win]', isla);
         const tl = gsap.timeline({ scrollTrigger: { trigger: isla, start: 'top top', end: 'bottom bottom', scrub: 1, invalidateOnRefresh: true } });
-        tl.fromTo(win, { scale: .62, rotate: -6 }, { scale: () => Math.max(innerWidth / win.offsetWidth, innerHeight / win.offsetHeight) * 1.9, rotate: 0, ease: 'power2.in' }, 0)
+        tl.fromTo(win, { scale: .62, rotate: -6 }, { scale: () => Math.max(innerWidth * .75 / win.offsetWidth, 1.2), rotate: 0, ease: 'power2.in' }, 0)
           .fromTo('.isla__bg span', { yPercent: 30, opacity: .2 }, { yPercent: -30, opacity: 1, stagger: .05, ease: 'none' }, 0)
           .to('.isla__q', { opacity: 0, y: -40, ease: 'none', duration: .3 }, .55);
       }
