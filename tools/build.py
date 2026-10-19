@@ -193,6 +193,10 @@ def page(path, title, title_en, desc, desc_en, content, body_class='', wa_text='
     PAGES.append(path)
     url = DOMAIN + path
     out = LAYOUT
+    import hashlib
+    for rel in ('css/main.css', 'js/main.js'):
+        v = hashlib.sha1((ROOT / rel).read_bytes()).hexdigest()[:10]
+        out = out.replace(f'"/{rel}"', f'"/{rel}?v={v}"')
     rep = {'title': e(title), 'title_en': e(title_en), 'desc': e(desc), 'desc_en': e(desc_en), 'url': url, 'domain': DOMAIN,
            'jsonld': json.dumps(ld or ld_business(), ensure_ascii=False).replace('</', '<\\/'), 'body_class': body_class,
            'header': header(path, wa_text), 'footer': footer(path), 'wa': wa_float(wa_text), 'content': content, 'preload': preload}

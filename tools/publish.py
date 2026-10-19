@@ -38,10 +38,10 @@ HEADERS = """\
   Cache-Control: public, max-age=604800
 
 /css/*
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /js/*
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 """
 
 
