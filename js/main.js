@@ -114,7 +114,12 @@
       const sec = el.closest('section');
       const opts = { slidesPerView: 'auto', spaceBetween: 0, grabCursor: true, speed: 900, a11y: A11Y[root.lang === 'en' ? 'en' : 'es'], keyboard: { enabled: true, onlyInViewport: true }, freeMode: false };
       if (sec && $('[data-prev]', sec)) opts.navigation = { prevEl: $('[data-prev]', sec), nextEl: $('[data-next]', sec) };
+      /* el margen izquierdo lo pone Swiper (no el padding del contenedor), así ninguna tarjeta queda pegada al borde */
+      const gut = () => { const ref = sec && $('.snav', sec); return parseFloat(getComputedStyle(ref || el).paddingLeft) || 0; };
+      const g = gut(); opts.slidesOffsetBefore = g; opts.slidesOffsetAfter = g;
+      el.style.paddingLeft = el.style.paddingRight = '0px';
       const sw = new Swiper(el, opts);
+      addEventListener('resize', () => { const n = gut(); if (n !== sw.params.slidesOffsetBefore) { sw.params.slidesOffsetBefore = sw.params.slidesOffsetAfter = n; sw.update(); } });
       sw.__a11y = lang => {
         const m = A11Y[lang]; Object.assign(sw.params.a11y, m);
         el.setAttribute('aria-roledescription', m.containerRoleDescriptionMessage);
