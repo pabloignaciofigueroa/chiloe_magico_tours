@@ -741,3 +741,4 @@ a.credit:hover{text-decoration:underline}
 @media (max-width:860px){.ssplit__stick{height:62svh}}
 .tcot{padding-bottom:clamp(120px,12vw,170px)}
 .isla__h{max-width:9ch}
+.tc__hook{flex:0 0 auto}
