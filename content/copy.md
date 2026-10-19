@@ -14,26 +14,26 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/` [BIO]: «¡Ven a descubrirlo!»
 - `/` [BIO]: «¡Tours todos los días! - Servicios privados»
 - `/` [IG-007]: «Todos nuestros tours incluyen traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos 🌿»
-- `/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN!»
+- `/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN…!» — corrección: recorte del remate «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR…»
 - `/` [IG-007]: «Nos caracterizamos por prestar el mejor servicio posible para hacer de tu visita una experiencia inolvidable!»
 - `/` [IG-007]: «Es por esto que diariamente nos trasladamos en modernas y cómodas vans 🚐 Con aire acondicionado (para que ni el frio ni el calor nos detengan!), asientos reclinables para la siesta post almuerzo, y conductores que además de profesionales son wena onda! 😎»
 - `/` [IG-007]: «Cada van viaja con un máximo de 16 pasajeros y su propio guía, para entregarles un servicio aún más personalizado!»
 - `/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
 - `/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
 - `/` [IG-016]: «Chiloe Magico Tour, servicio de turismo, traslado y viajes privados»
-- `/` [RESEÑA Javiera Blanco, Google]: «Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día.»
+- `/` [RESEÑA Javiera Blanco, Google]: «…Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día. …»
 - `/` [RESEÑA Zarana Bayona, Google]: «Sandra was a great tour guide and really showed us the charm of chiloe. The agency has great communication and were very accommodating with our last minute reservation. Everything ran smoothly. They were able to add vegetarian meals at the restaurant.»
-- `/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy  agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota.»
-- `/` [RESEÑA elia loddo, Google]: «I enjoyed the myths of brujería and the taste of chiloe with Nicolas. A sympathetic guide tour who made us laugh a lot with a million stories.»
-- `/` [RESEÑA Ximena González Vargas, Google]: «Fuimos con mi familia al tour de la costa, pues queríamos conocer la Isla Aucar y comer curanto en hoyo. Además de eso, pudimos conocer Dalcahue, Tenaún y la cascada de Tocoihue. El tour fue preciso, teníamos tiempo para recorrer libremente y solo acordábamos la hora de reunión para ir a otro lugar, vimos el proceso del curanto y aprendimos muchísimo de cada localidad.»
+- `/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy  agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota. …»
+- `/` [RESEÑA elia loddo, Google]: «I enjoyed the myths of brujería and the taste of chiloe with Nicolas. A sympathetic guide tour who made us laugh a lot with a million stories. …»
+- `/` [RESEÑA Ximena González Vargas, Google]: «…Fuimos con mi familia al tour de la costa, pues queríamos conocer la Isla Aucar y comer curanto en hoyo. Además de eso, pudimos conocer Dalcahue, Tenaún y la cascada de Tocoihue. El tour fue preciso, teníamos tiempo para recorrer libremente y solo acordábamos la hora de reunión para ir a otro lugar, vimos el proceso del curanto y aprendimos muchísimo de cada localidad. …»
 - `/` [RESEÑA Luciano Deluqui Vasques, Google]: «Great tours. Welcoming and attentive staff. Check the tour schedule and have fun.»
-- `/` [RESEÑA Valeria Carvajal, Google]: «Fuimos junto a mi pareja a realizar el tour de la costa . Nuestro Guía Nicolás muy amable, informado y divertido. Don Enrique nuestro conductor muy preocupado y gentil. Fue una excelente experiencia en invierno , 100% recomendable.»
+- `/` [RESEÑA Valeria Carvajal, Google]: «Fuimos junto a mi pareja a realizar el tour de la costa . Nuestro Guía Nicolás muy amable, informado y divertido. Don Enrique nuestro conductor muy preocupado y gentil. Fue una excelente experiencia en invierno , 100% recomendable. …»
 - `/` [RESEÑA Jennifer muñoz, Google]: «Quedamos muy contentos con el tour a las pingüinera y con el de la costa con curanto muy recomendado y el guía Alberto excelente persona y profesional y mencionar a don Enrique que nos transportó a todos esos lugares hermosos en forma segura muchas gracias desde Iquique .»
-- `/` [RESEÑA Gabriela Vallejos Carrasco, Google]: «Tomé tres tours con ellos y lo recomiendo. El transporte es en vehículos pequeños pero cómodos, lo cual hace que la experiencia sea muy personalizada.»
-- `/` [RESEÑA Alexandra Ilabaca, Google]: «Agradecemos a chiloe mágico por tan linda experiencia tomamos todos los tour con ellos 4 días seguidos!! … 10/10 el servicio sin duda lo recomendamos y volveríamos a elegirlos!»
-- `/` [RESEÑA Jaime Galaz, Google]: «Una excelente experiencia la del Tour La Costa!!! Desde el guía Alberto, conductor Enrique, transporte, comida y lugares por visitar son hermosos.»
-- `/` [RESEÑA Francesca Cruzat, Google]: «Tomamos con mi amiga el tour Isla Lemuy, excelente el guía, la comida y los lugares.»
-- `/` [RESEÑA susan mtv, Google]: «la comida que incluye el tour a isla Lemuy es demasiado rico y puedes comer hasta quedar satisfecho. Recorrimos lugares hermosos y convivimos con locales eso hace mucho mejor la experiencia.»
+- `/` [RESEÑA Gabriela Vallejos Carrasco, Google]: «Tomé tres tours con ellos y lo recomiendo. El transporte es en vehículos pequeños pero cómodos, lo cual hace que la experiencia sea muy personalizada. …»
+- `/` [RESEÑA Alexandra Ilabaca, Google]: «Agradecemos a chiloe mágico por tan linda experiencia tomamos todos los tour con ellos 4 días seguidos!! … 10/10 el servicio sin duda lo recomendamos y volveríamos a elegirlos! …»
+- `/` [RESEÑA Jaime Galaz, Google]: «Una excelente experiencia la del Tour La Costa!!! Desde el guía Alberto, conductor Enrique, transporte, comida y lugares por visitar son hermosos. …»
+- `/` [RESEÑA Francesca Cruzat, Google]: «Tomamos con mi amiga el tour Isla Lemuy, excelente el guía, la comida y los lugares. …»
+- `/` [RESEÑA susan mtv, Google]: «…la comida que incluye el tour a isla Lemuy es demasiado rico y puedes comer hasta quedar satisfecho. Recorrimos lugares hermosos y convivimos con locales eso hace mucho mejor la experiencia. …»
 - `/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/` [BIO]: «Lu a Do | 9:00 a 19:30»
 - `/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
@@ -67,9 +67,9 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/tours/la-costa-curanto/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
 - `/tours/la-costa-curanto/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/tours/la-costa-curanto/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/la-costa-curanto/` [RESEÑA Ximena González Vargas, Google]: «Fuimos con mi familia al tour de la costa, pues queríamos conocer la Isla Aucar y comer curanto en hoyo. Además de eso, pudimos conocer Dalcahue, Tenaún y la cascada de Tocoihue. El tour fue preciso, teníamos tiempo para recorrer libremente y solo acordábamos la hora de reunión para ir a otro lugar, vimos el proceso del curanto y aprendimos muchísimo de cada localidad.»
-- `/tours/la-costa-curanto/` [RESEÑA Valeria Carvajal, Google]: «Fuimos junto a mi pareja a realizar el tour de la costa . Nuestro Guía Nicolás muy amable, informado y divertido. Don Enrique nuestro conductor muy preocupado y gentil. Fue una excelente experiencia en invierno , 100% recomendable.»
-- `/tours/la-costa-curanto/` [RESEÑA Jaime Galaz, Google]: «Una excelente experiencia la del Tour La Costa!!! Desde el guía Alberto, conductor Enrique, transporte, comida y lugares por visitar son hermosos.»
+- `/tours/la-costa-curanto/` [RESEÑA Ximena González Vargas, Google]: «…Fuimos con mi familia al tour de la costa, pues queríamos conocer la Isla Aucar y comer curanto en hoyo. Además de eso, pudimos conocer Dalcahue, Tenaún y la cascada de Tocoihue. El tour fue preciso, teníamos tiempo para recorrer libremente y solo acordábamos la hora de reunión para ir a otro lugar, vimos el proceso del curanto y aprendimos muchísimo de cada localidad. …»
+- `/tours/la-costa-curanto/` [RESEÑA Valeria Carvajal, Google]: «Fuimos junto a mi pareja a realizar el tour de la costa . Nuestro Guía Nicolás muy amable, informado y divertido. Don Enrique nuestro conductor muy preocupado y gentil. Fue una excelente experiencia en invierno , 100% recomendable. …»
+- `/tours/la-costa-curanto/` [RESEÑA Jaime Galaz, Google]: «Una excelente experiencia la del Tour La Costa!!! Desde el guía Alberto, conductor Enrique, transporte, comida y lugares por visitar son hermosos. …»
 - `/tours/la-costa-curanto/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
 - `/tours/la-costa-curanto/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
 - `/tours/la-costa-curanto/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
@@ -84,14 +84,14 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/tours/isla-lemuy-asado/` [DEST-H7] títulos de afiche: «TOUR ISLA LEMUY con ASADO»
 - `/tours/isla-lemuy-asado/` [IG-012]: «VAMOS A VOLAR UN RATITO? ✨»
 - `/tours/isla-lemuy-asado/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
-- `/tours/isla-lemuy-asado/` [IG-012]: «Mañana nos vamos nuevamente hacia Isla Lemuy, donde no solo nos envolvemos de naturaleza y comemos rico sino también visitamos el infaltable @muelledelosbrujoschiloe para echarnos a volar en medio de bellos paisajes 🍃»
+- `/tours/isla-lemuy-asado/` [IG-012]: «…nos vamos nuevamente hacia Isla Lemuy, donde no solo nos envolvemos de naturaleza y comemos rico sino también visitamos el infaltable @muelledelosbrujoschiloe para echarnos a volar en medio de bellos paisajes 🍃» — corrección: se omite «Mañana» (fecha vencida)
 - `/tours/isla-lemuy-asado/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
 - `/tours/isla-lemuy-asado/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/tours/isla-lemuy-asado/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/isla-lemuy-asado/` [RESEÑA Javiera Blanco, Google]: «Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día.»
-- `/tours/isla-lemuy-asado/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy  agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota.»
-- `/tours/isla-lemuy-asado/` [RESEÑA Francesca Cruzat, Google]: «Tomamos con mi amiga el tour Isla Lemuy, excelente el guía, la comida y los lugares.»
-- `/tours/isla-lemuy-asado/` [RESEÑA susan mtv, Google]: «la comida que incluye el tour a isla Lemuy es demasiado rico y puedes comer hasta quedar satisfecho. Recorrimos lugares hermosos y convivimos con locales eso hace mucho mejor la experiencia.»
+- `/tours/isla-lemuy-asado/` [RESEÑA Javiera Blanco, Google]: «…Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día. …»
+- `/tours/isla-lemuy-asado/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy  agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota. …»
+- `/tours/isla-lemuy-asado/` [RESEÑA Francesca Cruzat, Google]: «Tomamos con mi amiga el tour Isla Lemuy, excelente el guía, la comida y los lugares. …»
+- `/tours/isla-lemuy-asado/` [RESEÑA susan mtv, Google]: «…la comida que incluye el tour a isla Lemuy es demasiado rico y puedes comer hasta quedar satisfecho. Recorrimos lugares hermosos y convivimos con locales eso hace mucho mejor la experiencia. …»
 - `/tours/isla-lemuy-asado/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
 - `/tours/isla-lemuy-asado/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
 - `/tours/isla-lemuy-asado/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
@@ -193,7 +193,7 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/tours/isla-mechuque/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/isla-mechuque/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/tours/isla-mechuque/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/destinos/` [IG-024]: «Los Palafitos de Castro⛅️ Uno de los lugares mágicos que nos ofrece Chiloé.»
+- `/destinos/` [IG-024]: «Los Palafitos de Castro⛅️ Uno de los lugares mágicos que nos ofrece Chiloé.» — corrección: se unen dos líneas del original en una
 - `/destinos/` [IG-015]: «Aquí algunos recuerdos de nuestro amigos disfrutando de toda magia y belleza natural que nos ofrece la comuna de Ancud!»
 - `/destinos/` [IG-087]: «En el mapudungun de Chiloé Dalkawe significa lugar de dalcas, es decir, de la embarcación de tres tablones que usaban originalmente los chonos y cuyo uso se difundió a todas las culturas del archipiélago, incuyendo la española.» — corrección: "incuyendo" se deja como en el original
 - `/destinos/` [IG-055]: «Ven a conocer las maravillas que ofrece la Isla Lemuy junto a Turismo Chiloé Mágico🤗»
@@ -205,7 +205,7 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/destinos/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/destinos/` [BIO]: «Lu a Do | 9:00 a 19:30»
 - `/destinos/castro/` nombres de lugares de los afiches [DEST-H7] y posts: «Palafitos de Castro / Iglesia de Nercón / Plaza de Armas»
-- `/destinos/castro/` [IG-024]: «Los Palafitos de Castro⛅️ Uno de los lugares mágicos que nos ofrece Chiloé.»
+- `/destinos/castro/` [IG-024]: «Los Palafitos de Castro⛅️ Uno de los lugares mágicos que nos ofrece Chiloé.» — corrección: se unen dos líneas del original en una
 - `/destinos/castro/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
 - `/destinos/castro/` [IG-045]: «La iglesia Nuestra Señora de Gracia de Nercón es una de las 16 Iglesias Patrimonio de la Humanidad y Monumento Nacional de Chiloé!»
 - `/destinos/castro/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
@@ -226,7 +226,7 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/destinos/dalcahue-quinchao/` nombres de lugares de los afiches [DEST-H7] y posts: «Feria Artesanal Dalcahue / Tenaún / Isla Aucar / Cascadas de Tocoihue / Curaco de Vélez / Achao»
 - `/destinos/dalcahue-quinchao/` [IG-087]: «En el mapudungun de Chiloé Dalkawe significa lugar de dalcas, es decir, de la embarcación de tres tablones que usaban originalmente los chonos y cuyo uso se difundió a todas las culturas del archipiélago, incuyendo la española.» — corrección: "incuyendo" se deja como en el original
 - `/destinos/dalcahue-quinchao/` [IG-061]: «La iglesia Nuestra Señora del Patrocinio de Tenaún, es una de las 16 Iglesias Patrimonio de la Humanidad y Monumento Nacional en Chiloé😱»
-- `/destinos/dalcahue-quinchao/` [IG-114]: «Aucar, o Isla de las Almas Navegantes, es un islote conocido por poseer una capilla católica, un cementerio, un parque botánico y una pasarela de 437 m de extensión que le permite estar conectado con la Isla Grande de Chiloé»
+- `/destinos/dalcahue-quinchao/` [IG-114]: «Aucar, o Isla de las Almas Navegantes, es un islote conocido por poseer una capilla católica, un cementerio, un parque botánico y una pasarela de 437 m de extensión que le permite estar conectado con la Isla Grande de Chiloé» — corrección: se unen dos líneas del original
 - `/destinos/dalcahue-quinchao/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
 - `/destinos/dalcahue-quinchao/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/destinos/dalcahue-quinchao/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
@@ -263,7 +263,7 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/experiencias/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/experiencias/` [BIO]: «Lu a Do | 9:00 a 19:30»
 - `/experiencias/patrimonio/` [IG-038]: «La iglesia San Antonio de Colo, es una de las 16 iglesias patrimonio de la humanidad y monumento nacional de chiloé!»
-- `/experiencias/patrimonio/` [IG-146]: «La Iglesia de Aldachildo, también conocida como Iglesia de Jesús Nazareno, es un templo católico situado en la localidad de Aldachildo, en la Isla Lemuy. Forma parte del grupo de 16 iglesias de madera de Chiloé calificadas como Monumento Nacional de Chile y reconocidas como Patrimonio de la Humanidad por la Unesco.»
+- `/experiencias/patrimonio/` [IG-146]: «La Iglesia de Aldachildo, también conocida como Iglesia de Jesús Nazareno, es un templo católico situado en la localidad de Aldachildo, en la Isla Lemuy. Forma parte del grupo de 16 iglesias de madera de Chiloé calificadas como Monumento Nacional de Chile y reconocidas como Patrimonio de la Humanidad por la Unesco.» — corrección: se unen dos líneas del original
 - `/experiencias/patrimonio/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/experiencias/patrimonio/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
 - `/experiencias/patrimonio/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
@@ -298,7 +298,6 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/experiencias/mitos/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/experiencias/mitos/` [BIO]: «Lu a Do | 9:00 a 19:30»
 - `/paquetes/` [IG-016]: «Otra salida marcada por innumerable recuerdos, una agradecimiento a nuestros amigos por contar con nosotros, excursión Valdivia y Niebla 4 días - 3 noches 🤗»
-- `/paquetes/` [IG-031]: «salidas 2 veces al mes, consulta por disponibilidad y no te quedes sin tu cupo»
 - `/paquetes/` [IG-031]: «recorrido de castro al volcán Osorno🏔, visitando  salto de petrohue y el lago todos los santos, no te pierdas de esta increíble experiencia para vivirla junto a tus familiares y amigos»
 - `/paquetes/` [IG-030]: «La nieve, paisajes hermosos y todo lo que San Carlos de Bariloche puede ofrecer....... los esperamos para repetir esta experiencia»
 - `/paquetes/` [IG-016]: «Chiloe Magico Tour, servicio de turismo, traslado y viajes privados»
@@ -308,7 +307,7 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/paquetes/` [BIO]: «Lu a Do | 9:00 a 19:30»
 - `/servicios/` [BIO]: «Servicios privados»
 - `/servicios/` [IG-016]: «servicio de turismo, traslado y viajes privados»
-- `/servicios/` [IG-006]: «Tremendo grupo nos tocó ayer que disfrutaron el Tour de La Costa🤩»
+- `/servicios/` [IG-006]: «Tremendo grupo nos tocó … que disfrutaron el Tour de La Costa🤩» — corrección: se omite «ayer»
 - `/servicios/` [IG-007]: «Es por esto que diariamente nos trasladamos en modernas y cómodas vans 🚐 Con aire acondicionado (para que ni el frio ni el calor nos detengan!), asientos reclinables para la siesta post almuerzo, y conductores que además de profesionales son wena onda! 😎»
 - `/servicios/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/servicios/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
@@ -324,11 +323,11 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/nosotros/` [IG-002]: «Chiloe es inolvidable y lo puedes sentir por qué aunque se repita el viaje la experiencia es única e irrepetible»
 - `/nosotros/` [IG-023]: «Nuestro guía Nicolás junto a don Enrique siempre enfocados en brindarle la mejor experiencia a nuestros turistas!»
 - `/nosotros/` [IG-007]: «Cada van viaja con un máximo de 16 pasajeros y su propio guía, para entregarles un servicio aún más personalizado!»
-- `/nosotros/` [RESEÑA Javiera Blanco, Google]: «Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día.»
+- `/nosotros/` [RESEÑA Javiera Blanco, Google]: «…Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día. …»
 - `/nosotros/` [RESEÑA Zarana Bayona, Google]: «Sandra was a great tour guide and really showed us the charm of chiloe. The agency has great communication and were very accommodating with our last minute reservation. Everything ran smoothly. They were able to add vegetarian meals at the restaurant.»
-- `/nosotros/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy  agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota.»
-- `/nosotros/` [RESEÑA elia loddo, Google]: «I enjoyed the myths of brujería and the taste of chiloe with Nicolas. A sympathetic guide tour who made us laugh a lot with a million stories.»
-- `/nosotros/` [RESEÑA Ximena González Vargas, Google]: «Fuimos con mi familia al tour de la costa, pues queríamos conocer la Isla Aucar y comer curanto en hoyo. Además de eso, pudimos conocer Dalcahue, Tenaún y la cascada de Tocoihue. El tour fue preciso, teníamos tiempo para recorrer libremente y solo acordábamos la hora de reunión para ir a otro lugar, vimos el proceso del curanto y aprendimos muchísimo de cada localidad.»
+- `/nosotros/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy  agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota. …»
+- `/nosotros/` [RESEÑA elia loddo, Google]: «I enjoyed the myths of brujería and the taste of chiloe with Nicolas. A sympathetic guide tour who made us laugh a lot with a million stories. …»
+- `/nosotros/` [RESEÑA Ximena González Vargas, Google]: «…Fuimos con mi familia al tour de la costa, pues queríamos conocer la Isla Aucar y comer curanto en hoyo. Además de eso, pudimos conocer Dalcahue, Tenaún y la cascada de Tocoihue. El tour fue preciso, teníamos tiempo para recorrer libremente y solo acordábamos la hora de reunión para ir a otro lugar, vimos el proceso del curanto y aprendimos muchísimo de cada localidad. …»
 - `/nosotros/` [RESEÑA Luciano Deluqui Vasques, Google]: «Great tours. Welcoming and attentive staff. Check the tour schedule and have fun.»
 - `/nosotros/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/nosotros/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
@@ -380,7 +379,7 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/preguntas-frecuentes/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
 - `/preguntas-frecuentes/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/preguntas-frecuentes/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
-- `/preguntas-frecuentes/` [IG-006]: «Tour La Costa: 💵Valor: $35.000 por persona (incluyendo el almuerzo) + $3.000 por persona (entrada a las cascadas)»
+- `/preguntas-frecuentes/` [IG-006]: «💵Valor: $35.000 por persona (incluyendo el almuerzo) + $3.000 por persona (entrada a las cascadas)»
 - `/preguntas-frecuentes/` [BIO]: «Lu a Do | 9:00 a 19:30»
 - `/preguntas-frecuentes/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/preguntas-frecuentes/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»

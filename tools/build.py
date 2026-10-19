@@ -149,11 +149,11 @@ def footer(page):
   <svg class="ftr__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,70 C360,10 820,0 1440,58 L1440,120 Z"/></svg>
   <div class="ftr__in">
     <div class="ftr__brand">
-      <img src="/brand/logo/logo-sticker.svg" width="1992" height="977" alt="Turismo Chiloé Mágico" data-alt-en="Turismo Chiloé Mágico" loading="lazy" class="ftr__logo">
+      <img src="/brand/logo/logo-sticker.svg" width="1912" height="1065" alt="Turismo Chiloé Mágico" data-alt-en="Turismo Chiloé Mágico" loading="lazy" class="ftr__logo">
       <p class="ftr__slogan script" lang="es">{q(SITE["slogan"], page)}</p>
     </div>
     <div class="ftr__cols">
-      <div><h2 class="ftr__h">{L("Tours")}</h2><ul>{tl}</ul></div>
+      <div><h2 class="ftr__h">{L("Tours", "Tours")}</h2><ul>{tl}</ul></div>
       <div><h2 class="ftr__h">{L("Sitio", "Site")}</h2><ul>{nav}<li><a href="/preguntas-frecuentes/">{L("Preguntas frecuentes", "FAQ")}</a></li></ul></div>
       <div><h2 class="ftr__h">{L("Visítanos", "Visit us")}</h2>
         <p lang="es">{q(SITE["address"], page)}</p>
@@ -213,7 +213,7 @@ def preload_img(key):
 
 # ------------------------------------------------------------------ bloques
 def tour_card(t, page, sizes='(max-width: 760px) 80vw, 30vw'):
-    price = (f'<span class="card__price">{L("Desde", "From")} {clp(t["price_from"])} <abbr title="pesos chilenos">CLP</abbr></span>'
+    price = (f'<span class="card__price">{L("Desde", "From")} {clp(t["price_from"])} <abbr title="pesos chilenos" data-title-en="Chilean pesos">CLP</abbr></span>'
              if t.get('price_from') else f'<span class="card__price card__price--p">{L("Precio por confirmar", "Price to be confirmed")}</span>')
     return f'''<article class="card" data-card>
   <a class="card__link" href="{tour_href(t)}">
@@ -248,7 +248,7 @@ def reviews_block(page, items, title=True):
 def medallion(name, key, i, size='m'):
     inner = img(key, '220px') if key else f'<span class="med__n" aria-hidden="true">{i:02d}</span>'
     pid = f'arc{abs(hash(name)) % 10**7}'
-    return (f'<li class="med med--{size}{"" if key else " med--empty"}"><div class="med__ring">{inner}</div>'
+    return (f'<li lang="es" class="med med--{size}{"" if key else " med--empty"}"><div class="med__ring">{inner}</div>'
             f'<svg class="med__label" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="{pid}" d="M6,100 a94,94 0 0,0 188,0"/></defs>'
             f'<text><textPath href="#{pid}" startOffset="50%" text-anchor="middle">{e(name.upper())}</textPath></text></svg>'
             f'<span class="sr">{e(name)}</span></li>')
@@ -260,7 +260,7 @@ def map_block(page):
     {img("palafitos", "(max-width: 760px) 100vw, 50vw")}
     <span class="map__cta">{L("Abrir mapa · Gamboa 351, Castro", "Open map · Gamboa 351, Castro")}</span>
   </a>
-  <iframe title="Mapa: Gamboa 351, Castro" data-src="https://www.openstreetmap.org/export/embed.html?bbox=-73.7702%2C-42.4846%2C-73.7582%2C-42.4786&amp;layer=mapnik&amp;marker=-42.4816941%2C-73.7642726" loading="lazy" referrerpolicy="no-referrer"></iframe>
+  <iframe title="Mapa: Gamboa 351, Castro" data-title-en="Map: Gamboa 351, Castro" data-src="https://www.openstreetmap.org/export/embed.html?bbox=-73.7702%2C-42.4846%2C-73.7582%2C-42.4786&amp;layer=mapnik&amp;marker=-42.4816941%2C-73.7642726" loading="lazy" referrerpolicy="no-referrer"></iframe>
 </div>'''
 
 
@@ -293,7 +293,7 @@ def home():
   <div class="hero__media" data-parallax-hero>{img("huillinco-columpio", "100vw", "", True)}</div>
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="hero__in">
-    <img class="hero__logo" src="/brand/logo/logo-sticker.svg" width="1992" height="977" alt="Turismo Chiloé Mágico" data-alt-en="Turismo Chiloé Mágico">
+    <img class="hero__logo" src="/brand/logo/logo-sticker.svg" width="1912" height="1065" alt="Turismo Chiloé Mágico" data-alt-en="Turismo Chiloé Mágico">
     <h1 class="hero__t" lang="es" data-lines><span class="line"><span>{q(Q("Nuestro archipiélago es mágico", "[BIO]"), P)}</span></span><span class="line line--script"><span>{q(Q("¡Ven a descubrirlo!", "[BIO]"), P)}</span></span></h1>
     <p class="hero__sub" lang="es">{q(SITE["bio1"], P)}</p>
     <div class="hero__ctas">{btn(L("Ver tours", "See tours"), "/tours/", "btn btn--light")}{btn(L("Reservar por WhatsApp", "Book on WhatsApp"), wa_link("Hola! Quiero consultar por los tours"), "btn btn--red", True)}</div>
@@ -351,7 +351,7 @@ def home():
   </div>
   <div class="why__txt">
     <p class="kicker">{L("Por qué viajar con nosotros", "Why travel with us")}</p>
-    <h2 class="h3" lang="es" data-lines><span class="line"><span>{q(Q("¡NO DEJES QUE TE LO CUENTEN!", "[IG-007]"), P)}</span></span></h2>
+    <h2 class="h3" lang="es" data-lines><span class="line"><span>{q(Q("¡NO DEJES QUE TE LO CUENTEN…!", "[IG-007]", fix="recorte del remate «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR…»"), P)}</span></span></h2>
     <p lang="es" class="why__p">{q(SITE["servicio"], P)}</p>
     <ul class="why__list">
       <li lang="es">{q(SITE["vans"], P)}</li>
@@ -431,7 +431,7 @@ def tour_page(t):
     wa_t = f'Hola! Quiero reservar el {t["short"]}. Fecha: ___ Personas: ___'
     rel = [x for x in D.TOURS if x is not t and (set(x['dest']) & set(t['dest']) or set(x['exp']) & set(t['exp']))][:3]
     revs = [r for r in D.REVIEWS if r.get('tour') == t['slug']]
-    price_html = (f'<p class="book__price"><span>{L("Desde", "From")}</span> <strong>{clp(t["price_from"])}</strong> <abbr title="pesos chilenos">CLP</abbr></p>'
+    price_html = (f'<p class="book__price"><span>{L("Desde", "From")}</span> <strong>{clp(t["price_from"])}</strong> <abbr title="pesos chilenos" data-title-en="Chilean pesos">CLP</abbr></p>'
                   f'<p class="book__pq" lang="es">{q(t["price"], P)}</p><p class="book__note">{L(t["price_season"])}</p>') if t.get('price_from') else \
                  f'<p class="book__price"><strong>{L("Precio por confirmar", "Price to be confirmed")}</strong></p>'
     stops = ''.join(medallion(s, k, i + 1) for i, (s, k) in enumerate(zip(t['stops'], t['stop_imgs'])))
@@ -522,6 +522,7 @@ def faq_items(P, items):
         for a in answers:
             if a == '__pending__': parts += pending(P)
             elif a == '__pending_prices__': parts += f'<p>{L("Los demás tours: precio por confirmar con la agencia.", "Other tours: price to be confirmed with the agency.")}</p>'
+            elif a == '__costa__': parts += f'<p><a href="/tours/la-costa-curanto/">Tour La Costa</a>:</p>'
             elif a == '__es_only__': parts += f'<p>{L("Español.", "Spanish.")}</p>'
             elif a == '__wa__': parts += f'<p>WhatsApp <a href="{wa_link("Hola! Quiero reservar un tour")}" target="_blank" rel="noopener">{SITE["wa_display"]}</a> · <a href="tel:+56998833946">{SITE["phone2"]}</a></p>'
             else: parts += f'<p lang="{"en" if "RESEÑA" in getattr(a, "src", "") and a.isascii() else "es"}">{q(a, P)}</p>'
@@ -607,7 +608,8 @@ def paquetes():
 {btn(L("Cotizar", "Get a quote"), wa_link(f"Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--ink", True)}</div></article>'''
     content = f'''<section class="phead"><p class="kicker">{L("Paquetes", "Packages")}</p>
 <h1 class="h1" data-lines><span class="line"><span>{L("Viajes de", "Trips of")}</span></span><span class="line line--script"><span>{L("varios días", "several days")}</span></span></h1>
-<p class="lead" lang="es">{q(SITE["privados"], P)}</p></section>
+<p class="lead" lang="es">{q(SITE["privados"], P)}</p>
+<p class="note">{L("Viajes que la agencia ya ha realizado según sus publicaciones. Próximas salidas y valores: por confirmar.", "Trips the agency has already run, according to its posts. Next departures and prices: to be confirmed.")}</p></section>
 <section class="sec">{items}</section>
 <section class="sec medida" id="a-medida"><div><p class="kicker">{L("A medida", "Custom")}</p><h2 class="h2">{L("Arma tu viaje", "Plan your trip")}</h2>
 <p lang="es">{q(SITE["diarias"], P)}</p></div>{wa_form(P, "a medida")}</section>'''
@@ -621,7 +623,7 @@ def servicios():
     cards = [
         (U('Viajes privados', 'Private trips'), Q('Servicios privados', '[BIO]'), 'grupo-van'),
         (U('Traslados', 'Transfers'), Q('servicio de turismo, traslado y viajes privados', '[IG-016]'), 'vans'),
-        (U('Grupos', 'Groups'), Q('Tremendo grupo nos tocó ayer que disfrutaron el Tour de La Costa🤩', '[IG-006]'), 'grupo-columpios'),
+        (U('Grupos', 'Groups'), Q('Tremendo grupo nos tocó … que disfrutaron el Tour de La Costa🤩', '[IG-006]', fix='se omite «ayer»'), 'grupo-columpios'),
     ]
     items = ''.join(f'<li class="srv">{media(k, "(max-width:760px) 90vw, 30vw", "", ratio="4/3")}<h2 class="h3">{L(t)}</h2><p lang="es">{q(x, P)}</p>'
                     f'<p class="note">{L("Recorridos, vehículos y tarifas: por confirmar con la agencia.", "Routes, vehicles and rates: to be confirmed with the agency.")}</p>'
@@ -652,7 +654,7 @@ def nosotros():
 <figure class="team__fig">{media("nicolas-enrique", "(max-width:760px) 90vw, 40vw", "", ratio="4/3")}<figcaption lang="es">{q(Q("Nuestro guía Nicolás junto a don Enrique siempre enfocados en brindarle la mejor experiencia a nuestros turistas!", "[IG-023]"), P)}</figcaption></figure></section>
 <section class="sec narrow"><h2 class="h3">{L("Flota", "Fleet")}</h2><p lang="es">{q(SITE["van16"], P)}</p>
 <h2 class="h3">{L("Registro Sernatur y sellos", "Sernatur registry and certifications")}</h2>
-<p>{L("No encontramos a la agencia por su nombre en el buscador de Sernatur (19-oct-2026). Número de registro, razón social y sellos: por confirmar.", "We could not find the agency by name in the Sernatur search (19 Oct 2026). Registry number, legal name and seals: to be confirmed.")}</p></section>
+<p>{L("Número de registro Sernatur, razón social y sellos:", "Sernatur registry number, legal name and seals:")}</p>{pending(P)}</section>
 {reviews_block(P, D.REVIEWS[:6])}'''
     page(P, 'Nosotros · Turismo Chiloé Mágico', 'About us · Turismo Chiloé Mágico',
          'Agencia local de turismo en Castro, Chiloé: guías, conductores y vans para recorrer el archipiélago.', 'Local travel agency in Castro, Chiloé.', content)
@@ -675,7 +677,7 @@ def guia():
 <article class="art"><header class="art__head"><h1 class="h1" data-lines><span class="line"><span>{L(g["title"])}</span></span></h1></header>
 {media(g["img"], "(max-width:760px) 100vw, 60vw", "art__media", True, "16/10", True)}
 <div class="art__body narrow">{''.join(q(p, P, 'p') for p in g["paras"])}<p class="note">{L("Fuente: publicaciones de @chiloemagicotour.", "Source: @chiloemagicotour posts.")}</p></div></article>
-<section class="sec"><header class="sec__head"><p class="kicker">{L("Vívelo en", "Experience it on")}</p></header><ul class="grid3">{''.join(f"<li>{tour_card(t, P)}</li>" for t in ts)}</ul></section>'''
+{f'<section class="sec"><header class="sec__head"><p class="kicker">{L("Vívelo en", "Experience it on")}</p></header><ul class="grid3">' + ''.join(f"<li>{tour_card(t, P)}</li>" for t in ts) + '</ul></section>' if ts else ''}'''
         page(P, f'{g["title"].es} · Guía de Chiloé', f'{g["title"].en} · Chiloé guide', f'{g["title"].es}: guía de Chiloé de Turismo Chiloé Mágico.',
              f'{g["title"].en}: Chiloé guide by Turismo Chiloé Mágico.', content, preload=preload_img(g['img']))
 
