@@ -1,11 +1,11 @@
 /* Turismo Chiloé Mágico · tokens de brand/palette.md y brand/typography.md */
-@font-face{font-family:Anton;src:url(/assets/fonts/anton-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:optional}
-@font-face{font-family:Sacramento;src:url(/assets/fonts/sacramento-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:optional}
-@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:optional}
-@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:optional}
-@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:optional}
-@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:optional}
-@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:optional}
+@font-face{font-family:Anton;src:url(/assets/fonts/anton-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Sacramento;src:url(/assets/fonts/sacramento-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
 /* respaldos con métricas ajustadas para que el cambio de fuente no mueva el layout */
 @font-face{font-family:"Montserrat-fb";src:local("Arial");size-adjust:112.5%;ascent-override:86%;descent-override:22%;line-gap-override:0%}
 @font-face{font-family:"Anton-fb";src:local("Arial Narrow"),local("Arial");size-adjust:92%;ascent-override:118%;descent-override:33%}
@@ -598,3 +598,13 @@ input:focus-visible,textarea:focus-visible{outline:3px solid var(--mar);outline-
 .trio .tile--pic{min-height:0}
 .ssplit + .trio{margin-top:4px}
 .ssplit + .trio>li{height:70svh}
+/* hero: datos de confianza sobre la foto y logo sin chocar con la cabecera */
+.hero{align-items:stretch}
+.hero__in{align-self:end;padding-bottom:clamp(96px,14vh,150px)}
+.hero__logo{width:clamp(150px,min(17vw,22svh),280px)}
+.hero__trust{position:absolute;left:0;right:0;bottom:0;margin:0;padding:16px var(--g);list-style:none;display:flex;flex-wrap:wrap;gap:8px 36px;font-size:13px;color:#fff;border-top:1px solid rgba(255,255,255,.3);background:linear-gradient(0deg,rgba(9,22,34,.55),rgba(9,22,34,0))}
+.hero__trust strong{font:400 20px/1 var(--f-display);margin-right:6px}
+@media (max-height:760px){.hero__logo{display:none}}
+@media (max-width:760px){.hero__trust{gap:6px 18px;font-size:12px}.hero__trust li:nth-child(n+3){display:none}}
+.home .hdr:not(.is-solid) .hdr__logo{opacity:0;pointer-events:none}
+.hdr__logo{transition:opacity .4s}
