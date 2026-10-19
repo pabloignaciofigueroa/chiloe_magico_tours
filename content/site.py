@@ -257,7 +257,7 @@ EXPERIENCIAS = [
 PAQUETES = [
     {'slug': 'valdivia-niebla', 'name': 'Valdivia y Niebla', 'days': U('4 días · 3 noches', '4 days · 3 nights'), 'imgs': ['valdivia', 'valdivia-2'],
      'text': Q('Otra salida marcada por innumerable recuerdos, una agradecimiento a nuestros amigos por contar con nosotros, excursión Valdivia y Niebla 4 días - 3 noches 🤗', '[IG-016]')},
-    {'slug': 'nieve-volcan-osorno', 'name': 'Circuito a la nieve: Volcán Osorno', 'days': U('Circuito publicado en 2023', 'Circuit published in 2023'), 'imgs': [],
+    {'slug': 'nieve-volcan-osorno', 'name': 'Circuito a la nieve: Volcán Osorno', 'days': U('Circuito publicado en 2023', 'Circuit published in 2023'), 'imgs': ['osorno'],
      'text': Q('recorrido de castro al volcán Osorno🏔, visitando  salto de petrohue y el lago todos los santos, no te pierdas de esta increíble experiencia para vivirla junto a tus familiares y amigos', '[IG-031]'),
      },
     {'slug': 'bariloche', 'name': 'San Carlos de Bariloche', 'days': U('Viaje internacional', 'International trip'), 'imgs': ['nieve', 'nieve-2'],

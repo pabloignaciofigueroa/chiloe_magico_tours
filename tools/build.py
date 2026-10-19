@@ -33,11 +33,25 @@ def L(es, en=None, tag='span'):
     return f'<{tag} data-l="es">{es}</{tag}><{tag} data-l="en">{en}</{tag}>'
 
 
+EMOJI = re.compile('[\U0001F000-\U0001FAFF\u2600-\u2604\u2606-\u27BF\u2B00-\u2BFF\uFE0F\u200D\u20E3\u2190-\u21FF\u2300-\u23FF]')
+
+
+def noemoji(t):
+    t = EMOJI.sub('', t)
+    t = re.sub(r'[ \t]{2,}', ' ', t)
+    t = re.sub(r' +([,.!?;:…])', r'\1', t)
+    return t.strip()
+
+
 def q(text, page, tag=None, cls='', lang='es'):
-    """Texto de la marca (literal). Registra su fuente para copy.md."""
+    """Texto de la marca (literal, sin emojis). Registra su fuente para copy.md."""
+    clean = noemoji(str(text))
     if isinstance(text, Q):
-        COPY.append((page, str(text), text.src, text.fix))
-    s = e(str(text))
+        fix = text.fix
+        if clean != str(text).strip():
+            fix = (fix + '; ' if fix else '') + 'sin emojis'
+        COPY.append((page, clean, text.src, fix))
+    s = e(clean)
     if tag:
         c = f' class="{cls}"' if cls else ''
         return f'<{tag}{c} lang="{lang}">{s}</{tag}>'
@@ -204,6 +218,8 @@ def page(path, title, title_en, desc, desc_en, content, body_class='', wa_text='
         out = out.replace('{{' + k + '}}', v)
     dest = ROOT / (path.strip('/') + '/index.html' if path != '/' else 'index.html')
     dest.parent.mkdir(parents=True, exist_ok=True)
+    # ningún emoji en pantalla (las estrellas de valoración se quedan)
+    out = re.sub(r' ?[\U0001F000-\U0001FAFF\u2600-\u2604\u2606-\u27BF\uFE0F]+', '', out)
     dest.write_text(out)
 
 
@@ -252,15 +268,29 @@ FOCUS = {
 
 def bimg(key, sizes='100vw', eager=False):
     """Imagen a sangre: cubre su contenedor con el punto focal de la foto."""
-    pos = FOCUS.get(key, '50% 50%')
+    m = META[key]
+    pos = m['pos'] if m.get('pos_src') == 'rostros' else (FOCUS.get(key) or m.get('pos', '50% 45%'))
     return img(key, sizes, 'bleed__img', eager, f'data-pos="{pos}"').replace(
         'style="background-image', f'style="object-position:{pos};background-image', 1)
 
 
+def credit(key, cls='credit'):
+    c = META[key].get('credit')
+    if not c: return ''
+    txt, url = c.split('|')
+    return f'<a class="{cls}" href="{url}" target="_blank" rel="noopener">{e(txt)}</a>'
+
+
+def wide(key):
+    m = META[key]; return m['w'] / m['h'] >= 1.25 and m['w'] >= 1100
+
+
 def bleed_hero(key, title_html, kicker='', lead='', crumbs='', size='full', extra=''):
-    """Encabezado de página a pantalla completa, con el título sobre el paisaje."""
-    return f'''<section class="bhero bhero--{size}" data-hero>
-  <div class="bhero__media" data-parallax-hero>{bimg(key, "100vw", True)}</div>
+    """Encabezado de página a pantalla completa, con el título sobre el paisaje.
+    Si la foto es vertical o cuadrada no se estira a lo ancho: ocupa la mitad derecha a altura completa."""
+    split = '' if wide(key) else ' bhero--split'
+    return f'''<section class="bhero bhero--{size}{split}" data-hero>
+  <div class="bhero__media" data-parallax-hero>{bimg(key, "100vw" if not split else "(max-width:760px) 100vw, 50vw", True)}</div>{credit(key)}
   <div class="bhero__shade" aria-hidden="true"></div>
   {crumbs}
   <div class="bhero__in">
@@ -282,6 +312,7 @@ def tile(key, href, title, sub='', tag='', cls='', sizes='(max-width:760px) 100v
     return f'''<a class="tile {cls}" href="{href}" {attrs}>
   <div class="tile__media" data-parallax>{bimg(key, sizes)}</div>
   <div class="tile__shade" aria-hidden="true"></div>
+  {f'<span class="credit">{e(META[key]["credit"].split("|")[0])}</span>' if META[key].get("credit") else ''}
   <div class="tile__in">
     {f'<p class="tile__tag">{tag}</p>' if tag else ''}
     <h3 class="tile__t">{title}</h3>
@@ -360,7 +391,7 @@ def sticky_split(key, inner_html, side='right', extra_keys=()):
     """Texto que corre junto a un paisaje fijo que toca el borde de la pantalla (sticky, sin pin)."""
     more = trio([f'<div class="tile tile--pic" data-parallax>{bimg(k, "(max-width:760px) 100vw, 50vw")}</div>' for k in extra_keys]) if extra_keys else ''
     return f'''<section class="ssplit ssplit--{side}">
-  <div class="ssplit__media"><div class="ssplit__stick" data-parallax>{bimg(key, "(max-width:760px) 100vw, 50vw")}</div></div>
+  <div class="ssplit__media"><div class="ssplit__stick" data-parallax>{bimg(key, "(max-width:760px) 100vw, 50vw")}</div>{credit(key)}</div>
   <div class="ssplit__txt">{inner_html}</div>
 </section>{more}'''
 
@@ -377,7 +408,8 @@ def home():
             COPY.append((P, ' · '.join(t['stops'][:5]), t['afiche'] + ' rótulos de paradas', None))
         a, s, b = t['title']
         COPY.append((P, f'{a} {s} {b}', '[DEST-H7] títulos de afiche', None))
-        panels += f'''<article class="tpanel" data-tpanel>
+        port = '' if wide(t["hero"]) else ' tpanel--portrait'
+        panels += f'''<article class="tpanel{port}" data-tpanel>
   <div class="tpanel__media" data-tpanel-media>{bimg(t["hero"], "100vw")}</div>
   <div class="tpanel__shade" aria-hidden="true"></div>
   <p class="tpanel__n" aria-hidden="true">{i+1:02d}<span>/{n:02d}</span></p>

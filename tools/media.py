@@ -6,7 +6,7 @@ M = json.load(open(ROOT / 'content/media.json'))
 RAW = ROOT / 'assets/raw/ig'; IMG = ROOT / 'assets/img'; VID = ROOT / 'assets/video'
 IMG.mkdir(parents=True, exist_ok=True); VID.mkdir(parents=True, exist_ok=True)
 meta = {}
-for key, (fname, alt) in M['images'].items():
+for key, (fname, alt, *more) in M['images'].items():
     im = ImageOps.exif_transpose(Image.open(RAW / fname)).convert('RGB')
     w, h = im.size
     for size in (800, 1800):
@@ -20,6 +20,7 @@ for key, (fname, alt) in M['images'].items():
     t = im.copy(); t.thumbnail((1800 if big else 800,) * 2)
     meta[key] = {'w': t.width, 'h': t.height, 'big': big, 'alt': alt, 'src': fname,
                  'lqip': 'data:image/webp;base64,' + base64.b64encode(b.getvalue()).decode()}
+    if more: meta[key]['credit'] = more[0]
 json.dump(meta, open(IMG / 'meta.json', 'w'), ensure_ascii=False, indent=1)
 for key, (fname, start, end, alt) in M['videos'].items():
     src = str(RAW / fname); dur = str(end - start)

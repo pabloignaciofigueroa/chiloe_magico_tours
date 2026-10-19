@@ -40,7 +40,7 @@
 
   /* ---------- fuentes: esperar con tiempo máximo ---------- */
   const fontsReady = Promise.race([
-    Promise.allSettled(['400 1em Anton', '400 1em Sacramento', '400 1em Montserrat', '600 1em Montserrat'].map(f => document.fonts ? document.fonts.load(f) : Promise.resolve())),
+    Promise.allSettled(['400 1em Anton', '400 1em Montserrat', '600 1em Montserrat'].map(f => document.fonts ? document.fonts.load(f) : Promise.resolve())),
     new Promise(r => setTimeout(r, 1800)),
   ]);
 

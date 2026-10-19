@@ -5,7 +5,9 @@
   "big": true,
   "alt": "Columpio sobre el lago Huillinco, con cerros al fondo y el agua quieta",
   "src": "134_ChpjPePu4_c_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABwBACdASoYABIAPu1gpk4ppSMiMBgMATAdiWMArAAHVVghLCBJ9IGBDjRF0AD3BCIqiqmVk4A9xDeX544sRahfGomlytDmHH5bmVdgvRB+O8val97fWwTqkeh/KU+rTYWqzIIt85dIXUblw8DRnEAA"
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABwBACdASoYABIAPu1gpk4ppSMiMBgMATAdiWMArAAHVVghLCBJ9IGBDjRF0AD3BCIqiqmVk4A9xDeX544sRahfGomlytDmHH5bmVdgvRB+O8val97fWwTqkeh/KU+rTYWqzIIt85dIXUblw8DRnEAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "punihuil-bahia": {
   "w": 1440,
@@ -13,7 +15,9 @@
   "big": true,
   "alt": "Bahía de Puñihuil con sus islotes, la playa y casas de pescadores",
   "src": "122_CjJN6MWp3TW_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAAAwBgCdASoYABIAPu1srFEppaQiqAqpMB2JbACdMoPEM3c8K7fMG9GHo/ocziQmlN+cjrw6wyRI09BIAP6xRZhJhCCz1D9SDM7+BnHbuZ8pg+8FNPuDLOR/mVt1UTvwxYduz6WF8wREh7ZFxvgWpnafJTOOvgBG+YzyGbwn3PlwDUkpGowiBJqBKAgFwXEezFSmnJTRMPDeG1GiwqbGRZuswys5KDmV6D+vcrcNdbCsDzKyEatH60/A7kwehKwrtbo2qTNpkgAAAA=="
+  "lqip": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAAAwBgCdASoYABIAPu1srFEppaQiqAqpMB2JbACdMoPEM3c8K7fMG9GHo/ocziQmlN+cjrw6wyRI09BIAP6xRZhJhCCz1D9SDM7+BnHbuZ8pg+8FNPuDLOR/mVt1UTvwxYduz6WF8wREh7ZFxvgWpnafJTOOvgBG+YzyGbwn3PlwDUkpGowiBJqBKAgFwXEezFSmnJTRMPDeG1GiwqbGRZuswys5KDmV6D+vcrcNdbCsDzKyEatH60/A7kwehKwrtbo2qTNpkgAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "muelle-luz-oceano": {
   "w": 1440,
@@ -21,7 +25,9 @@
   "big": true,
   "alt": "Muelle de la Luz frente al océano Pacífico en Chepu",
   "src": "120_CjLbJxIL7Vk_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoYABIAPu1qrVCppaQiqAqpMB2JQBdgAexhV+C0h4dbKUq4ywhwUqD2AN1xhwvgz4xwGEiW1eMsVMv4TlQgpXr+3RJmr0upEHaeDs+r54d2h9xuydGIeJfjl+s1RMFdzGhXvuHU1wWlku5sA2Bt+NnQQ2tNUnC2dWJW50dcN+xol7n98HAER5iADKzwZVyYCi6mWa3zMr9DygqIAQ6gAA=="
+  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoYABIAPu1qrVCppaQiqAqpMB2JQBdgAexhV+C0h4dbKUq4ywhwUqD2AN1xhwvgz4xwGEiW1eMsVMv4TlQgpXr+3RJmr0upEHaeDs+r54d2h9xuydGIeJfjl+s1RMFdzGhXvuHU1wWlku5sA2Bt+NnQQ2tNUnC2dWJW50dcN+xol7n98HAER5iADKzwZVyYCi6mWa3zMr9DygqIAQ6gAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "ancud-atardecer": {
   "w": 1440,
@@ -29,7 +35,9 @@
   "big": true,
   "alt": "Atardecer nublado sobre la costanera de Ancud",
   "src": "141_Cg7tpi9JRyW_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACwBACdASoYABIAPu1urlKppiQiqAgBMB2JZQDE2y6AlGnQQJzn6hNd/DJFOueYAN4d/9mfhKcN971LanjmbLrD8NlJ6SGx2ETLgtsfwaWzAKR5R1zqUJiTj7432hsD98AyA31SMJqyoPJ5na7DcdMYKxI9Sfe0EDUaQffup920PY4nyOSHZukLNfe5Fn3dt3k+nMM8IOTBAAAA"
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACwBACdASoYABIAPu1urlKppiQiqAgBMB2JZQDE2y6AlGnQQJzn6hNd/DJFOueYAN4d/9mfhKcN971LanjmbLrD8NlJ6SGx2ETLgtsfwaWzAKR5R1zqUJiTj7432hsD98AyA31SMJqyoPJ5na7DcdMYKxI9Sfe0EDUaQffup920PY4nyOSHZukLNfe5Fn3dt3k+nMM8IOTBAAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "pasarela-aucar": {
   "w": 1440,
@@ -37,7 +45,9 @@
   "big": true,
   "alt": "Pareja caminando por la pasarela de madera hacia la Isla Aucar",
   "src": "139_ChQRZIiJ6F0_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAABwBQCdASoYABIAPu1sq1EppiOiqAqpMB2JYgCdOcC7kAYZWSG6MhyelkmPY+2Df1Lj3KSAAP3iwzRpY3kuieYyq1CcXx3c/6IKDR3KmLDj4XyE7KueVpMrqVHporDFS2NGAn3T3oAkDX42+aI+BOzzSgo9VxpM+hxA0KFCU7hlGswBk3lCj2aXprCcmeLDWuEIp7/Y96DTlDfDAsOad4+Pei9Tgxt++R22+VbdWAA="
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAABwBQCdASoYABIAPu1sq1EppiOiqAqpMB2JYgCdOcC7kAYZWSG6MhyelkmPY+2Df1Lj3KSAAP3iwzRpY3kuieYyq1CcXx3c/6IKDR3KmLDj4XyE7KueVpMrqVHporDFS2NGAn3T3oAkDX42+aI+BOzzSgo9VxpM+hxA0KFCU7hlGswBk3lCj2aXprCcmeLDWuEIp7/Y96DTlDfDAsOad4+Pei9Tgxt++R22+VbdWAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "huillinco-pareja": {
   "w": 1440,
@@ -45,7 +55,9 @@
   "big": true,
   "alt": "Columpio de los enamorados en el lago Huillinco",
   "src": "111_Cj0sWCmpK5U_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwBACdASoYABIAPu1kqU2ppaQiMBgMATAdiWMArAAQlyImiEnfbhBM1JSZThJnLmAA/pAkYY4YwNCKnOAhh7cel6jtYb+thkCLVKXiSxyfib5ynJ+Z7e+Y6Mk/4gsSYOx+3XC8RwOUApoafu8lUDPg8It8AAAA"
+  "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwBACdASoYABIAPu1kqU2ppaQiMBgMATAdiWMArAAQlyImiEnfbhBM1JSZThJnLmAA/pAkYY4YwNCKnOAhh7cel6jtYb+thkCLVKXiSxyfib5ynJ+Z7e+Y6Mk/4gsSYOx+3XC8RwOUApoafu8lUDPg8It8AAAA",
+  "pos": "53% 81%",
+  "pos_src": "rostros"
  },
  "vans": {
   "w": 1440,
@@ -53,7 +65,9 @@
   "big": true,
   "alt": "Tres vans blancas de la agencia estacionadas junto al mar",
   "src": "095_CnSUzJQpV2s_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAACQBACdASoYABIAPu1qrFEppaQiqAqpMB2JZQC7ABEc0NWpAMToWMdsZ6y7mgAA/upollivpvhVzr0tuzqkqBlgHEIqYCIpGZrj9vkyno5pnCa+SifScf0IobO2F2r+vEXC4WUdKReNLDbCxa/Ld8FPyXxLm8iCVABoPWaoE4v/ZHjlcI+C1xQrPAO2q4uVvkLmK8pD2yQlEIWvJVAAAA=="
+  "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAACQBACdASoYABIAPu1qrFEppaQiqAqpMB2JZQC7ABEc0NWpAMToWMdsZ6y7mgAA/upollivpvhVzr0tuzqkqBlgHEIqYCIpGZrj9vkyno5pnCa+SifScf0IobO2F2r+vEXC4WUdKReNLDbCxa/Ld8FPyXxLm8iCVABoPWaoE4v/ZHjlcI+C1xQrPAO2q4uVvkLmK8pD2yQlEIWvJVAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "hueñay-playa": {
   "w": 1440,
@@ -61,7 +75,9 @@
   "big": true,
   "alt": "Dos viajeras sentadas en la playa de Hueñay, en Isla Lemuy",
   "src": "072_CoIdGjBJt3P_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoYABIAPt1WpU2oqSOiN/qoASAbiUAYnT/8B3/HnFpsAaVNwADdVz8ItN4BVz7EbX10WLREvFf6A497hhZ+/7Y78HlxBvDAc0Env0H3aroYWd7xm7P6KyW5h7khwhOCL+mAAA=="
+  "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoYABIAPt1WpU2oqSOiN/qoASAbiUAYnT/8B3/HnFpsAaVNwADdVz8ItN4BVz7EbX10WLREvFf6A497hhZ+/7Y78HlxBvDAc0Env0H3aroYWd7xm7P6KyW5h7khwhOCL+mAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "chonchi": {
   "w": 1440,
@@ -69,7 +85,9 @@
   "big": true,
   "alt": "Viajeros recorriendo una calle de Chonchi",
   "src": "090_CnZiCvGuuEi_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQBACdASoYABIAPu1oqVAppaOiqA1RMB2JYwDLLAua/2q74TQKDUsKgECdGUuJAADyjLWlVRQKbnO6EIDcy6GA0CXx1/e1+teOUZu9HjIg0miN9rzWJDv5oJQpeIcaEDRTNZBbgiyNKvGlLar1Emxf7hXTosCsB57sKzBlQrjIRX7PfZgVSnhPW9KFsx+Gd6c8gr1oAAA="
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQBACdASoYABIAPu1oqVAppaOiqA1RMB2JYwDLLAua/2q74TQKDUsKgECdGUuJAADyjLWlVRQKbnO6EIDcy6GA0CXx1/e1+teOUZu9HjIg0miN9rzWJDv5oJQpeIcaEDRTNZBbgiyNKvGlLar1Emxf7hXTosCsB57sKzBlQrjIRX7PfZgVSnhPW9KFsx+Gd6c8gr1oAAA=",
+  "pos": "40% 71%",
+  "pos_src": "rostros"
  },
  "muelle-almas-cielo": {
   "w": 1440,
@@ -77,7 +95,9 @@
   "big": true,
   "alt": "Viajeros sentados en un mirador de madera frente al lago",
   "src": "099_CnPOwu1uURj_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABwBQCdASoYABIAPu1qr1CppaSiqAqpMB2JZwC/OA+DbfrtNF3lZ6TrFpff5YKSV8Nn2cqkAP7qvQvHh1A+D3/s4zJ+EKI6YG58U8WnXy5QHacYWpqFdJdETIXK9z7Z/cibpmK4+IrSbSGAnGccXQPlkCCpJWkOH38ZhTLq4IvYUfVvEiufD6D4iI1UcsKySNBJNQAA"
+  "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABwBQCdASoYABIAPu1qr1CppaSiqAqpMB2JZwC/OA+DbfrtNF3lZ6TrFpff5YKSV8Nn2cqkAP7qvQvHh1A+D3/s4zJ+EKI6YG58U8WnXy5QHacYWpqFdJdETIXK9z7Z/cibpmK4+IrSbSGAnGccXQPlkCCpJWkOH38ZhTLq4IvYUfVvEiufD6D4iI1UcsKySNBJNQAA",
+  "pos": "23% 79%",
+  "pos_src": "rostros"
  },
  "aucar-isla": {
   "w": 1440,
@@ -85,7 +105,9 @@
   "big": true,
   "alt": "La Isla Aucar unida a tierra por su larga pasarela",
   "src": "105_ClCCavgJvul_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQBACdASoYABIAPu1srFEppaQiqAqpMB2JQBdgAWOyKwrhqrr4k/sGtSOAAPHJCKg5hpXZ+1D1omvUNDQxSYvS16gzKl9YvmYbteJ615rFb6qzIUOEvKG6PFsXHhPHQr+PfOxYVJmXzdRPVhqlB8BW1IVEFe0s2RQqWAAA"
+  "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQBACdASoYABIAPu1srFEppaQiqAqpMB2JQBdgAWOyKwrhqrr4k/sGtSOAAPHJCKg5hpXZ+1D1omvUNDQxSYvS16gzKl9YvmYbteJ615rFb6qzIUOEvKG6PFsXHhPHQr+PfOxYVJmXzdRPVhqlB8BW1IVEFe0s2RQqWAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "muelle-luz-grupo": {
   "w": 1440,
@@ -93,7 +115,9 @@
   "big": true,
   "alt": "Dos viajeros sentados al borde de un muelle rústico sobre el mar en Chepu",
   "src": "116_CjRHcuZpVl1_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQBACdASoYABIAPuVepk2pJSOiN/VYASAciUAYG4Id81Bkw4bDPjEBWf/fwEw0AAD+0wi79U2oUnYhjRxOH7+Bd3yxvCiYC9WABIxc8hQn9luz0Du/4nkxrtmx9nbOe7lp7RMikpjkYSS2fFk5HzrOZRBr/eedOS6VEej5T7Kf2Um5Kk/oAAAA"
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQBACdASoYABIAPuVepk2pJSOiN/VYASAciUAYG4Id81Bkw4bDPjEBWf/fwEw0AAD+0wi79U2oUnYhjRxOH7+Bd3yxvCiYC9WABIxc8hQn9luz0Du/4nkxrtmx9nbOe7lp7RMikpjkYSS2fFk5HzrOZRBr/eedOS6VEej5T7Kf2Um5Kk/oAAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "muelle-luz-mirador": {
   "w": 1440,
@@ -101,7 +125,9 @@
   "big": true,
   "alt": "Viajera en el extremo del Muelle de la Luz sobre el océano",
   "src": "116_CjRHcuZpVl1_3.jpg",
-  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwBACdASoYABIAPu1krVAppSQisBgIATAdiWcAAC930bz9y5fwbWvhLIk2wDwAAP7EUz2A/aZ9ygW8x//zL8sdWI7XTqcOhgwSQllq81fDwY8vrYlzH5j9DWpFoIghH9xIFVKGgg6ktTVFqAAAAA=="
+  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwBACdASoYABIAPu1krVAppSQisBgIATAdiWcAAC930bz9y5fwbWvhLIk2wDwAAP7EUz2A/aZ9ygW8x//zL8sdWI7XTqcOhgwSQllq81fDwY8vrYlzH5j9DWpFoIghH9xIFVKGgg6ktTVFqAAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "muelle-luz-sendero": {
   "w": 1440,
@@ -109,7 +135,9 @@
   "big": true,
   "alt": "Sendero entre pastizales hacia el Muelle de la Luz",
   "src": "116_CjRHcuZpVl1_7.jpg",
-  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBQCdASoYABIAPulkqk2pJaQiMBgMASAdCWMAtOgQ48pYHf0ohb3YuHL75QYkttVSQADLSK+a4j5HP5/fSUxJcbxcsAkL9dNqDLNpBOlhbRv9XN9ib6TfOyF89CsJ18EqM3pAx7dZoOjPkky3op53EtK4GUhGOglRLQE0DJc2edsMgvMke4g6OrWUwAAA"
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBQCdASoYABIAPulkqk2pJaQiMBgMASAdCWMAtOgQ48pYHf0ohb3YuHL75QYkttVSQADLSK+a4j5HP5/fSUxJcbxcsAkL9dNqDLNpBOlhbRv9XN9ib6TfOyF89CsJ18EqM3pAx7dZoOjPkky3op53EtK4GUhGOglRLQE0DJc2edsMgvMke4g6OrWUwAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "punihuil-playa": {
   "w": 1440,
@@ -117,7 +145,9 @@
   "big": true,
   "alt": "Playa de Puñihuil con sus islotes rocosos",
   "src": "117_CjOOsHopSD2_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwBACdASoTABgAPu1kq06ppaQiKA1RMB2JQBOmW+ApWbfJ9hKBME/uxWB9AAD9/LKOnqFntJpWbVIwfJqcG3tZM9Fr8Bm5mWnwmkyEJnoFJok+t+fm8+vKr0+rcAzRKWRpDjoNyKyJe4DoCnnPfXRAOeZKL7dLiPl8sk6LUDAAAA=="
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwBACdASoTABgAPu1kq06ppaQiKA1RMB2JQBOmW+ApWbfJ9hKBME/uxWB9AAD9/LKOnqFntJpWbVIwfJqcG3tZM9Fr8Bm5mWnwmkyEJnoFJok+t+fm8+vKr0+rcAzRKWRpDjoNyKyJe4DoCnnPfXRAOeZKL7dLiPl8sk6LUDAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "pincoya": {
   "w": 1440,
@@ -125,7 +155,9 @@
   "big": true,
   "alt": "Viajera junto a la escultura de la Pincoya frente al mar",
   "src": "133_Ch2jaZlJo-l_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAQBQCdASoYABIAPu1eqE6ppKOiMBgMATAdiWUAnQAQ73yA81MQHR+izl0o8GjcfOOAAP7fn1RMO6tDLAsvi2JuB3OT/ipZa2EsNw96Vd7dFQu6uLT9k9Biz2a8ZgIF7usVoYbVYo9lkAGHFifipMHLmTWudEBxfLBhXVUGOJrUisvsoAA="
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAQBQCdASoYABIAPu1eqE6ppKOiMBgMATAdiWUAnQAQ73yA81MQHR+izl0o8GjcfOOAAP7fn1RMO6tDLAsvi2JuB3OT/ipZa2EsNw96Vd7dFQu6uLT9k9Biz2a8ZgIF7usVoYbVYo9lkAGHFifipMHLmTWudEBxfLBhXVUGOJrUisvsoAA=",
+  "pos": "63% 71%",
+  "pos_src": "rostros"
  },
  "curanto-hoyo": {
   "w": 1287,
@@ -133,7 +165,9 @@
   "big": true,
   "alt": "Preparación del curanto en hoyo, con mariscos sobre las piedras calientes",
   "src": "085_CnfEHvnJGjB_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASoTABgAPu1ur1IppiQiqAgBMB2JZgAAG4sQCUtK2dKLyhkmfEEEuojhGQAA/vF66sJg96HtC5ee2Z8EFL5h7cXOJ3FDFAY3VT2wMFo0wkRpOq9JK7TRJLCKZgbb/daJli19CT2DHgAifh5N9AeBUEw2znaedJ9Dhx0vfm+vXPHfAu33d2voqqbN4fir0N5JipZ0nOPkUPvIxlautJSZo8uY67zd6mAA"
+  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASoTABgAPu1ur1IppiQiqAgBMB2JZgAAG4sQCUtK2dKLyhkmfEEEuojhGQAA/vF66sJg96HtC5ee2Z8EFL5h7cXOJ3FDFAY3VT2wMFo0wkRpOq9JK7TRJLCKZgbb/daJli19CT2DHgAifh5N9AeBUEw2znaedJ9Dhx0vfm+vXPHfAu33d2voqqbN4fir0N5JipZ0nOPkUPvIxlautJSZo8uY67zd6mAA",
+  "pos": "62% 0%",
+  "pos_src": "rostros"
  },
  "curanto-hojas": {
   "w": 1287,
@@ -141,7 +175,9 @@
   "big": true,
   "alt": "Curanto cubierto con hojas de pangue antes del tapado",
   "src": "085_CnfEHvnJGjB_2.jpg",
-  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACwBACdASoTABgAPu1wr1IppiQiqAgBMB2JZQDDNAoYzMOFHtaNTH+qh70+Q+3AAP6oKO8gw8Es8MaOtmG5tlNL2WE5HP9AfeVKXu/mIFF/cOtYXGY8684Vzad0Kr2zX5uBp6QF+h+QbCvYTkvltjIXm4c8jdHD1KiGcU9Mch9YtcP0hPbRboEtUgbHLX4IwlxzpZQDX0AG293qGlWwn++pyIsDSDxvaDUOfWaPoEA8oUGAAAA="
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACwBACdASoTABgAPu1wr1IppiQiqAgBMB2JZQDDNAoYzMOFHtaNTH+qh70+Q+3AAP6oKO8gw8Es8MaOtmG5tlNL2WE5HP9AfeVKXu/mIFF/cOtYXGY8684Vzad0Kr2zX5uBp6QF+h+QbCvYTkvltjIXm4c8jdHD1KiGcU9Mch9YtcP0hPbRboEtUgbHLX4IwlxzpZQDX0AG293qGlWwn++pyIsDSDxvaDUOfWaPoEA8oUGAAAA=",
+  "pos": "39% 37%",
+  "pos_src": "rostros"
  },
  "curanto-mesa": {
   "w": 1287,
@@ -149,7 +185,9 @@
   "big": true,
   "alt": "Viajeros almorzando curanto en una mesa larga",
   "src": "085_CnfEHvnJGjB_3.jpg",
-  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAAAwBQCdASoTABgAPu1sqlEppaOiqAqpMB2JYgCdIIkDuAtP9tSWNz9qBF3xX5XiWXQRUgDhy7YBL9eocolv/Tycv+X3cVvEkxGiwggebJaxzh52WaP43pvZF5co/FLPQxbBo1vF2+tpiXKJzruV3sA8U2X/Tic5PVU1JMa1TUS//hbdg4DyN9jsZxEk78wP+4uv6wroyjouoPx8Pccd2qyNRgUsuJOx8chBhV7i/S9Bmcy9z9DBU1QYr864wTX2/bjMq9cK6Wj04PVnhWDTlDF5okcOAAAA"
+  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAAAwBQCdASoTABgAPu1sqlEppaOiqAqpMB2JYgCdIIkDuAtP9tSWNz9qBF3xX5XiWXQRUgDhy7YBL9eocolv/Tycv+X3cVvEkxGiwggebJaxzh52WaP43pvZF5co/FLPQxbBo1vF2+tpiXKJzruV3sA8U2X/Tic5PVU1JMa1TUS//hbdg4DyN9jsZxEk78wP+4uv6wroyjouoPx8Pccd2qyNRgUsuJOx8chBhV7i/S9Bmcy9z9DBU1QYr864wTX2/bjMq9cK6Wj04PVnhWDTlDF5okcOAAAA",
+  "pos": "58% 47%",
+  "pos_src": "rostros"
  },
  "curanto-destape": {
   "w": 1440,
@@ -157,7 +195,9 @@
   "big": true,
   "alt": "Destape del curanto entre el humo",
   "src": "086_CncSVLsO2ZK_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBQCdASoTABgAPu1ur1IppiQiqAgBMB2JZgC/OBI5M2yjj0AEAv7G6vnLzxTeIWHHU9gA/I+3F7Iy3StVElr4+GcPon7EA4NDrd5BWySfNM3/yvGTTiD/w+gy1fkla7Grx88kbo5l2lglirUVJZ7nbEDeC5grmcqnfQ2/W4gMtLkvGXK7h+AleEFSWSOCi6vwtOz8n4jzLlLiqYL7PaPG5eR9euvg1T8/wAAA"
+  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBQCdASoTABgAPu1ur1IppiQiqAgBMB2JZgC/OBI5M2yjj0AEAv7G6vnLzxTeIWHHU9gA/I+3F7Iy3StVElr4+GcPon7EA4NDrd5BWySfNM3/yvGTTiD/w+gy1fkla7Grx88kbo5l2lglirUVJZ7nbEDeC5grmcqnfQ2/W4gMtLkvGXK7h+AleEFSWSOCi6vwtOz8n4jzLlLiqYL7PaPG5eR9euvg1T8/wAAA",
+  "pos": "75% 15%",
+  "pos_src": "rostros"
  },
  "curanto-papas": {
   "w": 1440,
@@ -165,7 +205,9 @@
   "big": true,
   "alt": "Papas y mariscos recién sacados del curanto",
   "src": "086_CncSVLsO2ZK_4.jpg",
-  "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADwBQCdASoTABgAPu1mqU+ppSOiMBgIATAdiUAXZlA1/8BAo89fHccv4AKaw/U7k2WkwmyDw6tTDAD33b4Rgaky2iIl6bu6Z0unS1L4unGvS/Kyo9mNetUxYlCcfEvSHd1K2GeLrMIoPslpHYnYcgObhCraHZlKN4aWLobHgLwAr1MLz+KB1VFURlMcNavIjGcRkQA9S0BBlQC/kyKJAcdBO3+n3YiEvnZpKx6HvxZFAAAA"
+  "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADwBQCdASoTABgAPu1mqU+ppSOiMBgIATAdiUAXZlA1/8BAo89fHccv4AKaw/U7k2WkwmyDw6tTDAD33b4Rgaky2iIl6bu6Z0unS1L4unGvS/Kyo9mNetUxYlCcfEvSHd1K2GeLrMIoPslpHYnYcgObhCraHZlKN4aWLobHgLwAr1MLz+KB1VFURlMcNavIjGcRkQA9S0BBlQC/kyKJAcdBO3+n3YiEvnZpKx6HvxZFAAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "curanto-fuego": {
   "w": 800,
@@ -173,7 +215,9 @@
   "big": false,
   "alt": "Cocineras tapando el curanto en hoyo",
   "src": "034_CpDim88Jxd6_1.webp",
-  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABwBQCdASoYABgAPu1urlIppiQiqAgBMB2JZACxAQgAJOx9QkXFudV4vSN8fD1oc6cr+5AAAP7AfPXhEXjt+fN6SLBJ5Z/kMgqS26Oj/LEQaR8zhNxP6g7tafQegiMkQGaA0E23F7rNPP3463ZpqZ4d1Qd5opJOEVGsZ4iS8yf1Zvf9jgWQNu4OY0wPL/eGhaJhL6ML+9lQSNJTjk57/inC41eX1ePJnbJyjqTomdkVcT2LFWhKhabO5K1yG8GuNoaOdTRQ1YaWBZ4BGacPpjkiqgwSQAAA"
+  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABwBQCdASoYABgAPu1urlIppiQiqAgBMB2JZACxAQgAJOx9QkXFudV4vSN8fD1oc6cr+5AAAP7AfPXhEXjt+fN6SLBJ5Z/kMgqS26Oj/LEQaR8zhNxP6g7tafQegiMkQGaA0E23F7rNPP3463ZpqZ4d1Qd5opJOEVGsZ4iS8yf1Zvf9jgWQNu4OY0wPL/eGhaJhL6ML+9lQSNJTjk57/inC41eX1ePJnbJyjqTomdkVcT2LFWhKhabO5K1yG8GuNoaOdTRQ1YaWBZ4BGacPpjkiqgwSQAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "tenaun": {
   "w": 960,
@@ -181,7 +225,9 @@
   "big": true,
   "alt": "Iglesia de Tenaún, azul y blanca con sus tres torres",
   "src": "061_CoVXWGPpfbg_1.webp",
-  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADwBACdASoTABgAPu1osFAppaSiqAqpMB2JYgCC5QL+oTOBMOMFOZ9ZQwl+n+8GaAAA9QsQIIi7JbYgrry5keY8OP2St4uwuCWp9sCHDR4j8Wyj/9qc0J0Mi/+HGoIteKJjexLJWZZFjxTnpgjD2Yph7MVE6cAM68FcsKSQ1uGTnPB2bip4+eiILGbssaqtM/vbR/fMjjO5ksRatCneWs59FO+lpS08EfkuC+zlickgAA=="
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADwBACdASoTABgAPu1osFAppaSiqAqpMB2JYgCC5QL+oTOBMOMFOZ9ZQwl+n+8GaAAA9QsQIIi7JbYgrry5keY8OP2St4uwuCWp9sCHDR4j8Wyj/9qc0J0Mi/+HGoIteKJjexLJWZZFjxTnpgjD2Yph7MVE6cAM68FcsKSQ1uGTnPB2bip4+eiILGbssaqtM/vbR/fMjjO5ksRatCneWs59FO+lpS08EfkuC+zlickgAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "tenaun-aereo": {
   "w": 800,
@@ -189,7 +235,9 @@
   "big": false,
   "alt": "Vista alta del pueblo de Tenaún y su iglesia",
   "src": "124_CjD7RmBJxon_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JYgAGaAHObbi6pVSXKccUU+SAAP1P1YDftyNh6/UtNNbewx3Ij7GBZ3pdor38W6Zh8LXlCWurAym9TFh2uJqX3gqryD8HIli3cQ0sKtQ+5rh+blvDJe3aJz7aOX9PeVdIrJPmYgYw1Z89NvXUwaER1SEpmaht2iAJ+zKXcTBGe8X+bZuyfkAA"
+  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JYgAGaAHObbi6pVSXKccUU+SAAP1P1YDftyNh6/UtNNbewx3Ij7GBZ3pdor38W6Zh8LXlCWurAym9TFh2uJqX3gqryD8HIli3cQ0sKtQ+5rh+blvDJe3aJz7aOX9PeVdIrJPmYgYw1Z89NvXUwaER1SEpmaht2iAJ+zKXcTBGe8X+bZuyfkAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "tocoihue": {
   "w": 1300,
@@ -197,7 +245,9 @@
   "big": true,
   "alt": "Cascada de Tocoihue cayendo entre el bosque",
   "src": "123_CjIzXy_rx1u_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAABwBQCdASoTABgAPu1osFAppaUiqAqpMB2JQBWGbOecIqAIgOfDvJXAHtiWvrwuJq/DHI/AAP6l9Etx495eknTJ2sAqt/e5CTNDRkferDSOnqqp3+aNT0eCczm/M343arf8pXvhEWPghnHTClDDTPOcllaUsNUfslpYQgZwn7abjaocAM7zD6FcGSvNiLiLvqzJRf7nRW+gjI1Y64ePsPxf2+Kpiz3lCKjOVHHf6Dd4hwKkEoQpAa5KSBtQQno50AA="
+  "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAABwBQCdASoTABgAPu1osFAppaUiqAqpMB2JQBWGbOecIqAIgOfDvJXAHtiWvrwuJq/DHI/AAP6l9Etx495eknTJ2sAqt/e5CTNDRkferDSOnqqp3+aNT0eCczm/M343arf8pXvhEWPghnHTClDDTPOcllaUsNUfslpYQgZwn7abjaocAM7zD6FcGSvNiLiLvqzJRf7nRW+gjI1Y64ePsPxf2+Kpiz3lCKjOVHHf6Dd4hwKkEoQpAa5KSBtQQno50AA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "tocoihue-viajeros": {
   "w": 1300,
@@ -205,7 +255,9 @@
   "big": true,
   "alt": "Viajeros frente a la Cascada de Tocoihue",
   "src": "123_CjIzXy_rx1u_4.jpg",
-  "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADQBQCdASoTABgAPu1qrVCppaQiqAqpMB2JaACdMoSA2BAgax0diuQdQwYyisMeEY/Z9x25qHiAAP7x38PxomjCNWxidmQojIL/uN/q0M5y4ZxRMbMBASl00ZfC8Gbi4OG5w71Mi2yCaQPnuXmyIk/IJ9084vqiAzZRo5FcO+n4bvtvy+NYM5hxVj/deOVlKmj2s5jvhj31eBjBUOfpC/OCaE8RCsOxRzp5Q0pqooixZyJtarSfVtCiNLxNh7P/C3KBcmAA"
+  "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADQBQCdASoTABgAPu1qrVCppaQiqAqpMB2JaACdMoSA2BAgax0diuQdQwYyisMeEY/Z9x25qHiAAP7x38PxomjCNWxidmQojIL/uN/q0M5y4ZxRMbMBASl00ZfC8Gbi4OG5w71Mi2yCaQPnuXmyIk/IJ9084vqiAzZRo5FcO+n4bvtvy+NYM5hxVj/deOVlKmj2s5jvhj31eBjBUOfpC/OCaE8RCsOxRzp5Q0pqooixZyJtarSfVtCiNLxNh7P/C3KBcmAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "aucar-pasarela": {
   "w": 800,
@@ -213,7 +265,9 @@
   "big": false,
   "alt": "Pasarela de madera hacia la Isla Aucar",
   "src": "046_CohwSnHLM9N_1.webp",
-  "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAwBQCdASoYABYAPu1sqlEppaOiqAqpMB2JQBdgAjG/NHWQ0W3UGxUlyj2t2QjJPMrkAAD+3pyJwIyqBvtTDxN37BXZPcOm5lLwg9Bv1stR8c0zrAK5J1rYIrBlqd+5u9HNdqo8bP4EEahfh0dYgWfauKDR0t7kf/3YmIUrRCZl6wxeoxkC8Rjnih5/VTaC5wnU1XIBZoo/h/9AYEYLwAAAAAA="
+  "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAwBQCdASoYABYAPu1sqlEppaOiqAqpMB2JQBdgAjG/NHWQ0W3UGxUlyj2t2QjJPMrkAAD+3pyJwIyqBvtTDxN37BXZPcOm5lLwg9Bv1stR8c0zrAK5J1rYIrBlqd+5u9HNdqo8bP4EEahfh0dYgWfauKDR0t7kf/3YmIUrRCZl6wxeoxkC8Rjnih5/VTaC5wnU1XIBZoo/h/9AYEYLwAAAAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "dalcahue": {
   "w": 1440,
@@ -221,7 +275,9 @@
   "big": true,
   "alt": "Iglesia de Dalcahue con su pórtico de arcos",
   "src": "087_CncAD0Mu-61_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAwBQCdASoTABgAPu1qq1EppaOiqAqpMB2JbACdMzL1Xn/AGtSrzylGoL5uq3huZIqGWAD+hj0CkmrzlAUtKCBFAFR41dHXUHBzSootGX80846Tqgnh2dqoekSwqA08XX4FGMftmyqQSwCK44IkxRwHO+FqF6KiHdDDN/fI+C4S/I5nwLT8fuCsSQidGs7cwjVuWa3z2soz0z98EervpDBJmzGtXbKhV9DN9eT9cyixuoGQArfA0gRpYBET8nR96z3l8r4v5fvfBMs4QIAAAA=="
+  "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAwBQCdASoTABgAPu1qq1EppaOiqAqpMB2JbACdMzL1Xn/AGtSrzylGoL5uq3huZIqGWAD+hj0CkmrzlAUtKCBFAFR41dHXUHBzSootGX80846Tqgnh2dqoekSwqA08XX4FGMftmyqQSwCK44IkxRwHO+FqF6KiHdDDN/fI+C4S/I5nwLT8fuCsSQidGs7cwjVuWa3z2soz0z98EervpDBJmzGtXbKhV9DN9eT9cyixuoGQArfA0gRpYBET8nR96z3l8r4v5fvfBMs4QIAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "dalcahue-feria": {
   "w": 800,
@@ -229,7 +285,9 @@
   "big": false,
   "alt": "Viajeros en la Feria Artesanal de Dalcahue",
   "src": "010_DFifUO7R-AA_4.webp",
-  "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAACwBQCdASoYABIAPu1qr1CppaQiqAqpMB2JYgC21A/yK7C3kMoakdFsVsZkf3nNVuOpAYBZgAAA/LSlp0Km0kj3rwzHzwG5vLcQ7xK3o0VbsALJuFSG+I+J8vmm2D9r6dsETQVST58YPjNLd9E/KYuHlX3cnkLJybaejcIyIFX2skxDVyzR5XyvkJ3tDtsi0tdmQlyVjLQbC+Z8+GGhClfVuzLkyaiYdoc5ijIzh+JFl9yVwPcsYn+TCDLLtNxGapmUBMFV9YyopVENVRWFgl4ZmS6AAA=="
+  "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAACwBQCdASoYABIAPu1qr1CppaQiqAqpMB2JYgC21A/yK7C3kMoakdFsVsZkf3nNVuOpAYBZgAAA/LSlp0Km0kj3rwzHzwG5vLcQ7xK3o0VbsALJuFSG+I+J8vmm2D9r6dsETQVST58YPjNLd9E/KYuHlX3cnkLJybaejcIyIFX2skxDVyzR5XyvkJ3tDtsi0tdmQlyVjLQbC+Z8+GGhClfVuzLkyaiYdoc5ijIzh+JFl9yVwPcsYn+TCDLLtNxGapmUBMFV9YyopVENVRWFgl4ZmS6AAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "quicavi": {
   "w": 1200,
@@ -237,7 +295,9 @@
   "big": true,
   "alt": "Muelle largo de Quicaví hacia el mar",
   "src": "102_CnKe5nXprqp_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADQBQCdASoYABIAPu1qrFEppaQiqAqpMB2JYgCdMzQ7PfgboAAmNYhJmZHOb3pR2PAsIbOmEPQAAP4hjMmYUEUKOOzNkWK828vJjOhtUoGwD5CdFEe/Xof1eJ+zrsihDsXhNW+tv8O7t2pb/ikIMSx3geuEeb2fV3Yf0gXPIJGg3rD3bQ25l58BmodAWlH6EQoV4XBVI6hJAAAA"
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADQBQCdASoYABIAPu1qrFEppaQiqAqpMB2JYgCdMzQ7PfgboAAmNYhJmZHOb3pR2PAsIbOmEPQAAP4hjMmYUEUKOOzNkWK828vJjOhtUoGwD5CdFEe/Xof1eJ+zrsihDsXhNW+tv8O7t2pb/ikIMSx3geuEeb2fV3Yf0gXPIJGg3rD3bQ25l58BmodAWlH6EQoV4XBVI6hJAAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "molinos-mirador": {
   "w": 1080,
@@ -245,7 +305,9 @@
   "big": true,
   "alt": "Mirador de Los Molinos sobre el mar interior",
   "src": "043_Coia0jrpXRQ_1.webp",
-  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACwBQCdASoTABgAPu1qrlCppaQiqAqpMB2JQBahJmgx1lXRLoerDU1Y79wmTyePpeJM7On+hgAA/sn/FP0fYBNNpQ1i2nIn/0oOV2t5WpeOmgqu/N49JXH5Ggxajmh6sftYRoOUmsnQZZQ33qP1ooFAagNBEVGvO0a3AoYGJahbfc/cRgMEPmoEOi+EW0QWxcXD8GxSOKhsf96PJg4IjAoLEFOSlhRbdhRSpZCAAAA="
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACwBQCdASoTABgAPu1qrlCppaQiqAqpMB2JQBahJmgx1lXRLoerDU1Y79wmTyePpeJM7On+hgAA/sn/FP0fYBNNpQ1i2nIn/0oOV2t5WpeOmgqu/N49JXH5Ggxajmh6sftYRoOUmsnQZZQ33qP1ooFAagNBEVGvO0a3AoYGJahbfc/cRgMEPmoEOi+EW0QWxcXD8GxSOKhsf96PJg4IjAoLEFOSlhRbdhRSpZCAAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "brujos-columpio": {
   "w": 1440,
@@ -253,7 +315,9 @@
   "big": true,
   "alt": "Viajero en el columpio del Muelle de los Brujos, recortado contra el cielo",
   "src": "127_CiyGhUcJrNk_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADQBQCdASoTABgAPu1qrlCppiQiqAqpMB2JagCdMyX5ir/S/4B6SrsRQ9p5NPtMxyFn0xJqDu+AAP7ez2HB8EaPwxjV7BK+UfESD5RTb8cIIuXatYV9QdFiVeANTMN5FkZP/3LvT9EYZShR5H7xCcVM683S7fIfmxGNHd6yBrmXULN5HyQuc6Xu8cU48kPwvjMVtRh7kdz48+h4DRbqBw2AAAA="
+  "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADQBQCdASoTABgAPu1qrlCppiQiqAqpMB2JagCdMyX5ir/S/4B6SrsRQ9p5NPtMxyFn0xJqDu+AAP7ez2HB8EaPwxjV7BK+UfESD5RTb8cIIuXatYV9QdFiVeANTMN5FkZP/3LvT9EYZShR5H7xCcVM683S7fIfmxGNHd6yBrmXULN5HyQuc6Xu8cU48kPwvjMVtRh7kdz48+h4DRbqBw2AAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "brujos-columpio-2": {
   "w": 1440,
@@ -261,7 +325,9 @@
   "big": true,
   "alt": "Columpio del Muelle de los Brujos con el mar al fondo",
   "src": "135_ChgOH8iNXbA_3.jpg",
-  "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAABQBQCdASoTABgAPu1kqE2ppaOiMAgBMB2JYgCdEfwANpqYnfzY8yNMDWwYAfhL8zRebmAA/mzrlgAbY7pMDC9fndyreDjeiNBkrNIBd/eDNpHDeHhqOz2IlwRz9edFdRrm6T7STDHUiTCfY59JG7p2EkXODSO9E6MvnehmEEYR6r3xsUX1c+snmTZ+UQsMmR43kjqP28uVQnaGNoPGmy7Yt6gd96wGcx57IX4nu7Mm1ZnqWGoZZtrBX1QNV7AzGxX/5NiHkGNuXYQj8AA="
+  "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAABQBQCdASoTABgAPu1kqE2ppaOiMAgBMB2JYgCdEfwANpqYnfzY8yNMDWwYAfhL8zRebmAA/mzrlgAbY7pMDC9fndyreDjeiNBkrNIBd/eDNpHDeHhqOz2IlwRz9edFdRrm6T7STDHUiTCfY59JG7p2EkXODSO9E6MvnehmEEYR6r3xsUX1c+snmTZ+UQsMmR43kjqP28uVQnaGNoPGmy7Yt6gd96wGcx57IX4nu7Mm1ZnqWGoZZtrBX1QNV7AzGxX/5NiHkGNuXYQj8AA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "brujos-vuelo": {
   "w": 800,
@@ -269,7 +335,9 @@
   "big": false,
   "alt": "Viajeros saltando con escobas en el Muelle de los Brujos",
   "src": "070_CoItypHp5Jo_1.webp",
-  "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAACwBQCdASoYABgAPu1iqU4ppSOiMBgMATAdiWgArDOTPAgVT7K6M3yjXpaZPt7qR4g7jelho8AAynMAShfYhhaVp88cjMqwEipBLwvzzuOWUty2umSZs4GEnJpWKZ/2o2dm2A8qt9eDPxsj1Ibjn7yS7e8mUiiLxmsZXd14cbIA8RzlXoHxNheV4PVkQvGeLC1WRTGXIpw7pEhc+BkSMthvqgNab89cDEdereIscLJCYI0DcFMm6NyOhY60FwJ22dcfZA6LOYobIGEfm38fBiyLYq3AAA=="
+  "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAACwBQCdASoYABgAPu1iqU4ppSOiMBgMATAdiWgArDOTPAgVT7K6M3yjXpaZPt7qR4g7jelho8AAynMAShfYhhaVp88cjMqwEipBLwvzzuOWUty2umSZs4GEnJpWKZ/2o2dm2A8qt9eDPxsj1Ibjn7yS7e8mUiiLxmsZXd14cbIA8RzlXoHxNheV4PVkQvGeLC1WRTGXIpw7pEhc+BkSMthvqgNab89cDEdereIscLJCYI0DcFMm6NyOhY60FwJ22dcfZA6LOYobIGEfm38fBiyLYq3AAA==",
+  "pos": "55% 10%",
+  "pos_src": "rostros"
  },
  "brujos-alas": {
   "w": 1440,
@@ -277,7 +345,9 @@
   "big": true,
   "alt": "Viajeros posando con alas de ángel y demonio en el Muelle de los Brujos",
   "src": "088_CnaERNMJ1mk_2.jpg",
-  "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAADQBQCdASoTABgAPu1sqlEppaOiqAqpMB2JYgCdMySsmn/APqbGW6wop5CDkcX+lhiLGdLTUSkIAP7qe1SghMPI2Ahzw7sS65V0UUbOvKOqewvZVLtny8K/DlUEHPjHBF2QCxCg4mql4bFoZhDSh2HWtKpKDCebOqWkNmObLW4nZUyJN0yXA97ttsOurY/9oxbvkO/mPpOsZ5RBPRY2l9vsjoyzEgocM/Eis5rxhCcU/oHKFYZRT1pDxTzQlnNXmoWnmoAAAAA="
+  "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAADQBQCdASoTABgAPu1sqlEppaOiqAqpMB2JYgCdMySsmn/APqbGW6wop5CDkcX+lhiLGdLTUSkIAP7qe1SghMPI2Ahzw7sS65V0UUbOvKOqewvZVLtny8K/DlUEHPjHBF2QCxCg4mql4bFoZhDSh2HWtKpKDCebOqWkNmObLW4nZUyJN0yXA97ttsOurY/9oxbvkO/mPpOsZ5RBPRY2l9vsjoyzEgocM/Eis5rxhCcU/oHKFYZRT1pDxTzQlnNXmoWnmoAAAAA=",
+  "pos": "49% 59%",
+  "pos_src": "rostros"
  },
  "brujos-atardecer": {
   "w": 800,
@@ -285,7 +355,9 @@
   "big": false,
   "alt": "Atardecer en el Muelle de los Brujos",
   "src": "074_Cn-UDUppH4t_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAQBACdASoYAA4APu1mqk4ppaOiMAgBMB2JZACdMoADDq+KGFHrhu+fgAD94jtb4nhEyp8IRtYtuFw62HGEMzei9+ygoNW5ZmwID3vq1hVZfasQ84IuuNzRv9vbb2GVL+LntqX6S7p+Cqc/0HsDBddioUpMqURDz9R6wDjW6xQ1V6oAAAA="
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAQBACdASoYAA4APu1mqk4ppaOiMAgBMB2JZACdMoADDq+KGFHrhu+fgAD94jtb4nhEyp8IRtYtuFw62HGEMzei9+ygoNW5ZmwID3vq1hVZfasQ84IuuNzRv9vbb2GVL+LntqX6S7p+Cqc/0HsDBddioUpMqURDz9R6wDjW6xQ1V6oAAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "yayanes-puente": {
   "w": 780,
@@ -293,7 +365,9 @@
   "big": false,
   "alt": "Puente colgante del Parque Yayanes sobre la quebrada",
   "src": "076_Cn7nJEHJOlu_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAABwBQCdASoYABIAPu1urlKppiQiqAgBMB2JZACsOUAAY8pkPFPZ6s7Z9f0dCIcupzYhepIAAP7Fjw49z6JmuyCpn/M+cjZzdU1oaapTgGDdXamN4YDrzMGiVmgBi/uRMWoydYGg0wR4A+12XbDtPrBxaU9It63KCPNbwxgg3GNUTr+E9Pu8SYlAU31q6kpWlu7wKJosfXmDHME7t59X++VoBS2+dbwRyqVnDRhuz0M+E3/FQg+pVnBo9WNBqHvAAAA="
+  "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAABwBQCdASoYABIAPu1urlKppiQiqAgBMB2JZACsOUAAY8pkPFPZ6s7Z9f0dCIcupzYhepIAAP7Fjw49z6JmuyCpn/M+cjZzdU1oaapTgGDdXamN4YDrzMGiVmgBi/uRMWoydYGg0wR4A+12XbDtPrBxaU9It63KCPNbwxgg3GNUTr+E9Pu8SYlAU31q6kpWlu7wKJosfXmDHME7t59X++VoBS2+dbwRyqVnDRhuz0M+E3/FQg+pVnBo9WNBqHvAAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "yayanes-bosque": {
   "w": 576,
@@ -301,7 +375,9 @@
   "big": false,
   "alt": "Sendero del Parque Yayanes entre arrayanes",
   "src": "067_CoQK0i0Jhbo_1.webp",
-  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAQBQCdASoTABgAPu1sq1EppaOiqAqpMB2JYwC7BAgAT0543P0juY4xy1Z/Ss5TenPAAPn3Ki0foxjuOYm5AycxFJ2Q/BknFyXOdKC4GMI9M4GZBm0qaC09NPjFITmYM9by4bY7mKFg+u+VS9qT/ACLKIOYNZOav5YXRvrDQs6xCcj/SVJ45/EnISz2b+RLzDFzpFAmEIR7Z9HsTrPr4TCYeQbz+k35zOW5R0AAAAA="
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAQBQCdASoTABgAPu1sq1EppaOiqAqpMB2JYwC7BAgAT0543P0juY4xy1Z/Ss5TenPAAPn3Ki0foxjuOYm5AycxFJ2Q/BknFyXOdKC4GMI9M4GZBm0qaC09NPjFITmYM9by4bY7mKFg+u+VS9qT/ACLKIOYNZOav5YXRvrDQs6xCcj/SVJ45/EnISz2b+RLzDFzpFAmEIR7Z9HsTrPr4TCYeQbz+k35zOW5R0AAAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "yayanes-cascada": {
   "w": 1440,
@@ -309,7 +385,9 @@
   "big": true,
   "alt": "Familia junto a la cascada del Parque Yayanes",
   "src": "059_CoVbzd9p64F_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAAAwBQCdASoYABgAPu1ur1IppiQiqAgBMB2JZAC3uAtWq8DlLF+oVYaaDx4mq16ZyjOmAAD+5S2QF2SolOz9VlVHwOXph1ZvcRgLL3PBeQsevzTU0iVnhzEeIL+uSoEKpBVLiJkuY525hWcgCxY04LjYqFcW0/Kclc0PGke3wG8KKQApMvZuj1MGjDsIrlr+vfByCWyH9AXxr4UYzhppNdoJPSjbnE057OPRhjGAny4lY0tR7BTiJiPtnpSxgQMqMUE3rcAyJG8v+ksFxxNFi1zyB5gpA8Gna+NetqZqLqJ9oyKcH54AAA=="
+  "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAAAwBQCdASoYABgAPu1ur1IppiQiqAgBMB2JZAC3uAtWq8DlLF+oVYaaDx4mq16ZyjOmAAD+5S2QF2SolOz9VlVHwOXph1ZvcRgLL3PBeQsevzTU0iVnhzEeIL+uSoEKpBVLiJkuY525hWcgCxY04LjYqFcW0/Kclc0PGke3wG8KKQApMvZuj1MGjDsIrlr+vfByCWyH9AXxr4UYzhppNdoJPSjbnE057OPRhjGAny4lY0tR7BTiJiPtnpSxgQMqMUE3rcAyJG8v+ksFxxNFi1zyB5gpA8Gna+NetqZqLqJ9oyKcH54AAA==",
+  "pos": "55% 58%",
+  "pos_src": "rostros"
  },
  "ichuac": {
   "w": 800,
@@ -317,7 +395,9 @@
   "big": false,
   "alt": "Iglesia de Ichuac en Isla Lemuy, con flores en primer plano",
   "src": "068_CoNghK3pF8c_1.webp",
-  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAAAQBQCdASoYABgAPu1oqVAppiOiqA1RMB2JagCdM3JBH2N/R0k1E0kt+OtiTgJuJRSgAOrMMu/HnxSsYw9XnZuwTf25h7HMoPWzHvmzgAb/KSNMX2LfXoUJO+plJSy6c412t1DOwPmRDEyBfvSeUEAxuh+hNTrde0bhfaamiCorxjYNeQQNkDxXL5gljOyjmb04vXKgpALkYtFEtQADKFH0GKVgaQMHXFlqorqR+FFbme/tsWFrdVCy9exwklqtDNQs4Kag5yQH9I/ukWJZyBA4gBAjHwAA"
+  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAAAQBQCdASoYABgAPu1oqVAppiOiqA1RMB2JagCdM3JBH2N/R0k1E0kt+OtiTgJuJRSgAOrMMu/HnxSsYw9XnZuwTf25h7HMoPWzHvmzgAb/KSNMX2LfXoUJO+plJSy6c412t1DOwPmRDEyBfvSeUEAxuh+hNTrde0bhfaamiCorxjYNeQQNkDxXL5gljOyjmb04vXKgpALkYtFEtQADKFH0GKVgaQMHXFlqorqR+FFbme/tsWFrdVCy9exwklqtDNQs4Kag5yQH9I/ukWJZyBA4gBAjHwAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "aldachildo": {
   "w": 1440,
@@ -325,7 +405,9 @@
   "big": true,
   "alt": "Iglesia de Aldachildo junto a su letrero",
   "src": "146_CgkTNHdpZEu_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAABQBQCdASoTABgAPu1urlIppiQiqAgBMB2JaACdMxgBISxco22iSOgEyrP0WowPzuMlgUAAzYb9lMCc25C9FN+Lx1bHNC/pDmnurF4PF1eXaAw8g4zkNHB15ztH319v93Hoz0H85mLfDcJeTdk8jj8tWG+PGSwkQjRP8SwNyHyC+eBeZBsuK+c20aeEDWYiBEphCHO/FwSf5+A+Sc3zLKD+N/b7gMjIqTaEX84mkBn+V6eh+YS3imL3za+cf4RogJAAAA=="
+  "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAABQBQCdASoTABgAPu1urlIppiQiqAgBMB2JaACdMxgBISxco22iSOgEyrP0WowPzuMlgUAAzYb9lMCc25C9FN+Lx1bHNC/pDmnurF4PF1eXaAw8g4zkNHB15ztH319v93Hoz0H85mLfDcJeTdk8jj8tWG+PGSwkQjRP8SwNyHyC+eBeZBsuK+c20aeEDWYiBEphCHO/FwSf5+A+Sc3zLKD+N/b7gMjIqTaEX84mkBn+V6eh+YS3imL3za+cf4RogJAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "acordeon": {
   "w": 1440,
@@ -333,7 +415,9 @@
   "big": true,
   "alt": "Don Sergio Colivoro tocando el acordeón en su museo de Chonchi",
   "src": "063_CoSaQgPJpD9_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAADwBQCdASoYABgAPu1ur1KppiQiqAgBMB2JagCdMuz6TtSApa3HSRHeNL4qFMNV+N6RTWP6d8AswAD+w3TrXGV5srFw+vUujeWE0bp04w3q/pPEjz9//zysQl/tbJX7u+HH7dg8fuTC1viUrBFQKFRrSDOJgiHAWXH/CKHA8slQvnRCQMKlOFgvvCLxOc0u06dnwuGMpxnqVmiNISmxyC1USiHrdxkslrZJp64iagtjw9ng9ww40jA4KSECWBTSDiex1LhJCyWEFl3H7UxNQuNLc30wJ783fnxwkr/Ib/Y9WcO/xCIAAA=="
+  "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAADwBQCdASoYABgAPu1ur1KppiQiqAgBMB2JagCdMuz6TtSApa3HSRHeNL4qFMNV+N6RTWP6d8AswAD+w3TrXGV5srFw+vUujeWE0bp04w3q/pPEjz9//zysQl/tbJX7u+HH7dg8fuTC1viUrBFQKFRrSDOJgiHAWXH/CKHA8slQvnRCQMKlOFgvvCLxOc0u06dnwuGMpxnqVmiNISmxyC1USiHrdxkslrZJp64iagtjw9ng9ww40jA4KSECWBTSDiex1LhJCyWEFl3H7UxNQuNLc30wJ783fnxwkr/Ib/Y9WcO/xCIAAA==",
+  "pos": "47% 18%",
+  "pos_src": "rostros"
  },
  "acordeones": {
   "w": 1440,
@@ -341,7 +425,9 @@
   "big": true,
   "alt": "Colección de acordeones del museo de don Sergio Colivoro",
   "src": "063_CoSaQgPJpD9_2.jpg",
-  "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABQBQCdASoYABgAPu1sqlGppaOiqAqpMB2JZgCuHAq3PLdKN33iDSZOOVOP+/vvZjG6YYAA/dJPbOb0Zkfxoo+q/L8/nHTyzOCrc+5lS5VIn7G91LCfFwIImbklCh/PpyUmXxf+uzW/w0cOGayK1jK8iXa4cd/8orBfwp6UA3NFbAGN4zqrzMWYUYCn+MokF7HhOOb5KYABradnuoxf38fHs8cqQiGPBajg51Han+XZxAj4HDANnAcBDAO0E+greqivgAAA"
+  "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABQBQCdASoYABgAPu1sqlGppaOiqAqpMB2JZgCuHAq3PLdKN33iDSZOOVOP+/vvZjG6YYAA/dJPbOb0Zkfxoo+q/L8/nHTyzOCrc+5lS5VIn7G91LCfFwIImbklCh/PpyUmXxf+uzW/w0cOGayK1jK8iXa4cd/8orBfwp6UA3NFbAGN4zqrzMWYUYCn+MokF7HhOOb5KYABradnuoxf38fHs8cqQiGPBajg51Han+XZxAj4HDANnAcBDAO0E+greqivgAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "asado-palo": {
   "w": 720,
@@ -349,7 +435,9 @@
   "big": false,
   "alt": "Corderos asándose al palo junto al fuego",
   "src": "018_C3sfzU7rL6O_1.webp",
-  "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAACwBQCdASoWABgAPu1qqU8ppiOiMBgIATAdiWwAv2eOgOjPAzCXzu5dpF15A5jMwV6tzU5iM9wA/vQf7dWz+1WmmfdSkDkv81glMeNBflkU5cG50JhmZzDc9/na9grhnZ+Nl4RkSd9S4GN2htJ3tdkko+5toq5G1R43aslSJE5HYrxdq4oCBNSyqDzsBCscTw+1Ask+m7pRuPcYh7D8GQEs95Q2qhxZLFDKsoNKHkB3Yz/P5gKUZnr2k2/BOSCYzvApXdtcAAA="
+  "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAACwBQCdASoWABgAPu1qqU8ppiOiMBgIATAdiWwAv2eOgOjPAzCXzu5dpF15A5jMwV6tzU5iM9wA/vQf7dWz+1WmmfdSkDkv81glMeNBflkU5cG50JhmZzDc9/na9grhnZ+Nl4RkSd9S4GN2htJ3tdkko+5toq5G1R43aslSJE5HYrxdq4oCBNSyqDzsBCscTw+1Ask+m7pRuPcYh7D8GQEs95Q2qhxZLFDKsoNKHkB3Yz/P5gKUZnr2k2/BOSCYzvApXdtcAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "asado-cordero": {
   "w": 1426,
@@ -357,7 +445,9 @@
   "big": true,
   "alt": "Asado de cordero al palo dorándose",
   "src": "129_CinoRzYOwAJ_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADwBACdASoTABgAPu1qrVCppaQiqAqpMB2JZACdIL/Bg+2yv/K+2wz/JYnbV1wIXpQA/vQqjqZISQi5DrQ+u3dOghn5lfCzDz/hwzIYSjIVn/coML4VxPjqp5lIoABZX8ox4833X1OwglmNCECF3NBE7zsMMJKAX2Aqqc2YYPoUzY8Dq8EY5Pj8foPjE+l1cz5Ufam1JrgelJaKkVWTCEXfgUUbNVUHch3f6vh+dJIuPSYQz11CyvPg2ivt1wAA"
+  "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADwBACdASoTABgAPu1qrVCppaQiqAqpMB2JZACdIL/Bg+2yv/K+2wz/JYnbV1wIXpQA/vQqjqZISQi5DrQ+u3dOghn5lfCzDz/hwzIYSjIVn/coML4VxPjqp5lIoABZX8ox4833X1OwglmNCECF3NBE7zsMMJKAX2Aqqc2YYPoUzY8Dq8EY5Pj8foPjE+l1cz5Ufam1JrgelJaKkVWTCEXfgUUbNVUHch3f6vh+dJIuPSYQz11CyvPg2ivt1wAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "detif": {
   "w": 800,
@@ -365,7 +455,9 @@
   "big": false,
   "alt": "Viajeros en la orilla de la playa de Detif",
   "src": "044_CoiJSB7p1QZ_1.webp",
-  "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBQCdASoYABQAPu1sq1EppaOiqAqpMB2JQBOmW+A1V+pDu030bCWppRf7BGJnSneUngAA/lt8qbPhGU0YLNIMT54cZdgdPNju7aRujiclu7q81Ww1RM7aK4VyNbidI2/HcJ72UClEnBhXS32JTi4pjvNGNFj4gVTnW3/8isViFG+gqjtx0duh4ko8a1wy5yOYkAIwJeEr6CsLQbPmyelBCrfoAAAA"
+  "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBQCdASoYABQAPu1sq1EppaOiqAqpMB2JQBOmW+A1V+pDu030bCWppRf7BGJnSneUngAA/lt8qbPhGU0YLNIMT54cZdgdPNju7aRujiclu7q81Ww1RM7aK4VyNbidI2/HcJ72UClEnBhXS32JTi4pjvNGNFj4gVTnW3/8isViFG+gqjtx0duh4ko8a1wy5yOYkAIwJeEr6CsLQbPmyelBCrfoAAAA",
+  "pos": "73% 57%",
+  "pos_src": "rostros"
  },
  "nercon": {
   "w": 1440,
@@ -373,7 +465,9 @@
   "big": true,
   "alt": "Iglesia de Nercón rodeada de jardines",
   "src": "045_Cohx2EDra_X_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAAAQBQCdASoYABgAPu1irVAppSQisBgIATAdiUAW2QIcdPdHuyxCkOBNucutE2+XV5aWAP5S3gbhUdmn2vVV8OL+k345XpraxjDW5Vv9qNZyBiSyhh10aXw9fCTZZ2lszvUpCwZrFkKQw8uk/NnsfXHUNdp7a/OqS2lk8l27+lNwnE7A90jEuG2jMoFU4X4N8hYmypYiIrIZtFxURvTUVRuUCfPRLjTPieSdyyjBz4UAYFQhi4gQ9WIfihnuh9zHVgcL+/xmSRIiWObQAAA="
+  "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAAAQBQCdASoYABgAPu1irVAppSQisBgIATAdiUAW2QIcdPdHuyxCkOBNucutE2+XV5aWAP5S3gbhUdmn2vVV8OL+k345XpraxjDW5Vv9qNZyBiSyhh10aXw9fCTZZ2lszvUpCwZrFkKQw8uk/NnsfXHUNdp7a/OqS2lk8l27+lNwnE7A90jEuG2jMoFU4X4N8hYmypYiIrIZtFxURvTUVRuUCfPRLjTPieSdyyjBz4UAYFQhi4gQ9WIfihnuh9zHVgcL+/xmSRIiWObQAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "nercon-2": {
   "w": 1300,
@@ -381,7 +475,9 @@
   "big": true,
   "alt": "Viajeros frente a la Iglesia de Nercón",
   "src": "110_Cj5jCEBj4PW_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABQBQCdASoTABgAPu1qr1CppiQiqAqpMB2JZAC1G47BoWK9civ2kOXhonP7nfB3DiOcbgAA/o2p4bApar0Z0cdA2wYGW1sZA/m6Ml7xTjLP7f7l80KbquKS4vJbSRlhVGykumUqmjQBAPqJwITpNVAqQSDdxkZV96HioQIRGzfSb//zV6KkwK4ip8jBEWOffv+g/vCYf6QvM9CYMQCtwc6mxdwIGq+LsgA="
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABQBQCdASoTABgAPu1qr1CppiQiqAqpMB2JZAC1G47BoWK9civ2kOXhonP7nfB3DiOcbgAA/o2p4bApar0Z0cdA2wYGW1sZA/m6Ml7xTjLP7f7l80KbquKS4vJbSRlhVGykumUqmjQBAPqJwITpNVAqQSDdxkZV96HioQIRGzfSb//zV6KkwK4ip8jBEWOffv+g/vCYf6QvM9CYMQCtwc6mxdwIGq+LsgA=",
+  "pos": "50% 96%",
+  "pos_src": "rostros"
  },
  "vilupulli": {
   "w": 1440,
@@ -389,7 +485,9 @@
   "big": true,
   "alt": "Iglesia de Vilupulli en lo alto de la loma",
   "src": "108_Cj8H_U0LdSp_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAADQBACdASoTABgAPuVgpU2pJaOiMAwBIByJQAAJUME23/TxG/Gdt8uqu7lKk8fcAAD+7V2MEtwv98AWU7YuImA5GqcDudFpzhQjioAVC5jajaI/1t5/XpaT26phjbpq2SXsegIcy3j8Vdh82FvyLQPhvam4h98La3umTgg8cTu8gtMLzryXeiW0h1RYpyNKSzQ8QXzcpAu86LATL7NmAAAA"
+  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAADQBACdASoTABgAPuVgpU2pJaOiMAwBIByJQAAJUME23/TxG/Gdt8uqu7lKk8fcAAD+7V2MEtwv98AWU7YuImA5GqcDudFpzhQjioAVC5jajaI/1t5/XpaT26phjbpq2SXsegIcy3j8Vdh82FvyLQPhvam4h98La3umTgg8cTu8gtMLzryXeiW0h1RYpyNKSzQ8QXzcpAu86LATL7NmAAAA",
+  "pos": "45% 100%",
+  "pos_src": "rostros"
  },
  "huillinco-lago": {
   "w": 800,
@@ -397,7 +495,9 @@
   "big": false,
   "alt": "Lago Huillinco con un muelle y piedras en la orilla",
   "src": "069_CoKib5DO6xt_1.webp",
-  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQBACdASoYABIAPu1mqk8ppaOiKA1RMB2JZwCo9BEZ7zoRQBjnMzpqUXUCEsAA/t7aYyLWSifTkkc/MgmsDVdnOSZRAE0zRk2OVmUMYMhRknZZdhJoaGKCikGXZcJV0fLVmyGl8v8WfeLwDxrqZbgtrwMlrwpt5KPxCCjz5rniEAAA"
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQBACdASoYABIAPu1mqk8ppaOiKA1RMB2JZwCo9BEZ7zoRQBjnMzpqUXUCEsAA/t7aYyLWSifTkkc/MgmsDVdnOSZRAE0zRk2OVmUMYMhRknZZdhJoaGKCikGXZcJV0fLVmyGl8v8WfeLwDxrqZbgtrwMlrwpt5KPxCCjz5rniEAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "cucao-humedal": {
   "w": 1440,
@@ -405,7 +505,9 @@
   "big": true,
   "alt": "Pasarela sobre el humedal del lago Cucao",
   "src": "097_CnP2iZYJSac_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAABwBQCdASoTABgAPu1mqU+ppaOiMBgIATAdiWgAuzM0P1bUyJez4yXkYVi7pBMfvwMCnvXIAP3h4/63436Sg09vdtpxwxTryItvlmHILyb4cmYjJK6QZ+6kgz/mQoJu6hNl+wkysvgO6cLqcbZpNaowNsJfs2R95wNZQ5iDAx2ubvlTn6m7yvGid8GVjDCgK1frD7q9/9BO2mwqCR700G070X/2YLRUgcMAcoINZk2uOEGVeCLU1a+75lZb6Ch8TZGo2FNJT8B3uTWi7zhiDiBJLalyPOQG74uoAA=="
+  "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAABwBQCdASoTABgAPu1mqU+ppaOiMBgIATAdiWgAuzM0P1bUyJez4yXkYVi7pBMfvwMCnvXIAP3h4/63436Sg09vdtpxwxTryItvlmHILyb4cmYjJK6QZ+6kgz/mQoJu6hNl+wkysvgO6cLqcbZpNaowNsJfs2R95wNZQ5iDAx2ubvlTn6m7yvGid8GVjDCgK1frD7q9/9BO2mwqCR700G070X/2YLRUgcMAcoINZk2uOEGVeCLU1a+75lZb6Ch8TZGo2FNJT8B3uTWi7zhiDiBJLalyPOQG74uoAA==",
+  "pos": "69% 80%",
+  "pos_src": "rostros"
  },
  "parque-bosque": {
   "w": 1440,
@@ -413,7 +515,9 @@
   "big": true,
   "alt": "Ramas de árboles nativos a contraluz en el Parque Nacional Chiloé",
   "src": "118_CjLtz3ppWg-_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABwBACdASoTABgAPu1urlIppiQiqAgBMB2JYwDLpY0CYX7aOFr2WPcxwASKIAD+SIiWNmEsRB7EonwMwK6+/9/Y9qtVuRx2B5atU1Q19PTA9R+tS4Eiq00mW2KQS+i1OmkbfC+nEYdK50xfFWuFY4eOnCTsAK/ZGsKV1+jufbKzxmQ2wpfj4IhtSgORIRF8G1bEAPyulN9v09aE/439u4+05ZBrDxzAiWSfsLrW/QJBxarEszBhg0hBRsjVgAAA"
+  "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABwBACdASoTABgAPu1urlIppiQiqAgBMB2JYwDLpY0CYX7aOFr2WPcxwASKIAD+SIiWNmEsRB7EonwMwK6+/9/Y9qtVuRx2B5atU1Q19PTA9R+tS4Eiq00mW2KQS+i1OmkbfC+nEYdK50xfFWuFY4eOnCTsAK/ZGsKV1+jufbKzxmQ2wpfj4IhtSgORIRF8G1bEAPyulN9v09aE/439u4+05ZBrDxzAiWSfsLrW/QJBxarEszBhg0hBRsjVgAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "parque-muelle": {
   "w": 1440,
@@ -421,7 +525,9 @@
   "big": true,
   "alt": "Muelle de madera sobre el lago en el Parque Nacional Chiloé",
   "src": "098_CnPzH5BpGOm_2.jpg",
-  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADQBACdASoTABgAPu1uqlGppiOiqAqpMB2JYwCw7A6+r56EouQyYeIxyp5vaAHDgAD9+5TtNrzZJkhO+rkOK/nimTo+JTO1uiUcoI6l/tIu4YJYGRcoHrrdzU247HgKDFhoDYZydg70SQ+HYVy8PAUQt/V3b3iBTdk0PsDJcHRrp150hPAAAA=="
+  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADQBACdASoTABgAPu1uqlGppiOiqAqpMB2JYwCw7A6+r56EouQyYeIxyp5vaAHDgAD9+5TtNrzZJkhO+rkOK/nimTo+JTO1uiUcoI6l/tIu4YJYGRcoHrrdzU247HgKDFhoDYZydg70SQ+HYVy8PAUQt/V3b3iBTdk0PsDJcHRrp150hPAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "murta": {
   "w": 1440,
@@ -429,7 +535,9 @@
   "big": true,
   "alt": "Flores anaranjadas de murta",
   "src": "119_CjLhMO5JcsM_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4ICgBAACwBwCdASoTABgAPu1qrlCppaQiqAqpMB2JbACdMoR9GIK2SMVq41vRabBvORXge5YWXvvDpECCDC5r4Gg13Fo65cWAjpawAP6/veHy9GiWrYxAdKQ/+V+nA49OGAIrGbdysiI/DPhT06huu44dIpJXNJzLwWDDkRZUKCzkPm8fp5hDWb/L4epnKBYOwJ444cq2OoFseOKKjHaiHlu/Ho5YuXw9tRqB5xkBHwKq/zc8JmRS/oN97pBduy/DUqwNQ35bP3GdErtvjfCiVaYnXt/5mhKlXgS/KQJJiOZdl+Rx3PYIgA9V6GFXuJ4rg+3nCzC1Geg/631k7dmf8AOygFb8PDpAwCexH+8eHtWF0rCRlN4ufaBkhOKO0nIr0eLoeTjLFIs1/OAAAA=="
+  "lqip": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4ICgBAACwBwCdASoTABgAPu1qrlCppaQiqAqpMB2JbACdMoR9GIK2SMVq41vRabBvORXge5YWXvvDpECCDC5r4Gg13Fo65cWAjpawAP6/veHy9GiWrYxAdKQ/+V+nA49OGAIrGbdysiI/DPhT06huu44dIpJXNJzLwWDDkRZUKCzkPm8fp5hDWb/L4epnKBYOwJ444cq2OoFseOKKjHaiHlu/Ho5YuXw9tRqB5xkBHwKq/zc8JmRS/oN97pBduy/DUqwNQ35bP3GdErtvjfCiVaYnXt/5mhKlXgS/KQJJiOZdl+Rx3PYIgA9V6GFXuJ4rg+3nCzC1Geg/631k7dmf8AOygFb8PDpAwCexH+8eHtWF0rCRlN4ufaBkhOKO0nIr0eLoeTjLFIs1/OAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "almas": {
   "w": 1197,
@@ -437,7 +545,9 @@
   "big": true,
   "alt": "Viajera en el extremo del Muelle de las Almas sobre el acantilado",
   "src": "062_CoStwAWp-mF_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADQBACdASoTABgAPu1qq0+ppiOiMBgIATAdiUAAEe6xR4ycbbPU+7+rCAj7XS/rAAD+6oNGQm653N2bHPs+dLe/awcX4dths+C3W265CUNPQ+Y8m2OpcMHeGg61CbPzKpALN1dM761T11XGrWLD4EAfK4oc6oVW3srmvXRlpkefsDgsMLDw61/e5IiHCzwA"
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADQBACdASoTABgAPu1qq0+ppiOiMBgIATAdiUAAEe6xR4ycbbPU+7+rCAj7XS/rAAD+6oNGQm653N2bHPs+dLe/awcX4dths+C3W265CUNPQ+Y8m2OpcMHeGg61CbPzKpALN1dM761T11XGrWLD4EAfK4oc6oVW3srmvXRlpkefsDgsMLDw61/e5IiHCzwA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "almas-2": {
   "w": 1080,
@@ -445,7 +555,9 @@
   "big": true,
   "alt": "Grupo caminando hacia el Muelle de las Almas",
   "src": "054_Coc_gyPJo9m_1.webp",
-  "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADQBACdASoTABgAPu1mqk8ppaOiKA1RMB2JYwCsMw6BrXGI8OuVtApSfoy/017v4AD+w5pH7FmZSMxfkh/dBZmsFyCKOR1dHD0wcVQ4osuxDUdlzTb6PHWjuAgD43yZzxGzrhDxGQhmzCdB/3PO637pYpdwemPkmmmc8SerywIHSzNFq6Z0XRUAAAA="
+  "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADQBACdASoTABgAPu1mqk8ppaOiKA1RMB2JYwCsMw6BrXGI8OuVtApSfoy/017v4AD+w5pH7FmZSMxfkh/dBZmsFyCKOR1dHD0wcVQ4osuxDUdlzTb6PHWjuAgD43yZzxGzrhDxGQhmzCdB/3PO637pYpdwemPkmmmc8SerywIHSzNFq6Z0XRUAAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "almas-pareja": {
   "w": 1080,
@@ -453,7 +565,9 @@
   "big": true,
   "alt": "Pareja abrazada en el Muelle de las Almas",
   "src": "035_Coxw4P2JMvV_1.webp",
-  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBQCdASoTABgAPu1iqE2ppaOiMAgBMB2JYwCdMswDTeplItm0HtkvaSzwLW/OQX8AAP7nKtQypcmCoQ1i9p81jZDmtYtxySquJHBm/PIBQt3Pu1A56FBTsylqb3n//ut5wHznxXvsPWI8ia0fGNuIgIt3CGVmyB7Ul/QAqbMRS6cMrVR8oRW+gAAAAA=="
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBQCdASoTABgAPu1iqE2ppaOiMAgBMB2JYwCdMswDTeplItm0HtkvaSzwLW/OQX8AAP7nKtQypcmCoQ1i9p81jZDmtYtxySquJHBm/PIBQt3Pu1A56FBTsylqb3n//ut5wHznxXvsPWI8ia0fGNuIgIt3CGVmyB7Ul/QAqbMRS6cMrVR8oRW+gAAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "almas-camino": {
   "w": 780,
@@ -461,7 +575,9 @@
   "big": false,
   "alt": "Cerros verdes y acantilados camino al Muelle de las Almas",
   "src": "056_Coahc9EJZ_c_1.webp",
-  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBQCdASoYABgAPulkq02pJaQiMBgMASAdCWYArDMYAambJU/rzUqJWtGWdtV2Dlm7Y8oAAP3coqk2q+Pn/rFMTFkr7HSaoW6600vN7QYFb7Bd6Oofe9XQRv7VkCBZpnh4p2WyK5uwGhrLoTNv2JnZCrlwfwgEc9ny7jVx89yYMTn7QgDRi0wCoz3t8yi4CzW2EQe3/rgSriQpzDOi8uoSECcAAA=="
+  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBQCdASoYABgAPulkq02pJaQiMBgMASAdCWYArDMYAambJU/rzUqJWtGWdtV2Dlm7Y8oAAP3coqk2q+Pn/rFMTFkr7HSaoW6600vN7QYFb7Bd6Oofe9XQRv7VkCBZpnh4p2WyK5uwGhrLoTNv2JnZCrlwfwgEc9ny7jVx89yYMTn7QgDRi0wCoz3t8yi4CzW2EQe3/rgSriQpzDOi8uoSECcAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "almas-grupo": {
   "w": 800,
@@ -469,7 +585,9 @@
   "big": false,
   "alt": "Grupo de viajeros en el campo frente a los acantilados de Cucao",
   "src": "048_CofpC7pJP77_1.webp",
-  "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAABwBQCdASoYABYAPu1mqk8ppaOiKA1RMB2JbAAALmrSCFqOhkaMcGbWZIbjgSn5ESe6iI8AAP3eCldyNFF0wJqMDweNQhCUFUJ2ONLLMI1zRsUemp2/uf7EamMV/5N7Pg2UD23/rxs5cPoYqmenxFBH7pcx2QQiMzhLhNzMcpGHmXC4EmYphKuoUhJGOaMPgWZPi4ZYR/xBmHihHQSBH92KePGjZWjB3zrVDVDMtYwLwdu4ZL7sGRBdUp/eV82hMoT72PKo19RS/MsEJViZSn5Lsur7yo1i5j0qhq8ylrhYoAAA"
+  "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAABwBQCdASoYABYAPu1mqk8ppaOiKA1RMB2JbAAALmrSCFqOhkaMcGbWZIbjgSn5ESe6iI8AAP3eCldyNFF0wJqMDweNQhCUFUJ2ONLLMI1zRsUemp2/uf7EamMV/5N7Pg2UD23/rxs5cPoYqmenxFBH7pcx2QQiMzhLhNzMcpGHmXC4EmYphKuoUhJGOaMPgWZPi4ZYR/xBmHihHQSBH92KePGjZWjB3zrVDVDMtYwLwdu4ZL7sGRBdUp/eV82hMoT72PKo19RS/MsEJViZSn5Lsur7yo1i5j0qhq8ylrhYoAAA",
+  "pos": "51% 81%",
+  "pos_src": "rostros"
  },
  "caleuche": {
   "w": 1440,
@@ -477,7 +595,9 @@
   "big": true,
   "alt": "Viajera en el Muelle del Caleuche frente a los islotes de Puñihuil",
   "src": "014_DFGp5BsSIpR_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABwBQCdASoTABgAPu1krFAppSQisBgIATAdiWgAnTMvwYKZ5BMS8md/q3maJHQ/O3bYXjGAAL2M1VN7GT2PEDghh2sdXEXf4QeUojM+usXsjS3/y89vIZNCI/HLCWsdAVIPSyoKh8N5Gqn5zd44BcwAY9h+vyOokm6TfdhCQp/Rv5TAOvGw0sowlyTYSwgI6jjpWKGgPNG90ds8Q33xx6phX3v7uxnkmAA="
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABwBQCdASoTABgAPu1krFAppSQisBgIATAdiWgAnTMvwYKZ5BMS8md/q3maJHQ/O3bYXjGAAL2M1VN7GT2PEDghh2sdXEXf4QeUojM+usXsjS3/y89vIZNCI/HLCWsdAVIPSyoKh8N5Gqn5zd44BcwAY9h+vyOokm6TfdhCQp/Rv5TAOvGw0sowlyTYSwgI6jjpWKGgPNG90ds8Q33xx6phX3v7uxnkmAA=",
+  "pos": "73% 100%",
+  "pos_src": "rostros"
  },
  "caleuche-2": {
   "w": 1440,
@@ -485,7 +605,9 @@
   "big": true,
   "alt": "Pareja sentada en el Muelle del Caleuche",
   "src": "014_DFGp5BsSIpR_3.jpg",
-  "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBQCdASoTABgAPu1kqk2ppaQiMAgBMB2JQBbZA9KWZVLqrw8QuUn7AVb9JKoJHdTQAP37o6XKAQ/iiNdoZLWFgsOSSzl4zL21rP0dcz5iTpuUH+wAP2xbi9jsk+gCe4OLKsGcvkN0nOiI3fmyPusMYb5fwD2eKzsfcC56kkjMqbmNya5zHvZ6Wp8JAi13clGJaZgsZo0U2eY4DHpAAA=="
+  "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBQCdASoTABgAPu1kqk2ppaQiMAgBMB2JQBbZA9KWZVLqrw8QuUn7AVb9JKoJHdTQAP37o6XKAQ/iiNdoZLWFgsOSSzl4zL21rP0dcz5iTpuUH+wAP2xbi9jsk+gCe4OLKsGcvkN0nOiI3fmyPusMYb5fwD2eKzsfcC56kkjMqbmNya5zHvZ6Wp8JAi13clGJaZgsZo0U2eY4DHpAAA==",
+  "pos": "46% 100%",
+  "pos_src": "rostros"
  },
  "punihuil-islote": {
   "w": 800,
@@ -493,7 +615,9 @@
   "big": false,
   "alt": "Islote rocoso de Puñihuil, hogar de los pingüinos",
   "src": "053_CodBEr_JqQ2_1.webp",
-  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBQCdASoYABEAPu1oq0+ppiOiMBgIATAdiWMAv1kgAYBEKuRYO5FLjQi3e6TW3GoAAP3ijn2UHcV3lSrNTyl2w0kBINn9qKKPWSwI5fkflAnAkOJZbuITloZj/Pu38BwPMPsWK8h07BzErvy3W4sHNtFFuW+FZsU0VCJyLM5z6VdM7fCJhwB/mQAAAA=="
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBQCdASoYABEAPu1oq0+ppiOiMBgIATAdiWMAv1kgAYBEKuRYO5FLjQi3e6TW3GoAAP3ijn2UHcV3lSrNTyl2w0kBINn9qKKPWSwI5fkflAnAkOJZbuITloZj/Pu38BwPMPsWK8h07BzErvy3W4sHNtFFuW+FZsU0VCJyLM5z6VdM7fCJhwB/mQAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "punihuil-bote": {
   "w": 780,
@@ -501,7 +625,9 @@
   "big": false,
   "alt": "Grupo con chalecos salvavidas antes de embarcar en Puñihuil",
   "src": "084_CnhfC0Tp5ti_2.jpg",
-  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAQBQCdASoYABIAPu1kq06ppaQiKA1RMB2JQBdjXSh5WIWXzUwkj3gHwXp+DOo8IrIAAP36PkGbb1V2ACvySrW5zc3U41BB4vBn1SpWwbvdc8XRwUntl50zvJG46k0w8sLuklBGcIJgTigpmU3D62vY4Ey3IQq2bAu8cNoD1kZt4yn/gNJcLBqzubv7K3YtC3pv0I7JFYdRvgRi/IhKKBnDiguD8C6hPqM0UGsllmAAAA=="
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAQBQCdASoYABIAPu1kq06ppaQiKA1RMB2JQBdjXSh5WIWXzUwkj3gHwXp+DOo8IrIAAP36PkGbb1V2ACvySrW5zc3U41BB4vBn1SpWwbvdc8XRwUntl50zvJG46k0w8sLuklBGcIJgTigpmU3D62vY4Ey3IQq2bAu8cNoD1kZt4yn/gNJcLBqzubv7K3YtC3pv0I7JFYdRvgRi/IhKKBnDiguD8C6hPqM0UGsllmAAAA==",
+  "pos": "28% 27%",
+  "pos_src": "rostros"
  },
  "punihuil-navega": {
   "w": 1440,
@@ -509,7 +635,9 @@
   "big": true,
   "alt": "Viajeros con chalecos navegando hacia las pingüineras",
   "src": "015_DE-2KRBSGZV_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAAAQBgCdASoTABgAPu1sq08ppiOiMBgIATAdiWwAnTLT9JiLc+2AehRgjnftRAPV/eGwCxf4qnB42YAA/iD1412VI4jGhUEw8GATyMvJTIIYDwXKFvnOmpSKksFxfuX/B+NnmUviuEUvcBdxEGkFE2a6FFmLXvMQplpaeFDaqXTaKFII5gUOOx5GLeXZKqjR1GQ+RjRM5Rga75+wpr91Z5llpFPDewfkf1f0kMo15IegCcaUO9S3QoMx2Qpu2w4raHvaDM/N3i8q6WT3WKTG9ycnIRIqAAAA"
+  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAAAQBgCdASoTABgAPu1sq08ppiOiMBgIATAdiWwAnTLT9JiLc+2AehRgjnftRAPV/eGwCxf4qnB42YAA/iD1412VI4jGhUEw8GATyMvJTIIYDwXKFvnOmpSKksFxfuX/B+NnmUviuEUvcBdxEGkFE2a6FFmLXvMQplpaeFDaqXTaKFII5gUOOx5GLeXZKqjR1GQ+RjRM5Rga75+wpr91Z5llpFPDewfkf1f0kMo15IegCcaUO9S3QoMx2Qpu2w4raHvaDM/N3i8q6WT3WKTG9ycnIRIqAAAA",
+  "pos": "48% 82%",
+  "pos_src": "rostros"
  },
  "punihuil-costa": {
   "w": 641,
@@ -517,7 +645,9 @@
   "big": false,
   "alt": "Costa rocosa de Puñihuil vista desde el bote",
   "src": "015_DE-2KRBSGZV_2.jpg",
-  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABwBACdASoTABgAPuVcpk2pJSOiMAwBIByJYgCo9A+NSpnDZzt2Of9PUuA/wADWhKrmPMkKl+p1hUWW1PZIH4oeZCvz7+o6eHdyIOnTNOrfL5depllPfSvralb8pWXJVDWrfqAZdYQqHrgj88UPB/PyjpoqKxXHhAr2YPhvB/OXMTNsTQAAAA=="
+  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABwBACdASoTABgAPuVcpk2pJSOiMAwBIByJYgCo9A+NSpnDZzt2Of9PUuA/wADWhKrmPMkKl+p1hUWW1PZIH4oeZCvz7+o6eHdyIOnTNOrfL5depllPfSvralb8pWXJVDWrfqAZdYQqHrgj88UPB/PyjpoqKxXHhAr2YPhvB/OXMTNsTQAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "curaco": {
   "w": 1440,
@@ -525,7 +655,9 @@
   "big": true,
   "alt": "Paseo borde costero de Curaco de Vélez",
   "src": "080_CnxK-gQpy7K_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAACQBACdASoTABgAPuVgp02pJaOiMAwBIByJZQCdACHFziMG4lS/ZWTiZ1U46zAA/t7MlTyncymn6m+pnh1HMMnkDMNjByAPRFv9AxxFxDdj26hyyKbXlE1EzyvkB5BQSpeaCVtGXFkm8Qp0jRtgj+LFh0p/CfAA"
+  "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAACQBACdASoTABgAPuVgp02pJaOiMAwBIByJZQCdACHFziMG4lS/ZWTiZ1U46zAA/t7MlTyncymn6m+pnh1HMMnkDMNjByAPRFv9AxxFxDdj26hyyKbXlE1EzyvkB5BQSpeaCVtGXFkm8Qp0jRtgj+LFh0p/CfAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "curaco-2": {
   "w": 642,
@@ -533,7 +665,9 @@
   "big": false,
   "alt": "Mirador sobre pilotes en el borde costero de Curaco de Vélez",
   "src": "080_CnxK-gQpy7K_4.jpg",
-  "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwBQCdASoTABgAPulep02pJSOiN/VYASAdCWMAt7gQ7DSYU/hOCioYzQm7SAmpL/oDwAD+6rn8T0JHMEADTK/1pOJ4xSHBdMjX8c+AAIpBz2lG5XXhcNK1z6tdifMW0PbtLDj6oMN5jAhe3l1H4GUGXUQdSPJbPXDNuaiq1lmLrRRCs6yw2I46Blmnx6rAwh9nazAA"
+  "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwBQCdASoTABgAPulep02pJSOiN/VYASAdCWMAt7gQ7DSYU/hOCioYzQm7SAmpL/oDwAD+6rn8T0JHMEADTK/1pOJ4xSHBdMjX8c+AAIpBz2lG5XXhcNK1z6tdifMW0PbtLDj6oMN5jAhe3l1H4GUGXUQdSPJbPXDNuaiq1lmLrRRCs6yw2I46Blmnx6rAwh9nazAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "mechuque": {
   "w": 720,
@@ -541,7 +675,9 @@
   "big": false,
   "alt": "Viajeros junto a la lancha antes de navegar a Isla Mechuque",
   "src": "025_C2VkISwpeib_1.webp",
-  "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAAAwBgCdASoYABgAPu1gqU2ppaQiMBgMATAdiWoAeM6HAjwAt605BTC5sVBuIbt9fwLKP83vNZUKTPXAAMpkFxjBHV990ybG38AMmsjq2zjv1K1hRkky+I7aR5x4iqx/9auX0CcH/w6aACmhbQkPYYNRnhz+gC2o5byrjZ28GbC9ylW7NZSEWBK4nILqlMWdMWbwsa+gstaVZcRmr0dHaDcx7b+nLMsolCNfugeimQDDP7h21Dqo3Jv1OgdF27coke5Hbugi/xqICDb6HsF7U2BRQAA="
+  "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAAAwBgCdASoYABgAPu1gqU2ppaQiMBgMATAdiWoAeM6HAjwAt605BTC5sVBuIbt9fwLKP83vNZUKTPXAAMpkFxjBHV990ybG38AMmsjq2zjv1K1hRkky+I7aR5x4iqx/9auX0CcH/w6aACmhbQkPYYNRnhz+gC2o5byrjZ28GbC9ylW7NZSEWBK4nILqlMWdMWbwsa+gstaVZcRmr0dHaDcx7b+nLMsolCNfugeimQDDP7h21Dqo3Jv1OgdF27coke5Hbugi/xqICDb6HsF7U2BRQAA=",
+  "pos": "28% 100%",
+  "pos_src": "rostros"
  },
  "palafitos": {
   "w": 1440,
@@ -549,7 +685,9 @@
   "big": true,
   "alt": "Palafitos de Castro reflejados en el agua",
   "src": "024_C2Xe1TkrsLX_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBQCdASoTABgAPu1qrFEppaQiqAqpMB2JZACxHzRCv+UB1whSBzXrLO58Q+8gHUBuBXAAAP65Dgd9an/3HMZEnvPfN5l2nV2z0pC4MkgL9nJxlV4wUHrSf4bgprUBa/WmcWvRW7uvnX0MzhGyUo06UxEi3qEe1Lvjavt8V8LfIl2PtYMJaRZzfPiYRxI2fcsGyKrLu0uhjhrabCVGsJBeeAAAAA=="
+  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBQCdASoTABgAPu1qrFEppaQiqAqpMB2JZACxHzRCv+UB1whSBzXrLO58Q+8gHUBuBXAAAP65Dgd9an/3HMZEnvPfN5l2nV2z0pC4MkgL9nJxlV4wUHrSf4bgprUBa/WmcWvRW7uvnX0MzhGyUo06UxEi3qEe1Lvjavt8V8LfIl2PtYMJaRZzfPiYRxI2fcsGyKrLu0uhjhrabCVGsJBeeAAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "quemchi": {
   "w": 800,
@@ -557,7 +695,9 @@
   "big": false,
   "alt": "Casa Museo Francisco Coloane en Quemchi",
   "src": "036_Coxv-bZpeEx_1.webp",
-  "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADQBACdASoYABEAPu1wsFKppiSiqAgBMB2JQBhWUAnHAZ3efgpXjD5HR1+5hXk4AAD9dGrysdTSONJip/SLi2CCvqO1YEibhcAtfQ2OybaauEcsj5Zj9DH0gg1VKwbTOFgN6nnlVwK0JJg8wgLqXcxJ3RGNMOPkgGk/RaGiMCbbSwsuEmpLm/TxdxpP7MOxN+4peCQ2jfhbETEpzDS4QaayuFtysiAA"
+  "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADQBACdASoYABEAPu1wsFKppiSiqAgBMB2JQBhWUAnHAZ3efgpXjD5HR1+5hXk4AAD9dGrysdTSONJip/SLi2CCvqO1YEibhcAtfQ2OybaauEcsj5Zj9DH0gg1VKwbTOFgN6nnlVwK0JJg8wgLqXcxJ3RGNMOPkgGk/RaGiMCbbSwsuEmpLm/TxdxpP7MOxN+4peCQ2jfhbETEpzDS4QaayuFtysiAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "colo": {
   "w": 1080,
@@ -565,7 +705,9 @@
   "big": true,
   "alt": "Iglesia de Colo con hortensias en primer plano",
   "src": "038_CovQwFDpMLb_1.webp",
-  "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAADwBQCdASoVABgAPu1ep06ppKMiMBgMATAdiWoAnTLPN6gQJAoJyCn4PCO0StCT/eMs+ldYXUaLAAD+6dMYHT34Dwfs002/9NfQEJH1cr4jhh6ew/d2xwm6q23MdKfTITomOO61Qj5sJZ2dCCMzFqqvH7BHqz6de5F1Iyu3gY07D7ZmnA7cNG1+FnxbY2x1CHkibkGylUTC0WfmipZTTHSF6sx0iM9MdMYIn+A6xngcnwFiX7+iTw+Hq7/jV4wjVTIjhFL9TyJ4Uc1aiKaVDtXmnvCbrcU8QH3CElwAAAA="
+  "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAADwBQCdASoVABgAPu1ep06ppKMiMBgMATAdiWoAnTLPN6gQJAoJyCn4PCO0StCT/eMs+ldYXUaLAAD+6dMYHT34Dwfs002/9NfQEJH1cr4jhh6ew/d2xwm6q23MdKfTITomOO61Qj5sJZ2dCCMzFqqvH7BHqz6de5F1Iyu3gY07D7ZmnA7cNG1+FnxbY2x1CHkibkGylUTC0WfmipZTTHSF6sx0iM9MdMYIn+A6xngcnwFiX7+iTw+Hq7/jV4wjVTIjhFL9TyJ4Uc1aiKaVDtXmnvCbrcU8QH3CElwAAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "nicolas-enrique": {
   "w": 799,
@@ -573,7 +715,9 @@
   "big": false,
   "alt": "El guía Nicolás junto a don Enrique y un grupo de viajeros",
   "src": "023_C2kmX0qxZ2a_1.webp",
-  "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAACQBQCdASoYABgAPu1qrFEppaQiqAqpMB2JbACpHKrVyecJUsZIhKMSAivtGaO+hkaOk1ta8AD+UViJ+LCBDxwdCHx6qi7TAowRipiGdtdaPEVe1hqlDyf38byZf8iD9vNBrDAOTwA9euS5SLAcr0I7xV/pP+uCwmFsgyMGaRCBvYgkOCrk6DFaCJw8cjOyB1jm1e3aemUOT3VhnbU2gcMe3XyOFnjxDwD+2uocHdANgQQaaRopA8rSprJAQ//S6fSAsN7+HT4ezHGtvE4HFr8b5deqx7LG0DUUjXvs4oAAAA=="
+  "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAACQBQCdASoYABgAPu1qrFEppaQiqAqpMB2JbACpHKrVyecJUsZIhKMSAivtGaO+hkaOk1ta8AD+UViJ+LCBDxwdCHx6qi7TAowRipiGdtdaPEVe1hqlDyf38byZf8iD9vNBrDAOTwA9euS5SLAcr0I7xV/pP+uCwmFsgyMGaRCBvYgkOCrk6DFaCJw8cjOyB1jm1e3aemUOT3VhnbU2gcMe3XyOFnjxDwD+2uocHdANgQQaaRopA8rSprJAQ//S6fSAsN7+HT4ezHGtvE4HFr8b5deqx7LG0DUUjXvs4oAAAA==",
+  "pos": "56% 50%",
+  "pos_src": "rostros"
  },
  "enrique": {
   "w": 780,
@@ -581,7 +725,9 @@
   "big": false,
   "alt": "Don Enrique de pie sobre una roca en Chepu",
   "src": "060_CoVaUkDJCUW_1.webp",
-  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBQCdASoYABgAPu1sqk8ppiOiMBgIATAdiWMAwoA0ZnWqP0DJXI+R3w/2Z0wAHSFAAP6MMejBmPELqR7Iqyq17eq+IkBEXyZneyKJQeTyoGrTFql5qxFj0/IejCUy/KgY2DZVLZmF7ihRIUq4Mmxym1SkDMdIPxqxYscwMvgAAA=="
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBQCdASoYABgAPu1sqk8ppiOiMBgIATAdiWMAwoA0ZnWqP0DJXI+R3w/2Z0wAHSFAAP6MMejBmPELqR7Iqyq17eq+IkBEXyZneyKJQeTyoGrTFql5qxFj0/IejCUy/KgY2DZVLZmF7ihRIUq4Mmxym1SkDMdIPxqxYscwMvgAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "grupo-van": {
   "w": 800,
@@ -589,7 +735,9 @@
   "big": false,
   "alt": "Grupo de viajeros sonriendo dentro de la van",
   "src": "006_DFxxLrjxYAC_1.webp",
-  "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAAAwBgCdASoYABIAPu1qrFEppaQiqAqpMB2JQBdmXqbzRXwYOb/z4oA/ASofea3nj7koOY+NVhXA0S4AAP7LzgqYGF8KUwb/olhg+bl5Z+z8QIDBYA5XfOBkSfyy0BZrndAHsh44uwRx6gb4efjOMoWDFbvlh3KwG4NyNU1WJLTjt2X5FC3LsXxjkrk1q6IHCOyJ5ZvjTqt+i8lNY108dDqauBy1yp+30n1kMo07PP1hRXxYGV+Zp/FBmqufY4RZ0Hq0XqVlRytQFCQx/5h0wEtctMVP6LedPpRorpiMfYGmgntiT6prhrnE5dchr9zAAAA="
+  "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAAAwBgCdASoYABIAPu1qrFEppaQiqAqpMB2JQBdmXqbzRXwYOb/z4oA/ASofea3nj7koOY+NVhXA0S4AAP7LzgqYGF8KUwb/olhg+bl5Z+z8QIDBYA5XfOBkSfyy0BZrndAHsh44uwRx6gb4efjOMoWDFbvlh3KwG4NyNU1WJLTjt2X5FC3LsXxjkrk1q6IHCOyJ5ZvjTqt+i8lNY108dDqauBy1yp+30n1kMo07PP1hRXxYGV+Zp/FBmqufY4RZ0Hq0XqVlRytQFCQx/5h0wEtctMVP6LedPpRorpiMfYGmgntiT6prhrnE5dchr9zAAAA=",
+  "pos": "46% 36%",
+  "pos_src": "rostros"
  },
  "grupo-almuerzo": {
   "w": 800,
@@ -597,7 +745,9 @@
   "big": false,
   "alt": "Grupo de viajeros almorzando juntos",
   "src": "006_DFxxLrjxYAC_3.webp",
-  "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAADQBACdASoYABIAPu1sq1EppaOiqAqpMB2JZgC7My/A8eWtM8dX7R/mmBfno+YWwADfiK/QtR6sPR2RCm01t1giTDxgF/tCqva8mRu+j6d3qAg8riRjyBsaLZNWTTgXNzUtVw9/prKdLpwIO0N4lO2pOPoeSO+r24NPANMIsMByHZ3mM7vC5pvD7v7rp2oezBjU4bsURrjeYSOQcpC54iN2xVFOxMDDJgRz+34go58+N/TX46BFX0E19txt7iwKpFWNwrtqxvwrWew7swAAAA=="
+  "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAADQBACdASoYABIAPu1sq1EppaOiqAqpMB2JZgC7My/A8eWtM8dX7R/mmBfno+YWwADfiK/QtR6sPR2RCm01t1giTDxgF/tCqva8mRu+j6d3qAg8riRjyBsaLZNWTTgXNzUtVw9/prKdLpwIO0N4lO2pOPoeSO+r24NPANMIsMByHZ3mM7vC5pvD7v7rp2oezBjU4bsURrjeYSOQcpC54iN2xVFOxMDDJgRz+34go58+N/TX46BFX0E19txt7iwKpFWNwrtqxvwrWew7swAAAA==",
+  "pos": "46% 21%",
+  "pos_src": "rostros"
  },
  "grupo-columpios": {
   "w": 800,
@@ -605,7 +755,9 @@
   "big": false,
   "alt": "Grupo de viajeros en los columpios de un mirador",
   "src": "092_CnXXEz2JMJd_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZACdAdwA8NGUOOZfPF70ZHbzUAD+34gUuoqkDq8dDxQM8aqoxjeY4I0mowhcSZgIoMDMH7Qx88G7z0RuCzE8CcvaRG6HIOtI8Ji/EACmpqU/3Kf6kCVSnrcqbLKhCxy2yq3pUXSJJxjbLkhdzD8tRYUJihKGHuAP4WB8cpFY8AAA"
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZACdAdwA8NGUOOZfPF70ZHbzUAD+34gUuoqkDq8dDxQM8aqoxjeY4I0mowhcSZgIoMDMH7Qx88G7z0RuCzE8CcvaRG6HIOtI8Ji/EACmpqU/3Kf6kCVSnrcqbLKhCxy2yq3pUXSJJxjbLkhdzD8tRYUJihKGHuAP4WB8cpFY8AAA",
+  "pos": "50% 34%",
+  "pos_src": "rostros"
  },
  "grupo-lemuy": {
   "w": 780,
@@ -613,7 +765,9 @@
   "big": false,
   "alt": "Viajeros saltando en un mirador de Isla Lemuy",
   "src": "104_ClWhnHApiAk_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASoYABIAPu1qrVCppaQiqAqpMB2JYgCnFA9jVpe6mtfmcnj+qqAqfgk/9wAA8oNx/yMg/4vh5KN9Dnb1evVAfs0G/rovC4A557GErtZW2bIzbE1vAbvY3y3AVxjFqSq3bHIGMYQdOFsYuzFzi+BaTnaDCZrnrJ1gsQEKWAFR5Rb/DusjqvR7u7ehp+gzyDryLL9xOX2GJM5yyVHsulsPJPm4HyWR/HgA"
+  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASoYABIAPu1qrVCppaQiqAqpMB2JYgCnFA9jVpe6mtfmcnj+qqAqfgk/9wAA8oNx/yMg/4vh5KN9Dnb1evVAfs0G/rovC4A557GErtZW2bIzbE1vAbvY3y3AVxjFqSq3bHIGMYQdOFsYuzFzi+BaTnaDCZrnrJ1gsQEKWAFR5Rb/DusjqvR7u7ehp+gzyDryLL9xOX2GJM5yyVHsulsPJPm4HyWR/HgA",
+  "pos": "52% 58%",
+  "pos_src": "rostros"
  },
  "nieve": {
   "w": 640,
@@ -621,7 +775,9 @@
   "big": false,
   "alt": "Grupo de viajeros en la nieve junto a la van, en el viaje a Bariloche",
   "src": "030_Czg_A1gJXfI_6.jpg",
-  "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAADwBACdASoTABgAPu1oqk2ppiQiMAgBMB2JQBZwMY7b4m8sEj5QXD+lMBaPPiiMqiAA3U1tz6G6vlTPfAJExOHgvZuoozzcVE+Lv/2Kos8Ghu4zEf9Pynay2mDprDQjhrxhTx8rUM80iyauw2V4/RwM6QMKVaaOj/u3bI5iRBHMTQmGrdInWDsQDK6cwAwHL8UvnpClDLEQy8QKxaLZv/VZj8ly5IdWXHS6WRGP7p6neW7lo60MrGAA"
+  "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAADwBACdASoTABgAPu1oqk2ppiQiMAgBMB2JQBZwMY7b4m8sEj5QXD+lMBaPPiiMqiAA3U1tz6G6vlTPfAJExOHgvZuoozzcVE+Lv/2Kos8Ghu4zEf9Pynay2mDprDQjhrxhTx8rUM80iyauw2V4/RwM6QMKVaaOj/u3bI5iRBHMTQmGrdInWDsQDK6cwAwHL8UvnpClDLEQy8QKxaLZv/VZj8ly5IdWXHS6WRGP7p6neW7lo60MrGAA",
+  "pos": "32% 78%",
+  "pos_src": "rostros"
  },
  "nieve-2": {
   "w": 640,
@@ -629,7 +785,9 @@
   "big": false,
   "alt": "Viajera con los brazos abiertos en la nieve, en el viaje a Bariloche",
   "src": "030_Czg_A1gJXfI_5.jpg",
-  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwBACdASoTABgAPu1eqk2ppKQiMBgMATAdiWcAyywQ7kA75GJ1dIxBcgN+4tn+uPQA/uq0TZWV+fJ7vOTSgG4RW6r8WKdbOebK6Xe1+Nm4DXuZ4QwTZtgyRZ5xHdZ1tZnKSy0nRaoNfZjU4EjO90QJhjgjfDTb80TiTB+EvSwK6iFi5s8nUtxEhC/HbP/B8m9WLXEAAAA="
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwBACdASoTABgAPu1eqk2ppKQiMBgMATAdiWcAyywQ7kA75GJ1dIxBcgN+4tn+uPQA/uq0TZWV+fJ7vOTSgG4RW6r8WKdbOebK6Xe1+Nm4DXuZ4QwTZtgyRZ5xHdZ1tZnKSy0nRaoNfZjU4EjO90QJhjgjfDTb80TiTB+EvSwK6iFi5s8nUtxEhC/HbP/B8m9WLXEAAAA=",
+  "pos": "39% 54%",
+  "pos_src": "rostros"
  },
  "valdivia": {
   "w": 581,
@@ -637,7 +795,9 @@
   "big": false,
   "alt": "Grupo de viajeros frente al letrero de Niebla y Valdivia",
   "src": "016_C66lvC4rqe__1.jpg",
-  "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACwBACdASoYABgAPu1qrlCppaQiqAqpMB2JQBWGcdg1LwfV5MZhvWs2qoAJCuAAAP6x9ZqMLRsK9+yykm2bbMRw6R1lVsG3vQWZFsxFAF6AWMavr4o6323SnsAhoqSuCK84JHgO9zm3Fk3K2B53+mV/i596bk1aYWQHj6wQ5AweIvc+Ox/R+04syziwLRVKpVB/4bGOdx2wEH2v8YzXU2+E08VApl91xpNSHfIv8if24TjwDtp39UAAAAA="
+  "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACwBACdASoYABgAPu1qrlCppaQiqAqpMB2JQBWGcdg1LwfV5MZhvWs2qoAJCuAAAP6x9ZqMLRsK9+yykm2bbMRw6R1lVsG3vQWZFsxFAF6AWMavr4o6323SnsAhoqSuCK84JHgO9zm3Fk3K2B53+mV/i596bk1aYWQHj6wQ5AweIvc+Ox/R+04syziwLRVKpVB/4bGOdx2wEH2v8YzXU2+E08VApl91xpNSHfIv8if24TjwDtp39UAAAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "valdivia-2": {
   "w": 581,
@@ -645,7 +805,9 @@
   "big": false,
   "alt": "Viajeros en el muelle frente al río en Valdivia",
   "src": "016_C66lvC4rqe__4.jpg",
-  "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAADQBQCdASoYABgAPu1osFAppaSiqAqpMB2JbACdMtDvXIsY92piIx+J/j95M5sJwxvqMLH1QKgAAN5W/u3ffbVF84iffYjqJ65W9YVAMkPpmpigVWSKTnUOmt/9PzLsCPJRGBONcy43G/28zfzZnnC/ygDz9Rc/Jjw/MTdhsr5sURwhyHoA6p0k7vE9UAEsrRclNtYOVnOS6e3u0cwV3/jQvO2h+8QKhQ/0maEN6wJshiboVbAhz8o0Qs2ZO6WxsEjWKnqC3k6FfNS3FPl50WjbQz0lqXiAa7KMgDtUuxgVYqnTca7Ex5Z+UuHa0wAA"
+  "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAADQBQCdASoYABgAPu1osFAppaSiqAqpMB2JbACdMtDvXIsY92piIx+J/j95M5sJwxvqMLH1QKgAAN5W/u3ffbVF84iffYjqJ65W9YVAMkPpmpigVWSKTnUOmt/9PzLsCPJRGBONcy43G/28zfzZnnC/ygDz9Rc/Jjw/MTdhsr5sURwhyHoA6p0k7vE9UAEsrRclNtYOVnOS6e3u0cwV3/jQvO2h+8QKhQ/0maEN6wJshiboVbAhz8o0Qs2ZO6WxsEjWKnqC3k6FfNS3FPl50WjbQz0lqXiAa7KMgDtUuxgVYqnTca7Ex5Z+UuHa0wAA",
+  "pos": "46% 9%",
+  "pos_src": "rostros"
  },
  "minga": {
   "w": 800,
@@ -653,7 +815,9 @@
   "big": false,
   "alt": "Minga tiradura de casa: bueyes tirando una casa por la playa de Liucura",
   "src": "066_CoQT72DpC85_1.webp",
-  "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAQBQCdASoYABIAPu1orFCppaQiqAqpMB2JYgC/VX+gONUJ2YaCCTEfZEgGhuMkbFeAAMpo+X5qs/SgaSVttsuSKA3xXScOdY7HkC+Tz2QpLvw7M2Fs/jk+eGh4dAX7mOxMJxxApzQIk5dDTtYowdmeopKW1U+cYBitP8LXqcRCdZwqcEHLaBDWpkFDX7VcBco0MsQdCr1URBzR/tRNiwFpQZvPdmX32pCw33S2xEJBnZkAAAAAAA=="
+  "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAQBQCdASoYABIAPu1orFCppaQiqAqpMB2JYgC/VX+gONUJ2YaCCTEfZEgGhuMkbFeAAMpo+X5qs/SgaSVttsuSKA3xXScOdY7HkC+Tz2QpLvw7M2Fs/jk+eGh4dAX7mOxMJxxApzQIk5dDTtYowdmeopKW1U+cYBitP8LXqcRCdZwqcEHLaBDWpkFDX7VcBco0MsQdCr1URBzR/tRNiwFpQZvPdmX32pCw33S2xEJBnZkAAAAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "familia-sillas": {
   "w": 1440,
@@ -661,7 +825,9 @@
   "big": true,
   "alt": "Viajeras sentadas en sillas blancas en un bosque de pinos de Lemuy",
   "src": "008_DFokIV1NnaP_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAACwBACdASoTABgAPu1srlKppaQiqAgBMB2JZQDE2A3mRJs2QSfq7BhR+jqUMFwAAPWQ5jz/AGPzAv/RkdN3K/gmXDJQbwcZYh/xYtgxCNRf2EaRQ0W0m9vzPtXZVBaEATsCr15MaaypXGy21Ax3ipFnO/M5fLsSb8Z7yMfsAMeY6Ief1W9KW9OgVW6JLifJD51g2ciEZJ++VxwZ03u6WIrw4I1r6QtLjFMsCLy/rkAAAA=="
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAACwBACdASoTABgAPu1srlKppaQiqAgBMB2JZQDE2A3mRJs2QSfq7BhR+jqUMFwAAPWQ5jz/AGPzAv/RkdN3K/gmXDJQbwcZYh/xYtgxCNRf2EaRQ0W0m9vzPtXZVBaEATsCr15MaaypXGy21Ax3ipFnO/M5fLsSb8Z7yMfsAMeY6Ief1W9KW9OgVW6JLifJD51g2ciEZJ++VxwZ03u6WIrw4I1r6QtLjFMsCLy/rkAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "pareja-columpio": {
   "w": 640,
@@ -669,7 +835,9 @@
   "big": true,
   "alt": "Viajera con alas en el columpio del Muelle de los Brujos",
   "src": "009_DFmD1CSNg9O_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoOABgAPu1mqk4ppaOiMAgBMB2JbACdAGh7MwOqeY2KzAAA/stat5HYXJGSfUBi41lleXdUPyPQzpQuJv/jeP9d38WXKDB338W/sj9KkHpNsozB1sOr8TpyHUcMznwpj4Cb+7wH/zgEGwIQAAA="
+  "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoOABgAPu1mqk4ppaOiMAgBMB2JbACdAGh7MwOqeY2KzAAA/stat5HYXJGSfUBi41lleXdUPyPQzpQuJv/jeP9d38WXKDB338W/sj9KkHpNsozB1sOr8TpyHUcMznwpj4Cb+7wH/zgEGwIQAAA=",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "minga-bueyes": {
   "w": 640,
@@ -677,7 +845,9 @@
   "big": true,
   "alt": "Bueyes chilotes en el camino de Isla Lemuy",
   "src": "011_DFeNTBstlH7_1.jpg",
-  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoOABgAPu1iqU2ppaOiMAgBMB2JaACdL1yA1S0A6wCnLN1WVwgAt04XlRH78qLG1lezWlgG5DfMOpQb1wdvxQw7yA7ETX15ox6+wn60mVk4ApAdb9sliIDBeaRmK7vruN5noBU0uhh3wzumvmElaVzhFlYinfWI17c5AAAA"
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoOABgAPu1iqU2ppaOiMAgBMB2JaACdL1yA1S0A6wCnLN1WVwgAt04XlRH78qLG1lezWlgG5DfMOpQb1wdvxQw7yA7ETX15ox6+wn60mVk4ApAdb9sliIDBeaRmK7vruN5noBU0uhh3wzumvmElaVzhFlYinfWI17c5AAAA",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "lemuy-bosque": {
   "w": 1440,
@@ -685,7 +855,20 @@
   "big": true,
   "alt": "Bosque de árboles cubiertos de musgo en Isla Lemuy",
   "src": "081_CnpuJx0JfXn_2.jpg",
-  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAQBQCdASoTABgAPu1qq1EppaOiqAqpMB2JYwC+SA0ltY9YUjrYyZSsrLzjDPRCD+YgAPn3Ki0fpDnKSwlmpFiXfgoU03vZWFWSdU0sU+RjpmOAr9cb84tR+dQ1ffDMCxjJ4FHZyPXN4VywWBGt96Uks/+VMdn6NK0dlSQAXPRhJxwNAmVr1D7h4hmwOJigiSAQsA2LkR9i91eHMtIXPaxTVkmEpUJVZL6wxNgSSAAAAA=="
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAQBQCdASoTABgAPu1qq1EppaOiqAqpMB2JYwC+SA0ltY9YUjrYyZSsrLzjDPRCD+YgAPn3Ki0fpDnKSwlmpFiXfgoU03vZWFWSdU0sU+RjpmOAr9cb84tR+dQ1ffDMCxjJ4FHZyPXN4VywWBGt96Uks/+VMdn6NK0dlSQAXPRhJxwNAmVr1D7h4hmwOJigiSAQsA2LkR9i91eHMtIXPaxTVkmEpUJVZL6wxNgSSAAAAA==",
+  "pos": "50% 42%",
+  "pos_src": "centro"
+ },
+ "osorno": {
+  "w": 1800,
+  "h": 1285,
+  "big": true,
+  "alt": "Volcán Osorno nevado sobre los Saltos del Petrohué",
+  "src": "../cc/osorno_alexmrz.jpg",
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAQBQCdASoYABEAPu1qrlCppaQiqAqpMB2JYgC1G2QBGTnAbpctrcO6SRnHJhAbW6wAAP3u71GCoBMRhTeUJ4HQKOxFn6Tjf86ZE9ggDXCoQrXdVv689rCLLyrsAUon4En3lshiFxDHd3oFEa0ZnJQvnBHGwz8aAbxyuWwBVzJnibHil3gp/47eqMIVlvnLvp8d0c0bh2cXC8tgCDCujgdwd/Un/3koLBhJSDlgveEAAA==",
+  "credit": "Foto: Alexmrz · CC BY-SA 4.0 · Wikimedia Commons|https://commons.wikimedia.org/wiki/File:Saltos_del_Petrohu%C3%A9_y_Volc%C3%A1n_Osorno.jpg",
+  "pos": "50% 42%",
+  "pos_src": "centro"
  },
  "_videos": {
   "isla": {
