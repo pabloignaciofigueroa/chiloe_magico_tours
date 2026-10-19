@@ -1,0 +1,11 @@
+assets/raw/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+_qa/
+dossier/*.pdf
+dossier/*.html
+dossier/shots/
+dossier/pages/
+dossier/png/
