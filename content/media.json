@@ -1,0 +1,365 @@
+{
+ "_nota": "Selección curada (fase 7). Solo fotos publicadas por @chiloemagicotour (sin colaboraciones ajenas, sin piezas con texto encima). key → archivo en assets/raw/ig, alt ES; el alt EN está en tools/alt-en.json.",
+ "images": {
+  "huillinco-columpio": [
+   "134_ChpjPePu4_c_1.jpg",
+   "Columpio sobre el lago Huillinco, con cerros al fondo y el agua quieta"
+  ],
+  "punihuil-bahia": [
+   "122_CjJN6MWp3TW_1.jpg",
+   "Bahía de Puñihuil con sus islotes, la playa y casas de pescadores"
+  ],
+  "muelle-luz-oceano": [
+   "120_CjLbJxIL7Vk_1.jpg",
+   "Muelle de la Luz frente al océano Pacífico en Chepu"
+  ],
+  "ancud-atardecer": [
+   "141_Cg7tpi9JRyW_1.jpg",
+   "Atardecer nublado sobre la costanera de Ancud"
+  ],
+  "pasarela-aucar": [
+   "139_ChQRZIiJ6F0_1.jpg",
+   "Pareja caminando por la pasarela de madera hacia la Isla Aucar"
+  ],
+  "huillinco-pareja": [
+   "111_Cj0sWCmpK5U_1.jpg",
+   "Columpio de los enamorados en el lago Huillinco"
+  ],
+  "vans": [
+   "095_CnSUzJQpV2s_1.jpg",
+   "Tres vans blancas de la agencia estacionadas junto al mar"
+  ],
+  "hueñay-playa": [
+   "072_CoIdGjBJt3P_1.jpg",
+   "Dos viajeras sentadas en la playa de Hueñay, en Isla Lemuy"
+  ],
+  "chonchi": [
+   "090_CnZiCvGuuEi_1.jpg",
+   "Viajeros recorriendo una calle de Chonchi"
+  ],
+  "muelle-almas-cielo": [
+   "099_CnPOwu1uURj_1.jpg",
+   "Viajeros sentados en un mirador de madera frente al lago"
+  ],
+  "aucar-isla": [
+   "105_ClCCavgJvul_1.jpg",
+   "La Isla Aucar unida a tierra por su larga pasarela"
+  ],
+  "muelle-luz-grupo": [
+   "116_CjRHcuZpVl1_1.jpg",
+   "Dos viajeros sentados al borde de un muelle rústico sobre el mar en Chepu"
+  ],
+  "muelle-luz-mirador": [
+   "116_CjRHcuZpVl1_3.jpg",
+   "Viajera en el extremo del Muelle de la Luz sobre el océano"
+  ],
+  "muelle-luz-sendero": [
+   "116_CjRHcuZpVl1_7.jpg",
+   "Sendero entre pastizales hacia el Muelle de la Luz"
+  ],
+  "punihuil-playa": [
+   "117_CjOOsHopSD2_1.jpg",
+   "Playa de Puñihuil con sus islotes rocosos"
+  ],
+  "pincoya": [
+   "133_Ch2jaZlJo-l_1.jpg",
+   "Viajera junto a la escultura de la Pincoya frente al mar"
+  ],
+  "curanto-hoyo": [
+   "085_CnfEHvnJGjB_1.jpg",
+   "Preparación del curanto en hoyo, con mariscos sobre las piedras calientes"
+  ],
+  "curanto-hojas": [
+   "085_CnfEHvnJGjB_2.jpg",
+   "Curanto cubierto con hojas de pangue antes del tapado"
+  ],
+  "curanto-mesa": [
+   "085_CnfEHvnJGjB_3.jpg",
+   "Viajeros almorzando curanto en una mesa larga"
+  ],
+  "curanto-destape": [
+   "086_CncSVLsO2ZK_1.jpg",
+   "Destape del curanto entre el humo"
+  ],
+  "curanto-papas": [
+   "086_CncSVLsO2ZK_4.jpg",
+   "Papas y mariscos recién sacados del curanto"
+  ],
+  "curanto-fuego": [
+   "034_CpDim88Jxd6_1.webp",
+   "Cocineras tapando el curanto en hoyo"
+  ],
+  "tenaun": [
+   "061_CoVXWGPpfbg_1.webp",
+   "Iglesia de Tenaún, azul y blanca con sus tres torres"
+  ],
+  "tenaun-aereo": [
+   "124_CjD7RmBJxon_1.jpg",
+   "Vista alta del pueblo de Tenaún y su iglesia"
+  ],
+  "tocoihue": [
+   "123_CjIzXy_rx1u_1.jpg",
+   "Cascada de Tocoihue cayendo entre el bosque"
+  ],
+  "tocoihue-viajeros": [
+   "123_CjIzXy_rx1u_4.jpg",
+   "Viajeros frente a la Cascada de Tocoihue"
+  ],
+  "aucar-pasarela": [
+   "046_CohwSnHLM9N_1.webp",
+   "Pasarela de madera hacia la Isla Aucar"
+  ],
+  "dalcahue": [
+   "087_CncAD0Mu-61_1.jpg",
+   "Iglesia de Dalcahue con su pórtico de arcos"
+  ],
+  "dalcahue-feria": [
+   "010_DFifUO7R-AA_4.webp",
+   "Viajeros en la Feria Artesanal de Dalcahue"
+  ],
+  "quicavi": [
+   "102_CnKe5nXprqp_1.jpg",
+   "Muelle largo de Quicaví hacia el mar"
+  ],
+  "molinos-mirador": [
+   "043_Coia0jrpXRQ_1.webp",
+   "Mirador de Los Molinos sobre el mar interior"
+  ],
+  "brujos-columpio": [
+   "127_CiyGhUcJrNk_1.jpg",
+   "Viajero en el columpio del Muelle de los Brujos, recortado contra el cielo"
+  ],
+  "brujos-columpio-2": [
+   "135_ChgOH8iNXbA_3.jpg",
+   "Columpio del Muelle de los Brujos con el mar al fondo"
+  ],
+  "brujos-vuelo": [
+   "070_CoItypHp5Jo_1.webp",
+   "Viajeros saltando con escobas en el Muelle de los Brujos"
+  ],
+  "brujos-alas": [
+   "088_CnaERNMJ1mk_2.jpg",
+   "Viajeros posando con alas de ángel y demonio en el Muelle de los Brujos"
+  ],
+  "brujos-atardecer": [
+   "074_Cn-UDUppH4t_1.jpg",
+   "Atardecer en el Muelle de los Brujos"
+  ],
+  "yayanes-puente": [
+   "076_Cn7nJEHJOlu_1.jpg",
+   "Puente colgante del Parque Yayanes sobre la quebrada"
+  ],
+  "yayanes-bosque": [
+   "067_CoQK0i0Jhbo_1.webp",
+   "Sendero del Parque Yayanes entre arrayanes"
+  ],
+  "yayanes-cascada": [
+   "059_CoVbzd9p64F_1.jpg",
+   "Familia junto a la cascada del Parque Yayanes"
+  ],
+  "ichuac": [
+   "068_CoNghK3pF8c_1.webp",
+   "Iglesia de Ichuac en Isla Lemuy, con flores en primer plano"
+  ],
+  "aldachildo": [
+   "146_CgkTNHdpZEu_1.jpg",
+   "Iglesia de Aldachildo junto a su letrero"
+  ],
+  "acordeon": [
+   "063_CoSaQgPJpD9_1.jpg",
+   "Don Sergio Colivoro tocando el acordeón en su museo de Chonchi"
+  ],
+  "acordeones": [
+   "063_CoSaQgPJpD9_2.jpg",
+   "Colección de acordeones del museo de don Sergio Colivoro"
+  ],
+  "asado-palo": [
+   "018_C3sfzU7rL6O_1.webp",
+   "Corderos asándose al palo junto al fuego"
+  ],
+  "asado-cordero": [
+   "129_CinoRzYOwAJ_1.jpg",
+   "Asado de cordero al palo dorándose"
+  ],
+  "detif": [
+   "044_CoiJSB7p1QZ_1.webp",
+   "Viajeros en la orilla de la playa de Detif"
+  ],
+  "nercon": [
+   "045_Cohx2EDra_X_1.jpg",
+   "Iglesia de Nercón rodeada de jardines"
+  ],
+  "nercon-2": [
+   "110_Cj5jCEBj4PW_1.jpg",
+   "Viajeros frente a la Iglesia de Nercón"
+  ],
+  "vilupulli": [
+   "108_Cj8H_U0LdSp_1.jpg",
+   "Iglesia de Vilupulli en lo alto de la loma"
+  ],
+  "huillinco-lago": [
+   "069_CoKib5DO6xt_1.webp",
+   "Lago Huillinco con un muelle y piedras en la orilla"
+  ],
+  "cucao-humedal": [
+   "097_CnP2iZYJSac_1.jpg",
+   "Pasarela sobre el humedal del lago Cucao"
+  ],
+  "parque-bosque": [
+   "081_CnpuJx0JfXn_2.jpg",
+   "Bosque de arrayanes del Parque Nacional Chiloé"
+  ],
+  "parque-muelle": [
+   "098_CnPzH5BpGOm_2.jpg",
+   "Muelle de madera sobre el lago en el Parque Nacional Chiloé"
+  ],
+  "murta": [
+   "119_CjLhMO5JcsM_1.jpg",
+   "Flores anaranjadas de murta"
+  ],
+  "almas": [
+   "062_CoStwAWp-mF_1.jpg",
+   "Viajera en el extremo del Muelle de las Almas sobre el acantilado"
+  ],
+  "almas-2": [
+   "054_Coc_gyPJo9m_1.webp",
+   "Grupo caminando hacia el Muelle de las Almas"
+  ],
+  "almas-pareja": [
+   "035_Coxw4P2JMvV_1.webp",
+   "Pareja abrazada en el Muelle de las Almas"
+  ],
+  "almas-camino": [
+   "056_Coahc9EJZ_c_1.webp",
+   "Cerros verdes y acantilados camino al Muelle de las Almas"
+  ],
+  "almas-grupo": [
+   "048_CofpC7pJP77_1.webp",
+   "Grupo de viajeros en el campo frente a los acantilados de Cucao"
+  ],
+  "caleuche": [
+   "014_DFGp5BsSIpR_1.jpg",
+   "Viajera en el Muelle del Caleuche frente a los islotes de Puñihuil"
+  ],
+  "caleuche-2": [
+   "014_DFGp5BsSIpR_3.jpg",
+   "Pareja sentada en el Muelle del Caleuche"
+  ],
+  "punihuil-islote": [
+   "053_CodBEr_JqQ2_1.webp",
+   "Islote rocoso de Puñihuil, hogar de los pingüinos"
+  ],
+  "punihuil-bote": [
+   "084_CnhfC0Tp5ti_2.jpg",
+   "Grupo con chalecos salvavidas antes de embarcar en Puñihuil"
+  ],
+  "punihuil-navega": [
+   "015_DE-2KRBSGZV_1.jpg",
+   "Viajeros con chalecos navegando hacia las pingüineras"
+  ],
+  "punihuil-costa": [
+   "015_DE-2KRBSGZV_2.jpg",
+   "Costa rocosa de Puñihuil vista desde el bote"
+  ],
+  "curaco": [
+   "080_CnxK-gQpy7K_1.jpg",
+   "Paseo borde costero de Curaco de Vélez"
+  ],
+  "curaco-2": [
+   "080_CnxK-gQpy7K_4.jpg",
+   "Mirador sobre pilotes en el borde costero de Curaco de Vélez"
+  ],
+  "mechuque": [
+   "025_C2VkISwpeib_1.webp",
+   "Viajeros junto a la lancha antes de navegar a Isla Mechuque"
+  ],
+  "palafitos": [
+   "024_C2Xe1TkrsLX_1.jpg",
+   "Palafitos de Castro reflejados en el agua"
+  ],
+  "quemchi": [
+   "036_Coxv-bZpeEx_1.webp",
+   "Casa Museo Francisco Coloane en Quemchi"
+  ],
+  "colo": [
+   "038_CovQwFDpMLb_1.webp",
+   "Iglesia de Colo con hortensias en primer plano"
+  ],
+  "nicolas-enrique": [
+   "023_C2kmX0qxZ2a_1.webp",
+   "El guía Nicolás junto a don Enrique y un grupo de viajeros"
+  ],
+  "enrique": [
+   "060_CoVaUkDJCUW_1.webp",
+   "Don Enrique de pie sobre una roca en Chepu"
+  ],
+  "grupo-van": [
+   "006_DFxxLrjxYAC_1.webp",
+   "Grupo de viajeros sonriendo dentro de la van"
+  ],
+  "grupo-almuerzo": [
+   "006_DFxxLrjxYAC_3.webp",
+   "Grupo de viajeros almorzando juntos"
+  ],
+  "grupo-columpios": [
+   "092_CnXXEz2JMJd_1.jpg",
+   "Grupo de viajeros en los columpios de un mirador"
+  ],
+  "grupo-lemuy": [
+   "104_ClWhnHApiAk_1.jpg",
+   "Viajeros saltando en un mirador de Isla Lemuy"
+  ],
+  "nieve": [
+   "030_Czg_A1gJXfI_6.jpg",
+   "Grupo de viajeros en la nieve junto a la van"
+  ],
+  "nieve-2": [
+   "030_Czg_A1gJXfI_5.jpg",
+   "Viajera con los brazos abiertos en la nieve"
+  ],
+  "valdivia": [
+   "016_C66lvC4rqe__1.jpg",
+   "Grupo de viajeros frente al letrero de Niebla y Valdivia"
+  ],
+  "valdivia-2": [
+   "016_C66lvC4rqe__4.jpg",
+   "Viajeros en el muelle frente al río en Valdivia"
+  ],
+  "minga": [
+   "066_CoQT72DpC85_1.webp",
+   "Minga tiradura de casa: bueyes tirando una casa por la playa de Liucura"
+  ],
+  "familia-sillas": [
+   "008_DFokIV1NnaP_1.jpg",
+   "Viajeras sentadas en sillas blancas en un bosque de pinos de Lemuy"
+  ],
+  "pareja-columpio": [
+   "009_DFmD1CSNg9O_1.jpg",
+   "Viajera con alas en el columpio del Muelle de los Brujos"
+  ],
+  "minga-bueyes": [
+   "011_DFeNTBstlH7_1.jpg",
+   "Bueyes chilotes en el camino de Isla Lemuy"
+  ]
+ },
+ "videos": {
+  "isla": [
+   "013_DFWZNHZNi5Y_1.mp4",
+   6,
+   26,
+   "Navegación entre los islotes de Puñihuil"
+  ],
+  "vuelo": [
+   "012_DFYXxmFS8mm_1.mp4",
+   0,
+   10,
+   "Viajera en el columpio del Muelle de los Brujos"
+  ],
+  "vans": [
+   "007_DFqK9NeR5rc_1.mp4",
+   2,
+   18,
+   "Las vans de la agencia en la rampa del transbordador"
+  ]
+ }
+}
