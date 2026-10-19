@@ -2,49 +2,18 @@
 
 Cada texto visible de la marca, la página donde aparece y su fuente. La interfaz ([UI]) está en los pares data-l del HTML.
 
-- `/` [DEST-H7_002] rótulos de paradas: «Feria Artesanal Dalcahue · Iglesia Patrimonio Tenaún · Almuerzo en agroturismo · Cascadas de Tocoihue · Isla Aucar»
-- `/` [DEST-H7] títulos de afiche: «TOUR LA COSTA con CURANTO EN HOYO»
 - `/` [IG-010]: «UN CURANTITO?» — corrección: sin emojis
-- `/` [DEST-H7_008] rótulos de paradas: «Feria Artesanal Chonchi · Iglesia Patrimonio Vilupulli · Navegación Canal Yal · Almuerzo en agroturismo · Parque Yayanes»
-- `/` [DEST-H7] títulos de afiche: «TOUR ISLA LEMUY con ASADO»
 - `/` [IG-012]: «VAMOS A VOLAR UN RATITO?» — corrección: sin emojis
-- `/` [DEST-H7_003] rótulos de paradas: «Iglesia Patrimonio Nercón · Artesanía Chonchi · Columpio Lago Huillinco · Restaurant tradicional · Parque Nacional Chiloé»
-- `/` [DEST-H7] títulos de afiche: «TOUR Parque NACIONAL CHILOÉ»
 - `/` [IG-083]: «Caminar entre bosque y mar es lo mágico de Chiloé» — corrección: sin emojis
-- `/` [DEST-H7_004] rótulos de paradas: «Caminata Cordillera Piruil · Muelle de las Almas · Restaurant tradicional · Muelle Lago Huillinco · Columpio de los Enamorados»
-- `/` [DEST-H7] títulos de afiche: «TOUR MUELLE de las ALMAS»
 - `/` [IG-054]: «Este muelle tan mágico nunca pasa de moda» — corrección: sin emojis
-- `/` [DEST-H7_005] rótulos de paradas: «Navegación Río Chepu · Muelle Mirador de la Luz · Almuerzo restaurant panorámico · Caleta Puñihuil · Plaza de Armas Ancud»
-- `/` [DEST-H7] títulos de afiche: «TOUR MUELLE de la LUZ»
 - `/` [IG-093]: «…¿y qué sientes tú, frente a la inmensidad del océano?» — corrección: sin emojis
-- `/` [DEST-H7_006] rótulos de paradas: «Navegación por 3 islotes · Restaurant panorámico · Muelle El Caleuche · Fuerte San Antonio · Feria Artesanal Ancud»
-- `/` [DEST-H7] títulos de afiche: «TOUR PINGÜINERAS de PUÑIHUIL ANCUD»
 - `/` [IG-015]: «Vamos a navegar?» — corrección: sin emojis
-- `/` [DEST-H7_007] rótulos de paradas: «Feria Artesanal Dalcahue · Iglesia Patrimonio Rilán · Muelle Mirador Chonos · Mirador Changuitad · Iglesia Patrimonio Villa Quinchao»
-- `/` [DEST-H7] títulos de afiche: «TOUR Isla QUINCHAO»
 - `/` [IG-080]: «Paseo borde Costero #curacodevélez» — corrección: sin emojis
-- `/` [IG-024]: «Los Palafitos de Castro Uno de los lugares mágicos que nos ofrece Chiloé.» — corrección: se unen dos líneas del original en una; sin emojis
-- `/` [IG-015]: «Aquí algunos recuerdos de nuestro amigos disfrutando de toda magia y belleza natural que nos ofrece la comuna de Ancud!»
-- `/` [IG-087]: «En el mapudungun de Chiloé Dalkawe significa lugar de dalcas, es decir, de la embarcación de tres tablones que usaban originalmente los chonos y cuyo uso se difundió a todas las culturas del archipiélago, incuyendo la española.» — corrección: "incuyendo" se deja como en el original
-- `/` [IG-055]: «Ven a conocer las maravillas que ofrece la Isla Lemuy junto a Turismo Chiloé Mágico» — corrección: sin emojis
-- `/` [IG-071]: «¡Camina junto a nosotros a través de esta generosa reserva nacional de flora y fauna nativa!» — corrección: sin emojis
-- `/` [IG-038]: «La iglesia San Antonio de Colo, es una de las 16 iglesias patrimonio de la humanidad y monumento nacional de chiloé!»
-- `/` [IG-086]: «¡Llegó la hora del destape! #curantoalhoyo» — corrección: sin emojis
-- `/` [IG-070]: «Tal como lo hacen los brujos y brujas de Chiloé, nuestros turistas aprovecharon la visita al @muelledelosbrujoschiloe en Yelqui para practicar el vuelo» — corrección: sin emojis
-- `/` [IG-016]: «Otra salida marcada por innumerable recuerdos, una agradecimiento a nuestros amigos por contar con nosotros, excursión Valdivia y Niebla 4 días - 3 noches» — corrección: sin emojis
-- `/` [IG-031]: «recorrido de castro al volcán Osorno, visitando salto de petrohue y el lago todos los santos, no te pierdas de esta increíble experiencia para vivirla junto a tus familiares y amigos» — corrección: sin emojis
-- `/` [IG-030]: «La nieve, paisajes hermosos y todo lo que San Carlos de Bariloche puede ofrecer....... los esperamos para repetir esta experiencia»
+- `/` [IG-025]: «No te pierdas esta fantástica navegación a la Isla Mechuque para disfrutar de un delicioso curanto en hoyo junto a Chiloé Mágico!»
 - `/` [BIO]: «Nuestro archipiélago es mágico»
 - `/` [BIO]: «¡Ven a descubrirlo!»
 - `/` [BIO]: «¡Tours todos los días! - Servicios privados»
 - `/` [IG-007]: «Todos nuestros tours incluyen traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos» — corrección: sin emojis
-- `/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
-- `/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN…!» — corrección: recorte del remate «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR…»
-- `/` [IG-007]: «Nos caracterizamos por prestar el mejor servicio posible para hacer de tu visita una experiencia inolvidable!»
-- `/` [IG-007]: «Es por esto que diariamente nos trasladamos en modernas y cómodas vans Con aire acondicionado (para que ni el frio ni el calor nos detengan!), asientos reclinables para la siesta post almuerzo, y conductores que además de profesionales son wena onda!» — corrección: sin emojis
-- `/` [IG-007]: «Cada van viaja con un máximo de 16 pasajeros y su propio guía, para entregarles un servicio aún más personalizado!»
-- `/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
-- `/` [IG-016]: «Chiloe Magico Tour, servicio de turismo, traslado y viajes privados»
 - `/` [RESEÑA Javiera Blanco, Google]: «…Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día.…» — corrección: sin emojis
 - `/` [RESEÑA Zarana Bayona, Google]: «Sandra was a great tour guide and really showed us the charm of chiloe. The agency has great communication and were very accommodating with our last minute reservation. Everything ran smoothly. They were able to add vegetarian meals at the restaurant.»
 - `/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota.…» — corrección: sin emojis
@@ -58,169 +27,102 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/` [RESEÑA Jaime Galaz, Google]: «Una excelente experiencia la del Tour La Costa!!! Desde el guía Alberto, conductor Enrique, transporte, comida y lugares por visitar son hermosos.…» — corrección: sin emojis
 - `/` [RESEÑA Francesca Cruzat, Google]: «Tomamos con mi amiga el tour Isla Lemuy, excelente el guía, la comida y los lugares.…» — corrección: sin emojis
 - `/` [RESEÑA susan mtv, Google]: «…la comida que incluye el tour a isla Lemuy es demasiado rico y puedes comer hasta quedar satisfecho. Recorrimos lugares hermosos y convivimos con locales eso hace mucho mejor la experiencia.…» — corrección: sin emojis
+- `/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
-- `/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
+- `/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
-- `/tours/` [DEST-H7_001] "NUESTROS TOURS DISPONIBLES": «NUESTROS TOURS disponibles» — corrección: Se separa "disponibles" en cursiva
+- `/tours/` [IG-010]: «UN CURANTITO?» — corrección: sin emojis
+- `/tours/` [IG-012]: «VAMOS A VOLAR UN RATITO?» — corrección: sin emojis
+- `/tours/` [IG-083]: «Caminar entre bosque y mar es lo mágico de Chiloé» — corrección: sin emojis
+- `/tours/` [IG-054]: «Este muelle tan mágico nunca pasa de moda» — corrección: sin emojis
+- `/tours/` [IG-093]: «…¿y qué sientes tú, frente a la inmensidad del océano?» — corrección: sin emojis
+- `/tours/` [IG-015]: «Vamos a navegar?» — corrección: sin emojis
+- `/tours/` [IG-080]: «Paseo borde Costero #curacodevélez» — corrección: sin emojis
+- `/tours/` [IG-025]: «No te pierdas esta fantástica navegación a la Isla Mechuque para disfrutar de un delicioso curanto en hoyo junto a Chiloé Mágico!»
+- `/tours/` [DEST-H7_001] "NUESTROS TOURS DISPONIBLES": «NUESTROS TOURS disponibles» — corrección: Se separa "disponibles" en otra línea
 - `/tours/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
-- `/tours/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
 - `/tours/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
+- `/tours/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
+- `/tours/` [BIO]: «Lu a Do | 9:00 a 19:30»
 - `/tours/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
-- `/tours/` [BIO]: «Lu a Do | 9:00 a 19:30»
+- `/tours/la-costa-curanto/` [DEST-H7_002] rótulos de paradas: «Feria Artesanal Dalcahue · Iglesia Patrimonio Tenaún · Almuerzo en agroturismo · Cascadas de Tocoihue · Isla Aucar»
 - `/tours/la-costa-curanto/` [IG-006]: «$35.000 por persona (incluyendo el almuerzo) + $3.000 por persona (entrada a las cascadas)»
-- `/tours/la-costa-curanto/` [IG-010]: «Visita a la ciudad de Dalcahue»
-- `/tours/la-costa-curanto/` [IG-010]: «Llegada al sector de los Molinos para el tapamiento»
-- `/tours/la-costa-curanto/` [IG-010]: «Visita al pueblo de Tenaún»
-- `/tours/la-costa-curanto/` [IG-010]: «Almuerzo en el sector de los Molinos»
-- `/tours/la-costa-curanto/` [IG-010]: «Visita a la Isla Aucar»
-- `/tours/la-costa-curanto/` [IG-010]: «Visita a las Cascadas de Tocoihue»
-- `/tours/la-costa-curanto/` [IG-010]: «Retorno a la ciudad de Castro»
-- `/tours/la-costa-curanto/` [IG-043]: «En este lugar es donde se lleva a cabo nuestro famoso Curanto en Hoyo del Tour de la Costa, que tiene un mirador espectacular a las Islas Chauques!» — corrección: sin emojis
-- `/tours/la-costa-curanto/` [IG-034]: «El curanto en hoyo o curanto al hoyo, es una milenaria técnica de cocción que utiliza piedras calientes en un hoyo excavado en la tierra para cocinar los alimentos, los cuales se tapan con hojas de pague, permitiendo una cocción al vapor con toques ahumados»
-- `/tours/la-costa-curanto/` [IG-019]: «La imponente Cascada de Tocoihue nos deleita con su lechoso manto en donde los brujos se bañaban como ritual de iniciación durante 40 noches» — corrección: sin emojis
-- `/tours/la-costa-curanto/` [IG-046]: «Un pasarela de 437 metros que hay que cruzar para llegar a la maravillosa Isla Aucar!» — corrección: sin emojis
-- `/tours/la-costa-curanto/` [IG-010]: «$3.000 por persona (entrada a Cascadas)»
+- `/tours/la-costa-curanto/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
+- `/tours/la-costa-curanto/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
 - `/tours/la-costa-curanto/` [DEST-H7] títulos de afiche: «TOUR LA COSTA con CURANTO EN HOYO»
 - `/tours/la-costa-curanto/` [IG-010]: «UN CURANTITO?» — corrección: sin emojis
-- `/tours/la-costa-curanto/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/tours/la-costa-curanto/` [IG-010]: «Ven a disfrutar de esta exquisita comida típica chilota junto a nosotros»
-- `/tours/la-costa-curanto/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
-- `/tours/la-costa-curanto/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/tours/la-costa-curanto/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/la-costa-curanto/` [RESEÑA Ximena González Vargas, Google]: «…Fuimos con mi familia al tour de la costa, pues queríamos conocer la Isla Aucar y comer curanto en hoyo. Además de eso, pudimos conocer Dalcahue, Tenaún y la cascada de Tocoihue. El tour fue preciso, teníamos tiempo para recorrer libremente y solo acordábamos la hora de reunión para ir a otro lugar, vimos el proceso del curanto y aprendimos muchísimo de cada localidad.…» — corrección: sin emojis
-- `/tours/la-costa-curanto/` [RESEÑA Valeria Carvajal, Google]: «Fuimos junto a mi pareja a realizar el tour de la costa. Nuestro Guía Nicolás muy amable, informado y divertido. Don Enrique nuestro conductor muy preocupado y gentil. Fue una excelente experiencia en invierno, 100% recomendable.…» — corrección: sin emojis
-- `/tours/la-costa-curanto/` [RESEÑA Jaime Galaz, Google]: «Una excelente experiencia la del Tour La Costa!!! Desde el guía Alberto, conductor Enrique, transporte, comida y lugares por visitar son hermosos.…» — corrección: sin emojis
-- `/tours/la-costa-curanto/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
-- `/tours/la-costa-curanto/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
-- `/tours/la-costa-curanto/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
-- `/tours/la-costa-curanto/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/tours/la-costa-curanto/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/la-costa-curanto/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/tours/la-costa-curanto/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/tours/isla-lemuy-asado/` [DEST-H7_008] rótulos de paradas: «Feria Artesanal Chonchi / Iglesia Patrimonio Vilupulli / Navegación Canal Yal / Almuerzo en agroturismo / Parque Yayanes / Recorrido por Lemuy»
-- `/tours/isla-lemuy-asado/` [IG-018]: «El asado de cordero al palo es un deleite para el paladar de toda persona. La cocción de la carne de esta manera es superior a cualquier otra» — corrección: sin emojis
-- `/tours/isla-lemuy-asado/` [IG-039]: «Nuestros viajeros se vuelven brujos por un día en nuestro tour a la Isla Lemuy!»
-- `/tours/isla-lemuy-asado/` [IG-064]: «Un puente colgante de 30 metros, que ofrece adrenalina y emoción sin igual!» — corrección: sin emojis
-- `/tours/isla-lemuy-asado/` [IG-063]: «Una de las paradas más importantes en la ciudad de Chonchi, es en el Museo del Acordeón de don Sergio Colivoro!» — corrección: sin emojis
+- `/tours/isla-lemuy-asado/` [DEST-H7_008] rótulos de paradas: «Feria Artesanal Chonchi · Iglesia Patrimonio Vilupulli · Navegación Canal Yal · Almuerzo en agroturismo · Parque Yayanes · Recorrido por Lemuy»
+- `/tours/isla-lemuy-asado/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
+- `/tours/isla-lemuy-asado/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
 - `/tours/isla-lemuy-asado/` [DEST-H7] títulos de afiche: «TOUR ISLA LEMUY con ASADO»
 - `/tours/isla-lemuy-asado/` [IG-012]: «VAMOS A VOLAR UN RATITO?» — corrección: sin emojis
-- `/tours/isla-lemuy-asado/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/tours/isla-lemuy-asado/` [IG-012]: «…nos vamos nuevamente hacia Isla Lemuy, donde no solo nos envolvemos de naturaleza y comemos rico sino también visitamos el infaltable @muelledelosbrujoschiloe para echarnos a volar en medio de bellos paisajes» — corrección: se omite «Mañana» (fecha vencida); sin emojis
-- `/tours/isla-lemuy-asado/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
-- `/tours/isla-lemuy-asado/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/tours/isla-lemuy-asado/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/isla-lemuy-asado/` [RESEÑA Javiera Blanco, Google]: «…Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día.…» — corrección: sin emojis
-- `/tours/isla-lemuy-asado/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota.…» — corrección: sin emojis
-- `/tours/isla-lemuy-asado/` [RESEÑA Francesca Cruzat, Google]: «Tomamos con mi amiga el tour Isla Lemuy, excelente el guía, la comida y los lugares.…» — corrección: sin emojis
-- `/tours/isla-lemuy-asado/` [RESEÑA susan mtv, Google]: «…la comida que incluye el tour a isla Lemuy es demasiado rico y puedes comer hasta quedar satisfecho. Recorrimos lugares hermosos y convivimos con locales eso hace mucho mejor la experiencia.…» — corrección: sin emojis
-- `/tours/isla-lemuy-asado/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
-- `/tours/isla-lemuy-asado/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
-- `/tours/isla-lemuy-asado/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
-- `/tours/isla-lemuy-asado/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/tours/isla-lemuy-asado/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/isla-lemuy-asado/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/tours/isla-lemuy-asado/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/tours/parque-nacional-chiloe/` [DEST-H7_003] rótulos de paradas: «Iglesia Patrimonio Nercón / Artesanía Chonchi / Columpio Lago Huillinco / Restaurant tradicional / Parque Nacional Chiloé / Playa Chanquín»
-- `/tours/parque-nacional-chiloe/` [IG-134]: «El Columpio de Huillinco o de los enamorados, fue construido por un matrimonio para celebrar su aniversario.» — corrección: sin emojis
-- `/tours/parque-nacional-chiloe/` [IG-110]: «El pueblo de Nercón, que en huilliche significa “entre lomas”, fue una misión indígena fundada por los jesuitas durante la Colonia, que más tarde pasó a estar bajo la dirección de los Franciscanos de Ocopa.»
-- `/tours/parque-nacional-chiloe/` [IG-130]: «Vilupulli, que en mapudungun significa la colina de la serpiente, ha mantenido históricamente un carácter de aldea costera que se agrupa en torno a la Iglesia.»
+- `/tours/parque-nacional-chiloe/` [DEST-H7_003] rótulos de paradas: «Iglesia Patrimonio Nercón · Artesanía Chonchi · Columpio Lago Huillinco · Restaurant tradicional · Parque Nacional Chiloé · Playa Chanquín»
+- `/tours/parque-nacional-chiloe/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
+- `/tours/parque-nacional-chiloe/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
 - `/tours/parque-nacional-chiloe/` [DEST-H7] títulos de afiche: «TOUR Parque NACIONAL CHILOÉ»
 - `/tours/parque-nacional-chiloe/` [IG-083]: «Caminar entre bosque y mar es lo mágico de Chiloé» — corrección: sin emojis
-- `/tours/parque-nacional-chiloe/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/tours/parque-nacional-chiloe/` [IG-071]: «¡Camina junto a nosotros a través de esta generosa reserva nacional de flora y fauna nativa!» — corrección: sin emojis
-- `/tours/parque-nacional-chiloe/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
-- `/tours/parque-nacional-chiloe/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/tours/parque-nacional-chiloe/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/parque-nacional-chiloe/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
-- `/tours/parque-nacional-chiloe/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
-- `/tours/parque-nacional-chiloe/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
-- `/tours/parque-nacional-chiloe/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/tours/parque-nacional-chiloe/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/parque-nacional-chiloe/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/tours/parque-nacional-chiloe/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/tours/muelle-de-las-almas/` [DEST-H7_004] rótulos de paradas: «Caminata Cordillera Piruil / Muelle de las Almas / Restaurant tradicional / Muelle Lago Huillinco / Columpio de los Enamorados»
-- `/tours/muelle-de-las-almas/` [IG-062]: «Este representa el inicio del camino que deben seguir las almas después de la muerte, para poder avanzar al más allá» — corrección: sin emojis
-- `/tours/muelle-de-las-almas/` [IG-056]: «En este lugar mágico, donde las almas deben cruzar para ir al más allá, se pueden escuchar los lamentos y súplicas de aquellos que esperan al balsero para que las lleve al descanso eterno» — corrección: sin emojis
-- `/tours/muelle-de-las-almas/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
+- `/tours/muelle-de-las-almas/` [DEST-H7_004] rótulos de paradas: «Caminata Cordillera Piruil · Muelle de las Almas · Restaurant tradicional · Muelle Lago Huillinco · Columpio de los Enamorados»
+- `/tours/muelle-de-las-almas/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
+- `/tours/muelle-de-las-almas/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
 - `/tours/muelle-de-las-almas/` [DEST-H7] títulos de afiche: «TOUR MUELLE de las ALMAS»
 - `/tours/muelle-de-las-almas/` [IG-054]: «Este muelle tan mágico nunca pasa de moda» — corrección: sin emojis
-- `/tours/muelle-de-las-almas/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/tours/muelle-de-las-almas/` [IG-062]: «El maravilloso Muelle de las Almas, ubicado en la localidad de Cucao es uno de los atractivos turísticos más importantes del Archipiélago de Chiloé!»
-- `/tours/muelle-de-las-almas/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
 - `/tours/muelle-de-las-almas/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/muelle-de-las-almas/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
-- `/tours/muelle-de-las-almas/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
-- `/tours/muelle-de-las-almas/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
-- `/tours/muelle-de-las-almas/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/tours/muelle-de-las-almas/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/muelle-de-las-almas/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/tours/muelle-de-las-almas/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/tours/muelle-de-la-luz/` [DEST-H7_005] rótulos de paradas: «Navegación Río Chepu / Muelle Mirador de la Luz / Almuerzo restaurant panorámico / Caleta Puñihuil / Plaza de Armas Ancud / Costanera Ancud»
-- `/tours/muelle-de-la-luz/` [IG-049]: «La magia de la Pincoya nos acompaña en nuestro viaje al Muelle de la Luz» — corrección: sin emojis
-- `/tours/muelle-de-la-luz/` [IG-140]: «Sí, esto también es parte de nuestro maravilloso Tour Muelle de la Luz.»
-- `/tours/muelle-de-la-luz/` [IG-140]: «Vive la belleza de Chepu, y de Ancud, junto a @turismochiloemagico» — corrección: sin emojis
+- `/tours/muelle-de-la-luz/` [DEST-H7_005] rótulos de paradas: «Navegación Río Chepu · Muelle Mirador de la Luz · Almuerzo restaurant panorámico · Caleta Puñihuil · Plaza de Armas Ancud · Costanera Ancud»
+- `/tours/muelle-de-la-luz/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
+- `/tours/muelle-de-la-luz/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
 - `/tours/muelle-de-la-luz/` [DEST-H7] títulos de afiche: «TOUR MUELLE de la LUZ»
 - `/tours/muelle-de-la-luz/` [IG-093]: «…¿y qué sientes tú, frente a la inmensidad del océano?» — corrección: sin emojis
-- `/tours/muelle-de-la-luz/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/tours/muelle-de-la-luz/` [IG-022]: «El Muelle de la Luz es uno de los más destacados dentro de nuestro hermoso archipiélago y también uno de los más visitados por su acceso directo al océano pacífico» — corrección: sin emojis
-- `/tours/muelle-de-la-luz/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
-- `/tours/muelle-de-la-luz/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/tours/muelle-de-la-luz/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/muelle-de-la-luz/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
-- `/tours/muelle-de-la-luz/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
-- `/tours/muelle-de-la-luz/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
-- `/tours/muelle-de-la-luz/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/tours/muelle-de-la-luz/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/muelle-de-la-luz/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/tours/muelle-de-la-luz/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/tours/pinguineras-punihuil/` [DEST-H7_006] rótulos de paradas: «Navegación por 3 islotes / Restaurant panorámico / Muelle El Caleuche / Fuerte San Antonio / Feria Artesanal Ancud»
-- `/tours/pinguineras-punihuil/` [IG-089]: «Al navegar por el Monumento Natural Islotes de Puñihuil, conocemos uno de los pocos lugares del mundo que alberga a colonias de nidificación y reproducción de los pingüinos de Magallanes y de Humboldt.»
-- `/tours/pinguineras-punihuil/` [IG-014]: «Recuerdos que nos ha dejado este día visitando el Muelle del Caleuche en Puñihuil, donde el amor fue el protagonista» — corrección: sin emojis
-- `/tours/pinguineras-punihuil/` [IG-057]: «su habitat veraniego»
+- `/tours/pinguineras-punihuil/` [DEST-H7_006] rótulos de paradas: «Navegación por 3 islotes · Restaurant panorámico · Muelle El Caleuche · Fuerte San Antonio · Feria Artesanal Ancud»
+- `/tours/pinguineras-punihuil/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
+- `/tours/pinguineras-punihuil/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
 - `/tours/pinguineras-punihuil/` [DEST-H7] títulos de afiche: «TOUR PINGÜINERAS de PUÑIHUIL ANCUD»
 - `/tours/pinguineras-punihuil/` [IG-015]: «Vamos a navegar?» — corrección: sin emojis
-- `/tours/pinguineras-punihuil/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/tours/pinguineras-punihuil/` [IG-057]: «Una navegación para poder observar los pingüinos de la corriente Magallánica y Humboldt conviviendo en su habitat veraniego, los islotes de Puñihuil» — corrección: sin emojis
-- `/tours/pinguineras-punihuil/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
-- `/tours/pinguineras-punihuil/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/tours/pinguineras-punihuil/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/pinguineras-punihuil/` [RESEÑA Jennifer muñoz, Google]: «Quedamos muy contentos con el tour a las pingüinera y con el de la costa con curanto muy recomendado y el guía Alberto excelente persona y profesional y mencionar a don Enrique que nos transportó a todos esos lugares hermosos en forma segura muchas gracias desde Iquique.» — corrección: sin emojis
-- `/tours/pinguineras-punihuil/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
-- `/tours/pinguineras-punihuil/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
-- `/tours/pinguineras-punihuil/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
-- `/tours/pinguineras-punihuil/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/tours/pinguineras-punihuil/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/pinguineras-punihuil/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/tours/pinguineras-punihuil/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/tours/isla-quinchao/` [DEST-H7_007] rótulos de paradas: «Feria Artesanal Dalcahue / Iglesia Patrimonio Rilán / Muelle Mirador Chonos / Mirador Changuitad / Iglesia Patrimonio Villa Quinchao / Costanera Curaco de Vélez / Almuerzo en agroturismo / Costanera Achao»
-- `/tours/isla-quinchao/` [IG-075]: «La Feria Artesanal de Dalcahue se caracteriza por su arquitectura y sobre todo por su productos y artesanías locales.» — corrección: sin emojis
+- `/tours/isla-quinchao/` [DEST-H7_007] rótulos de paradas: «Feria Artesanal Dalcahue · Iglesia Patrimonio Rilán · Muelle Mirador Chonos · Mirador Changuitad · Iglesia Patrimonio Villa Quinchao · Costanera Curaco de Vélez · Almuerzo en agroturismo · Costanera Achao»
+- `/tours/isla-quinchao/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
+- `/tours/isla-quinchao/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
 - `/tours/isla-quinchao/` [DEST-H7] títulos de afiche: «TOUR Isla QUINCHAO»
 - `/tours/isla-quinchao/` [IG-080]: «Paseo borde Costero #curacodevélez» — corrección: sin emojis
-- `/tours/isla-quinchao/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/tours/isla-quinchao/` [IG-080]: «Sus extensos y ricos humedales albergan una veintena de aves locales y migratorias que incluyen los zarapitos, que viajan desde Alaska a Chiloé» — corrección: sin emojis
-- `/tours/isla-quinchao/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
-- `/tours/isla-quinchao/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/tours/isla-quinchao/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/isla-quinchao/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
-- `/tours/isla-quinchao/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
-- `/tours/isla-quinchao/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
-- `/tours/isla-quinchao/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/tours/isla-quinchao/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/isla-quinchao/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/tours/isla-quinchao/` [BIO]: «Lu a Do | 9:00 a 19:30»
+- `/tours/isla-mechuque/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
+- `/tours/isla-mechuque/` [IG-006]: «Todos son tours de día completo (salida a las 10am y retorno a las 7pm aprox)»
 - `/tours/isla-mechuque/` [DEST-H7] títulos de afiche: «NAVEGACIÓN a ISLA MECHUQUE»
 - `/tours/isla-mechuque/` [IG-025]: «No te pierdas esta fantástica navegación a la Isla Mechuque para disfrutar de un delicioso curanto en hoyo junto a Chiloé Mágico!»
-- `/tours/isla-mechuque/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
-- `/tours/isla-mechuque/` [IG-006]: «Traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos»
-- `/tours/isla-mechuque/` [IG-137]: «Con viento y lluvia, se vive la magia y aventura de Chiloé.»
 - `/tours/isla-mechuque/` [IG-006]: «Consulta por cupos, no te quedes sin el tuyo»
-- `/tours/isla-mechuque/` [RESEÑA Maja, Google]: «FYI the tour is not available in english.»
-- `/tours/isla-mechuque/` [RESEÑA Zarana Bayona, Google]: «They were able to add vegetarian meals at the restaurant.»
-- `/tours/isla-mechuque/` [IG-006]: «Salidas desde nuestra agencia, ubicada frente a la plaza de armas, a un costado de la Iglesia de Castro»
-- `/tours/isla-mechuque/` [IG-007]: «¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!»
 - `/tours/isla-mechuque/` [DEST-H7]: «Chiloé Mágico te espera, Ven a descubrirlo!»
 - `/tours/isla-mechuque/` [BIO]: «Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116, Castro, Chile»
 - `/tours/isla-mechuque/` [BIO]: «Lu a Do | 9:00 a 19:30»

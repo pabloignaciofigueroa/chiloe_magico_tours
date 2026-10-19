@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chiloemagicotour.pages.dev/sitemap.xml

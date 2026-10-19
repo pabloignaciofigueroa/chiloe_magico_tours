@@ -17,7 +17,7 @@ from urllib.parse import unquote
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / 'public'
 
-INCLUDE_FILES = ['index.html']
+INCLUDE_FILES = ['index.html', 'sitemap.xml', 'robots.txt']
 PAGE_DIRS = ['tours', 'destinos', 'experiencias', 'paquetes', 'servicios', 'nosotros', 'guia', 'preguntas-frecuentes', 'contacto']
 INCLUDE_DIRS = ['css', 'js', 'vendor', 'assets', 'brand'] + PAGE_DIRS
 

@@ -638,3 +638,106 @@ a.credit:hover{text-decoration:underline}
   .tpanel--portrait .tpanel__in{max-width:min(760px,50vw)}
 }
 .mos + .why{margin-top:4px}
+
+/* ---------- v4 · simple: una idea por sección, y nunca dos fotos pegadas ---------- */
+/* la isla: el video detrás, un velo con el hueco de la isla que crece hasta desaparecer */
+.isla{position:relative;height:330svh;background:var(--tinta)}
+.isla__stick{position:sticky;top:0;height:100svh;min-height:0;overflow:clip;display:block;padding:0;background:var(--isla)}
+.isla__v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.isla__cover{position:absolute;inset:-2px;background:var(--tinta);--h:66svh;
+  -webkit-mask-image:linear-gradient(#000,#000),url(/brand/logo/isla.svg);mask-image:linear-gradient(#000,#000),url(/brand/logo/isla.svg);
+  -webkit-mask-size:100% 100%,auto var(--h);mask-size:100% 100%,auto var(--h);
+  -webkit-mask-position:0 0,50% 42%;mask-position:0 0,50% 42%;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-composite:xor;mask-composite:exclude}
+.isla__shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,22,34,.7) 0%,rgba(9,22,34,.25) 38%,rgba(9,22,34,0) 60%);opacity:.6}
+.isla__t{position:absolute;z-index:3;left:var(--g);right:var(--g);bottom:clamp(40px,9vh,100px);color:#fff;pointer-events:none}
+.isla__h{font:400 clamp(54px,10.5vw,184px)/.86 var(--f-display);text-transform:uppercase;margin:0;max-width:12ch;text-shadow:0 4px 30px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4)}
+.isla__q{position:static;margin:.55em 0 0;font:700 clamp(20px,2.4vw,36px)/1.2 var(--f-text);color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+@media (prefers-reduced-motion:reduce){.isla{height:auto}.isla__stick{position:relative;height:100svh}.isla__cover{display:none}.isla__shade{opacity:1}}
+
+/* tours: un carrusel de tarjetas sobre fondo liso */
+.tsec{background:var(--niebla);padding:var(--sec) 0;overflow:clip}
+.tsec__head{padding:0 var(--g);max-width:calc(var(--max) + 2*var(--g));margin:0 auto clamp(28px,4vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:16px 48px;align-items:end}
+.tsec__head .h2{margin:0}
+.tsec__lead{margin:0;font-size:clamp(16px,1.2vw,19px);line-height:1.5;max-width:44ch}
+@media (max-width:760px){.tsec__head{grid-template-columns:1fr}}
+.tsw{padding:0 var(--g);max-width:calc(var(--max) + 2*var(--g));margin:0 auto;overflow:visible}
+.tsw .swiper-slide.tc{width:clamp(260px,76vw,400px);margin-right:20px;height:auto}
+@media (min-width:761px){.tsw .swiper-slide.tc{width:clamp(280px,24vw,380px);margin-right:24px}}
+.tc{margin:0}
+.tc__a{display:flex;flex-direction:column;height:100%;text-decoration:none;color:var(--tinta)}
+.tc__img{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:clip;background:var(--bruma)}
+.tc__img img{position:absolute;inset:0;transition:transform 1.2s var(--ease)}
+.tc__a:hover .tc__img img,.tc__a:focus-visible .tc__img img{transform:scale(1.04)}
+.tc__txt{padding:18px 2px 0;display:flex;flex-direction:column;flex:1}
+.tc__tag{font:600 11px/1.3 var(--f-text);letter-spacing:.18em;text-transform:uppercase;color:var(--isla);margin:0 0 8px}
+.tc__t{font:400 clamp(28px,2.3vw,36px)/1 var(--f-display);text-transform:uppercase;margin:0 0 10px}
+.tc__hook{margin:0 0 16px;font-size:15px;line-height:1.45;flex:1}
+.tc__more{align-self:flex-start;font:700 13px/1 var(--f-text);letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--turismo);padding-bottom:4px}
+.snav{display:flex;align-items:center;gap:12px;padding:0 var(--g);max-width:calc(var(--max) + 2*var(--g));margin:28px auto 0}
+.snav__hint{margin-left:auto;font-size:13px;opacity:.7}
+.snav--light{color:#fff}
+.snav--light .u-link{margin-left:auto}
+.arrow--light{color:#fff;border-color:rgba(255,255,255,.7)}
+.arrow--light:hover{background:#fff;color:var(--tinta)}
+
+/* reseñas: fondo liso, nada de foto detrás */
+.rsec{background:var(--tinta);color:#fff;padding:var(--sec) 0;overflow:clip}
+.rsec__head{padding:0 var(--g);max-width:calc(var(--max) + 2*var(--g));margin:0 auto clamp(28px,4vw,48px)}
+.rsec__head .h2{margin:0}
+.rsec__sub{margin:10px 0 0;opacity:.8}
+.rsec__sw{padding:0 var(--g);max-width:calc(var(--max) + 2*var(--g));margin:0 auto;overflow:visible}
+.rsec__sw .swiper-slide{height:auto;width:clamp(280px,80vw,460px);margin-right:20px;color:var(--tinta)}
+.rsec + .bcta{margin-top:0}
+.bcta__addr{margin:28px auto 0;font-size:15px;max-width:52ch;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.bcta__big{font-size:clamp(40px,6.4vw,110px)}
+
+/* lista de tours: tarjetas con aire, sin collage */
+.tlist{background:var(--niebla);padding:clamp(48px,7vw,110px) var(--g) var(--sec)}
+.tlist__grid{list-style:none;margin:0 auto;padding:0;max-width:var(--max);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(36px,4vw,64px) clamp(16px,2.4vw,36px)}
+.tlist__grid>li{min-width:0}
+@media (max-width:1000px){.tlist__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.tlist__grid{gap:32px 14px}.tlist .tc__t{font-size:22px}.tlist .tc__hook{display:none}.tlist .tc__tag{font-size:10px;letter-spacing:.12em}}
+.tlist + .bcta{margin-top:0}
+
+/* página de tour: 3 puntos, fotos, cotizar */
+.tinfo{background:var(--niebla);padding:clamp(56px,8vw,120px) var(--g)}
+.tinfo__in{max-width:980px;margin:0 auto}
+.tinfo .h3{margin:0 0 18px}
+.tinfo__lead{font-size:clamp(17px,1.3vw,21px);line-height:1.55;max-width:60ch;margin:0 0 clamp(28px,4vw,48px)}
+.tpts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px)}
+@media (max-width:860px){.tpts{grid-template-columns:1fr}}
+.tpt{display:flex;gap:16px;align-items:flex-start;border-top:2px solid var(--tinta);padding-top:18px}
+.tpt__n{font:400 44px/.9 var(--f-display);color:var(--turismo)}
+.tpt__h{font:700 15px/1.3 var(--f-text);letter-spacing:.1em;text-transform:uppercase;margin:4px 0 10px}
+.tpt p{margin:0 0 8px;line-height:1.55}
+.tpt .pending{margin-top:10px}
+.tfotos{background:var(--tinta);color:#fff;padding:clamp(56px,8vw,120px) 0;overflow:clip}
+.tfotos__head{padding:0 var(--g);max-width:calc(var(--max) + 2*var(--g));margin:0 auto 28px;display:flex;align-items:baseline;gap:8px 24px;flex-wrap:wrap}
+.tfotos__head .h3{margin:0;color:#fff}
+.tfotos__head p{margin:0;opacity:.75;font-size:14px}
+.tfsw{padding:0 var(--g);max-width:calc(var(--max) + 2*var(--g));margin:0 auto;overflow:visible}
+.tfsw .swiper-slide.tf{position:relative;width:clamp(250px,78vw,420px);aspect-ratio:4/5;margin-right:14px;border-radius:var(--r);overflow:clip;background:#2a332f}
+@media (min-width:761px){.tfsw .swiper-slide.tf{width:clamp(280px,28vw,420px)}}
+.tf img{position:absolute;inset:0}
+.tcot{background:var(--niebla);padding:clamp(56px,8vw,120px) var(--g) clamp(40px,6vw,80px);text-align:center}
+.tcot__in{max-width:640px;margin:0 auto}
+.tcot .h2{margin:0}
+.tcot__sub{margin:14px 0 28px}
+.tcot__f{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left}
+.tcot__f label{display:flex;flex-direction:column;gap:6px;font:600 12px/1.2 var(--f-text);letter-spacing:.12em;text-transform:uppercase}
+.tcot__f input{font:500 16px/1.2 var(--f-text);padding:14px;border:1.5px solid var(--tinta);border-radius:12px;background:#fff;color:var(--tinta);min-height:52px}
+.tcot__f .btn{grid-column:1/-1}
+.tcot__alt{margin:22px 0 6px}
+.tcot__cupos{margin:0;font-size:14px;opacity:.75}
+.tback{max-width:640px;margin:clamp(40px,6vw,72px) auto 0;border-top:1px solid rgba(29,36,33,.2);padding-top:24px}
+.tback__a{font:700 14px/1 var(--f-text);letter-spacing:.08em;text-transform:uppercase;color:var(--tinta);text-decoration:none;border-bottom:2px solid var(--turismo);padding-bottom:4px}
+.tour .bhero__hook{font-size:clamp(20px,1.8vw,28px)}
+.crumbs--light a{color:#fff}
+
+/* paquetes: entre un viaje y otro, aire */
+.ssplit + .ssplit{border-top:clamp(28px,4vw,56px) solid var(--niebla)}
+@media (max-width:860px){.ssplit__stick{height:62svh}}
+.tcot{padding-bottom:clamp(120px,12vw,170px)}
+.isla__h{max-width:9ch}

@@ -112,8 +112,8 @@
     loadSwiper().then(Swiper => {
       const kind = el.dataset.swiper;
       const sec = el.closest('section');
-      const opts = { slidesPerView: 'auto', spaceBetween: kind === 'gallery' ? 6 : 24, grabCursor: true, speed: 900, a11y: A11Y[root.lang === 'en' ? 'en' : 'es'], keyboard: { enabled: true, onlyInViewport: true }, freeMode: kind !== 'reviews' ? { enabled: true, momentumRatio: .6 } : false };
-      if (kind === 'reviews' && sec) opts.navigation = { prevEl: $('[data-prev]', sec), nextEl: $('[data-next]', sec) };
+      const opts = { slidesPerView: 'auto', spaceBetween: 0, grabCursor: true, speed: 900, a11y: A11Y[root.lang === 'en' ? 'en' : 'es'], keyboard: { enabled: true, onlyInViewport: true }, freeMode: false };
+      if (sec && $('[data-prev]', sec)) opts.navigation = { prevEl: $('[data-prev]', sec), nextEl: $('[data-next]', sec) };
       const sw = new Swiper(el, opts);
       sw.__a11y = lang => {
         const m = A11Y[lang]; Object.assign(sw.params.a11y, m);
@@ -192,11 +192,12 @@
     if (window.ScrollTrigger) ScrollTrigger.refresh();
   }));
 
-  /* ---------- barra móvil de reserva ---------- */
-  const mbar = $('[data-mbar]'), book = $('.book');
-  if (mbar && book) {
-    const io = new IntersectionObserver(es => mbar.classList.toggle('is-on', !es[0].isIntersecting && es[0].boundingClientRect.top < 0), { threshold: 0 });
-    io.observe(book);
+  /* ---------- barra móvil de reserva: aparece al dejar la portada del tour, se esconde al llegar a cotizar ---------- */
+  const mbar = $('[data-mbar]'), bh = $('.bhero'), cot = $('#cotizar');
+  if (mbar && bh && cot) {
+    let pastHero = false, atCot = false; const upd = () => mbar.classList.toggle('is-on', pastHero && !atCot);
+    new IntersectionObserver(es => { pastHero = !es[0].isIntersecting; upd(); }).observe(bh);
+    new IntersectionObserver(es => { atCot = es[0].isIntersecting; upd(); }).observe(cot);
   }
 
   /* ---------- menú (dialog accesible) ---------- */
@@ -281,14 +282,16 @@
         });
         ScrollTrigger.refresh();
       }
-      /* el momento: la isla se abre */
+      /* la isla: el hueco crece hasta que el velo desaparece y el video queda entero, corriendo */
       const isla = $('[data-isla]');
       if (isla) {
-        const win = $('[data-isla-win]', isla);
-        const tl = gsap.timeline({ scrollTrigger: { trigger: isla, start: 'top top', end: 'bottom bottom', scrub: 1, invalidateOnRefresh: true } });
-        tl.fromTo(win, { scale: .62, rotate: -6 }, { scale: () => Math.max(innerWidth * .75 / win.offsetWidth, 1.2), rotate: 0, ease: 'power2.in' }, 0)
-          .fromTo('.isla__bg span', { yPercent: 30, opacity: .2 }, { yPercent: -30, opacity: 1, stagger: .05, ease: 'none' }, 0)
-          .to('.isla__q', { opacity: 0, y: -40, ease: 'none', duration: .3 }, .55);
+        const cov = $('.isla__cover', isla), sh = $('.isla__shade', isla), o = { h: .66 };
+        const setH = () => cov.style.setProperty('--h', (o.h * innerHeight) + 'px');
+        const tl = gsap.timeline({ scrollTrigger: { trigger: isla, start: 'top top', end: 'bottom bottom', scrub: .8, invalidateOnRefresh: true } });
+        tl.to(o, { h: 16, duration: .5, ease: 'power2.in', onUpdate: setH }, 0)
+          .to(cov, { opacity: 0, duration: .1, ease: 'none' }, .42)
+          .to(sh, { opacity: 1, duration: .15, ease: 'none' }, .38)
+          .to({}, { duration: .5 }, .5);
       }
       return () => {};
     });
