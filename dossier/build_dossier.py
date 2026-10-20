@@ -26,7 +26,7 @@ N_REV = REV['count']; NOTA = str(REV['rating']).replace('.', ',')
 rv = REV['reviews']
 has = lambda ws: sum(any(w in (x.get('txt') or '').lower() for w in ws) for x in rv)
 N_GUIA = has(['guía', 'guia', 'guide'])
-N_NOMBRE = has(['nicol', 'alberto', 'enrique', 'sandra', 'meli', 'rodolfo', 'beto'])
+N_NOMBRE = sum(bool(re.search(r'\b(nicol[aá]s|nico|alberto|beto|enrique|sandra|meli|rodolfo|marcelo|marco)\b', (x.get('txt') or '').lower())) for x in rv)
 N_COMIDA = has(['comida', 'curanto', 'asado', 'almuerzo', 'food', 'lunch', 'cordero'])
 N5 = sum(x['stars'].startswith('5') for x in rv); N2 = N_REV - N5
 posts = re.findall(r'^### \[IG-\d+\] \S+ · \S+ · autor: (\S+)', (ROOT / 'content/ig_posts.md').read_text(encoding='utf-8'), re.M)
@@ -155,7 +155,7 @@ L.append(lamina_libre(nx(),
   {block("Afiches", "<p>Los <b>7 afiches de tours</b> de la destacada «Tours»: de ahí salen los títulos de cada tour, las paradas, la letra y el rojo de la banda.</p>")}
   {block("Google", f"<p><b>{N_REV} reseñas</b> con nota <b>{NOTA}</b>: {N5} de cinco estrellas y {N2} de dos. Se leyeron todas, en su idioma original, para saber qué valoran y qué les falta a sus viajeros.</p>")}
   {block("Fotos y videos", f"<p>De sus publicaciones se eligieron <b>{N_PROPIAS} fotos</b> de {N_POSTS_FOTOS} posts distintos y <b>3 videos</b>. Sin piezas con texto encima ni fotos de cuentas ajenas.</p>")}
-  {block("La regla", "<p>Cada texto del sitio tiene su origen identificado: qué post, qué destacada, qué afiche o qué reseña. Si un dato no estaba publicado (precios de la mayoría de los tours, formas de pago, políticas), el sitio lo dice: <b>«por confirmar con la agencia»</b>.</p>", "wide")}
+  {block("La regla", "<p>Cada texto de la marca en el sitio tiene su origen identificado: qué post, qué destacada, qué afiche o qué reseña. Lo que solo guía la visita (botones, menús, rótulos que describen un lugar) se escribió sin adjetivos ni promesas. Si un dato no estaba publicado (precios de la mayoría de los tours, formas de pago, políticas), el sitio lo dice: <b>«por confirmar con la agencia»</b>.</p>", "wide")}
   </div>'''))
 
 # ======================= 04 LA VOZ =======================
@@ -257,8 +257,8 @@ S('Portada', 'Nuestro archipiélago es mágico',
 S('Vamos a navegar', 'Vamos a navegar?',
   'La isla de su logo se vuelve una ventana. Al bajar por la página, la silueta crece hasta que el video de la navegación en Puñihuil ocupa toda la pantalla.',
   'd-isla-a', None, [
-    block('Textos', quote('Vamos a navegar?', IG('015')) + '<p>Bajada: «Entre los islotes de Puñihuil, con los pingüinos».</p>'),
-    block('Video', thumbs([('punihuil-navega', 'Navegación en Puñihuil · ' + IG('015'))]) + f'<p>Un tramo de su video del {IGD["013"]}, aligerado para que cargue rápido incluso con poca señal.</p>'),
+    block('Textos', quote('Vamos a navegar?', IG('015')) + '<p>Bajada: «Entre los islotes de Puñihuil, con los pingüinos». Esta línea solo describe el lugar; no es una frase suya.</p>'),
+    block('Video', thumbs([('punihuil-navega', 'Navegación en Puñihuil · ' + IG('013'))]) + f'<p>Un tramo de su video del {IGD["013"]}, aligerado para que cargue rápido incluso con poca señal.</p>'),
     block('Movimiento', '<p>Es el único momento «de efecto» del sitio: la isla crece suave mientras se baja y el velo oscuro desaparece. Si alguien prefiere menos movimiento en su teléfono, la isla aparece ya abierta.</p>'),
     block('Por qué aquí', quote('La experiencia de ver los pingüinos que ofrece la caleta Puñihuil es de otro nivel', IG('057')) + '<p>Su logo ya es la isla. Antes de ver la lista de tours, el viajero entra «dentro» de Chiloé por la ventana de su propia marca.</p>'),
   ], nota='Arriba, la isla recién abriéndose; abajo, a pantalla completa.', desk2='d-isla-b')
@@ -410,7 +410,7 @@ L.append(lamina_libre(nx(),
   <div class="grid">
   {block("Menú", "<p>Cuatro capítulos grandes (Tours, Paquetes, Nosotros, Contacto). Al pasar sobre cada uno aparece una foto suya de ese tema.</p>")}
   {block("Español e inglés", "<p>Un botón ES · EN traduce todo lo que guía la visita: menús, botones, rótulos. Sus textos y las reseñas quedan en su idioma original, para no poner palabras en su boca.</p>")}
-  {block("WhatsApp siempre a mano", "<p>Un botón verde acompaña cada página. En las fichas, una barra con el precio y «Cotizar» se queda abajo mientras se lee.</p>")}
+  {block("WhatsApp siempre a mano", "<p>Un botón verde acompaña cada página. En las fichas, en celular, una barra con el nombre del tour (o su precio, si está publicado) y «Cotizar» se queda abajo mientras se lee.</p>")}
   {block("Pensado para celular", "<p>Cada página se ordena distinto en el teléfono: una columna, botones grandes y WhatsApp a un toque. Las fotos se aligeraron y se descargan a medida que se baja, para que funcione incluso con poca señal en ruta.</p>")}
   {block("Sin tropiezos", "<p>Las fotos reservan su espacio antes de cargar, así la página no salta mientras se lee. Se puede recorrer completo con el teclado, y cada foto tiene su descripción en español e inglés para quien usa lector de pantalla.</p>", "wide")}
   </div>'''))
