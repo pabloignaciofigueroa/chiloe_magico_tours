@@ -1063,3 +1063,13 @@ p,li,blockquote{text-wrap:pretty}
 @media (max-width:760px){.hdr__logo,.hdr__logo img{height:44px}}
 /* footer sin segundo llamado */
 .ftr__addr a{color:#fff;font-weight:700;text-decoration:none;display:inline-block;padding:10px 0;margin:-10px 0}
+.lang,.lang__es,.lang__en{font-size:14px}
+@media (max-width:560px){.tr__go{min-height:44px}}
+.credit{font-size:13px}
+
+/* fotos chicas (≤ 800 px) no se estiran a media pantalla */
+@media (min-width:861px){
+  .ssplit--sm .ssplit__media{padding:clamp(40px,5vw,80px)}
+  .ssplit--sm .ssplit__stick{position:sticky;top:110px;height:auto;aspect-ratio:1/1;max-height:72svh;border-radius:var(--r)}
+  .ssplit--sm{align-items:center}
+}

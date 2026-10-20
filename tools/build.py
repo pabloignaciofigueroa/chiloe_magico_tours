@@ -218,7 +218,7 @@ def page(path, title, title_en, desc, desc_en, content, body_class='', wa_text='
 def preload_img(key):
     m = META[key]
     if m['big']:
-        return (f'<link rel="preload" as="image" href="/assets/img/{key}-1800.webp" imagesrcset="/assets/img/{key}-800.webp 800w, '
+        return (f'<link rel="preload" as="image" href="/assets/img/{key}-1800.webp" imagesrcset="/assets/img/{key}-800.webp {w800(key)}w, '
                 f'/assets/img/{key}-1800.webp {m["w"]}w" imagesizes="100vw" fetchpriority="high">')
     return f'<link rel="preload" as="image" href="/assets/img/{key}-800.webp" fetchpriority="high">'
 
@@ -382,7 +382,8 @@ def map_block(page):
 def sticky_split(key, inner_html, side='right', extra_keys=()):
     """Texto que corre junto a un paisaje fijo que toca el borde de la pantalla (sticky, sin pin)."""
     more = trio([f'<div class="tile tile--pic" data-parallax>{bimg(k, "(max-width:760px) 100vw, 50vw")}</div>' for k in extra_keys]) if extra_keys else ''
-    return f'''<section class="ssplit ssplit--{side}">
+    sm = ' ssplit--sm' if META[key]['w'] < 1000 else ''
+    return f'''<section class="ssplit ssplit--{side}{sm}">
   <div class="ssplit__media"><div class="ssplit__stick" data-parallax>{bimg(key, "(max-width:760px) 100vw, 50vw")}</div>{credit(key)}</div>
   <div class="ssplit__txt" data-rv>{inner_html}</div>
 </section>{more}'''
@@ -565,7 +566,7 @@ def tour_page(t):
     season = f'<p class="note">{L(d["season"])}</p>' if d.get('season') else ''
     guide = [g for g in D.GUIA if g['slug'] in d.get('guia', [])]
     guide_html = ''.join(f'<li><a class="u-link" href="/guia/{g["slug"]}/">{L(g["title"])}</a></li>' for g in guide)
-    content = f'''<section class="th{" th--split" if not wide(t["hero"]) else ""}" data-hero>
+    content = f'''<section class="th th--split" data-hero>
   <div class="th__media" data-parallax-hero>{bimg(t["hero"], "100vw", True)}</div>{credit(t["hero"])}
   <div class="th__shade" aria-hidden="true"></div>
   <a class="back" href="/tours/"><span aria-hidden="true">←</span> {L("Todos los tours", "All tours")}</a>
