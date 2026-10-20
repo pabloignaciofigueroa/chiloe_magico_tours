@@ -165,7 +165,7 @@ L.append(lam(NI,
   <p>Este sitio nació de mirar con atención lo que ustedes ya publican. No hay frases inventadas ni promesas de agencia: cada título sale de sus posts, sus destacadas, sus afiches, su bio o de lo que sus viajeros escribieron en Google. Lo que hicimos fue ordenarlo, darle aire y ponerlo en movimiento.</p>
   <p>Tampoco hay fotos de banco: de las {N_FOTOS} fotos del sitio, {N_PROPIAS} y los 3 videos son suyos. La única excepción es una foto de libre uso del volcán Osorno, con su autor citado.</p>
   <p>Es un regalo. Ojalá lo disfruten tanto como nosotros disfrutamos haciéndolo.</p>
-  <p class="sign2">Pablo Figueroa G. · Director de estudio</p></div>''')))
+  <p class="sign2">Pablo Figueroa G.</p></div>''')))
 
 # 03 · DE DÓNDE VIENE TODO · rojo, polaroids, cifras gigantes
 pol = [('caleuche', .55, .7, -8), ('curanto-destape', 2.55, .45, 5), ('tenaun', 4.35, .9, -3),
@@ -188,8 +188,8 @@ sth = ''.join(f'<div class="stripe" style="background:{C[k]};color:{fg}"><span c
 L.append(lam(NI, f'<div class="stripes">{sth}</div>' +
   f'<img class="abs" src="{png_file("brand/logo/logo-color.png", 600)}" style="left:.55in;top:.5in;width:1.7in" alt="">' +
   box(.55, 1.75, 6.6, f'''<p class="k" style="color:{ISLA}">La marca · letra y color</p>
-  <p class="spa">TOUR LA COSTA</p><p class="spb">con</p><p class="spa">CURANTO EN HOYO</p>
-  <p class="cap2">Anton para títulos, como sus afiches · Montserrat para todo lo demás</p>''') +
+  <p class="spa">TOUR ISLA LEMUY</p><p class="spb">con</p><p class="spa">ASADO</p>
+  <p class="cap2">Así titulan su afiche de Lemuy · Anton para títulos, Montserrat para el resto</p>''') +
   box(.55, 5.3, 6.6, f'''<div class="cols3">
   <div><h4 style="color:{ROJOH}">Letra</h4><p>La letra pesada y angosta de sus afiches, en mayúsculas, y la palabra suelta que une dos líneas («con»).</p></div>
   <div><h4 style="color:{ISLA}">Color</h4><p>El fondo y el oscuro salen del cielo nublado y del bosque de sus fotos; los acentos, de su logo, tal cual.</p></div>
@@ -197,9 +197,9 @@ L.append(lam(NI, f'<div class="stripes">{sth}</div>' +
 
 # 05 · RECORRIDO · isla, 4 actos con medallones
 actos = [('d-hero', 'Llegar', 'El columpio de Huillinco y la navegación en Puñihuil, dentro de la isla del logo.', -3),
-         ('d-tours', 'Elegir', 'Los 8 tours como sus afiches, cada uno con su ficha.', 2),
+         ('d-tours', 'Elegir', 'Ocho recorridos para comparar, cada uno con su propia ficha.', 2),
          ('d-reviews', 'Confiar', f'{N_REV} reseñas, el equipo con sus nombres y más de 20 años.', -2),
-         ('d-bcta', 'Reservar', 'Su remate de siempre y WhatsApp a un toque, en cada página.', 3)]
+         ('d-bcta', 'Reservar', 'Una invitación final y el botón verde de WhatsApp en cada página.', 3)]
 ah = ''
 for i, (s_, t_, p_, r_) in enumerate(actos):
     x = .5 + i * 3.1
@@ -207,13 +207,13 @@ for i, (s_, t_, p_, r_) in enumerate(actos):
     ah += box(x, 5.45, 2.8, f'<h3 class="t3" style="color:#fff">{t_}</h3><p class="p" style="color:rgba(255,255,255,.88)">{p_}</p>')
 L.append(lam(ISLA, wave('rgba(255,255,255,.08)', 1.4) +
   box(.5, .6, 9, f'''<p class="k" style="color:rgba(255,255,255,.8)">El recorrido</p>
-  <h2 class="t" style="color:#fff">Un día de tour, <em style="color:{NI}">en</em> cuatro actos</h2>''') + ah,
+  <h2 class="t" style="color:#fff">Un día de tour, <em style="color:{TI}">en</em> cuatro actos</h2>''') + ah,
   nc='rgba(255,255,255,.7)'))
 
 # 06 · PORTADA DEL SITIO · azul hondo, navegador + celular
 L.append(lam(MARH, gull(.55, 6.6, .7, 'rgba(255,255,255,.35)', 12) +
-  box(.55, .7, 3.95, f'''<p class="k" style="color:rgba(255,255,255,.8)">La portada</p>
-  <h2 class="t" style="color:#fff">Nuestro archipiélago <em style="color:{TE}">es</em> mágico</h2>
+  box(.55, .7, 3.95, f'''<p class="k" style="color:rgba(255,255,255,.8)">La portada del sitio</p>
+  <h2 class="t" style="color:#fff">Una foto suya <em style="color:{TE}">y</em> dos caminos</h2>
   <p class="p" style="color:rgba(255,255,255,.9)">La frase de su bio sobre su foto del lago, y dos caminos: ver los tours o escribir por WhatsApp. Al pie, cuatro datos que un viajero quiere saber antes de comparar agencias.</p>''') +
   box(.55, 5.0, 3.75, Q('El transporte es en vehículos pequeños pero cómodos, lo cual hace que la experiencia sea muy personalizada.', 'Gabriela · Google'), 'card', f'background:{NI};') +
   fr('d-hero', 5.3, .65, 7.25, 1.5) + ph('m-hero', 4.65, 3.75, 1.65, -5) +
@@ -222,7 +222,7 @@ L.append(lam(MARH, gull(.55, 6.6, .7, 'rgba(255,255,255,.35)', 12) +
 
 # 07 · VAMOS A NAVEGAR · captura a sangre, tarjeta flotante
 L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed abs0" src="{shot("d-isla-b", 2400)}" style="object-position:50% 70%" alt="">' +
-  box(7.55, 1.15, 5.0, f'''<p class="k" style="color:{ISLA}">Vamos a navegar</p>
+  box(7.55, 1.15, 5.0, f'''<p class="k" style="color:{ISLA}">La navegación</p>
   <h2 class="t" style="color:{TI}">La isla <em style="color:{ROJO}">de su logo,</em> hecha ventana</h2>
   <p class="p">Al bajar por la página, la silueta de Chiloé crece hasta que el video de Puñihuil llena la pantalla. Es el único momento «de efecto» del sitio.</p>
   {Q("La experiencia de ver los pingüinos que ofrece la caleta Puñihuil es de otro nivel", IG("057"))}''', 'card', f'background:{NI};') +
@@ -233,7 +233,7 @@ L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed a
 fan = [('curanto-destape', 8.45, 1.75, -7, 'Con curanto en hoyo'), ('brujos-columpio-2', 9.85, 1.6, 2, 'Con asado al palo'), ('almas-pareja', 11.2, 1.8, 8, 'Mitos y acantilados')]
 fanh = ''.join(f'<div class="card-t" style="left:{x}in;top:{y}in;transform:rotate({r}deg)"><img src="{src(k, 420)}" alt=""><span>{t}</span></div>' for k, x, y, r, t in fan)
 L.append(lam(NI, f'<div class="band" style="background:{ROJOH}"></div>' + gull(11.75, .2, .75, '#fff', -6) +
-  box(.55, .3, 11, f'<p class="k" style="color:rgba(255,255,255,.85)">Elige tu tour</p><h2 class="t tline" style="color:#fff">Los 8 tours, <em style="color:{TI}">como</em> sus afiches</h2>') +
+  box(.55, .3, 11, f'<p class="k" style="color:rgba(255,255,255,.85)">Los tours</p><h2 class="t tline" style="color:#fff">Los 8 tours, <em style="color:{TI}">como</em> sus afiches</h2>') +
   fr('d-tours', .55, 1.75, 7.3, -1) + ph('m-tours', 6.75, 4.55, 1.45, 5) + fanh +
   box(8.45, 4.75, 4.1, f'''<p class="p">Se deslizan con el dedo, como si estuvieran colgados en la vitrina de la agencia. Bajo cada nombre, una frase suya: «UN CURANTITO?».</p>
   <p class="p"><b style="color:{ROJOH}">{N_COMIDA} de las {N_REV} reseñas</b> hablan de la comida. Por eso cada tour se presenta primero por lo que se come o se vive.</p>''')))
@@ -242,8 +242,9 @@ L.append(lam(NI, f'<div class="band" style="background:{ROJOH}"></div>' + gull(1
 paradas = ['Feria Artesanal Dalcahue', 'Iglesia Patrimonio Tenaún', 'Almuerzo en agroturismo', 'Cascadas de Tocoihue', 'Isla Aucar']
 parh = ''.join(medal(.55 + i * 1.18, 3.55, 1.08, NI if i % 2 == 0 else '#fff', VER, f'<span class="mds">{E(p_)}</span>', rot=(-6, 5, -3, 7, -5)[i], fs=7.4) for i, p_ in enumerate(paradas))
 L.append(lam(VER,
-  box(.55, .55, 6.2, f'''<p class="k" style="color:rgba(255,255,255,.85)">Ficha de tour · como su afiche</p>
-  <p class="spa" style="color:#fff">TOUR LA COSTA</p><p class="spb" style="color:{NI}">con</p><p class="spa" style="color:#fff">CURANTO EN HOYO</p>''') + parh +
+  box(.55, .55, 6.2, f'''<p class="k" style="color:rgba(255,255,255,.85)">Ficha de tour · La Costa</p>
+  <h2 class="t" style="color:#fff">Paradas, precio <em style="color:{TI}">y</em> un solo botón</h2>
+  <p class="p" style="color:rgba(255,255,255,.9)">Cada tour tiene su página con el título de su afiche y las paradas rotuladas en círculos, igual que en el original.</p>''') + parh +
   box(.55, 4.95, 2.95, f'<p class="pr">$35.000</p><p class="p">por persona, con almuerzo, + $3.000 a las cascadas. Su post del 7 feb 2025: conviene confirmar si sigue vigente.</p>', 'card', f'background:{NI};') +
   box(3.75, 4.95, 2.85, Q('El tour fue preciso, teníamos tiempo para recorrer libremente…', 'Ximena · Google', cls='light') + '<p class="p" style="color:rgba(255,255,255,.9)">Por eso las paradas y el horario van primero, y el formulario termina en su WhatsApp.</p>') +
   fr('d-ficha', 6.95, .6, 5.6, 2.5) + fr('d-ficha-info', 6.7, 4.3, 5.6, -2) +
@@ -272,7 +273,7 @@ L.append(lam(BR, gull(11.7, .45, .7, MARH, -10, True) +
 
 # 12 · RESERVAR · rojo, el remate gigante
 L.append(lam(ROJO, wave(ROJOH, 1.3) + gull(5.2, 4.15, .85, '#fff', -12) +
-  box(.55, .55, 6.7, f'''<p class="k" style="color:rgba(255,255,255,.85)">Reservar · el final de cada página</p>
+  box(.55, .55, 6.7, f'''<p class="k" style="color:rgba(255,255,255,.85)">El cierre de cada página</p>
   <p class="remate">¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!</p>
   <p class="k" style="color:rgba(255,255,255,.75)">{IG("007")} · su remate de siempre</p>''') +
   box(.55, 5.35, 6.2, f'''<p class="p">Su bio dice «Escríbenos» con el enlace de WhatsApp: ese es su canal real. El contacto y las 14 preguntas frecuentes terminan ahí, con fecha y personas ya escritas. Antes de reservar se aclara que el guiado es en español.</p>
@@ -283,8 +284,8 @@ L.append(lam(ROJO, wave(ROJOH, 1.3) + gull(5.2, 4.15, .85, '#fff', -12) +
 # 13 · DETALLES · niebla, cinco celulares
 phs = ''.join(ph(k, .65 + i * 2.45, .5 + (0, .3, 0, .3, 0)[i], 2.05, (-4, 3, -2, 4, -3)[i]) for i, k in enumerate(['m-hero', 'm-tours', 'm-ficha-info', 'm-nosotros', 'm-contacto']))
 dots = ''.join(f'<div class="dot" style="left:{.45 + i * 2.45}in;top:{1.4 + (0, .3, 0, .3, 0)[i]}in;background:{c_}"></div>' for i, c_ in enumerate([MAR, VER, ROJO, ISLA, TE]))
-det = [('Celular primero', 'Una columna, botones grandes y WhatsApp a un toque. Las fotos se aligeraron para funcionar con poca señal en ruta.', MAR),
-       ('Español e inglés', 'Un botón ES · EN traduce lo que guía la visita; sus textos y las reseñas quedan en su idioma original.', VER),
+det = [('Celular primero', 'Una columna y botones grandes. Las fotos se aligeraron para funcionar con poca señal en ruta.', MAR),
+       ('Español e inglés', 'Un botón ES · EN traduce lo que guía la visita; sus textos y las reseñas quedan tal como se escribieron.', VER),
        ('Menú con fotos', 'Cuatro capítulos grandes; al pasar sobre cada uno aparece una foto suya de ese tema.', ROJO),
        ('Sin tropiezos', 'La página no salta mientras carga y cada foto tiene su descripción en español e inglés.', ISLA)]
 deth = ''.join(box(.55 + i * 3.1, 5.75, 2.85, f'<div class="bar" style="background:{c_}"></div><h3 class="t4">{t_}</h3><p class="p">{p_}</p>') for i, (t_, p_, c_) in enumerate(det))
