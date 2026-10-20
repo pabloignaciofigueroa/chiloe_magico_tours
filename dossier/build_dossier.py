@@ -131,6 +131,17 @@ def ph(name, x, y, w, rot=0, z=3):
     return f'<div class="ph" style="left:{x}in;top:{y}in;width:{w}in;transform:rotate({rot}deg);z-index:{z}"><img src="{shot(name, 560)}" alt=""></div>'
 def medal(x, y, d, bg, fg, html_, rot=0, fs=11, z=4):
     return f'<div class="md" style="left:{x}in;top:{y}in;width:{d}in;height:{d}in;background:{bg};color:{fg};transform:rotate({rot}deg);font-size:{fs}pt;z-index:{z}"><div>{html_}</div></div>'
+def seal(x, y, d, rot=-8):
+    ring = 'PARA CHILOÉ MÁGICO ★ HECHO EN CASTRO ★ OCTUBRE 2026 ★ '
+    return f'''<svg class="seal" viewBox="0 0 200 200" style="left:{x}in;top:{y}in;width:{d}in;height:{d}in;transform:rotate({rot}deg)">
+  <defs><path id="sr" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+  <circle cx="100" cy="100" r="98" fill="{C["turismo"]}"/>
+  <circle cx="100" cy="100" r="91" fill="none" stroke="#fff" stroke-width="2"/>
+  <circle cx="100" cy="100" r="58" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <text font-family="Montserrat" font-weight="700" font-size="11" fill="#fff"><textPath href="#sr" textLength="462" lengthAdjust="spacing">{ring}</textPath></text>
+  <text x="100" y="97" text-anchor="middle" font-family="Anton" font-size="30" fill="#fff">UN</text>
+  <text x="100" y="128" text-anchor="middle" font-family="Anton" font-size="30" fill="#fff">REGALO</text>
+</svg>'''
 def box(x, y, w, inner, cls='', st=''):
     return f'<div class="tx {cls}" style="left:{x}in;top:{y}in;width:{w}in;{st}">{inner}</div>'
 def pill(t, bg, fg='#fff'):
@@ -157,13 +168,13 @@ L.append(f'''<article class="lam spread">
 # 02 · CARTA · niebla, foto redondeada, ola azul, medallón rojo
 L.append(lam(NI,
   photo('nicolas-enrique', .45, .45, 5.6, 7.3, pos='50% 40%', z=2) +
-  medal(8.7, 4.75, 1.75, ROJO, '#fff', 'UN REGALO<br>PARA<br>CHILOÉ<br>MÁGICO', rot=-8, fs=16) +
+  seal(8.5, 5.85, 2.2) +
   box(6.65, .75, 5.85, f'''<p class="k" style="color:{ISLA}">Antes de empezar</p>
   <h2 class="t" style="color:{TI}">Un sitio hecho <em style="color:{ROJO}">con</em> lo que ustedes ya dijeron</h2>
   <div class="letter2">
   <p>Equipo de Chiloé Mágico:</p>
-  <p>Este sitio nació de mirar con atención lo que ustedes ya publican. No hay frases inventadas ni promesas de agencia: cada título sale de sus posts, sus destacadas, sus afiches, su bio o de lo que sus viajeros escribieron en Google. Lo que hicimos fue ordenarlo, darle aire y ponerlo en movimiento.</p>
-  <p>Tampoco hay fotos de banco: de las {N_FOTOS} fotos del sitio, {N_PROPIAS} y los 3 videos son suyos. La única excepción es una foto de libre uso del volcán Osorno, con su autor citado.</p>
+  <p>Todo lo que van a ver ya era suyo. Cada título viene de sus posts, sus destacadas, sus afiches, su bio o de lo que sus viajeros escribieron en Google; el sitio solo lo ordena y le da aire.</p>
+  <p>Las imágenes también: {N_PROPIAS} de las {N_FOTOS} fotos y los 3 videos salen de su Instagram. La única ajena es la del volcán Osorno, de libre uso y con su autor citado.</p>
   <p>Es un regalo. Ojalá lo disfruten tanto como nosotros disfrutamos haciéndolo.</p>
   <p class="sign2">Pablo Figueroa G.</p></div>''')))
 
@@ -176,8 +187,8 @@ def big(nm, cap): return f'<div class="bign"><b>{nm}</b><span>{cap}</span></div>
 L.append(lam(ROJOH, polh + gull(11.6, .45, .8, 'rgba(255,255,255,.9)', -8) +
   box(6.85, .7, 5.7, f'''<p class="k" style="color:rgba(255,255,255,.85)">De dónde viene todo</p>
   <h2 class="t" style="color:#fff">Todo esto <em style="color:{TI}">ya</em> era suyo</h2>
-  <div class="bigs">{big(N_POSTS, "publicaciones de Instagram, leídas una por una")}{big(N_REV, f"reseñas de Google, nota {NOTA}, en su idioma original")}{big(7, "afiches de tours: títulos, paradas, letra y rojo")}{big(N_PROPIAS, f"fotos suyas, de {N_POSTS_FOTOS} posts distintos")}</div>
-  <p class="p" style="color:#fff">Cada texto de la marca tiene su origen identificado. Lo que no estaba publicado (la mayoría de los precios, pagos, políticas) dice <b>«por confirmar con la agencia»</b>.</p>'''),
+  <div class="bigs">{big(N_POSTS, "publicaciones en su Instagram")}{big(N_REV, f"reseñas de sus viajeros en Google, nota {NOTA}")}{big(7, "afiches suyos: de ahí vienen títulos, paradas, letra y rojo")}{big(N_PROPIAS, f"fotos suyas, de {N_POSTS_FOTOS} publicaciones")}</div>
+  <p class="p" style="color:#fff">Cada texto del sitio viene de uno de estos lugares. Lo que ustedes aún no publican (la mayoría de los precios, pagos, políticas) aparece como <b>«por confirmar con la agencia»</b>.</p>'''),
   nc='rgba(255,255,255,.7)'))
 
 # 04 · LA MARCA · niebla, franjas de color verticales
@@ -191,15 +202,15 @@ L.append(lam(NI, f'<div class="stripes">{sth}</div>' +
   <p class="spa">TOUR ISLA LEMUY</p><p class="spb">con</p><p class="spa">ASADO</p>
   <p class="cap2">Así titulan su afiche de Lemuy · Anton para títulos, Montserrat para el resto</p>''') +
   box(.55, 5.3, 6.6, f'''<div class="cols3">
-  <div><h4 style="color:{ROJOH}">Letra</h4><p>La letra pesada y angosta de sus afiches, en mayúsculas, y la palabra suelta que une dos líneas («con»).</p></div>
-  <div><h4 style="color:{ISLA}">Color</h4><p>El fondo y el oscuro salen del cielo nublado y del bosque de sus fotos; los acentos, de su logo, tal cual.</p></div>
-  <div><h4 style="color:{ROJOH}">Rojo = reservar</h4><p>El rojo de «TURISMO» solo va en lo que lleva a reservar: así el ojo aprende dónde se actúa.</p></div></div>''')))
+  <div><h4 style="color:{ROJOH}">Letra</h4><p>Viene de sus afiches: títulos en una letra pesada y angosta, en mayúsculas, y una palabra suelta que une dos líneas («con»).</p></div>
+  <div><h4 style="color:{ISLA}">Color</h4><p>Viene de sus fotos y su logo: el cielo nublado da el fondo, el bosque da el oscuro y el logo, los acentos.</p></div>
+  <div><h4 style="color:{ROJOH}">Rojo = reservar</h4><p>Viene del «TURISMO» de su logo y de la banda de sus afiches; en el sitio marca lo que lleva a reservar.</p></div></div>''')))
 
 # 05 · RECORRIDO · isla, 4 actos con medallones
-actos = [('d-hero', 'Llegar', 'El columpio de Huillinco y la navegación en Puñihuil, dentro de la isla del logo.', -3),
-         ('d-tours', 'Elegir', 'Ocho recorridos para comparar, cada uno con su propia ficha.', 2),
-         ('d-reviews', 'Confiar', f'{N_REV} reseñas, el equipo con sus nombres y más de 20 años.', -2),
-         ('d-bcta', 'Reservar', 'Una invitación final y el botón verde de WhatsApp en cada página.', 3)]
+actos = [('d-hero', 'Llegar', 'Su columpio de Huillinco y su navegación en Puñihuil, dentro de la isla de su logo.', -3),
+         ('d-tours', 'Elegir', 'Sus ocho recorridos, cada uno con su propia ficha.', 2),
+         ('d-reviews', 'Confiar', f'Lo que dicen sus viajeros, su equipo con nombre y sus más de 20 años.', -2),
+         ('d-bcta', 'Reservar', 'Su invitación de siempre y su WhatsApp en cada página.', 3)]
 ah = ''
 for i, (s_, t_, p_, r_) in enumerate(actos):
     x = .5 + i * 3.1
@@ -214,7 +225,7 @@ L.append(lam(ISLA, wave('rgba(255,255,255,.08)', 1.4) +
 L.append(lam(MARH, gull(.55, 6.6, .7, 'rgba(255,255,255,.35)', 12) +
   box(.55, .7, 3.95, f'''<p class="k" style="color:rgba(255,255,255,.8)">La portada del sitio</p>
   <h2 class="t" style="color:#fff">Una foto suya <em style="color:{TE}">y</em> dos caminos</h2>
-  <p class="p" style="color:rgba(255,255,255,.9)">La frase de su bio sobre su foto del lago, y dos caminos: ver los tours o escribir por WhatsApp. Al pie, cuatro datos que un viajero quiere saber antes de comparar agencias.</p>''') +
+  <p class="p" style="color:rgba(255,255,255,.9)">Su bio ya lo decía: «Nuestro archipiélago es mágico ¡Ven a descubrirlo!». Va sobre su foto del lago Huillinco, con dos caminos: ver sus tours o escribirles por WhatsApp. Al pie, cuatro datos que ustedes ya publican y que un viajero compara antes de elegir.</p>''') +
   box(.55, 5.0, 3.75, Q('El transporte es en vehículos pequeños pero cómodos, lo cual hace que la experiencia sea muy personalizada.', 'Gabriela · Google'), 'card', f'background:{NI};') +
   fr('d-hero', 5.3, .65, 7.25, 1.5) + ph('m-hero', 4.65, 3.75, 1.65, -5) +
   box(6.75, 5.5, 5.8, f'<div class="pills">{pill(f"{NOTA} ★ · {N_REV} reseñas", ROJO)}{pill("Lu a Do", NI, TI)}{pill("16 por van", ISLA)}{pill("10:00 · Plaza de Armas", NI, TI)}</div>'),
@@ -224,7 +235,7 @@ L.append(lam(MARH, gull(.55, 6.6, .7, 'rgba(255,255,255,.35)', 12) +
 L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed abs0" src="{shot("d-isla-b", 2400)}" style="object-position:50% 70%" alt="">' +
   box(7.55, 1.15, 5.0, f'''<p class="k" style="color:{ISLA}">La navegación</p>
   <h2 class="t" style="color:{TI}">La isla <em style="color:{ROJO}">de su logo,</em> hecha ventana</h2>
-  <p class="p">Al bajar por la página, la silueta de Chiloé crece hasta que el video de Puñihuil llena la pantalla. Es el único momento «de efecto» del sitio.</p>
+  <p class="p">Su logo ya tenía la isla. Al bajar por la página, esa silueta crece hasta que su video de Puñihuil llena la pantalla.</p>
   {Q("La experiencia de ver los pingüinos que ofrece la caleta Puñihuil es de otro nivel", IG("057"))}''', 'card', f'background:{NI};') +
   fr('d-isla-a', 9.3, 5.25, 3.2, 4) + medal(8.55, 4.95, 1.05, ROJO, '#fff', 'Así<br>empieza', rot=-12, fs=10, z=6) +
   f'<span class="no" style="color:rgba(255,255,255,.7)">{nx():02d}</span></article>')
@@ -235,8 +246,8 @@ fanh = ''.join(f'<div class="card-t" style="left:{x}in;top:{y}in;transform:rotat
 L.append(lam(NI, f'<div class="band" style="background:{ROJOH}"></div>' + gull(11.75, .2, .75, '#fff', -6) +
   box(.55, .3, 11, f'<p class="k" style="color:rgba(255,255,255,.85)">Los tours</p><h2 class="t tline" style="color:#fff">Los 8 tours, <em style="color:{TI}">como</em> sus afiches</h2>') +
   fr('d-tours', .55, 1.75, 7.3, -1) + ph('m-tours', 6.75, 4.55, 1.45, 5) + fanh +
-  box(8.45, 4.75, 4.1, f'''<p class="p">Se deslizan con el dedo, como si estuvieran colgados en la vitrina de la agencia. Bajo cada nombre, una frase suya: «UN CURANTITO?».</p>
-  <p class="p"><b style="color:{ROJOH}">{N_COMIDA} de las {N_REV} reseñas</b> hablan de la comida. Por eso cada tour se presenta primero por lo que se come o se vive.</p>''')))
+  box(8.45, 4.75, 4.1, f'''<p class="p">Sus afiches ya presentaban cada tour por separado; aquí se deslizan con el dedo, como en la vitrina de su agencia. Bajo cada nombre, una frase de su propio post: «UN CURANTITO?».</p>
+  <p class="p"><b style="color:{ROJOH}">{N_COMIDA} de las {N_REV} reseñas</b> de sus viajeros hablan de la comida; por eso cada tour se presenta primero por lo que se come o se vive.</p>''')))
 
 # 09 · FICHA DE TOUR · verde, título de afiche, paradas en círculos
 paradas = ['Feria Artesanal Dalcahue', 'Iglesia Patrimonio Tenaún', 'Almuerzo en agroturismo', 'Cascadas de Tocoihue', 'Isla Aucar']
@@ -244,9 +255,9 @@ parh = ''.join(medal(.55 + i * 1.18, 3.55, 1.08, NI if i % 2 == 0 else '#fff', V
 L.append(lam(VER,
   box(.55, .55, 6.2, f'''<p class="k" style="color:rgba(255,255,255,.85)">Ficha de tour · La Costa</p>
   <h2 class="t" style="color:#fff">Paradas, precio <em style="color:{TI}">y</em> un solo botón</h2>
-  <p class="p" style="color:rgba(255,255,255,.9)">Cada tour tiene su página con el título de su afiche y las paradas rotuladas en círculos, igual que en el original.</p>''') + parh +
-  box(.55, 4.95, 2.95, f'<p class="pr">$35.000</p><p class="p">por persona, con almuerzo, + $3.000 a las cascadas. Su post del 7 feb 2025: conviene confirmar si sigue vigente.</p>', 'card', f'background:{NI};') +
-  box(3.75, 4.95, 2.85, Q('El tour fue preciso, teníamos tiempo para recorrer libremente…', 'Ximena · Google', cls='light') + '<p class="p" style="color:rgba(255,255,255,.9)">Por eso las paradas y el horario van primero, y el formulario termina en su WhatsApp.</p>') +
+  <p class="p" style="color:rgba(255,255,255,.9)">Su afiche de La Costa ya traía el título y las paradas rotuladas en círculos; la ficha de cada tour los repite tal cual.</p>''') + parh +
+  box(.55, 4.95, 2.95, f'<p class="pr">$35.000</p><p class="p">por persona, con almuerzo, + $3.000 a las cascadas, como lo publicaron el 7 feb 2025. Conviene confirmar si sigue vigente.</p>', 'card', f'background:{NI};') +
+  box(3.75, 4.95, 2.85, Q('El tour fue preciso, teníamos tiempo para recorrer libremente…', 'Ximena · Google', cls='light') + '<p class="p" style="color:rgba(255,255,255,.9)">Sus viajeros valoran saber qué pasa en el día: por eso las paradas y el horario van primero, y la cotización termina en su WhatsApp.</p>') +
   fr('d-ficha', 6.95, .6, 5.6, 2.5) + fr('d-ficha-info', 6.7, 4.3, 5.6, -2) +
   medal(11.7, 3.65, 1.0, ROJO, '#fff', 'Cotizar<br><small>por WhatsApp</small>', rot=10, fs=10, z=6),
   nc='rgba(255,255,255,.7)'))
@@ -258,7 +269,7 @@ L.append(lam(TI, '<p class="qq" style="left:.4in;top:.15in">“</p>' +
   <p class="k" style="color:rgba(255,255,255,.6);margin-top:.12in">Andrea · Google</p>''') +
   box(.6, 3.55, 5.9, f'''<div class="stats"><div><b style="color:{ROJO}">{N_GUIA}</b><span>de {N_REV} reseñas hablan del guía</span></div><div><b style="color:{MAR}">{N_NOMBRE}</b><span>nombran a alguien del equipo</span></div></div>
   <div class="pills" style="margin-top:.2in">{"".join(pill(n_, c_) for n_, c_ in names)}</div>
-  <p class="p" style="color:rgba(255,255,255,.75);margin-top:.18in">Paisajes muestran todas las agencias; lo que distingue a Chiloé Mágico son las personas. Por eso las reseñas elegidas dicen nombres, y «Nosotros» muestra caras. Las {N2} reseñas de dos estrellas se leyeron, pero no se publican.</p>''') +
+  <p class="p" style="color:rgba(255,255,255,.75);margin-top:.18in">Sus viajeros hablan, sobre todo, de las personas: de Nicolás, de Alberto, de don Enrique. Por eso las reseñas del sitio dicen nombres y «Nosotros» muestra caras. Las {N2} reseñas de dos estrellas quedan fuera.</p>''') +
   fr('d-reviews', 7.0, .6, 5.55, -2.5) + fr('d-nosotros2', 6.75, 4.25, 5.55, 2),
   nc='rgba(255,255,255,.6)'))
 
@@ -267,16 +278,16 @@ trio = [('d-destinos', 'Por<br>lugar', MAR, -2.5), ('d-experiencias', 'Por<br>ex
 th_ = ''.join(fr(s_, .55 + i * 4.1, 2.15, 3.85, r_) + medal(.2 + i * 4.1 + 3.4, 1.65, 1.15, c_, '#fff', t_, rot=(-10, 8, -6)[i], fs=12, z=5) for i, (s_, t_, c_, r_) in enumerate(trio))
 L.append(lam(BR, gull(11.7, .45, .7, MARH, -10, True) +
   box(.55, .55, 9, f'<p class="k" style="color:{ISLA}">Otras formas de buscar</p><h2 class="t" style="color:{TI}">Por dónde, <em style="color:{ROJO}">qué y</em> por qué</h2>') + th_ +
-  box(.55, 5.15, 3.85, Q('En el mapudungun de Chiloé Dalkawe significa lugar de dalcas…', IG('087')) + '<p class="p">Cinco destinos, cada uno explicado con sus posts.</p>') +
-  box(4.65, 5.15, 3.85, Q('I enjoyed the myths of brujería and the taste of chiloe with Nicolas.', 'elia · Google', 'en') + '<p class="p">Mitos y comida, al mismo nivel que el patrimonio.</p>') +
-  box(8.75, 5.15, 3.8, f'<p class="p">Sus posts explicativos (el curanto, las iglesias, los brujos) se pierden en Instagram con el tiempo; reunidos en una guía, ayudan a que los encuentren en Google.</p><p class="p"><b>Paquetes</b> y <b>servicios privados</b> tienen su página, con lo no publicado «por confirmar».</p>')))
+  box(.55, 5.15, 3.85, Q('En el mapudungun de Chiloé Dalkawe significa lugar de dalcas…', IG('087')) + '<p class="p">Sus posts ya explicaban cada destino; esos textos son ahora sus páginas.</p>') +
+  box(4.65, 5.15, 3.85, Q('I enjoyed the myths of brujería and the taste of chiloe with Nicolas.', 'elia · Google', 'en') + '<p class="p">Sus viajeros recuerdan los mitos y la comida tanto como las iglesias.</p>') +
+  box(8.75, 5.15, 3.8, f'<p class="p">Ustedes ya explicaban el curanto, las iglesias y los brujos en Instagram, donde se pierden con el tiempo; en una guía, quedan para quien busca en Google.</p><p class="p">Sus <b>paquetes</b> y <b>servicios privados</b> tienen su página; lo que aún no publican, «por confirmar».</p>')))
 
 # 12 · RESERVAR · rojo, el remate gigante
 L.append(lam(ROJO, wave(ROJOH, 1.3) + gull(5.2, 4.15, .85, '#fff', -12) +
   box(.55, .55, 6.7, f'''<p class="k" style="color:rgba(255,255,255,.85)">El cierre de cada página</p>
   <p class="remate">¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!</p>
   <p class="k" style="color:rgba(255,255,255,.75)">{IG("007")} · su remate de siempre</p>''') +
-  box(.55, 5.35, 6.2, f'''<p class="p">Su bio dice «Escríbenos» con el enlace de WhatsApp: ese es su canal real. El contacto y las 14 preguntas frecuentes terminan ahí, con fecha y personas ya escritas. Antes de reservar se aclara que el guiado es en español.</p>
+  box(.55, 5.35, 6.2, f'''<p class="p">Su bio ya lo dice: «Escríbenos», con el enlace de WhatsApp. Por eso el contacto y las 14 preguntas frecuentes terminan ahí, con fecha y personas ya escritas. Y como tres de sus reseñas en inglés lo mencionan, se aclara antes que el guiado es en español.</p>
   <p class="p sm">En la bio y en el portal municipal aparecen dos números distintos; ambos están en el sitio hasta que confirmen cuál usar.</p>''', 'card', f'background:{NI};') +
   fr('d-contacto2', 7.25, .65, 5.3, 3) + fr('d-faq', 7.6, 4.2, 4.95, -2.5) + ph('m-contacto', 6.85, 3.3, 1.35, -6),
   nc='rgba(255,255,255,.7)'))
@@ -284,10 +295,10 @@ L.append(lam(ROJO, wave(ROJOH, 1.3) + gull(5.2, 4.15, .85, '#fff', -12) +
 # 13 · DETALLES · niebla, cinco celulares
 phs = ''.join(ph(k, .65 + i * 2.45, .5 + (0, .3, 0, .3, 0)[i], 2.05, (-4, 3, -2, 4, -3)[i]) for i, k in enumerate(['m-hero', 'm-tours', 'm-ficha-info', 'm-nosotros', 'm-contacto']))
 dots = ''.join(f'<div class="dot" style="left:{.45 + i * 2.45}in;top:{1.4 + (0, .3, 0, .3, 0)[i]}in;background:{c_}"></div>' for i, c_ in enumerate([MAR, VER, ROJO, ISLA, TE]))
-det = [('Celular primero', 'Una columna y botones grandes. Las fotos se aligeraron para funcionar con poca señal en ruta.', MAR),
-       ('Español e inglés', 'Un botón ES · EN traduce lo que guía la visita; sus textos y las reseñas quedan tal como se escribieron.', VER),
+det = [('Celular primero', 'Como su Instagram, se lee en el teléfono: una columna, botones grandes y fotos livianas para la poca señal en ruta.', MAR),
+       ('Español e inglés', 'Parte de sus reseñas llegan en inglés: un botón ES · EN traduce lo que guía la visita; sus textos quedan tal como los escribieron.', VER),
        ('Menú con fotos', 'Cuatro capítulos grandes; al pasar sobre cada uno aparece una foto suya de ese tema.', ROJO),
-       ('Sin tropiezos', 'La página no salta mientras carga y cada foto tiene su descripción en español e inglés.', ISLA)]
+       ('Sin tropiezos', 'La página no salta mientras carga y cada una de sus fotos tiene descripción en español e inglés.', ISLA)]
 deth = ''.join(box(.55 + i * 3.1, 5.75, 2.85, f'<div class="bar" style="background:{c_}"></div><h3 class="t4">{t_}</h3><p class="p">{p_}</p>') for i, (t_, p_, c_) in enumerate(det))
 L.append(lam(NI, dots + phs + deth))
 
@@ -295,7 +306,7 @@ L.append(lam(NI, dots + phs + deth))
 L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed abs0" src="{raw("tenaun", 2600)}" style="object-position:50% 40%" alt="">' +
   box(6.75, .5, 5.75, f'''{MARK}
   <p class="k" style="color:{ISLA}">Lo que sigue</p><h2 class="t" style="color:{TI}">Hacerlo <em style="color:{ROJO}">suyo</em></h2>
-  <p class="p">Este sitio se hizo solo con lo que ya estaba publicado. Con un par de conversaciones podría ir mucho más lejos:</p>
+  <p class="p">Todo esto salió de lo que ustedes ya publicaron. Con un par de conversaciones podría ir mucho más lejos:</p>
   <ul class="next2"><li>Fotografía y video propios de cada tour, del equipo y de las vans</li>
     <li>Precios, temporadas y políticas confirmados por ustedes</li>
     <li>Dominio propio .cl y alojamiento a nombre de Chiloé Mágico</li>
@@ -341,7 +352,8 @@ body{{font-family:"Montserrat",Arial,sans-serif;color:{TI};-webkit-print-color-a
 .q2 p{{font-style:italic;font-size:10.4pt;line-height:1.42;margin-bottom:3pt}}
 .q2 cite{{font-style:normal;font-weight:600;font-size:6.4pt;letter-spacing:.16em;text-transform:uppercase;color:{MU}}}
 .q2.light p{{color:#fff}}.q2.light cite{{color:rgba(255,255,255,.75)}}
-.letter2 p{{font-size:10.2pt;line-height:1.58;margin-bottom:.1in}}
+.letter2 p{{font-size:13.3pt;line-height:1.5;margin-bottom:.12in}}
+.seal{{position:absolute;z-index:6;filter:drop-shadow(0 8pt 18pt rgba(0,0,0,.25))}}
 .sign2{{font-style:italic;color:{MU}}}
 .wave{{position:absolute;left:0;width:100%;display:block;z-index:0}}
 .gull{{position:absolute;z-index:3}}
