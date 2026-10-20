@@ -198,11 +198,12 @@
   }));
 
   /* ---------- barra móvil de reserva: aparece al dejar la portada del tour, se esconde al llegar a cotizar ---------- */
-  const mbar = $('[data-mbar]'), bh = $('.bhero'), cot = $('#cotizar');
+  const mbar = $('[data-mbar]'), bh = $('.th'), cot = $('#cotizar'), ft = $('footer');
   if (mbar && bh && cot) {
-    let pastHero = false, atCot = false; const upd = () => mbar.classList.toggle('is-on', pastHero && !atCot);
+    let pastHero = false, atCot = false, atFt = false; const upd = () => mbar.classList.toggle('is-on', pastHero && !atCot && !atFt);
     new IntersectionObserver(es => { pastHero = !es[0].isIntersecting; upd(); }).observe(bh);
     new IntersectionObserver(es => { atCot = es[0].isIntersecting; upd(); }).observe(cot);
+    if (ft) new IntersectionObserver(es => { atFt = es[0].isIntersecting; upd(); }).observe(ft);
   }
 
   /* ---------- menú (dialog accesible) ---------- */
@@ -269,6 +270,8 @@
       const hero = $('[data-parallax-hero]');
       if (hero) gsap.to(hero, { yPercent: 12, scale: 1.06, ease: 'none', scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: true } });
       $$('[data-parallax] img').forEach(img => gsap.fromTo(img, { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
+      /* entrada de cada bloque: sube y aparece una vez (si el script falla, todo queda visible) */
+      $$('[data-rv]').forEach(el => gsap.from(el.children.length > 1 && !el.matches('.tr') ? el.children : el, { y: 24, opacity: 0, duration: .9, ease: EASE, stagger: .07, scrollTrigger: { trigger: el, start: 'top 88%', once: true } }));
       $$('[data-card]').forEach((c, i) => gsap.from(c, { y: 60 + (i % 3) * 30, opacity: 0, duration: 1.2, ease: EASE, scrollTrigger: { trigger: c, start: 'top 92%', once: true } }));
       /* tours: paneles a pantalla completa que avanzan en horizontal (sticky + transform, sin pin) */
       const hs = $('[data-htours]');
@@ -293,10 +296,11 @@
         const cov = $('.isla__cover', isla), sh = $('.isla__shade', isla), o = { h: .66 };
         const setH = () => cov.style.setProperty('--h', (o.h * innerHeight) + 'px');
         const tl = gsap.timeline({ scrollTrigger: { trigger: isla, start: 'top top', end: 'bottom bottom', scrub: .8, invalidateOnRefresh: true } });
-        tl.to(o, { h: 16, duration: .5, ease: 'power2.in', onUpdate: setH }, 0)
-          .to(cov, { opacity: 0, duration: .1, ease: 'none' }, .42)
-          .to(sh, { opacity: 1, duration: .15, ease: 'none' }, .38)
-          .to({}, { duration: .5 }, .5);
+        tl.to(o, { h: 16, duration: .55, ease: 'power2.in', onUpdate: setH }, 0)
+          .to(cov, { opacity: 0, duration: .1, ease: 'none' }, .45)
+          .to(sh, { opacity: 1, duration: .15, ease: 'none' }, .42)
+          .fromTo('[data-isla-t]', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .15, ease: 'power2.out' }, .5)
+          .to({}, { duration: .35 }, .65);
       }
       return () => {};
     });

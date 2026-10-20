@@ -334,3 +334,99 @@ FAQ = [
     (U('¿Pueden ir niños?', 'Can children come?'), ['__pending__']),
     (U('¿Cuál es el horario de la agencia?', 'What are the office hours?'), [SITE['hours']]),
 ]
+
+
+# ---------------------------------------------------------------- v5: ficha de cada tour
+# Texto de interfaz escrito a partir de datos verificables (afiche del tour y sus publicaciones);
+# las citas literales de la marca siguen en TOURS (hook, lead, body). Fuente de cada dato al lado.
+DETAIL = {
+    'la-costa-curanto': {
+        'corto': U('Curanto en hoyo, iglesia de Tenaún, cascadas e Isla Aucar.', 'Pit curanto, Tenaún church, waterfalls and Aucar Island.'),
+        'que': U('Curanto en hoyo frente a las Islas Chauques, la iglesia de Tenaún, las cascadas de Tocoihue y la pasarela a Isla Aucar.',
+                 'Pit-cooked curanto facing the Chauques Islands, Tenaún church, Tocoihue falls and the footbridge to Aucar Island.'),  # [DEST-H7_002] + IG
+        'lunch': U('Curanto en hoyo', 'Pit-cooked curanto'),
+        'pts': [U('Ves preparar y destapar el curanto en hoyo, con mirador a las Islas Chauques', 'Watch the curanto being cooked and uncovered in the pit, overlooking the Chauques Islands'),
+                U('Iglesia Patrimonio de la Humanidad de Tenaún', 'Tenaún church, a UNESCO World Heritage Site'),
+                U('Cascadas de Tocoihue, donde según la leyenda se iniciaban los brujos', 'Tocoihue falls, where legend says the witches were initiated'),
+                U('Pasarela de 437 metros sobre el mar hasta la Isla Aucar', 'A 437-metre footbridge over the sea to Aucar Island'),
+                U('Feria Artesanal de Dalcahue', 'Dalcahue craft market')],
+        'no': [U('$3.000 por persona: entrada a las cascadas', 'CLP 3,000 per person: falls entrance')],  # [DEST-H7_002]
+        'rel': ['isla-mechuque', 'isla-quinchao', 'isla-lemuy-asado'],
+    },
+    'isla-lemuy-asado': {
+        'corto': U('Navegación a Lemuy, Muelle de los Brujos y asado al palo.', "Boat to Lemuy, the Witches' Pier and spit-roast lamb."),
+        'que': U('Navegas el canal Yal hasta Isla Lemuy, vuelas en escoba en el Muelle de los Brujos y almuerzas asado de cordero al palo.',
+                 'Cross the Yal channel to Lemuy Island, fly on a broom at the Witches\' Pier and have spit-roast lamb for lunch.'),  # [DEST-H7_008] + IG
+        'lunch': U('Asado de cordero al palo', 'Spit-roast lamb'),
+        'pts': [U('Navegación por el canal Yal hasta Isla Lemuy', 'Crossing the Yal channel to Lemuy Island'),
+                U('Fotos "volando" en el Muelle de los Brujos', '"Flying" photos at the Witches\' Pier'),
+                U('Puente colgante de 30 metros en el Parque Yayanes', '30-metre suspension bridge in Yayanes Park'),
+                U('Iglesia Patrimonio de Vilupulli y el Museo del Acordeón en Chonchi', 'Vilupulli heritage church and the Accordion Museum in Chonchi'),
+                U('Almuerzo de asado de cordero al palo en agroturismo', 'Spit-roast lamb lunch at a farm')],
+        'no': [], 'rel': ['la-costa-curanto', 'parque-nacional-chiloe', 'muelle-de-las-almas'],
+    },
+    'parque-nacional-chiloe': {
+        'corto': U('Bosque nativo y playa en el Parque Nacional, más Nercón y Huillinco.', 'Native forest and beach in the National Park, plus Nercón and Huillinco.'),
+        'que': U('Caminas por el bosque nativo del Parque Nacional Chiloé hasta la playa, con paradas en Nercón, Chonchi y el columpio de Huillinco.',
+                 'Walk through the native forest of Chiloé National Park to the beach, stopping at Nercón, Chonchi and the Huillinco swing.'),  # [DEST-H7_003]
+        'lunch': U('Almuerzo en restaurant tradicional', 'Lunch at a traditional restaurant'),
+        'pts': [U('Senderos del Parque Nacional Chiloé y la playa Chanquín', 'Chiloé National Park trails and Chanquín beach'),
+                U('Iglesia Patrimonio de Nercón', 'Nercón heritage church'),
+                U('Columpio de los Enamorados en el lago Huillinco', 'The Lovers\' Swing on Lake Huillinco'),
+                U('Artesanía en Chonchi', 'Crafts in Chonchi')],
+        'no': [], 'rel': ['muelle-de-las-almas', 'isla-lemuy-asado', 'muelle-de-la-luz'],
+    },
+    'muelle-de-las-almas': {
+        'corto': U('Caminata a los acantilados de Cucao y el Muelle de las Almas.', 'A walk to the Cucao cliffs and the Pier of Souls.'),
+        'que': U('Caminata por la cordillera de Piruil hasta el Muelle de las Almas, sobre los acantilados de Cucao, y el lago Huillinco.',
+                 'A walk over the Piruil range to the Pier of Souls above the Cucao cliffs, then Lake Huillinco.'),  # [DEST-H7_004]
+        'lunch': U('Almuerzo en restaurant tradicional', 'Lunch at a traditional restaurant'),
+        'pts': [U('Caminata por la cordillera de Piruil', 'Walk over the Piruil range'),
+                U('Muelle de las Almas, frente al Pacífico', 'The Pier of Souls, facing the Pacific'),
+                U('La leyenda del balsero que lleva las almas al más allá', 'The legend of the ferryman who carries souls to the afterlife'),
+                U('Muelle y Columpio de los Enamorados en el lago Huillinco', 'Pier and Lovers\' Swing on Lake Huillinco')],
+        'no': [], 'rel': ['parque-nacional-chiloe', 'muelle-de-la-luz', 'isla-lemuy-asado'],
+    },
+    'muelle-de-la-luz': {
+        'corto': U('Navegación por el río Chepu y el muelle frente al Pacífico.', 'A Chepu river boat ride and the pier facing the Pacific.'),
+        'que': U('Navegas el río Chepu, caminas al Muelle de la Luz frente al océano y terminas en Puñihuil y Ancud.',
+                 'Sail the Chepu river, walk to the Muelle de la Luz facing the ocean and finish at Puñihuil and Ancud.'),  # [DEST-H7_005]
+        'lunch': U('Almuerzo en restaurant panorámico', 'Lunch at a panoramic restaurant'),
+        'pts': [U('Navegación por el río Chepu', 'Sailing the Chepu river'),
+                U('Muelle Mirador de la Luz, sobre el Pacífico', 'Muelle de la Luz lookout over the Pacific'),
+                U('Caleta Puñihuil y la escultura de la Pincoya', 'Puñihuil cove and the Pincoya sculpture'),
+                U('Plaza de Armas y costanera de Ancud', 'Ancud main square and waterfront')],
+        'no': [], 'rel': ['pinguineras-punihuil', 'muelle-de-las-almas', 'parque-nacional-chiloe'],
+    },
+    'pinguineras-punihuil': {
+        'corto': U('Navegación a ver pingüinos en los islotes de Puñihuil.', 'A boat trip to see penguins at the Puñihuil islets.'),
+        'que': U('Navegas entre los islotes de Puñihuil para ver pingüinos de Magallanes y de Humboldt, y sigues al Muelle El Caleuche y Ancud.',
+                 'Sail among the Puñihuil islets to see Magellanic and Humboldt penguins, then the Caleuche pier and Ancud.'),  # [DEST-H7_006] + IG
+        'lunch': U('Almuerzo en restaurant panorámico', 'Lunch at a panoramic restaurant'),
+        'pts': [U('Navegación por 3 islotes del Monumento Natural Puñihuil', 'Boat trip around 3 islets of the Puñihuil Natural Monument'),
+                U('Pingüinos de Magallanes y de Humboldt en su temporada de verano', 'Magellanic and Humboldt penguins in their summer season'),
+                U('Muelle El Caleuche', 'El Caleuche pier'),
+                U('Fuerte San Antonio y Feria Artesanal de Ancud', 'San Antonio fort and Ancud craft market')],
+        'no': [], 'season': U('Pingüinos en verano. Meses exactos: por confirmar con la agencia.', 'Penguins in summer. Exact months: to be confirmed with the agency.'),
+        'rel': ['muelle-de-la-luz', 'isla-mechuque', 'la-costa-curanto'],
+    },
+    'isla-quinchao': {
+        'corto': U('Feria de Dalcahue, iglesias patrimonio y humedales de Curaco.', 'Dalcahue market, heritage churches and Curaco wetlands.'),
+        'que': U('Cruzas a Isla Quinchao: feria de Dalcahue, iglesias patrimonio de Rilán y Villa Quinchao, miradores y los humedales de Curaco de Vélez.',
+                 'Cross to Quinchao Island: Dalcahue market, Rilán and Villa Quinchao heritage churches, lookouts and the Curaco de Vélez wetlands.'),  # [DEST-H7_007]
+        'lunch': U('Almuerzo incluido', 'Lunch included'),
+        'pts': [U('Feria Artesanal de Dalcahue', 'Dalcahue craft market'),
+                U('Iglesias Patrimonio de Rilán y Villa Quinchao', 'Rilán and Villa Quinchao heritage churches'),
+                U('Miradores Chonos y Changuitad', 'Chonos and Changuitad lookouts'),
+                U('Costanera y humedales de Curaco de Vélez, con aves migratorias', 'Curaco de Vélez waterfront and wetlands, with migratory birds')],
+        'no': [], 'rel': ['la-costa-curanto', 'isla-mechuque', 'isla-lemuy-asado'],
+    },
+    'isla-mechuque': {
+        'corto': U('Navegación a la Isla Mechuque con curanto en hoyo.', 'A boat trip to Mechuque Island with pit curanto.'),
+        'que': U('Navegas a la Isla Mechuque y almuerzas curanto en hoyo.', 'Sail to Mechuque Island and have pit-cooked curanto for lunch.'),  # [PIEZA IG-017]
+        'lunch': U('Curanto en hoyo', 'Pit-cooked curanto'),
+        'pts': [U('Navegación a la Isla Mechuque', 'Boat trip to Mechuque Island'),
+                U('Curanto en hoyo', 'Pit-cooked curanto')],
+        'no': [], 'rel': ['la-costa-curanto', 'isla-quinchao', 'pinguineras-punihuil'],
+    },
+}
