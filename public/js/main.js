@@ -192,9 +192,10 @@
     e.preventDefault();
     const d = new FormData(f);
     const parts = [];
-    if (f.dataset.tour) parts.push(`Hola! Quiero reservar el ${f.dataset.tour}.`); else parts.push(`Hola! Consulta (${f.dataset.kind || 'web'}).`);
+    const fmt = v => { if (!/^\d{4}-\d{2}-\d{2}$/.test(v)) return v; const [y, m, dd] = v.split('-').map(Number); return new Date(y, m - 1, dd).toLocaleDateString('es-CL', { weekday: 'long', day: 'numeric', month: 'long' }); };
+    if (f.dataset.tour) parts.push(`Hola! Quiero cotizar el ${f.dataset.tour}.`); else parts.push(`Hola! Quiero cotizar (${f.dataset.kind || 'web'}).`);
     if (d.get('nombre')) parts.push(`Nombre: ${d.get('nombre')}`);
-    if (d.get('fecha')) parts.push(`Fecha: ${d.get('fecha')}`);
+    if (d.get('fecha')) parts.push(`Fecha: ${fmt(d.get('fecha'))}`);
     if (d.get('personas')) parts.push(`Personas: ${d.get('personas')}`);
     if (d.get('mensaje')) parts.push(d.get('mensaje'));
     window.open(`https://wa.me/${WA}?text=${encodeURIComponent(parts.join('\n'))}`, '_blank', 'noopener');

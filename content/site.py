@@ -90,7 +90,7 @@ TOURS = [
         'slug': 'isla-lemuy-asado', 'afiche': '[DEST-H7_008]',
         'title': ('TOUR ISLA LEMUY', 'con', 'ASADO'),
         'short': 'Tour Isla Lemuy',
-        'hero': 'brujos-columpio', 'card': 'brujos-vuelo',
+        'hero': 'brujos-vuelo', 'card': 'brujos-alas',
         'gallery': ['brujos-vuelo', 'brujos-alas', 'yayanes-puente', 'lemuy-bosque', 'ichuac', 'aldachildo', 'acordeon', 'asado-cordero', 'detif', 'hueñay-playa'],
         'dest': ['chonchi-lemuy'], 'exp': ['gastronomia', 'patrimonio', 'naturaleza', 'navegacion', 'mitos'],
         'tag': U('Con asado al palo', 'With spit-roast lamb'),
@@ -186,7 +186,7 @@ TOURS = [
         'slug': 'isla-quinchao', 'afiche': '[DEST-H7_007]',
         'title': ('TOUR', 'Isla', 'QUINCHAO'),
         'short': 'Tour Isla Quinchao',
-        'hero': 'curaco', 'card': 'curaco-2',
+        'hero': 'curaco', 'card': 'dalcahue-feria',
         'gallery': ['dalcahue', 'dalcahue-feria', 'curaco', 'curaco-2'],
         'dest': ['dalcahue-quinchao'], 'exp': ['patrimonio', 'naturaleza'],
         'tag': U('Iglesias y humedales', 'Churches and wetlands'),
@@ -341,6 +341,7 @@ FAQ = [
 # las citas literales de la marca siguen en TOURS (hook, lead, body). Fuente de cada dato al lado.
 DETAIL = {
     'la-costa-curanto': {
+        'guia': ['que-es-el-curanto', 'iglesias-patrimonio'],
         'tags': [U('Curanto','Curanto'), U('Iglesias patrimonio','Heritage churches'), U('Cascadas','Waterfalls')],
         'corto': U('Ves destapar un curanto en hoyo, visitas Tenaún y cruzas a Isla Aucar.', 'Watch a pit curanto being uncovered, visit Tenaún and cross to Aucar Island.'),
         'que': U('Curanto en hoyo frente a las Islas Chauques, la iglesia de Tenaún, las cascadas de Tocoihue y la pasarela a Isla Aucar.',
@@ -355,6 +356,7 @@ DETAIL = {
         'rel': ['isla-mechuque', 'isla-quinchao', 'isla-lemuy-asado'],
     },
     'isla-lemuy-asado': {
+        'guia': ['brujos-almas-y-pincoya', 'iglesias-patrimonio'],
         'tags': [U('Navegación','Boat'), U('Asado al palo','Spit-roast lamb'), U('Muelle de los Brujos','Witches\' Pier')],
         'corto': U('Navegas a Isla Lemuy, te fotografías «volando» y almuerzas asado al palo.', 'Sail to Lemuy Island, take "flying" photos and have spit-roast lamb.'),
         'que': U('Navegas el canal Yal hasta Isla Lemuy, te fotografías «volando» en el Muelle de los Brujos y almuerzas asado de cordero al palo.',
@@ -368,6 +370,7 @@ DETAIL = {
         'no': [], 'rel': ['la-costa-curanto', 'parque-nacional-chiloe', 'muelle-de-las-almas'],
     },
     'parque-nacional-chiloe': {
+        'guia': ['iglesias-patrimonio'],
         'tags': [U('Caminata fácil','Easy walk'), U('Bosque nativo','Native forest'), U('Playa','Beach')],
         'corto': U('Caminas por bosque nativo hasta la playa del Parque Nacional Chiloé.', 'Walk through native forest to the beach in Chiloé National Park.'),
         'que': U('Caminas por el bosque nativo del Parque Nacional Chiloé hasta la playa, con paradas en Nercón, Chonchi y el columpio de Huillinco.',
@@ -380,6 +383,7 @@ DETAIL = {
         'no': [], 'rel': ['muelle-de-las-almas', 'isla-lemuy-asado', 'muelle-de-la-luz'],
     },
     'muelle-de-las-almas': {
+        'guia': ['brujos-almas-y-pincoya'],
         'tags': [U('Caminata','Walk'), U('Acantilados','Cliffs'), U('Leyendas','Legends')],
         'corto': U('Caminas por los cerros de Cucao hasta el Muelle de las Almas.', 'Walk over the Cucao hills to the Pier of Souls.'),
         'que': U('Caminata por la cordillera de Piruil hasta el Muelle de las Almas, sobre los acantilados de Cucao, y el lago Huillinco.',
@@ -392,6 +396,7 @@ DETAIL = {
         'no': [], 'rel': ['parque-nacional-chiloe', 'muelle-de-la-luz', 'isla-lemuy-asado'],
     },
     'muelle-de-la-luz': {
+        'guia': ['brujos-almas-y-pincoya'],
         'tags': [U('Navegación','Boat'), U('Océano Pacífico','Pacific Ocean'), U('Ancud','Ancud')],
         'corto': U('Navegas el río Chepu y caminas al muelle frente al Pacífico.', 'Sail the Chepu river and walk to the pier facing the Pacific.'),
         'que': U('Navegas el río Chepu, caminas al Muelle de la Luz frente al océano y terminas en Puñihuil y Ancud.',
@@ -404,6 +409,7 @@ DETAIL = {
         'no': [], 'rel': ['pinguineras-punihuil', 'muelle-de-las-almas', 'parque-nacional-chiloe'],
     },
     'pinguineras-punihuil': {
+        'guia': ['pinguinos-de-punihuil'],
         'tags': [U('Navegación','Boat'), U('Pingüinos','Penguins'), U('Solo en verano','Summer only')],
         'corto': U('Navegas entre los islotes de Puñihuil para ver pingüinos.', 'Sail among the Puñihuil islets to see penguins.'),
         'que': U('Navegas entre los islotes de Puñihuil para ver pingüinos de Magallanes y de Humboldt, y sigues al Muelle El Caleuche y Ancud.',
@@ -417,6 +423,7 @@ DETAIL = {
         'rel': ['muelle-de-la-luz', 'isla-mechuque', 'la-costa-curanto'],
     },
     'isla-quinchao': {
+        'guia': ['iglesias-patrimonio', 'la-minga'],
         'tags': [U('Iglesias patrimonio','Heritage churches'), U('Feria artesanal','Craft market'), U('Aves','Birds')],
         'corto': U('Cruzas a Quinchao: feria de Dalcahue, iglesias patrimonio y humedales.', 'Cross to Quinchao: Dalcahue market, heritage churches and wetlands.'),
         'que': U('Cruzas a Isla Quinchao: feria de Dalcahue, iglesias patrimonio de Rilán y Villa Quinchao, miradores y los humedales de Curaco de Vélez.',
@@ -429,7 +436,8 @@ DETAIL = {
         'no': [], 'rel': ['la-costa-curanto', 'isla-mechuque', 'isla-lemuy-asado'],
     },
     'isla-mechuque': {
-        'tags': [U('Navegación','Boat'), U('Curanto','Curanto'), U('Isla','Island')],
+        'guia': ['que-es-el-curanto'],
+        'tags': [U('Navegación','Boat'), U('Curanto','Curanto'), U('Palafitos','Stilt houses')],
         'corto': U('Navegas a Isla Mechuque y almuerzas curanto en hoyo.', 'Sail to Mechuque Island and have pit curanto for lunch.'),
         'que': U('Navegas a la Isla Mechuque y almuerzas curanto en hoyo.', 'Sail to Mechuque Island and have pit-cooked curanto for lunch.'),  # [PIEZA IG-017]
         'lunch': U('curanto en hoyo', 'pit-cooked curanto'),

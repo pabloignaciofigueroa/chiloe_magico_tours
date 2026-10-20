@@ -1020,3 +1020,46 @@ p,li,blockquote{text-wrap:pretty}
 .lang{min-height:44px;font-size:13px}
 .lang__es,.lang__en{font-size:13px}
 @media (max-width:560px){.tr__a{grid-template-columns:132px minmax(0,1fr)}.tr__img{aspect-ratio:3/4;align-self:stretch}}
+
+/* =========== v7 · segunda ronda =========== */
+/* celular: la foto de la tarjeta se queda en su columna */
+@media (max-width:560px){
+  .tr__a{grid-template-columns:120px minmax(0,1fr);grid-template-rows:auto}
+  .tr__img{aspect-ratio:auto;width:100%;min-width:0;min-height:176px;height:100%;overflow:hidden;grid-row:1/-1}
+  .tr__img img{width:100%;height:100%;object-fit:cover}
+}
+/* ficha en escritorio: caja de cotización fija junto a "Lo que harás" */
+.tw__in{grid-template-columns:minmax(0,1fr)}
+.tbox{display:none}
+@media (min-width:1100px){
+  .tw__in{grid-template-columns:minmax(0,1fr) 360px;gap:clamp(40px,5vw,88px)}
+  .tbox{display:block;position:sticky;top:96px;align-self:start}
+  .tbox__in{background:#fff;border-radius:var(--r);padding:26px}
+  .tbox__name{font:400 var(--t3)/1 var(--f-display);text-transform:uppercase;margin:0 0 10px}
+  .tbox__price{margin:0 0 14px;font-size:var(--t4)}
+  .tbox__price strong{font-size:22px}
+  .tbox__list{margin:0 0 20px;padding-left:18px;font-size:var(--t5);line-height:1.55}
+  .tbox__alt{margin:12px 0 0;text-align:center;font-size:var(--t5)}
+}
+.tw__main .h2{margin:0 0 clamp(20px,2.4vw,32px)}
+.tw__list{max-width:720px}
+.tw__quote{max-width:720px}
+/* reseñas: estrellas que se ven, tarjetas a su altura */
+.rsec .stars5,.rev .stars5{fill:#f5b301}
+.rsec__sw .swiper-wrapper{align-items:flex-start}
+.rsec .rev{min-height:0}
+/* isla */
+.isla__h{line-height:.95;max-width:9ch}
+.isla__q{max-width:30ch}
+@media (min-aspect-ratio:1/1){.isla__t{max-width:min(34vw,440px)}}
+.th__more{gap:6px}
+.th__que{max-width:46ch}
+.guidelist{margin:0 0 1em;padding-left:18px}
+.tcot__warn{grid-column:1/-1;margin:-4px 0 0;font-size:var(--t5);color:var(--turismo-hondo);font-weight:600}
+/* header con el logo oficial */
+.hdr__logo{width:auto;height:52px}
+.hdr__logo img{height:52px;width:auto}
+.home .hdr:not(.is-solid) .hdr__logo{opacity:1;pointer-events:auto}
+@media (max-width:760px){.hdr__logo,.hdr__logo img{height:44px}}
+/* footer sin segundo llamado */
+.ftr__addr a{color:#fff;font-weight:700;text-decoration:none;display:inline-block;padding:10px 0;margin:-10px 0}
