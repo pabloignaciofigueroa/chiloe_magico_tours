@@ -1317,3 +1317,8 @@ main:has(> :is(.bcta,.rsec):last-child) + .ftr{margin-top:0}
 .btn--pkg{min-width:240px;justify-content:center;min-height:58px;padding:0 40px;font:700 17px/1 var(--f-text);letter-spacing:.02em;text-transform:none;border-radius:999px}
 @media (min-width:1100px){.btn--pkg{min-height:54px;font-size:16px}}
 .btn--pkg [aria-hidden]{font-size:20px;margin-left:8px}
+/* Nosotros: termina en reseñas oscuras cuya ola es roja → el pie sigue en rojo */
+main:has(> .rsec:last-child) + .ftr{background:var(--turismo-hondo)}
+main:has(> .rsec:last-child) + .ftr .ftr__wave{display:none}
+main:has(> .rsec:last-child) + .ftr .ftr__gull{stroke:var(--turismo-hondo)}
+main:has(> .rsec:last-child) + .ftr .ftr__wa{--bg:#fff;--fg:var(--turismo-hondo)}
