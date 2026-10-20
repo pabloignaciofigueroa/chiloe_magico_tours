@@ -385,7 +385,7 @@ h2{{font-family:"Anton";font-weight:400;font-size:26pt;line-height:1.02;text-tra
 .spread .bleed{{position:absolute;inset:0}}
 .spread-shade{{display:none}}
 .spread-in{{position:absolute;left:8.35in;right:.4in;top:.45in;bottom:.45in;padding:.32in;background:rgba(29,36,33,var(--masa,.8));border-radius:.24in;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.12in;color:#fff}}
-.spread-tab{{position:absolute;left:0;top:.45in;background:rgba(255,255,255,.75);padding:.17in .32in .17in .5in;border-radius:0 .18in .18in 0}}
+.spread-tab{{position:absolute;left:0;top:.45in;background:#fff;opacity:.75;padding:.17in .32in .17in .5in;border-radius:0 .18in .18in 0}}
 .spread-logo{{width:1.9in;display:block}}
 .spread .sub{{font-family:"Anton";font-size:26pt;text-transform:uppercase;line-height:1.05;text-shadow:0 2px 14px rgba(0,0,0,.45)}}
 .spread .for{{font-size:13pt;font-style:italic;margin-top:.1in;text-shadow:0 1px 8px rgba(0,0,0,.5)}}
