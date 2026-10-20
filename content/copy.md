@@ -19,13 +19,13 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/` [RESEÑA Francesca Cruzat, Google]: «Tomamos con mi amiga el tour Isla Lemuy, excelente el guía, la comida y los lugares.…» — corrección: sin emojis
 - `/` [RESEÑA susan mtv, Google]: «…la comida que incluye el tour a isla Lemuy es demasiado rico y puedes comer hasta quedar satisfecho. Recorrimos lugares hermosos y convivimos con locales eso hace mucho mejor la experiencia.…» — corrección: sin emojis
 - `/` [IG-007]: «¡No dejes que te lo cuenten! / Ven a disfrutar de esta mágica isla junto a nosotros» — corrección: remate partido en dos: título y frase
+- `/` [BIO]: «Chiloé Mágico te espera. ¡Ven a descubrirlo!» — corrección: puntuación: «te espera, Ven a descubrirlo!»
 - `/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/` [BIO]: «Chiloé Mágico te espera. ¡Ven a descubrirlo!» — corrección: puntuación: «te espera, Ven a descubrirlo!»
 - `/tours/` [IG-007]: «¡No dejes que te lo cuenten! / Ven a disfrutar de esta mágica isla junto a nosotros» — corrección: remate partido en dos: título y frase
+- `/tours/` [BIO]: «Chiloé Mágico te espera. ¡Ven a descubrirlo!» — corrección: puntuación: «te espera, Ven a descubrirlo!»
 - `/tours/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/tours/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/tours/` [BIO]: «Chiloé Mágico te espera. ¡Ven a descubrirlo!» — corrección: puntuación: «te espera, Ven a descubrirlo!»
 - `/tours/la-costa-curanto/` [DEST-H7_002] título del afiche: «TOUR LA COSTA con CURANTO EN HOYO»
 - `/tours/la-costa-curanto/` [DEST-H7_002] rótulos de paradas: «Feria Artesanal Dalcahue · Iglesia Patrimonio Tenaún · Almuerzo en agroturismo · Cascadas de Tocoihue · Isla Aucar»
 - `/tours/la-costa-curanto/` [IG-010]: «Ven a disfrutar de esta exquisita comida típica chilota junto a nosotros»

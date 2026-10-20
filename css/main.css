@@ -1256,3 +1256,13 @@ h1 em,h2 em{font-style:normal;color:var(--turismo)}
   .md2 span{font-size:10.5px}
 }
 .meet .map__cta{color:var(--tinta)}
+
+/* mapa: bloqueado hasta que se toca, así el scroll de la página nunca queda atrapado */
+.map iframe{pointer-events:none}
+.map.is-active iframe{pointer-events:auto}
+.map__lock{position:absolute;inset:0;z-index:3;display:flex;align-items:flex-end;justify-content:center;padding:0 0 18px;border:0;background:transparent;cursor:pointer;opacity:0;transition:opacity .3s}
+.map.is-loaded .map__lock{opacity:1}
+.map__lock span{background:rgba(29,36,33,.86);color:#fff;font:600 14px/1 var(--f-text);padding:12px 18px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+.map.is-active .map__lock{display:none}
+.map__lock:focus-visible span{outline:3px solid var(--sol);outline-offset:3px}
+.bcta--red .bcta__big em{color:var(--sol)}

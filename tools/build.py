@@ -378,6 +378,7 @@ def map_block(page):
     {bimg("palafitos", "(max-width: 760px) 100vw, 50vw")}
     <span class="map__cta">{L("Abrir mapa · Gamboa 351, Castro", "Open map · Gamboa 351, Castro")}</span>
   </a>
+  <button class="map__lock" type="button" data-map-lock><span>{L("Toca para mover el mapa", "Tap to move the map")}</span></button>
   <iframe title="Mapa: Gamboa 351, Castro" data-title-en="Map: Gamboa 351, Castro" data-src="https://www.openstreetmap.org/export/embed.html?bbox=-73.7702%2C-42.4846%2C-73.7582%2C-42.4786&amp;layer=mapnik&amp;marker=-42.4816941%2C-73.7642726" loading="lazy" referrerpolicy="no-referrer"></iframe>
 </div>'''
 
@@ -451,7 +452,6 @@ def closing(page, text, key='punihuil-bahia'):
     <h2 class="bcta__big" id="bcta-t" lang="es">¡No dejes que te lo <em>cuenten</em>!</h2>
     <p class="bcta__p" lang="es">Ven a disfrutar de esta mágica isla junto a nosotros.</p>
     <div class="cta__row">{btn(L("Cotizar por WhatsApp", "Get a quote on WhatsApp"), wa_link(text), "btn btn--red", True)}</div>
-    <p class="bcta__addr" lang="es">{q(SITE["address_short"], page)} · {q(SITE["hours"], page)}</p>
   </div>
 </section>'''
 
@@ -629,7 +629,7 @@ def tour_page(t):
         <p class="tbox__price">{price_short(t)}</p>
         <ul class="tbox__list"><li>{L("Día completo, 10:00 a 19:00", "Full day, 10am to 7pm")}</li><li>{L("Traslado, guía, almuerzo y bebestibles", "Transport, guide, lunch and drinks")}</li><li>{L("Sale frente a la Plaza de Armas de Castro", "Leaves from Castro's main square")}</li></ul>
         {btn(L("Cotizar este tour", "Get a quote"), "#cotizar", "btn btn--red btn--full")}
-        <p class="tbox__alt">{L("¿Dudas? Escríbenos:", "Questions? Message us:")} <a class="u-link" href="{wa_link(wa_t)}" target="_blank" rel="noopener">{SITE["wa_display"]}</a></p>
+        <p class="tbox__alt"><a class="u-link" href="{wa_link(wa_t)}" target="_blank" rel="noopener">{L("¿Dudas? Escríbenos por WhatsApp", "Questions? Message us on WhatsApp")}</a></p>
       </div>
     </aside>
   </div>
@@ -664,7 +664,7 @@ def tour_page(t):
       <label>{L("Personas", "People")}<input type="number" name="personas" min="1" max="16" value="2" required></label>
       <button class="btn btn--red" type="submit"><span class="btn__in">{L("Cotizar por WhatsApp", "Get a quote on WhatsApp")}</span></button>
     </form>
-    <p class="tcot__alt">{L("¿Prefieres hablar?", "Rather talk?")} <a href="{wa_link(wa_t)}" target="_blank" rel="noopener" class="u-link">WhatsApp {SITE["wa_display"]}</a></p>
+    <p class="tcot__alt">{L("¿Prefieres hablar?", "Rather talk?")} <a href="{wa_link(wa_t)}" target="_blank" rel="noopener" class="u-link">{L("Escríbenos directo por WhatsApp", "Message us directly on WhatsApp")}</a></p>
   </div>
 </section>
 

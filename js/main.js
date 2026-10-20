@@ -94,6 +94,16 @@
     covers.forEach(c => io2.observe(c));
   }
 
+  /* ---------- mapa bloqueado: no se traga el scroll; se activa con un toque y se bloquea al salir ---------- */
+  $$('[data-map]').forEach(m => {
+    const btn = $('[data-map-lock]', m); if (!btn) return;
+    const lock = () => m.classList.remove('is-active');
+    btn.addEventListener('click', () => { m.classList.add('is-active'); });
+    m.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') lock(); });
+    new IntersectionObserver(es => { if (!es[0].isIntersecting) lock(); }, { threshold: 0 }).observe(m);
+    document.addEventListener('touchstart', e => { if (!m.contains(e.target)) lock(); }, { passive: true });
+  });
+
   /* ---------- mapa diferido ---------- */
   $$('[data-map]').forEach(m => {
     const f = $('iframe', m);
