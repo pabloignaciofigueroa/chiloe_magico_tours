@@ -155,7 +155,7 @@ L.append(f'''<article class="lam spread">
 </article>''')
 
 # 02 · CARTA · niebla, foto redondeada, ola azul, medallón rojo
-L.append(lam(NI, wave(MAR, .9) +
+L.append(lam(NI,
   photo('nicolas-enrique', .45, .45, 5.6, 7.3, pos='50% 40%', z=2) +
   medal(4.75, 5.55, 1.75, ROJO, '#fff', 'Un regalo<br><small>para</small><br>Chiloé Mágico', rot=-11, fs=15) +
   box(6.65, .75, 5.85, f'''<p class="k" style="color:{ISLA}">Antes de empezar</p>
