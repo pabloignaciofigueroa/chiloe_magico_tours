@@ -120,7 +120,7 @@ def S(nombre, titulo, lead, desk, mob, bloques, nota='', desk2=None, hl=None):
 nx()
 L.append(f'''<article class="lam spread">
   <img class="bleed" src="{raw("huillinco-columpio", 2600)}" style="object-position:50% 62%" alt="">
-  <img class="spread-logo" src="{png_file("brand/logo/logo-sticker.png", 900)}" alt="Turismo Chiloé Mágico">
+  <div class="spread-tab"><img class="spread-logo" src="{png_file("brand/logo/logo-color.png", 900)}" alt="Turismo Chiloé Mágico"></div>
 </article>''')
 
 # ======================= 02 CARTA =======================
@@ -385,7 +385,8 @@ h2{{font-family:"Anton";font-weight:400;font-size:26pt;line-height:1.02;text-tra
 .spread .bleed{{position:absolute;inset:0}}
 .spread-shade{{display:none}}
 .spread-in{{position:absolute;left:8.35in;right:.4in;top:.45in;bottom:.45in;padding:.32in;background:rgba(29,36,33,var(--masa,.8));border-radius:.24in;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.12in;color:#fff}}
-.spread-logo{{position:absolute;left:.5in;top:.45in;width:2.6in;filter:drop-shadow(0 6px 18px rgba(0,0,0,.3))}}
+.spread-tab{{position:absolute;left:0;top:.45in;background:#fff;padding:.22in .4in .22in .5in;border-radius:0 .22in .22in 0;box-shadow:0 6px 22px rgba(0,0,0,.18)}}
+.spread-logo{{width:2.4in;display:block}}
 .spread .sub{{font-family:"Anton";font-size:26pt;text-transform:uppercase;line-height:1.05;text-shadow:0 2px 14px rgba(0,0,0,.45)}}
 .spread .for{{font-size:13pt;font-style:italic;margin-top:.1in;text-shadow:0 1px 8px rgba(0,0,0,.5)}}
 .spread .meta{{font-size:9pt;opacity:.9}}
