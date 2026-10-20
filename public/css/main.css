@@ -948,3 +948,64 @@ p,li,blockquote{text-wrap:pretty}
 .th__que{font-size:clamp(18px,1.3vw,21px)}
 .big-link{overflow-wrap:anywhere}
 .h5{text-transform:none;letter-spacing:0;font:700 var(--t5)/1.4 var(--f-text)}
+
+/* =========== v6 · tras la revisión de los 6 agentes =========== */
+/* tarjeta de tour: nombre manda, chips que distinguen, precio tranquilo */
+.u-muted{color:var(--musgo);font-weight:500}
+.u-cap{text-transform:none}
+.u-cap span::first-letter{text-transform:uppercase}
+.tr__t{font-size:clamp(22px,1.9vw,30px);letter-spacing:.01em}
+.tr__tags{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.tr__tags li{font:600 12.5px/1 var(--f-text);background:var(--niebla);color:var(--tinta);border-radius:999px;padding:7px 11px}
+.tr__meta{font-size:13px;color:var(--musgo);margin:0 0 14px}
+.tr__price{font-size:var(--t5)}
+.tr__price strong{color:var(--tinta)}
+.tr__go{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border-radius:999px;background:var(--turismo-hondo);color:#fff;font-size:13px}
+.tr__a:hover .tr__go{background:var(--tinta)}
+/* escritorio: tarjetas verticales, 4 por fila, la foto grande */
+@media (min-width:1100px){
+  .tl{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+  .tr__a{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .tr__img{aspect-ratio:4/3;min-height:0}
+  .tl--mini{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (min-width:701px) and (max-width:1099px){.tl{grid-template-columns:repeat(2,minmax(0,1fr))}.tr__a{grid-template-columns:1fr;grid-template-rows:auto 1fr}.tr__img{aspect-ratio:4/3;min-height:0}}
+@media (max-width:560px){.tr__tags{margin-bottom:8px}.tr__tags li{font-size:12px;padding:6px 9px}.tr__tags li:nth-child(3){display:none}.tr__go{min-height:36px;padding:0 12px}}
+
+/* portada: el hero sin logo grande */
+.hero__logo{display:none}
+
+/* isla: video vertical; en pantallas anchas va completo al centro sobre su propia imagen difuminada */
+.isla{height:220svh}
+.isla__blur{position:absolute;inset:-40px;background:url(/assets/video/isla-poster.jpg) center/cover;filter:blur(28px) brightness(.55) saturate(1.1);transform:scale(1.1)}
+@media (min-aspect-ratio:1/1){
+  .isla__v{object-fit:contain}
+  .isla__t{right:auto;max-width:min(36vw,560px)}
+  .isla__shade{background:linear-gradient(90deg,rgba(9,22,34,.65) 0%,rgba(9,22,34,0) 45%)}
+}
+
+/* ficha: un solo tamaño de h2, fondos parejos */
+.tfotos__head .h2{margin:0;color:#fff}
+.meet .h2,.trev .h2{margin:0 0 .5em}
+.other{background:#fff}
+.th{min-height:min(80svh,800px)}
+.inclist{margin:0 0 .6em;padding-left:20px}
+.tw__quote{margin:22px 0 0;padding:18px 20px;background:#fff;border-radius:var(--r)}
+.tw__quote blockquote{margin:0;font-size:var(--t4);line-height:1.55;color:var(--tinta)}
+.tw__quote figcaption{margin-top:8px;font-size:13px;color:var(--musgo)}
+
+/* footer en tinta: el logo respira y el rojo queda para la acción */
+.ftr{background:var(--tinta)}
+.ftr__wave{fill:var(--tinta)}
+.ftr__gull{stroke:var(--tinta)}
+.ftr__wa{--bg:var(--turismo-hondo);--fg:#fff}
+.u-cap span{display:inline-block}
+@media (max-width:760px){.th__shade{background:linear-gradient(180deg,rgba(9,22,34,.5) 0%,rgba(9,22,34,.1) 20%,rgba(9,22,34,.35) 42%,rgba(9,22,34,.86) 72%)}}
+*{text-shadow:none!important}
+.form label{font-size:var(--t5);letter-spacing:0;text-transform:none}
+.tr__tags li{font-size:13px}
+@media (max-width:560px){.tr__tags li{font-size:13px}}
+.credit{font-size:12px;right:16px;bottom:10px}
+.tile .credit{top:12px}
+.th--split .tt{font-size:clamp(40px,4.4vw,76px);max-width:none}
+.th--split .tt{font-size:clamp(44px,5vw,84px)}@media (min-width:761px){.th--split .th__in{padding-right:52%}}
