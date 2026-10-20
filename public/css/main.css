@@ -1266,3 +1266,19 @@ h1 em,h2 em{font-style:normal;color:var(--turismo)}
 .map.is-active .map__lock{display:none}
 .map__lock:focus-visible span{outline:3px solid var(--sol);outline-offset:3px}
 .bcta--red .bcta__big em{color:var(--sol)}
+
+/* "¿Buscas otro tour?": siempre una sola fila */
+.tl--mini{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:minmax(0,1fr);gap:16px}
+.tl--mini .tr__a{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+.tl--mini .tr__img{aspect-ratio:4/3;min-height:0}
+@media (max-width:760px){
+  .tl--mini{grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+  .tl--mini::-webkit-scrollbar{display:none}
+  .tl--mini .tr{scroll-snap-align:start}
+  .tl--mini .tr__img{height:auto;min-height:0;grid-row:auto}
+}
+.hero__seal [data-l]{display:block}
+.tl--mini{padding-inline:var(--g);scroll-padding-inline:var(--g)}
+.tl--mini .tr__foot{flex-wrap:wrap;gap:8px}
+@media (min-width:761px) and (max-width:1099px){.tl--mini .tr__tags li:nth-child(3){display:none}}
+@media (max-width:560px){.tr__price{white-space:normal}}

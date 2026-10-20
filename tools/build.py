@@ -195,6 +195,20 @@ def ld_business():
             "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": SITE['reviews_count']}}
 
 
+EN = json.loads((ROOT / 'content/en.json').read_text())
+_EN_RX = None
+
+
+def translate(html):
+    """Todo texto marcado lang="es" que tenga traducción pasa a llevar su par en inglés (el botón ES · EN lo alterna)."""
+    global _EN_RX
+    for es in sorted(EN, key=len, reverse=True):
+        for raw in {es, es.replace('"', '&quot;')}:
+            rx = re.compile(r'(<(\w+)\b[^>]*?)\slang="?es"?([^>]*>)' + re.escape(raw) + r'(</\2>)')
+            html = rx.sub(lambda m, raw=raw, es=es: f'{m.group(1)}{m.group(3)}<span data-l="es" lang="es">{raw}</span><span data-l="en" lang="en">{EN[es]}</span>{m.group(4)}', html)
+    return html
+
+
 def page(path, title, title_en, desc, desc_en, content, body_class='', wa_text='¡Hola! Quiero cotizar un tour.', ld=None, preload=''):
     PAGES.append(path)
     url = DOMAIN + path
@@ -210,6 +224,7 @@ def page(path, title, title_en, desc, desc_en, content, body_class='', wa_text='
         out = out.replace('{{' + k + '}}', v)
     dest = ROOT / (path.strip('/') + '/index.html' if path != '/' else 'index.html')
     dest.parent.mkdir(parents=True, exist_ok=True)
+    out = translate(out)
     # ningún emoji en pantalla (las estrellas de valoración se quedan)
     out = re.sub(r' ?[\U0001F000-\U0001FAFF\u2600-\u2604\u2606-\u27BF\uFE0F]+', '', out)
     dest.write_text(out)
@@ -466,10 +481,10 @@ def wave(fill, flip=False):
             f'<path d="M0,120 L0,70 C360,10 820,0 1440,58 L1440,120 Z" fill="{fill}"/></svg>')
 
 
-def seal(top, bottom, ring):
-    return f'''<svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sr" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+def seal(top, bottom, ring, sid='sr'):
+    return f'''<svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="{sid}" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
   <circle cx="100" cy="100" r="98" fill="#d0342c"/><circle cx="100" cy="100" r="91" fill="none" stroke="#fff" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="#fff" stroke-width="1.5"/>
-  <text font-family="Montserrat, sans-serif" font-weight="700" font-size="11" fill="#fff"><textPath href="#sr" textLength="462" lengthAdjust="spacing">{ring}</textPath></text>
+  <text font-family="Montserrat, sans-serif" font-weight="700" font-size="11" fill="#fff"><textPath href="#{sid}" textLength="462" lengthAdjust="spacing">{ring}</textPath></text>
   <text x="100" y="97" text-anchor="middle" font-family="Anton, sans-serif" font-size="30" fill="#fff">{top}</text>
   <text x="100" y="128" text-anchor="middle" font-family="Anton, sans-serif" font-size="30" fill="#fff">{bottom}</text></svg>'''
 
@@ -488,7 +503,7 @@ def home():
     COPY.append((P, 'Tours en Chiloé desde Castro', 'título de interfaz', None))
     content = f'''
 <section class="hero" data-hero>{WAVE}
-  <a class="hero__seal" href="#tours" aria-label="Ver los tours" data-aria-en="See the tours">{seal("TOURS", "DIARIOS", "DESDE CASTRO ★ CHILOÉ MÁGICO ★ 10:00 A 19:00 ★ ")}</a>
+  <a class="hero__seal" href="#tours" aria-label="Ver los tours" data-aria-en="See the tours"><span data-l="es">{seal("TOURS", "DIARIOS", "DESDE CASTRO ★ CHILOÉ MÁGICO ★ 10:00 A 19:00 ★ ")}</span><span data-l="en">{seal("DAILY", "TOURS", "FROM CASTRO ★ CHILOÉ MÁGICO ★ 10AM TO 7PM ★ ", "sr-en")}</span></a>
   <div class="hero__media" data-parallax-hero>{img("huillinco-columpio", "100vw", "", True)}</div>
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="hero__in">
