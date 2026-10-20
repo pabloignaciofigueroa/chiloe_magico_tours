@@ -58,13 +58,22 @@ def q(text, page, tag=None, cls='', lang='es'):
     return s
 
 
+_W = {}
+def w800(key):
+    """Ancho real del archivo -800 (las verticales miden 640): el srcset no debe mentir."""
+    if key not in _W:
+        from PIL import Image
+        _W[key] = Image.open(ROOT / f'assets/img/{key}-800.webp').size[0]
+    return _W[key]
+
+
 def img(key, sizes='100vw', cls='', eager=False, extra=''):
     m = META[key]
     en = ALT_EN.get(key)
     if not en:
         MISSING_ALT.append(key)
     s800 = f'/assets/img/{key}-800.webp'
-    srcset = f'{s800} {min(800, m["w"]) if not m["big"] else 800}w'
+    srcset = f'{s800} {w800(key)}w'
     src = s800
     if m['big']:
         srcset += f', /assets/img/{key}-1800.webp {m["w"]}w'
@@ -391,7 +400,7 @@ def price_short(t):
             if t.get('price_from') else f'<span class="u-muted">{L("Precio a cotizar", "Price on request")}</span>')
 
 
-def trow(t, P, sizes='(max-width:760px) 120px, 220px', h='h3'):
+def trow(t, P, sizes='(max-width:560px) 132px, (max-width:1099px) 46vw, 25vw', h='h3'):
     """Fila de tour: foto + qué es + horario/almuerzo + precio. Toda la fila es el enlace."""
     d = det(t)
     return f'''<li class="tr" data-rv><a class="tr__a" href="{tour_href(t)}">

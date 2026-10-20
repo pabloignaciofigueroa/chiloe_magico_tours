@@ -6,14 +6,16 @@
 @font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
 /* respaldos con métricas ajustadas para que el cambio de fuente no mueva el layout */
-@font-face{font-family:"Montserrat-fb";src:local("Arial");size-adjust:115%;ascent-override:84%;descent-override:21.5%;line-gap-override:0%}
-@font-face{font-family:"Anton-fb";src:local("Arial Narrow"),local("Arial");size-adjust:92%;ascent-override:118%;descent-override:33%}
+@font-face{font-family:"Montserrat-fb";src:local("Arial"),local("Helvetica"),local("Roboto");size-adjust:115%;ascent-override:84%;descent-override:21.5%;line-gap-override:0%}
+@font-face{font-family:"Montserrat-fb2";src:local("DejaVu Sans"),local("Liberation Sans");size-adjust:104%}
+@font-face{font-family:"Anton-fb-n";src:local("Arial Narrow"),local("ArialNarrow");size-adjust:87%;ascent-override:118%;descent-override:33%}
+@font-face{font-family:"Anton-fb";src:local("Arial"),local("Helvetica"),local("Roboto"),local("Liberation Sans"),local("DejaVu Sans");size-adjust:71%;ascent-override:150%;descent-override:42%}
 
 :root{
   --niebla:#f2f1ec;--bruma:#dfe4e6;--tinta:#1d2421;--musgo:#46473b;--tierra:#a69775;
   --mar:#1a8fc4;--mar-hondo:#126a96;--isla:#0e766c;--chiloe:#17853f;--chiloe-hondo:#106530;
   --turismo:#d0342c;--turismo-hondo:#b02a23;--blanco:#fff;
-  --f-display:Anton,"Anton-fb",Impact,sans-serif;--f-script:var(--f-text);--f-text:Montserrat,"Montserrat-fb",Arial,sans-serif;
+  --f-display:Anton,"Anton-fb-n","Anton-fb",sans-serif;--f-script:var(--f-text);--f-text:Montserrat,"Montserrat-fb","Montserrat-fb2",sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);--g:clamp(16px,4vw,56px);--max:1440px;--r:18px;
   --sec:clamp(88px,12vw,184px);
 }
@@ -1009,3 +1011,12 @@ p,li,blockquote{text-wrap:pretty}
 .tile .credit{top:12px}
 .th--split .tt{font-size:clamp(40px,4.4vw,76px);max-width:none}
 .th--split .tt{font-size:clamp(44px,5vw,84px)}@media (min-width:761px){.th--split .th__in{padding-right:52%}}
+@media (max-width:760px){.th__ctas{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* responsive: correcciones de la revisión */
+.wa.is-off{transform:translateY(160%);pointer-events:none}
+.rsec__sw .swiper-slide:last-child,.tfsw .swiper-slide:last-child,.tsw .swiper-slide:last-child{margin-right:0}
+.rsec figcaption a,.isla__q a,.u-link,.big-link,a.credit{display:inline-block;padding-block:11px;margin-block:-11px}
+.lang{min-height:44px;font-size:13px}
+.lang__es,.lang__en{font-size:13px}
+@media (max-width:560px){.tr__a{grid-template-columns:132px minmax(0,1fr)}.tr__img{aspect-ratio:3/4;align-self:stretch}}

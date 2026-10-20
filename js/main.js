@@ -77,10 +77,22 @@
     const near = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { loadVideo(en.target); near.unobserve(en.target); } }), { rootMargin: '120% 0px' });
     const seen = new IntersectionObserver(es => es.forEach(en => {
       const v = en.target;
-      if (en.isIntersecting && !reduce.matches) { const p = v.play(); if (p) p.catch(() => {}); } else v.pause();
+      if (en.isIntersecting && !reduce.matches) {
+        v.__want = true; loadVideo(v);
+        const go = () => { if (v.__want) { const p = v.play(); if (p) p.catch(() => {}); } };
+        if (v.readyState >= 2) go(); else v.addEventListener('canplay', go, { once: true });
+      } else { v.__want = false; v.pause(); }
     }), { threshold: .15 });
     vids.forEach(v => { near.observe(v); seen.observe(v); });
   } else vids.forEach(loadVideo);
+
+  /* ---------- el botón flotante no se superpone a los botones del hero ni del cierre ---------- */
+  const waF = $('.wa'); const covers = $$('.hero, .bcta, .th, footer');
+  if (waF && covers.length && 'IntersectionObserver' in window) {
+    const vis = new Set();
+    const io2 = new IntersectionObserver(es => { es.forEach(en => en.isIntersecting ? vis.add(en.target) : vis.delete(en.target)); waF.classList.toggle('is-off', vis.size > 0); }, { threshold: .25 });
+    covers.forEach(c => io2.observe(c));
+  }
 
   /* ---------- mapa diferido ---------- */
   $$('[data-map]').forEach(m => {
