@@ -207,7 +207,7 @@ L.append(lam(NI, f'<div class="stripes">{sth}</div>' +
   <div><h4 style="color:{ROJOH}">Rojo = reservar</h4><p>Viene del «TURISMO» de su logo y de la banda de sus afiches; en el sitio marca lo que lleva a reservar.</p></div></div>''')))
 
 # 05 · RECORRIDO · isla, 4 actos con medallones
-actos = [('d-hero', 'Llegar', 'Su columpio de Huillinco y su navegación en Puñihuil, dentro de la isla de su logo.', -3),
+actos = [('d-hero', 'Llegar', 'Su columpio de Huillinco y, enseguida, su navegación en Puñihuil.', -3),
          ('d-tours', 'Elegir', 'Sus ocho recorridos, cada uno con su propia ficha.', 2),
          ('d-reviews', 'Confiar', f'Lo que dicen sus viajeros, su equipo con nombre y sus más de 20 años.', -2),
          ('d-bcta', 'Reservar', 'Su invitación de siempre y su WhatsApp en cada página.', 3)]
@@ -247,7 +247,7 @@ L.append(lam(NI, f'<div class="band" style="background:{ROJOH}"></div>' + gull(1
   box(.55, .3, 11, f'<p class="k" style="color:rgba(255,255,255,.85)">Los tours</p><h2 class="t tline" style="color:#fff">Los 8 tours, <em style="color:{TI}">como</em> sus afiches</h2>') +
   fr('d-tours', .55, 1.75, 7.3, -1) + ph('m-tours', 6.75, 4.55, 1.45, 5) + fanh +
   box(8.45, 4.75, 4.1, f'''<p class="p">Sus afiches ya presentaban cada tour por separado; aquí se deslizan con el dedo, como en la vitrina de su agencia. Bajo cada nombre, una frase de su propio post: «UN CURANTITO?».</p>
-  <p class="p"><b style="color:{ROJOH}">{N_COMIDA} de las {N_REV} reseñas</b> de sus viajeros hablan de la comida; por eso cada tour se presenta primero por lo que se come o se vive.</p>''')))
+  <p class="p"><b style="color:{ROJOH}">{N_COMIDA} de las {N_REV} reseñas</b> en Google hablan de la comida; por eso cada tour se presenta primero por lo que se come o se vive.</p>''')))
 
 # 09 · FICHA DE TOUR · verde, título de afiche, paradas en círculos
 paradas = ['Feria Artesanal Dalcahue', 'Iglesia Patrimonio Tenaún', 'Almuerzo en agroturismo', 'Cascadas de Tocoihue', 'Isla Aucar']
@@ -287,7 +287,7 @@ L.append(lam(ROJO, wave(ROJOH, 1.3) + gull(5.2, 4.15, .85, '#fff', -12) +
   box(.55, .55, 6.7, f'''<p class="k" style="color:rgba(255,255,255,.85)">El cierre de cada página</p>
   <p class="remate">¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!</p>
   <p class="k" style="color:rgba(255,255,255,.75)">{IG("007")} · su remate de siempre</p>''') +
-  box(.55, 5.35, 6.2, f'''<p class="p">Su bio ya lo dice: «Escríbenos», con el enlace de WhatsApp. Por eso el contacto y las 14 preguntas frecuentes terminan ahí, con fecha y personas ya escritas. Y como tres de sus reseñas en inglés lo mencionan, se aclara antes que el guiado es en español.</p>
+  box(.55, 5.35, 6.2, f'''<p class="p">«Escríbenos», dice su bio, con el enlace de WhatsApp. Por eso el contacto y las 14 preguntas frecuentes terminan ahí, con fecha y personas ya escritas. Y como tres de sus reseñas en inglés lo mencionan, se aclara antes que el guiado es en español.</p>
   <p class="p sm">En la bio y en el portal municipal aparecen dos números distintos; ambos están en el sitio hasta que confirmen cuál usar.</p>''', 'card', f'background:{NI};') +
   fr('d-contacto2', 7.25, .65, 5.3, 3) + fr('d-faq', 7.6, 4.2, 4.95, -2.5) + ph('m-contacto', 6.85, 3.3, 1.35, -6),
   nc='rgba(255,255,255,.7)'))
@@ -306,7 +306,7 @@ L.append(lam(NI, dots + phs + deth))
 L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed abs0" src="{raw("tenaun", 2600)}" style="object-position:50% 40%" alt="">' +
   box(6.75, .5, 5.75, f'''{MARK}
   <p class="k" style="color:{ISLA}">Lo que sigue</p><h2 class="t" style="color:{TI}">Hacerlo <em style="color:{ROJO}">suyo</em></h2>
-  <p class="p">Todo esto salió de lo que ustedes ya publicaron. Con un par de conversaciones podría ir mucho más lejos:</p>
+  <p class="p">Todo esto salió de su propio material. Con un par de conversaciones podría ir mucho más lejos:</p>
   <ul class="next2"><li>Fotografía y video propios de cada tour, del equipo y de las vans</li>
     <li>Precios, temporadas y políticas confirmados por ustedes</li>
     <li>Dominio propio .cl y alojamiento a nombre de Chiloé Mágico</li>
