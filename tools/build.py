@@ -220,7 +220,7 @@ def page(path, title, title_en, desc, desc_en, content, body_class='', wa_text='
     def brand_first(t):
         for s in (' · Turismo Chiloé Mágico', 'Turismo Chiloé Mágico · '):
             t = t.replace(s, '')
-        return 'Chiloé Mágico Tour · ' + t
+        return 'Chiloé Mágico Tour'
     title, title_en = brand_first(title), brand_first(title_en)
     rep = {'title': e(title), 'title_en': e(title_en), 'desc': e(desc), 'desc_en': e(desc_en), 'url': url, 'domain': DOMAIN,
            'jsonld': json.dumps(ld or ld_business(), ensure_ascii=False).replace('</', '<\\/'), 'body_class': body_class,
