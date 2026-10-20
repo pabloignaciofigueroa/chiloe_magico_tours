@@ -347,7 +347,7 @@ DETAIL = {
         'que': U('Curanto en hoyo frente a las Islas Chauques, la iglesia de Tenaún, las cascadas de Tocoihue y la pasarela a Isla Aucar.',
                  'Pit-cooked curanto facing the Chauques Islands, Tenaún church, Tocoihue falls and the footbridge to Aucar Island.'),  # [DEST-H7_002] + IG
         'lunch': U('curanto en hoyo', 'pit-cooked curanto'),
-        'pts': [U('Ves preparar y destapar el curanto en hoyo, con mirador a las Islas Chauques', 'Watch the curanto being cooked and uncovered in the pit, overlooking the Chauques Islands'),
+        'pts': [U('Preparación y destape del curanto en hoyo, con mirador a las Islas Chauques', 'Watch the curanto being cooked and uncovered in the pit, overlooking the Chauques Islands'),
                 U('Iglesia Patrimonio de la Humanidad de Tenaún', 'Tenaún church, a UNESCO World Heritage Site'),
                 U('Cascadas de Tocoihue, donde según la leyenda se iniciaban los brujos', 'Tocoihue falls, where legend says the witches were initiated'),
                 U('Pasarela de 437 metros sobre el mar hasta la Isla Aucar', 'A 437-metre footbridge over the sea to Aucar Island'),
@@ -363,7 +363,7 @@ DETAIL = {
                  'Cross the Yal channel to Lemuy Island, take "flying" photos at the Witches\' Pier and have spit-roast lamb for lunch.'),  # [DEST-H7_008] + IG
         'lunch': U('asado de cordero al palo', 'spit-roast lamb'),
         'pts': [U('Navegación por el canal Yal hasta Isla Lemuy', 'Crossing the Yal channel to Lemuy Island'),
-                U('Fotos "volando" en el Muelle de los Brujos', '"Flying" photos at the Witches\' Pier'),
+                U('Fotos «volando» en el Muelle de los Brujos', '"Flying" photos at the Witches\' Pier'),
                 U('Puente colgante de 30 metros en el Parque Yayanes', '30-metre suspension bridge in Yayanes Park'),
                 U('Iglesia Patrimonio de Vilupulli y el Museo del Acordeón en Chonchi', 'Vilupulli heritage church and the Accordion Museum in Chonchi'),
                 U('Almuerzo de asado de cordero al palo en agroturismo', 'Spit-roast lamb lunch at a farm')],

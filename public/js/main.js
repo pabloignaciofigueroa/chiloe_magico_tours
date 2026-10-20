@@ -314,7 +314,7 @@
           .to(cov, { opacity: 0, duration: .1, ease: 'none' }, .45)
           .to(sh, { opacity: 1, duration: .15, ease: 'none' }, .42)
           .fromTo('[data-isla-t]', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .15, ease: 'power2.out' }, .5)
-          .to({}, { duration: .35 }, .65);
+          .set(cov, { autoAlpha: 0 }, .6).to({}, { duration: .35 }, .65);
       }
       return () => {};
     });

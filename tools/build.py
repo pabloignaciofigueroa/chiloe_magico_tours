@@ -155,7 +155,7 @@ def header(current, wa_text):
     <div class="menu__media" aria-hidden="true">{menu_imgs}</div>
   </div>
   <div class="menu__foot">
-    <a href="{wa_link('Hola! Quiero consultar por los tours')}" target="_blank" rel="noopener">WhatsApp {SITE["wa_display"]}</a>
+    <a href="{wa_link('¡Hola! Quiero cotizar un tour.')}" target="_blank" rel="noopener">WhatsApp {SITE["wa_display"]}</a>
     <a href="{SITE["instagram"]}" target="_blank" rel="noopener">Instagram @chiloemagicotour</a>
   </div>
 </div>'''
@@ -171,7 +171,7 @@ def footer(page):
       <p class="ftr__slogan" lang="es">{q(Q("Chiloé Mágico te espera. ¡Ven a descubrirlo!", "[BIO]", fix="puntuación: «te espera, Ven a descubrirlo!»"), page)}</p>
     </div>
     <div class="ftr__act">
-      <p class="ftr__addr"><a href="{wa_link('Hola! Quiero cotizar un tour')}" target="_blank" rel="noopener">WhatsApp {SITE["wa_display"]}</a><br><span lang="es">{q(SITE["address_short"], page)}</span><br><span lang="es">{q(SITE["hours"], page)}</span></p>
+      <p class="ftr__addr"><a href="{wa_link('¡Hola! Quiero cotizar un tour.')}" target="_blank" rel="noopener">WhatsApp {SITE["wa_display"]}</a><br><span lang="es">{q(SITE["address_short"], page)}</span><br><span lang="es">{q(SITE["hours"], page)}</span></p>
     </div>
   </div>
   <nav class="ftr__nav" aria-label="Pie de página" data-aria-en="Footer"><ul>{nav}<li><a href="/guia/">{L("Guía de Chiloé", "Chiloé guide")}</a></li><li><a href="/preguntas-frecuentes/">{L("Preguntas frecuentes", "FAQ")}</a></li><li><a href="{SITE["instagram"]}" target="_blank" rel="noopener">Instagram</a></li></ul></nav>
@@ -195,7 +195,7 @@ def ld_business():
             "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": SITE['reviews_count']}}
 
 
-def page(path, title, title_en, desc, desc_en, content, body_class='', wa_text='Hola! Quiero consultar por los tours', ld=None, preload=''):
+def page(path, title, title_en, desc, desc_en, content, body_class='', wa_text='¡Hola! Quiero cotizar un tour.', ld=None, preload=''):
     PAGES.append(path)
     url = DOMAIN + path
     out = LAYOUT
@@ -255,14 +255,17 @@ FOCUS = {
     'mechuque': '50% 55%', 'palafitos': '50% 78%', 'punihuil-navega': '50% 40%', 'tenaun': '50% 35%', 'brujos-vuelo': '50% 45%',
     'yayanes-puente': '50% 45%', 'huillinco-columpio': '50% 40%', 'aucar-isla': '50% 55%', 'curanto-fuego': '50% 50%',
     'nercon': '50% 40%', 'brujos-alas': '50% 40%', 'punihuil-islote': '50% 50%', 'minga': '50% 55%',
-    'palafitos': '50% 92%', 'vans': '50% 70%', 'nicolas-enrique': '30% 45%', 'muelle-luz-grupo': '60% 40%', 'parque-muelle': '50% 55%',
+    'palafitos': '50% 92%', 'vans': '50% 70%', 'nicolas-enrique': '25% 45%', 'valdivia': '50% 28%', 'muelle-luz-grupo': '60% 40%', 'parque-muelle': '50% 55%',
 }
+
+
+FORCE = {'nicolas-enrique', 'valdivia'}
 
 
 def bimg(key, sizes='100vw', eager=False):
     """Imagen a sangre: cubre su contenedor con el punto focal de la foto."""
     m = META[key]
-    pos = m['pos'] if m.get('pos_src') == 'rostros' else (FOCUS.get(key) or m.get('pos', '50% 45%'))
+    pos = FOCUS[key] if key in FORCE else (m['pos'] if m.get('pos_src') == 'rostros' else (FOCUS.get(key) or m.get('pos', '50% 45%')))
     return img(key, sizes, 'bleed__img', eager, f'data-pos="{pos}"').replace(
         'style="background-image', f'style="object-position:{pos};background-image', 1)
 
@@ -384,7 +387,7 @@ def sticky_split(key, inner_html, side='right', extra_keys=(), force_sm=False):
     more = trio([f'<div class="tile tile--pic" data-parallax>{bimg(k, "(max-width:760px) 100vw, 50vw")}</div>' for k in extra_keys]) if extra_keys else ''
     sm = ' ssplit--sm' if META[key]['w'] < 1000 or force_sm else ''
     return f'''<section class="ssplit ssplit--{side}{sm}">
-  <div class="ssplit__media"><div class="ssplit__stick" data-parallax>{bimg(key, "(max-width:760px) 100vw, 50vw")}</div>{credit(key)}</div>
+  <div class="ssplit__media"><div class="ssplit__stick" data-parallax>{bimg(key, "(max-width:760px) 100vw, 50vw")}</div>{credit(key, "credit credit--below" if sm else "credit")}</div>
   <div class="ssplit__txt" data-rv>{inner_html}</div>
 </section>{more}'''
 
@@ -409,7 +412,7 @@ def trow(t, P, sizes='(max-width:560px) 132px, (max-width:1099px) 46vw, 25vw', h
     <{h} class="tr__t" lang="es">{e(t["short"])}</{h}>
     <p class="tr__que">{L(d["corto"])}</p>
     <ul class="tr__tags">{''.join(f'<li>{L(x)}</li>' for x in d["tags"])}</ul>
-    <p class="tr__meta">{L("Almuerzo:", "Lunch:")} {L(d["lunch"])}</p>
+    <p class="tr__meta"><span class="tr__ml">{L("Almuerzo:", "Lunch:")}</span> <span>{L(d["lunch"])}</span></p>
     <p class="tr__foot"><span class="tr__price">{price_short(t)}</span><span class="tr__go">{L("Ver tour", "See tour")} <span aria-hidden="true">→</span></span></p>
   </div>
 </a></li>'''
@@ -471,8 +474,8 @@ def home():
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="hero__in">
     <h1 class="hero__t" data-lines><span class="line"><span>{L("Tours en Chiloé", "Chiloé tours")}</span></span><span class="line"><span>{L("desde Castro", "from Castro")}</span></span></h1>
-    <p class="hero__sub" lang="es">{q(Q("Nuestro archipiélago es mágico ¡Ven a descubrirlo!", "[BIO]"), P)}</p>
-    <div class="hero__ctas">{btn(L("Ver los tours", "See the tours"), "#tours", "btn btn--light")}{btn(L("Cotizar por WhatsApp", "Get a quote on WhatsApp"), wa_link("Hola! Quiero cotizar un tour"), "btn btn--red", True)}</div>
+    <p class="hero__sub" lang="es">{q(Q("Nuestro archipiélago es mágico. ¡Ven a descubrirlo!", "[BIO]", fix="se agrega el punto antes de ¡"), P)}</p>
+    <div class="hero__ctas">{btn(L("Ver los tours", "See the tours"), "#tours", "btn btn--light")}{btn(L("Cotizar por WhatsApp", "Get a quote on WhatsApp"), wa_link("¡Hola! Quiero cotizar un tour."), "btn btn--red", True)}</div>
   </div>
 </section>
 
@@ -489,7 +492,7 @@ def home():
 
 <section class="isla" aria-labelledby="isla-t" data-isla>
   <div class="isla__stick">
-    <div class="isla__blur" aria-hidden="true"></div>
+    <div class="isla__blur" aria-hidden="true"><video class="isla__vbg" muted playsinline loop preload="none" data-lazy-video aria-hidden="true" tabindex="-1"><source data-src="/assets/video/isla.webm" type="video/webm"><source data-src="/assets/video/isla.mp4" type="video/mp4"></video></div>
     <video class="isla__v" muted playsinline loop preload="none" data-lazy-video data-poster="/assets/video/isla-poster.jpg" aria-label="{e(META['_videos']['isla']['alt'])}" data-aria-en="{e(ALT_EN['vid:isla'])}">
       <source data-src="/assets/video/isla.webm" type="video/webm"><source data-src="/assets/video/isla.mp4" type="video/mp4">
     </video>
@@ -504,7 +507,7 @@ def home():
 
 {reviews_solid(P, D.REVIEWS)}
 
-{closing(P, "Hola! Quiero consultar por los tours")}
+{closing(P, "¡Hola! Quiero cotizar un tour.")}
 '''
     page('/', 'Turismo Chiloé Mágico · Tours en Chiloé desde Castro', 'Turismo Chiloé Mágico · Chiloé tours from Castro',
          'Tours de día completo por el archipiélago de Chiloé desde Castro: La Costa con curanto, Isla Lemuy, Parque Nacional, Muelle de las Almas, Muelle de la Luz, Pingüineras de Puñihuil e Isla Quinchao.',
@@ -532,7 +535,7 @@ def tours_index():
   {facts_strip(P)}
   {tour_list(P, D.TOURS, h='h2')}
 </section>
-{closing(P, "Hola! Quiero consultar por los tours")}'''
+{closing(P, "¡Hola! Quiero cotizar un tour.")}'''
     page(P, 'Tours en Chiloé desde Castro · Turismo Chiloé Mágico', 'Chiloé tours from Castro · Turismo Chiloé Mágico',
          'Tours de día completo desde Castro con traslado, guiado, almuerzo y bebestibles.',
          'Full-day tours from Castro with transport, guiding, lunch and drinks.', content)
@@ -546,7 +549,7 @@ def tour_page(t):
           "provider": {"@type": "TravelAgency", "name": SITE['name'], "telephone": '+' + SITE['wa'], "url": DOMAIN + '/'}}
     if t.get('price_from'):
         ld['offers'] = {"@type": "Offer", "price": t['price_from'], "priceCurrency": "CLP"}
-    wa_t = f'Hola! Quiero cotizar el {t["short"]}. Fecha: ___ Personas: ___'
+    wa_t = f'¡Hola! Quiero cotizar el {t["short"]}.'
     a, s, b = t['title']
     COPY.append((P, f'{a} {s} {b}', t['afiche'] + ' título del afiche', None))
     sub = f'{s} {b}'.strip()
@@ -669,7 +672,7 @@ def faq_items(P, items):
             elif a == '__pending_prices__': parts += f'<p>{L("Los demás tours: precio por confirmar con la agencia.", "Other tours: price to be confirmed with the agency.")}</p>'
             elif a == '__costa__': parts += f'<p><a href="/tours/la-costa-curanto/">Tour La Costa</a>:</p>'
             elif a == '__es_only__': parts += f'<p>{L("Español.", "Spanish.")}</p>'
-            elif a == '__wa__': parts += f'<p>WhatsApp <a href="{wa_link("Hola! Quiero reservar un tour")}" target="_blank" rel="noopener">{SITE["wa_display"]}</a> · <a href="tel:+56998833946">{SITE["phone2"]}</a></p>'
+            elif a == '__wa__': parts += f'<p>WhatsApp <a href="{wa_link("¡Hola! Quiero reservar un tour")}" target="_blank" rel="noopener">{SITE["wa_display"]}</a> · <a href="tel:+56998833946">{SITE["phone2"]}</a></p>'
             else: parts += f'<p lang="{"en" if "RESEÑA" in getattr(a, "src", "") and a.isascii() else "es"}">{q(a, P)}</p>'
         out += f'<details class="faq"><summary>{L(qq)}</summary><div class="faq__a">{parts}</div></details>'
     return out
@@ -680,7 +683,7 @@ def destinos():
     P = '/destinos/'
     tiles = ''.join(f'<li>{tile(d["img"], dest_href(d), f"<span lang=es>{e(d["name"])}</span>", f"<span lang=es>{q(d["intro"], P)}</span>")}</li>' for d in D.DESTINOS)
     content = f'''{bleed_hero("aucar-isla", h1_lines((L("Explora por", "Explore by"), False), (L("destino", "destination"), True)), L("Destinos", "Destinations"), f'<p lang="es">{q(SITE["diarias"], P)}</p>')}
-<section class="tgrid"><ul class="tiles2">{tiles}</ul></section>{booking_cta(P, "Hola! Quiero consultar por los tours", "punihuil-bahia")}'''
+<section class="tgrid"><ul class="tiles2">{tiles}</ul></section>{booking_cta(P, "¡Hola! Quiero cotizar un tour.", "punihuil-bahia")}'''
     page(P, 'Destinos en Chiloé · Turismo Chiloé Mágico', 'Destinations in Chiloé · Turismo Chiloé Mágico',
          'Castro, Ancud y Puñihuil, Dalcahue y Quinchao, Chonchi e Isla Lemuy, Cucao y el Parque Nacional Chiloé.',
          'Castro, Ancud and Puñihuil, Dalcahue and Quinchao, Chonchi and Lemuy Island, Cucao and Chiloé National Park.', content, preload=preload_img('aucar-isla'))
@@ -697,7 +700,7 @@ def destinos():
         content = f'''{bleed_hero(d["img"], f'<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>{e(d["name"].upper())}</span></span></h1>', L("Destino", "Destination"), '', crumbs)}
 {sticky_split(d["imgs"][0], inner, "right", d["imgs"][1:])}
 <section class="related"><header class="pkgs__head"><p class="kicker">{L("Tours que pasan por aquí", "Tours that stop here")}</p></header>{trio([tour_tile(t, P, sizes="(max-width:760px) 100vw, 34vw") for t in ts])}</section>
-{booking_cta(P, f"Hola! Quiero conocer {d['name']}", d["imgs"][-1])}'''
+{booking_cta(P, f"¡Hola! Quiero conocer {d['name']}", d["imgs"][-1])}'''
         page(P, f'{d["name"]} · Turismo Chiloé Mágico', f'{d["name"]} · Turismo Chiloé Mágico',
              f'Qué hacer en {d["name"]}, Chiloé: {", ".join(d["must"])}. Tours desde Castro.', f'Things to do in {d["name"]}, Chiloé. Tours from Castro.',
              content, preload=preload_img(d['img']))
@@ -717,7 +720,7 @@ def experiencias():
         content = f'''{bleed_hero(x["img"], h1_lines((L(x["name"]), False)), L("Experiencia", "Experience"), f'<p lang="es">{q(x["quote"], P)}</p>', crumbs)}
 <section class="sec narrow"><p class="lead" lang="es">{q(x["more"], P)}</p></section>
 <section class="related"><header class="pkgs__head"><p class="kicker">{L("Tours con esta experiencia", "Tours with this experience")}</p></header>{trio([tour_tile(t, P, sizes="(max-width:760px) 100vw, 34vw") for t in ts])}</section>
-{booking_cta(P, "Hola! Quiero consultar por los tours", ts[0]["hero"] if ts else "punihuil-bahia")}'''
+{booking_cta(P, "¡Hola! Quiero cotizar un tour.", ts[0]["hero"] if ts else "punihuil-bahia")}'''
         page(P, f'{x["name"].es} en Chiloé · Turismo Chiloé Mágico', f'{x["name"].en} in Chiloé · Turismo Chiloé Mágico',
              f'{x["name"].es}: tours de día completo desde Castro.', f'{x["name"].en}: full-day tours from Castro.', content, preload=preload_img(x['img']))
 
@@ -741,7 +744,7 @@ def paquetes():
         extra = q(p['extra'], P, 'p') if p.get('extra') else ''
         inner = f'''<p class="kicker">{L(p["days"])}</p><h2 class="h2" lang="es">{e(p["name"])}</h2>{q(p["text"], P, "p")}{extra}
 <p class="note">{L("Itinerario y precio: te los enviamos por WhatsApp.", "Itinerary and price: we send them on WhatsApp.")}</p>
-<p>{btn(L("Cotizar", "Get a quote"), wa_link(f"Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--ink", True)}</p>'''
+<p>{btn(L("Cotizar", "Get a quote"), wa_link(f"¡Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--ink", True)}</p>'''
         if p['imgs']:
             items += sticky_split(p['imgs'][0], inner, 'right' if items.count('<section class="ssplit') % 2 == 0 else 'left', force_sm=True)
         else:
@@ -763,11 +766,11 @@ def servicios():
         (U('Traslados', 'Transfers'), Q('servicio de turismo, traslado y viajes privados', '[IG-016]'), 'vans'),
         (U('Grupos', 'Groups'), Q('Tremendo grupo nos tocó … que disfrutaron el Tour de La Costa🤩', '[IG-006]', fix='se omite «ayer»'), 'grupo-columpios'),
     ]
-    tiles = [tile(k, wa_link("Hola! Quiero cotizar: " + t.es), L(t), f'<span lang="es">{q(x, P)}</span> · {L("Cotizar", "Get a quote")}', '', '', '(max-width:760px) 100vw, 34vw', 'target="_blank" rel="noopener"') for t, x, k in cards]
+    tiles = [tile(k, wa_link("¡Hola! Quiero cotizar: " + t.es), L(t), f'<span lang="es">{q(x, P)}</span> · {L("Cotizar", "Get a quote")}', '', '', '(max-width:760px) 100vw, 34vw', 'target="_blank" rel="noopener"') for t, x, k in cards]
     content = f'''{bleed_hero("vans", h1_lines((L("Traslados, privados", "Transfers, private"), False), (L("y grupos", "and groups"), True)), L("Servicios", "Services"), f'<p lang="es">{q(SITE["vans"], P)}</p>')}
 {trio(tiles, "trio--tall")}
 <section class="sec narrow"><p class="note">{L("Recorridos, vehículos y tarifas de cada servicio: por confirmar con la agencia.", "Routes, vehicles and rates for each service: to be confirmed with the agency.")}</p></section>
-{booking_cta(P, "Hola! Quiero cotizar un servicio privado", "muelle-luz-grupo")}'''
+{booking_cta(P, "¡Hola! Quiero cotizar un servicio privado", "muelle-luz-grupo")}'''
     page(P, 'Servicios privados y traslados · Turismo Chiloé Mágico', 'Private services and transfers · Turismo Chiloé Mágico',
          'Viajes privados, traslados y grupos en vans con aire acondicionado desde Castro.', 'Private trips, transfers and groups in air-conditioned vans from Castro.', content, preload=preload_img('vans'))
 
@@ -814,7 +817,7 @@ def guia():
 def faq():
     P = '/preguntas-frecuentes/'
     content = f'''{bleed_hero("huillinco-pareja", h1_lines((L("Preguntas", "Frequently asked"), False), (L("frecuentes", "questions"), True)), "FAQ", '', '', "tall")}
-<section class="sec narrow">{faq_items(P, D.FAQ)}</section>{booking_cta(P, "Hola! Tengo una consulta", "muelle-luz-oceano")}'''
+<section class="sec narrow">{faq_items(P, D.FAQ)}</section>{booking_cta(P, "¡Hola! Tengo una consulta", "muelle-luz-oceano")}'''
     page(P, 'Preguntas frecuentes · Turismo Chiloé Mágico', 'FAQ · Turismo Chiloé Mágico',
          'Salidas, horarios, qué incluye, idioma, grupos y reservas de los tours de Turismo Chiloé Mágico.', 'Departures, times, inclusions, language, groups and bookings.', content, preload=preload_img('huillinco-pareja'))
 
@@ -824,7 +827,7 @@ def contacto():
     content = f'''{bleed_hero("chonchi", f'<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>{L("Cotiza tu tour", "Get a quote")}</span></span></h1>', L("Contacto", "Contact"), f'<p>{L("Escríbenos por WhatsApp:", "Message us on WhatsApp:")} {SITE["wa_display"]}</p>', '', "tall")}
 <section class="sec split">
   <div class="contact__list">
-    <p><span class="kicker">WhatsApp</span><a class="big-link" href="{wa_link('Hola! Quiero consultar por los tours')}" target="_blank" rel="noopener">{SITE["wa_display"]}</a></p>
+    <p><span class="kicker">WhatsApp</span><a class="big-link" href="{wa_link('¡Hola! Quiero cotizar un tour.')}" target="_blank" rel="noopener">{SITE["wa_display"]}</a></p>
     <p><span class="kicker">{L("Teléfono", "Phone")}</span><a class="big-link" href="tel:+56998833946">{SITE["phone2"]}</a></p>
     <p><span class="kicker">{L("Correo", "Email")}</span><a class="big-link" href="mailto:{SITE["email"]}">{SITE["email"]}</a></p>
     <p><span class="kicker">{L("Dirección", "Address")}</span><span lang="es">{q(SITE["address"], P)}</span></p>
