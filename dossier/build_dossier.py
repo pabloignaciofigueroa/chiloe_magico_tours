@@ -175,7 +175,7 @@ polh = ''.join(f'<div class="pol" style="left:{x}in;top:{y}in;transform:rotate({
 def big(nm, cap): return f'<div class="bign"><b>{nm}</b><span>{cap}</span></div>'
 L.append(lam(ROJOH, polh + gull(11.6, .45, .8, 'rgba(255,255,255,.9)', -8) +
   box(6.85, .7, 5.7, f'''<p class="k" style="color:rgba(255,255,255,.85)">De dónde viene todo</p>
-  <h2 class="t" style="color:#fff">Todo esto <em>ya</em> era suyo</h2>
+  <h2 class="t" style="color:#fff">Todo esto <em style="color:{TI}">ya</em> era suyo</h2>
   <div class="bigs">{big(N_POSTS, "publicaciones de Instagram, leídas una por una")}{big(N_REV, f"reseñas de Google, nota {NOTA}, en su idioma original")}{big(7, "afiches de tours: títulos, paradas, letra y rojo")}{big(N_PROPIAS, f"fotos suyas, de {N_POSTS_FOTOS} posts distintos")}</div>
   <p class="p" style="color:#fff">Cada texto de la marca tiene su origen identificado. Lo que no estaba publicado (la mayoría de los precios, pagos, políticas) dice <b>«por confirmar con la agencia»</b>.</p>'''),
   nc='rgba(255,255,255,.7)'))
@@ -213,7 +213,7 @@ L.append(lam(ISLA, wave('rgba(255,255,255,.08)', 1.4) +
 # 06 · PORTADA DEL SITIO · azul hondo, navegador + celular
 L.append(lam(MARH, gull(.55, 6.6, .7, 'rgba(255,255,255,.35)', 12) +
   box(.55, .7, 3.95, f'''<p class="k" style="color:rgba(255,255,255,.8)">La portada</p>
-  <h2 class="t" style="color:#fff">Nuestro archipiélago <em>es</em> mágico</h2>
+  <h2 class="t" style="color:#fff">Nuestro archipiélago <em style="color:{TE}">es</em> mágico</h2>
   <p class="p" style="color:rgba(255,255,255,.9)">La frase de su bio sobre su foto del lago, y dos caminos: ver los tours o escribir por WhatsApp. Al pie, cuatro datos que un viajero quiere saber antes de comparar agencias.</p>''') +
   box(.55, 5.0, 3.75, Q('El transporte es en vehículos pequeños pero cómodos, lo cual hace que la experiencia sea muy personalizada.', 'Gabriela · Google'), 'card', f'background:{NI};') +
   fr('d-hero', 5.3, .65, 7.25, 1.5) + ph('m-hero', 4.65, 3.75, 1.65, -5) +
@@ -233,7 +233,7 @@ L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed a
 fan = [('curanto-destape', 8.45, 1.75, -7, 'Con curanto en hoyo'), ('brujos-columpio-2', 9.85, 1.6, 2, 'Con asado al palo'), ('almas-pareja', 11.2, 1.8, 8, 'Mitos y acantilados')]
 fanh = ''.join(f'<div class="card-t" style="left:{x}in;top:{y}in;transform:rotate({r}deg)"><img src="{src(k, 420)}" alt=""><span>{t}</span></div>' for k, x, y, r, t in fan)
 L.append(lam(NI, f'<div class="band" style="background:{ROJOH}"></div>' + gull(11.75, .2, .75, '#fff', -6) +
-  box(.55, .3, 11, f'<p class="k" style="color:rgba(255,255,255,.85)">Elige tu tour</p><h2 class="t tline" style="color:#fff">Los 8 tours, <em>como</em> sus afiches</h2>') +
+  box(.55, .3, 11, f'<p class="k" style="color:rgba(255,255,255,.85)">Elige tu tour</p><h2 class="t tline" style="color:#fff">Los 8 tours, <em style="color:{TI}">como</em> sus afiches</h2>') +
   fr('d-tours', .55, 1.75, 7.3, -1) + ph('m-tours', 6.75, 4.55, 1.45, 5) + fanh +
   box(8.45, 4.75, 4.1, f'''<p class="p">Se deslizan con el dedo, como si estuvieran colgados en la vitrina de la agencia. Bajo cada nombre, una frase suya: «UN CURANTITO?».</p>
   <p class="p"><b style="color:{ROJOH}">{N_COMIDA} de las {N_REV} reseñas</b> hablan de la comida. Por eso cada tour se presenta primero por lo que se come o se vive.</p>''')))
@@ -330,7 +330,7 @@ body{{font-family:"Montserrat",Arial,sans-serif;color:{TI};-webkit-print-color-a
 .card{{border-radius:.22in;padding:.3in .34in;box-shadow:0 10pt 30pt rgba(0,0,0,.18)}}
 .k{{font-weight:600;font-size:7.4pt;letter-spacing:.24em;text-transform:uppercase;margin-bottom:.1in}}
 .t{{font-family:"Anton";font-weight:400;font-size:36pt;line-height:1;text-transform:uppercase;margin-bottom:.18in}}
-.t em{{font-family:"Montserrat";font-weight:600;font-style:normal;text-transform:none;font-size:.5em;letter-spacing:0;vertical-align:.18em;margin:0 .06em}}
+.t em{{font-style:normal}}
 .tline{{font-size:34pt;white-space:nowrap}}
 .t3{{font-family:"Anton";font-weight:400;font-size:24pt;text-transform:uppercase;margin-bottom:.06in}}
 .t4{{font-family:"Anton";font-weight:400;font-size:17pt;text-transform:uppercase;margin:.1in 0 .05in}}
@@ -351,7 +351,7 @@ body{{font-family:"Montserrat",Arial,sans-serif;color:{TI};-webkit-print-color-a
 .ph{{position:absolute;border-radius:16pt;overflow:hidden;border:4pt solid #111;box-shadow:0 14pt 30pt rgba(0,0,0,.32);background:#111}}
 .ph img{{width:100%;display:block;border-radius:12pt}}
 .md{{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:"Anton";text-transform:uppercase;line-height:1.02;padding:.1in;box-shadow:0 8pt 20pt rgba(0,0,0,.22)}}
-.md small{{font-family:"Montserrat";font-weight:600;text-transform:none;font-size:.62em}}
+.md small{{font-size:.7em}}
 .mdn{{font-size:30pt;font-weight:400}}
 .mds{{font-family:"Montserrat";font-weight:700;text-transform:uppercase;letter-spacing:.04em;line-height:1.25}}
 .pol{{position:absolute;width:1.85in;background:#fff;padding:.08in .08in .3in;box-shadow:0 10pt 24pt rgba(0,0,0,.3)}}
@@ -364,7 +364,7 @@ body{{font-family:"Montserrat",Arial,sans-serif;color:{TI};-webkit-print-color-a
 .stripe .sn{{position:absolute;left:50%;top:.55in;transform:translateX(-50%) rotate(180deg);writing-mode:vertical-rl;font-weight:700;font-size:8pt;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}}
 .stripe .sh{{position:absolute;left:0;right:0;bottom:.55in;text-align:center;font-weight:600;font-size:6.2pt;letter-spacing:.06em;writing-mode:vertical-rl;transform:rotate(180deg);margin:0 auto;width:100%;display:flex;align-items:center}}
 .spa{{font-family:"Anton";font-size:58pt;line-height:.98;text-transform:uppercase;color:{TI}}}
-.spb{{font-weight:600;font-size:22pt;color:{ROJO};margin:.02in 0 .02in .06in}}
+.spb{{font-family:"Anton";font-size:30pt;line-height:1;text-transform:uppercase;color:{ROJO};margin:.02in 0}}
 .cap2{{font-weight:600;font-size:7pt;letter-spacing:.18em;text-transform:uppercase;color:{MU};margin-top:.16in}}
 .cols3{{display:grid;grid-template-columns:repeat(3,1fr);gap:.28in}}
 .cols3 h4{{font-family:"Anton";font-weight:400;font-size:16pt;text-transform:uppercase;margin-bottom:.06in}}
