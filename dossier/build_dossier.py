@@ -116,170 +116,194 @@ def nx():
 def S(nombre, titulo, lead, desk, mob, bloques, nota='', desk2=None, hl=None):
     L.append(lamina_seccion(nx(), nombre, titulo, lead, desk, mob, bloques, nota, desk2, hl))
 
-# ======================= 01 PORTADA (doble página) =======================
+# ======================= LÁMINAS (diseño libre, colores alternados) =======================
+GULL = '<svg viewBox="0 0 100 100" class="gull" style="{st}"><path d="M4,4 C22,16 42,36 56,55 C62,53 70,52 78,53 C82,53.5 85,55 86,57 C83,59 79,60 75,61 C82,72 90,85 97,98 C86,88 75,76 66,65 C58,66 50,67 44,69 C47,66 50,63 52,61 C40,42 22,20 4,4 Z" fill="{c}"/></svg>'
+def gull(x, y, w, c, rot=0, flip=False):
+    sx = -1 if flip else 1
+    return GULL.format(st=f'left:{x}in;top:{y}in;width:{w}in;transform:rotate({rot}deg) scaleX({sx})', c=c)
+def wave(c, h=.8, top=None, flip=False):
+    pos = f'top:{top}in' if top is not None else 'bottom:0'
+    tr = 'transform:scaleY(-1);' if flip else ''
+    return f'<svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" style="{pos};height:{h}in;{tr}"><path d="M0,120 L0,70 C360,10 820,0 1440,58 L1440,120 Z" fill="{c}"/></svg>'
+def fr(name, x, y, w, rot=0, z=2):
+    return f'<div class="fr" style="left:{x}in;top:{y}in;width:{w}in;transform:rotate({rot}deg);z-index:{z}"><img src="{shot(name, 1400)}" alt=""></div>'
+def ph(name, x, y, w, rot=0, z=3):
+    return f'<div class="ph" style="left:{x}in;top:{y}in;width:{w}in;transform:rotate({rot}deg);z-index:{z}"><img src="{shot(name, 560)}" alt=""></div>'
+def medal(x, y, d, bg, fg, html_, rot=0, fs=11, z=4):
+    return f'<div class="md" style="left:{x}in;top:{y}in;width:{d}in;height:{d}in;background:{bg};color:{fg};transform:rotate({rot}deg);font-size:{fs}pt;z-index:{z}"><div>{html_}</div></div>'
+def box(x, y, w, inner, cls='', st=''):
+    return f'<div class="tx {cls}" style="left:{x}in;top:{y}in;width:{w}in;{st}">{inner}</div>'
+def pill(t, bg, fg='#fff'):
+    return f'<span class="pill" style="background:{bg};color:{fg}">{E(t)}</span>'
+def Q(text, source, lang='', cls=''):
+    la = f' lang="{lang}"' if lang else ''
+    return f'<blockquote class="q2 {cls}"{la}><p>“{text}”</p><cite>{E(source)}</cite></blockquote>'
+def lam(bg, inner, nc='rgba(29,36,33,.45)', cls=''):
+    k = nx()
+    return f'<article class="lam free {cls}" style="background:{bg}">{inner}<span class="no" style="color:{nc}">{k:02d}</span></article>'
+def photo(key, x, y, w, h, r=.28, pos='50% 50%', z=1, rot=0, border=''):
+    return f'<div class="pic" style="left:{x}in;top:{y}in;width:{w}in;height:{h}in;border-radius:{r}in;transform:rotate({rot}deg);z-index:{z};{border}"><img src="{raw(key, 1500)}" style="object-position:{pos}" alt=""></div>'
+
+NI, BR, TI, MU, TE = C['niebla'], C['bruma'], C['tinta'], C['musgo'], C['tierra']
+MAR, MARH, ISLA, VER, ROJO, ROJOH = C['mar'], C['marh'], C['isla'], C['chiloe'], C['turismo'], C['turismoh']
+
+# 01 · PORTADA
 nx()
 L.append(f'''<article class="lam spread">
   <img class="bleed" src="{raw("huillinco-columpio", 2600)}" style="object-position:50% 62%" alt="">
   <div class="spread-tab"><img class="spread-logo" src="{png_file("brand/logo/logo-color.png", 900)}" alt="Turismo Chiloé Mágico"></div>
 </article>''')
 
-# ======================= 02 CARTA =======================
-L.append(lamina_libre(nx(),
-  f'<img class="bleed" src="{raw("nicolas-enrique")}" style="object-position:50% 40%" alt="">',
-  f'''<p class="kick">Antes de empezar</p><h2>Un sitio hecho con lo que ustedes ya dijeron</h2>
-  <div class="letter">
+# 02 · CARTA · niebla, foto redondeada, ola azul, medallón rojo
+L.append(lam(NI, wave(MAR, .9) +
+  photo('nicolas-enrique', .45, .45, 5.6, 7.3, pos='50% 40%', z=2) +
+  medal(4.75, 5.55, 1.75, ROJO, '#fff', 'Un regalo<br><small>para</small><br>Chiloé Mágico', rot=-11, fs=15) +
+  box(6.65, .75, 5.85, f'''<p class="k" style="color:{ISLA}">Antes de empezar</p>
+  <h2 class="t" style="color:{TI}">Un sitio hecho <em style="color:{ROJO}">con</em> lo que ustedes ya dijeron</h2>
+  <div class="letter2">
   <p>Equipo de Chiloé Mágico:</p>
-  <p>Este sitio nació de mirar con atención lo que Chiloé Mágico ya publica. No hay frases inventadas ni promesas de agencia: cada título sale de sus posts de Instagram, de sus destacadas, de sus afiches de tours, de su bio o de lo que sus viajeros escribieron en Google. Lo que hicimos fue ordenarlo, darle aire y ponerlo en movimiento.</p>
-  <p>Tampoco hay fotos de banco de imágenes. De las {N_FOTOS} fotos del sitio, {N_PROPIAS} y los 3 videos son suyos; la única excepción es una foto de libre uso del volcán Osorno, con su autor citado.</p>
-  <p>En las próximas láminas, a la izquierda está el sitio tal como se ve; a la derecha, de dónde salió cada cosa y por qué está ahí.</p>
+  <p>Este sitio nació de mirar con atención lo que ustedes ya publican. No hay frases inventadas ni promesas de agencia: cada título sale de sus posts, sus destacadas, sus afiches, su bio o de lo que sus viajeros escribieron en Google. Lo que hicimos fue ordenarlo, darle aire y ponerlo en movimiento.</p>
+  <p>Tampoco hay fotos de banco: de las {N_FOTOS} fotos del sitio, {N_PROPIAS} y los 3 videos son suyos. La única excepción es una foto de libre uso del volcán Osorno, con su autor citado.</p>
   <p>Es un regalo. Ojalá lo disfruten tanto como nosotros disfrutamos haciéndolo.</p>
-  <p class="sign">Pablo Figueroa G.<br>Director de estudio</p></div>''', 'full'))
+  <p class="sign2">Pablo Figueroa G. · Director de estudio</p></div>''')))
 
-# ======================= 03 DE DÓNDE VIENE TODO =======================
-grid_keys = ['huillinco-columpio', 'curanto-destape', 'brujos-columpio-2', 'almas-pareja', 'muelle-luz-mirador',
-             'caleuche', 'punihuil-bahia', 'pasarela-aucar', 'tenaun', 'palafitos',
-             'nicolas-enrique', 'vans', 'yayanes-puente', 'curaco-2', 'mechuque']
-igrid = ''.join(f'<img src="{src(k, 300)}" alt="">' for k in grid_keys)
-L.append(lamina_libre(nx(),
-  f'''<p class="lab">15 de las {N_PROPIAS} fotos elegidas de su Instagram</p><div class="igrid">{igrid}</div>
-  <div class="voice" style="margin-top:.16in">
-    <p class="vbig vsm">¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!</p>
-    <p class="vsrc">{IG("007")} · su remate de siempre, y el cierre del sitio</p></div>''',
-  f'''<p class="kick">De dónde viene todo</p><h2>Todo esto ya era suyo</h2>
-  <p class="lead">Antes de diseñar, leímos todo lo que Chiloé Mágico tiene publicado.</p>
-  <div class="grid">
-  {block("Lo que leímos", f"<p><b>{N_POSTS} publicaciones</b> de Instagram ({N_PROPIOS} suyas), <b>7 destacadas</b>, la bio y los <b>7 afiches de tours</b>. De los afiches salen los títulos, las paradas, la letra y el rojo.</p>")}
-  {block("Lo que dicen sus viajeros", f"<p><b>{N_REV} reseñas</b> de Google con nota <b>{NOTA}</b>, leídas todas en su idioma original para saber qué valoran y qué les falta.</p>")}
-  {block("Su voz", "<p>Tutea, se entusiasma y usa la mitología como invitación: «UN CURANTITO?», «VAMOS A VOLAR UN RATITO?». En el sitio se quitaron los emojis; las preguntas y las mayúsculas se dejaron tal cual.</p>")}
-  {block("La regla", "<p>Cada texto de la marca tiene su origen identificado. Si un dato no estaba publicado (la mayoría de los precios, pagos, políticas), el sitio dice <b>«por confirmar con la agencia»</b>.</p>")}
-  </div>'''))
+# 03 · DE DÓNDE VIENE TODO · rojo, polaroids, cifras gigantes
+pol = [('caleuche', .55, .7, -8), ('curanto-destape', 2.55, .45, 5), ('tenaun', 4.35, .9, -3),
+       ('brujos-columpio-2', .8, 3.15, 4), ('palafitos', 2.85, 2.95, -6), ('vans', 4.55, 3.35, 7),
+       ('almas-pareja', 1.0, 5.55, -4), ('pasarela-aucar', 3.1, 5.4, 3)]
+polh = ''.join(f'<div class="pol" style="left:{x}in;top:{y}in;transform:rotate({r}deg)"><img src="{src(k, 420)}" alt=""></div>' for k, x, y, r in pol)
+def big(nm, cap): return f'<div class="bign"><b>{nm}</b><span>{cap}</span></div>'
+L.append(lam(ROJOH, polh + gull(11.6, .45, .8, 'rgba(255,255,255,.9)', -8) +
+  box(6.85, .7, 5.7, f'''<p class="k" style="color:rgba(255,255,255,.85)">De dónde viene todo</p>
+  <h2 class="t" style="color:#fff">Todo esto <em>ya</em> era suyo</h2>
+  <div class="bigs">{big(N_POSTS, "publicaciones de Instagram, leídas una por una")}{big(N_REV, f"reseñas de Google, nota {NOTA}, en su idioma original")}{big(7, "afiches de tours: títulos, paradas, letra y rojo")}{big(N_PROPIAS, f"fotos suyas, de {N_POSTS_FOTOS} posts distintos")}</div>
+  <p class="p" style="color:#fff">Cada texto de la marca tiene su origen identificado. Lo que no estaba publicado (la mayoría de los precios, pagos, políticas) dice <b>«por confirmar con la agencia»</b>.</p>'''),
+  nc='rgba(255,255,255,.7)'))
 
-# ======================= 04 LA MARCA =======================
-sw = [('niebla', 'Niebla de Castro', '#1d2421'), ('bruma', 'Bruma', '#1d2421'), ('tierra', 'Tierra chilota', '#1d2421'),
-      ('tinta', 'Tinta de alerce', '#f2f1ec'), ('musgo', 'Musgo', '#f2f1ec'), ('isla', 'Isla Grande', '#f2f1ec'),
-      ('mar', 'Mar del logo', '#fff'), ('chiloe', 'Verde Chiloé', '#fff'), ('turismo', 'Rojo Turismo', '#fff')]
-swh = ''.join(f'<span style="background:{C[k]};color:{fg}">{nm}<br>{C[k]}</span>' for k, nm, fg in sw)
-L.append(lamina_libre(nx(),
-  f'''<div class="spec">
-    <img class="spec-logo" src="{png_file("brand/logo/logo-color.png", 600)}" alt="">
-    <p class="sp0">Tours de día completo desde Castro</p>
-    <p class="sp1">TOUR LA COSTA</p><p class="sp1s">con</p><p class="sp1">CURANTO EN HOYO</p>
-    <p class="sp2">Todos nuestros tours incluyen traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos</p>
-    <p class="cap">Anton · títulos — Montserrat · textos, rótulos y botones</p></div>
-  <div class="swatches">{swh}</div>''',
-  f'''<p class="kick">La marca</p><h2>La letra de sus afiches y los colores de su logo</h2>
-  <p class="lead">Ustedes no tenían sitio, pero sí una gramática clara en sus afiches y en su logo. La buscamos ahí.</p>
-  <div class="grid">
-  {block("Letra", "<p>Los títulos de sus afiches van en una letra de palo pesada y angosta, en mayúsculas; <b>Anton</b> es su equivalente libre. Para todo lo demás, <b>Montserrat</b>, la letra redonda de su pieza «Visita CHILOÉ». La palabra suelta que une dos líneas en sus afiches («con») se mantiene, en Montserrat gruesa.</p>")}
-  {block("Color", "<p>Medimos los tonos que más se repiten en sus fotos: los cielos nublados dan el fondo (<b>Niebla de Castro</b>) y el bosque y la madera, el oscuro (<b>Tinta de alerce</b>). Los acentos son los colores de su logo, tal cual.</p>")}
-  {block("Rojo = reservar", "<p>El <b>rojo de «TURISMO»</b>, que es también la banda de sus afiches, se usa solo en lo que lleva a reservar: «Reservar», «Cotizar por WhatsApp» y el pie. Todo se lee con holgura, incluso con sol sobre la pantalla del celular.</p>" + P("turismoh"))}
-  {block("Logo", "<p>El logo de su foto de perfil se redibujó sobre el original, sin cambiar nada, para que sea nítido a cualquier tamaño: a color, en blanco, en versión adhesivo para fotos y horizontal para la barra de arriba. La isla del logo reaparece como ventana en la portada.</p>")}
-  </div>'''))
+# 04 · LA MARCA · niebla, franjas de color verticales
+stripes = [('niebla', 'Niebla de Castro', TI), ('bruma', 'Bruma', TI), ('tierra', 'Tierra chilota', TI), ('musgo', 'Musgo', NI),
+           ('tinta', 'Tinta de alerce', NI), ('isla', 'Isla Grande', '#fff'), ('mar', 'Mar del logo', '#fff'),
+           ('chiloe', 'Verde Chiloé', '#fff'), ('turismo', 'Rojo Turismo', '#fff')]
+sth = ''.join(f'<div class="stripe" style="background:{C[k]};color:{fg}"><span class="sn">{nm}</span><span class="sh">{C[k]}</span></div>' for k, nm, fg in stripes)
+L.append(lam(NI, f'<div class="stripes">{sth}</div>' +
+  f'<img class="abs" src="{png_file("brand/logo/logo-color.png", 600)}" style="left:.55in;top:.5in;width:1.7in" alt="">' +
+  box(.55, 1.75, 6.6, f'''<p class="k" style="color:{ISLA}">La marca · letra y color</p>
+  <p class="spa">TOUR LA COSTA</p><p class="spb">con</p><p class="spa">CURANTO EN HOYO</p>
+  <p class="cap2">Anton para títulos, como sus afiches · Montserrat para todo lo demás</p>''') +
+  box(.55, 5.3, 6.6, f'''<div class="cols3">
+  <div><h4 style="color:{ROJOH}">Letra</h4><p>La letra pesada y angosta de sus afiches, en mayúsculas, y la palabra suelta que une dos líneas («con»).</p></div>
+  <div><h4 style="color:{ISLA}">Color</h4><p>El fondo y el oscuro salen del cielo nublado y del bosque de sus fotos; los acentos, de su logo, tal cual.</p></div>
+  <div><h4 style="color:{ROJOH}">Rojo = reservar</h4><p>El rojo de «TURISMO» solo va en lo que lleva a reservar: así el ojo aprende dónde se actúa.</p></div></div>''')))
 
-# ======================= 05 RECORRIDO =======================
-strip = [('d-hero', 'Portada'), ('d-isla-b', 'Vamos a navegar'), ('d-tours', 'Elige tu tour'),
-         ('d-ficha', 'Ficha de tour'), ('d-reviews', 'Reseñas'), ('d-nosotros', 'Nosotros'),
-         ('d-destinos', 'Destinos'), ('d-bcta', 'Cierre'), ('d-contacto', 'Contacto')]
-sh = ''.join(f'<figure><img src="{shot(k, 640)}" alt=""><figcaption>{c}</figcaption></figure>' for k, c in strip)
-L.append(lamina_libre(nx(), f'<p class="lab">El recorrido</p><div class="strip">{sh}</div>',
-  f'''<p class="kick">Recorrido</p><h2>Un día de tour, en cuatro actos</h2>
-  <p class="lead">El sitio se recorre como una excursión: llegar, elegir, confiar y reservar.</p>
-  <div class="grid">
-  {block("1 · Llegar", "<p>El columpio del lago Huillinco con la frase de su bio. Enseguida, la navegación en Puñihuil dentro de la silueta de la isla.</p>")}
-  {block("2 · Elegir", "<p>Los 8 tours como sus afiches, cada uno con su ficha. Destinos y experiencias ofrecen otras dos formas de buscar.</p>")}
-  {block("3 · Confiar", f"<p>{N_REV} reseñas con nota {NOTA}, el equipo con sus nombres, las vans y los más de 20 años de servicio.</p>")}
-  {block("4 · Reservar", "<p>Su remate «¡NO DEJES QUE TE LO CUENTEN…!» y WhatsApp siempre a un toque, en cada página.</p>")}
-  </div>'''))
+# 05 · RECORRIDO · isla, 4 actos con medallones
+actos = [('d-hero', 'Llegar', 'El columpio de Huillinco y la navegación en Puñihuil, dentro de la isla del logo.', -3),
+         ('d-tours', 'Elegir', 'Los 8 tours como sus afiches, cada uno con su ficha.', 2),
+         ('d-reviews', 'Confiar', f'{N_REV} reseñas, el equipo con sus nombres y más de 20 años.', -2),
+         ('d-bcta', 'Reservar', 'Su remate de siempre y WhatsApp a un toque, en cada página.', 3)]
+ah = ''
+for i, (s_, t_, p_, r_) in enumerate(actos):
+    x = .5 + i * 3.1
+    ah += fr(s_, x, 3.2, 2.85, r_) + medal(x + 2.15, 2.75, .95, NI, ISLA, f'<b class="mdn">{i + 1}</b>', rot=-r_ * 2, z=5)
+    ah += box(x, 5.45, 2.8, f'<h3 class="t3" style="color:#fff">{t_}</h3><p class="p" style="color:rgba(255,255,255,.88)">{p_}</p>')
+L.append(lam(ISLA, wave('rgba(255,255,255,.08)', 1.4) +
+  box(.5, .6, 9, f'''<p class="k" style="color:rgba(255,255,255,.8)">El recorrido</p>
+  <h2 class="t" style="color:#fff">Un día de tour, <em style="color:{NI}">en</em> cuatro actos</h2>''') + ah,
+  nc='rgba(255,255,255,.7)'))
 
-# ======================= SECCIONES =======================
-S('Portada', 'Nuestro archipiélago es mágico',
-  'Una foto suya a pantalla completa, su logo, la frase de su bio y dos caminos: ver los tours o escribir por WhatsApp.',
-  'd-hero', 'm-hero', [
-    block('Textos', quote('Nuestro archipiélago es mágico ¡Ven a descubrirlo!', 'Bio de Instagram') + quote('¡Tours todos los días! - Servicios privados', 'Bio de Instagram')),
-    block('Datos de confianza', f'<p>Al pie, cuatro datos verificables: <b>{NOTA} ★ en Google · {N_REV} reseñas</b>, tours de lunes a domingo, máximo 16 pasajeros por van y salida a las 10:00 frente a la Plaza de Armas.</p>'),
-    block('Por qué así', '<p>Lo primero que hace un viajero es comparar agencias. La nota de Google y el tamaño de los grupos responden esa duda antes de bajar.</p>' + quote('El transporte es en vehículos pequeños pero cómodos, lo cual hace que la experiencia sea muy personalizada.', 'Gabriela · Google'), 'wide'),
-  ])
+# 06 · PORTADA DEL SITIO · azul hondo, navegador + celular
+L.append(lam(MARH, gull(.55, 6.6, .7, 'rgba(255,255,255,.35)', 12) +
+  box(.55, .7, 3.95, f'''<p class="k" style="color:rgba(255,255,255,.8)">La portada</p>
+  <h2 class="t" style="color:#fff">Nuestro archipiélago <em>es</em> mágico</h2>
+  <p class="p" style="color:rgba(255,255,255,.9)">La frase de su bio sobre su foto del lago, y dos caminos: ver los tours o escribir por WhatsApp. Al pie, cuatro datos que un viajero quiere saber antes de comparar agencias.</p>''') +
+  box(.55, 5.0, 3.75, Q('El transporte es en vehículos pequeños pero cómodos, lo cual hace que la experiencia sea muy personalizada.', 'Gabriela · Google'), 'card', f'background:{NI};') +
+  fr('d-hero', 5.3, .65, 7.25, 1.5) + ph('m-hero', 4.65, 3.75, 1.65, -5) +
+  box(6.75, 5.5, 5.8, f'<div class="pills">{pill(f"{NOTA} ★ · {N_REV} reseñas", ROJO)}{pill("Lu a Do", NI, TI)}{pill("16 por van", ISLA)}{pill("10:00 · Plaza de Armas", NI, TI)}</div>'),
+  nc='rgba(255,255,255,.7)'))
 
-S('Vamos a navegar', 'Vamos a navegar?',
-  'La isla de su logo se vuelve una ventana: al bajar por la página, la silueta crece hasta que el video de Puñihuil ocupa toda la pantalla.',
-  'd-isla-a', None, [
-    block('Textos', quote('Vamos a navegar?', IG('015')) + f'<p>Video: un tramo de su publicación del {IGD["013"]}.</p>'),
-    block('Movimiento', '<p>Es el único momento «de efecto» del sitio. Si alguien prefiere menos movimiento en su teléfono, la isla aparece ya abierta.</p>'),
-    block('Por qué aquí', quote('La experiencia de ver los pingüinos que ofrece la caleta Puñihuil es de otro nivel', IG('057')) + '<p>Su logo ya es la isla. Antes de ver los tours, el viajero entra «dentro» de Chiloé por la ventana de su propia marca.</p>', 'wide'),
-  ], nota='Arriba, la isla abriéndose; abajo, a pantalla completa.', desk2='d-isla-b')
+# 07 · VAMOS A NAVEGAR · captura a sangre, tarjeta flotante
+L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed abs0" src="{shot("d-isla-b", 2400)}" style="object-position:50% 70%" alt="">' +
+  box(7.55, 1.15, 5.0, f'''<p class="k" style="color:{ISLA}">Vamos a navegar</p>
+  <h2 class="t" style="color:{TI}">La isla <em style="color:{ROJO}">de su logo,</em> hecha ventana</h2>
+  <p class="p">Al bajar por la página, la silueta de Chiloé crece hasta que el video de Puñihuil llena la pantalla. Es el único momento «de efecto» del sitio.</p>
+  {Q("La experiencia de ver los pingüinos que ofrece la caleta Puñihuil es de otro nivel", IG("057"))}''', 'card', f'background:{NI};') +
+  fr('d-isla-a', 9.3, 5.25, 3.2, 4) + medal(8.55, 4.95, 1.05, ROJO, '#fff', 'Así<br>empieza', rot=-12, fs=10, z=6) +
+  f'<span class="no" style="color:rgba(255,255,255,.7)">{nx():02d}</span></article>')
 
-S('Elige tu tour', 'Elige tu tour',
-  'Los 8 tours uno al lado del otro, como sus afiches en la vitrina de la agencia. Se deslizan con el dedo o con las flechas; la página «Tours» los muestra todos en grilla.',
-  'd-tours', 'm-tours', [
-    block('Textos', quote('Todos nuestros tours incluyen traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos', IG('007')) + '<p>Bajo cada nombre, una frase suya del post de ese tour: «UN CURANTITO?».</p>'),
-    block('Imágenes', thumbs([('curanto-destape', 'Curanto · ' + ORIG('curanto-destape')), ('brujos-columpio-2', 'Muelle de los Brujos · ' + ORIG('brujos-columpio-2')), ('almas-pareja', 'Muelle de las Almas · ' + ORIG('almas-pareja'))])),
-    block('Por qué así', f'<p>{N_COMIDA} de las {N_REV} reseñas hablan de la comida. Por eso el rótulo de cada tour nombra primero lo que se come o se vive («Con curanto en hoyo», «Con asado al palo»), antes que la lista de lugares.</p>', 'wide'),
-  ], hl=('Elige tu tour',))
+# 08 · ELIGE TU TOUR · niebla con banda roja y afiches en abanico
+fan = [('curanto-destape', 8.45, 1.75, -7, 'Con curanto en hoyo'), ('brujos-columpio-2', 9.85, 1.6, 2, 'Con asado al palo'), ('almas-pareja', 11.2, 1.8, 8, 'Mitos y acantilados')]
+fanh = ''.join(f'<div class="card-t" style="left:{x}in;top:{y}in;transform:rotate({r}deg)"><img src="{src(k, 420)}" alt=""><span>{t}</span></div>' for k, x, y, r, t in fan)
+L.append(lam(NI, f'<div class="band" style="background:{ROJOH}"></div>' + gull(11.75, .2, .75, '#fff', -6) +
+  box(.55, .3, 11, f'<p class="k" style="color:rgba(255,255,255,.85)">Elige tu tour</p><h2 class="t tline" style="color:#fff">Los 8 tours, <em>como</em> sus afiches</h2>') +
+  fr('d-tours', .55, 1.75, 7.3, -1) + ph('m-tours', 6.75, 4.55, 1.45, 5) + fanh +
+  box(8.45, 4.75, 4.1, f'''<p class="p">Se deslizan con el dedo, como si estuvieran colgados en la vitrina de la agencia. Bajo cada nombre, una frase suya: «UN CURANTITO?».</p>
+  <p class="p"><b style="color:{ROJOH}">{N_COMIDA} de las {N_REV} reseñas</b> hablan de la comida. Por eso cada tour se presenta primero por lo que se come o se vive.</p>''')))
 
-S('Ficha de tour', 'Tour La Costa con curanto en hoyo',
-  'Cada tour tiene su página, armada como su afiche: el título, el plato estrella, las paradas, qué incluye, horario y precio, sus fotos y un formulario que termina en WhatsApp.',
-  'd-ficha', None, [
-    block('Textos', quote('TOUR LA COSTA con CURANTO EN HOYO', AFICHES) + quote('Feria Artesanal Dalcahue · Iglesia Patrimonio Tenaún · Almuerzo en agroturismo · Cascadas de Tocoihue · Isla Aucar', AFICHES + ' · paradas')),
-    block('Datos', '<p><b>$35.000 por persona</b> (con almuerzo) + <b>$3.000</b> de entrada a las cascadas, según su post del 7 de febrero de 2025. Es el único tour con precio publicado; en los demás dice «por confirmar».</p><p class="small">Conviene confirmar si este valor sigue vigente.</p>'),
-    block('Interacción', '<p>El formulario pide solo fecha y número de personas, y abre WhatsApp con el mensaje escrito. En celular, una barra con «Cotizar» se queda abajo durante la lectura.</p>'),
-    block('Por qué así', quote('El tour fue preciso, teníamos tiempo para recorrer libremente y solo acordábamos la hora de reunión…', 'Ximena · Google') + '<p>Los viajeros valoran saber qué pasa en el día: por eso las paradas y el horario van primero.</p>'),
-  ], desk2='d-ficha-info')
+# 09 · FICHA DE TOUR · verde, título de afiche, paradas en círculos
+paradas = ['Feria Artesanal Dalcahue', 'Iglesia Patrimonio Tenaún', 'Almuerzo en agroturismo', 'Cascadas de Tocoihue', 'Isla Aucar']
+parh = ''.join(medal(.55 + i * 1.18, 3.55, 1.08, NI if i % 2 == 0 else '#fff', VER, f'<span class="mds">{E(p_)}</span>', rot=(-6, 5, -3, 7, -5)[i], fs=7.4) for i, p_ in enumerate(paradas))
+L.append(lam(VER,
+  box(.55, .55, 6.2, f'''<p class="k" style="color:rgba(255,255,255,.85)">Ficha de tour · como su afiche</p>
+  <p class="spa" style="color:#fff">TOUR LA COSTA</p><p class="spb" style="color:{NI}">con</p><p class="spa" style="color:#fff">CURANTO EN HOYO</p>''') + parh +
+  box(.55, 4.95, 2.95, f'<p class="pr">$35.000</p><p class="p">por persona, con almuerzo, + $3.000 a las cascadas. Su post del 7 feb 2025: conviene confirmar si sigue vigente.</p>', 'card', f'background:{NI};') +
+  box(3.75, 4.95, 2.85, Q('El tour fue preciso, teníamos tiempo para recorrer libremente…', 'Ximena · Google', cls='light') + '<p class="p" style="color:rgba(255,255,255,.9)">Por eso las paradas y el horario van primero, y el formulario termina en su WhatsApp.</p>') +
+  fr('d-ficha', 6.95, .6, 5.6, 2.5) + fr('d-ficha-info', 6.7, 4.3, 5.6, -2) +
+  medal(11.7, 3.65, 1.0, ROJO, '#fff', 'Cotizar<br><small>por WhatsApp</small>', rot=10, fs=10, z=6),
+  nc='rgba(255,255,255,.7)'))
 
-S('Reseñas', 'Las personas son la marca',
-  f'Trece reseñas reales en su idioma original, y una página «Nosotros» con el equipo por su nombre, sus más de 20 años y sus propias palabras.',
-  'd-reviews', None, [
-    block('Textos', quote('Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo.', 'Andrea · Google') + quote('nuestro marketing y publicidad más grande son nuestros turistas que cuentan sus experiencias con nosotros', IG('002'))),
-    block('El equipo', '<p>Guías: Nicolás, Alberto, Meli, Sandra y Rodolfo. Conductores: don Enrique, Marcelo y Marco. Cada nombre aparece en sus posts o en reseñas de Google.</p>'),
-    block('Lo que se decidió no mostrar', f'<p>Las {N2} reseñas de dos estrellas se leyeron, pero no se publican. Una sí dejó una enseñanza: las preguntas frecuentes aclaran que el guiado es en español.</p>'),
-    block('Por qué así', f'<p><b>{N_GUIA} de las {N_REV} reseñas</b> hablan del guía y <b>{N_NOMBRE}</b> nombran a alguien del equipo. Paisajes muestran todas las agencias; lo que distingue a Chiloé Mágico son las personas.</p>'),
-  ], desk2='d-nosotros2', hl=('Reseñas', 'Nosotros'))
+# 10 · LAS PERSONAS · tinta, comillas gigantes, nombres en cápsulas
+names = [('Nicolás', MAR), ('Alberto', ISLA), ('Meli', ROJO), ('Sandra', VER), ('Rodolfo', TE), ('don Enrique', MAR), ('Marcelo', ISLA), ('Marco', ROJO)]
+L.append(lam(TI, '<p class="qq" style="left:.4in;top:.15in">“</p>' +
+  box(.6, 1.45, 5.9, f'''<p class="qbig">Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo.</p>
+  <p class="k" style="color:rgba(255,255,255,.6);margin-top:.12in">Andrea · Google</p>''') +
+  box(.6, 3.55, 5.9, f'''<div class="stats"><div><b style="color:{ROJO}">{N_GUIA}</b><span>de {N_REV} reseñas hablan del guía</span></div><div><b style="color:{MAR}">{N_NOMBRE}</b><span>nombran a alguien del equipo</span></div></div>
+  <div class="pills" style="margin-top:.2in">{"".join(pill(n_, c_) for n_, c_ in names)}</div>
+  <p class="p" style="color:rgba(255,255,255,.75);margin-top:.18in">Paisajes muestran todas las agencias; lo que distingue a Chiloé Mágico son las personas. Por eso las reseñas elegidas dicen nombres, y «Nosotros» muestra caras. Las {N2} reseñas de dos estrellas se leyeron, pero no se publican.</p>''') +
+  fr('d-reviews', 7.0, .6, 5.55, -2.5) + fr('d-nosotros2', 6.75, 4.25, 5.55, 2),
+  nc='rgba(255,255,255,.6)'))
 
-S('Destinos', 'Otras formas de buscar',
-  'Por lugar (cinco zonas del archipiélago), por experiencia (patrimonio, naturaleza, navegación, gastronomía y mitos) y una guía con sus propias explicaciones.',
-  'd-destinos', None, [
-    block('Textos', quote('En el mapudungun de Chiloé Dalkawe significa lugar de dalcas…', IG('087')) + quote('Te estarás preguntando ¿que es el curanto?', IG('034'))),
-    block('También', '<p><b>Paquetes:</b> Valdivia y Niebla, el volcán Osorno y Bariloche, sin fechas, con detalles «por confirmar». <b>Servicios privados:</b> sus vans y traslados, con su post entero, «wena onda» incluido.</p>'),
-    block('Por qué así', quote('I enjoyed the myths of brujería and the taste of chiloe with Nicolas.', 'elia · Google', 'en') + '<p>Muchos llegan sabiendo a dónde quieren ir o qué quieren vivir, no qué tour tomar. Y sus posts explicativos, que en Instagram se pierden con el tiempo, aquí ayudan a que los encuentren en Google.</p>', 'wide'),
-  ], desk2='d-experiencias', hl=('Destinos', 'Experiencias', 'Guía de Chiloé', 'Paquetes', 'Servicios privados'))
+# 11 · OTRAS FORMAS DE BUSCAR · bruma, tres capturas con medallones
+trio = [('d-destinos', 'Por<br>lugar', MAR, -2.5), ('d-experiencias', 'Por<br>experiencia', VER, 1.5), ('d-guia', 'Por<br>historia', ROJO, -1.5)]
+th_ = ''.join(fr(s_, .55 + i * 4.1, 2.15, 3.85, r_) + medal(.2 + i * 4.1 + 3.4, 1.65, 1.15, c_, '#fff', t_, rot=(-10, 8, -6)[i], fs=12, z=5) for i, (s_, t_, c_, r_) in enumerate(trio))
+L.append(lam(BR, gull(11.7, .45, .7, MARH, -10, True) +
+  box(.55, .55, 9, f'<p class="k" style="color:{ISLA}">Otras formas de buscar</p><h2 class="t" style="color:{TI}">Por dónde, <em style="color:{ROJO}">qué y</em> por qué</h2>') + th_ +
+  box(.55, 5.15, 3.85, Q('En el mapudungun de Chiloé Dalkawe significa lugar de dalcas…', IG('087')) + '<p class="p">Cinco destinos, cada uno explicado con sus posts.</p>') +
+  box(4.65, 5.15, 3.85, Q('I enjoyed the myths of brujería and the taste of chiloe with Nicolas.', 'elia · Google', 'en') + '<p class="p">Mitos y comida, al mismo nivel que el patrimonio.</p>') +
+  box(8.75, 5.15, 3.8, f'<p class="p">Sus posts explicativos (el curanto, las iglesias, los brujos) se pierden en Instagram con el tiempo; reunidos en una guía, ayudan a que los encuentren en Google.</p><p class="p"><b>Paquetes</b> y <b>servicios privados</b> tienen su página, con lo no publicado «por confirmar».</p>')))
 
-S('Contacto', '¡No dejes que te lo cuenten!',
-  'El final de cada página es su remate de siempre y un solo botón. Las preguntas frecuentes y el contacto terminan, igual, en su WhatsApp.',
-  'd-bcta', None, [
-    block('Textos', quote('¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!', IG('007')) + quote('FYI the tour is not available in english.', 'Maja · Google', 'en')),
-    block('Preguntas frecuentes', '<p>14 dudas típicas respondidas con sus palabras. Las que no han respondido en público dicen «Por confirmar con la agencia». El idioma se aclara antes de reservar: tres reseñas en inglés lo mencionan.</p>'),
-    block('Por qué así', '<p>Su bio dice «Escríbenos» con el enlace de WhatsApp: ese es su canal real. El sitio no crea uno nuevo; ordena la primera conversación para que llegue con fecha y número de personas.</p><p class="small">En la bio y en el portal municipal aparecen dos números distintos; ambos están en el sitio hasta que ustedes confirmen cuál usar.</p>', 'wide'),
-  ], desk2='d-contacto2', hl=('Preguntas frecuentes', 'Contacto'))
+# 12 · RESERVAR · rojo, el remate gigante
+L.append(lam(ROJO, wave(ROJOH, 1.3) + gull(5.2, 4.15, .85, '#fff', -12) +
+  box(.55, .55, 6.7, f'''<p class="k" style="color:rgba(255,255,255,.85)">Reservar · el final de cada página</p>
+  <p class="remate">¡NO DEJES QUE TE LO CUENTEN, VEN A DISFRUTAR DE ESTA MÁGICA ISLA JUNTO A NOSOTROS!</p>
+  <p class="k" style="color:rgba(255,255,255,.75)">{IG("007")} · su remate de siempre</p>''') +
+  box(.55, 5.35, 6.2, f'''<p class="p">Su bio dice «Escríbenos» con el enlace de WhatsApp: ese es su canal real. El contacto y las 14 preguntas frecuentes terminan ahí, con fecha y personas ya escritas. Antes de reservar se aclara que el guiado es en español.</p>
+  <p class="p sm">En la bio y en el portal municipal aparecen dos números distintos; ambos están en el sitio hasta que confirmen cuál usar.</p>''', 'card', f'background:{NI};') +
+  fr('d-contacto2', 7.25, .65, 5.3, 3) + fr('d-faq', 7.6, 4.2, 4.95, -2.5) + ph('m-contacto', 6.85, 3.3, 1.35, -6),
+  nc='rgba(255,255,255,.7)'))
 
-# ======================= DETALLES =======================
-mrow = ''.join(f'<img src="{shot(k, 360)}" alt="">' for k in ['m-hero', 'm-tours', 'm-ficha-info', 'm-nosotros', 'm-contacto'])
-L.append(lamina_libre(nx(),
-  f'''<p class="lab">Menú abierto</p><img class="desk" style="width:72%" src="{shot("d-menu", 1100)}" alt="">
-  <p class="lab" style="margin-top:.08in">Celular</p><div class="mrow">{mrow}</div>''',
-  f'''<p class="kick">Detalles en todo el sitio</p><h2>Lo que no se ve, pero se siente</h2>
-  <p class="lead">Decisiones que acompañan toda la visita.</p>
-  <div class="grid">
-  {block("Menú", "<p>Cuatro capítulos grandes. Al pasar sobre cada uno aparece una foto suya de ese tema.</p>")}
-  {block("Español e inglés", "<p>Un botón ES · EN traduce lo que guía la visita. Sus textos y las reseñas quedan en su idioma original, para no poner palabras en su boca.</p>")}
-  {block("Pensado para celular", "<p>Una columna, botones grandes y WhatsApp a un toque. Las fotos se aligeraron y se descargan a medida que se baja, para que funcione con poca señal en ruta.</p>")}
-  {block("Sin tropiezos", "<p>La página no salta mientras carga, se puede recorrer con el teclado y cada foto tiene su descripción en español e inglés.</p>")}
-  </div>'''))
+# 13 · DETALLES · niebla, cinco celulares
+phs = ''.join(ph(k, .65 + i * 2.45, .5 + (0, .3, 0, .3, 0)[i], 2.05, (-4, 3, -2, 4, -3)[i]) for i, k in enumerate(['m-hero', 'm-tours', 'm-ficha-info', 'm-nosotros', 'm-contacto']))
+dots = ''.join(f'<div class="dot" style="left:{.45 + i * 2.45}in;top:{1.4 + (0, .3, 0, .3, 0)[i]}in;background:{c_}"></div>' for i, c_ in enumerate([MAR, VER, ROJO, ISLA, TE]))
+det = [('Celular primero', 'Una columna, botones grandes y WhatsApp a un toque. Las fotos se aligeraron para funcionar con poca señal en ruta.', MAR),
+       ('Español e inglés', 'Un botón ES · EN traduce lo que guía la visita; sus textos y las reseñas quedan en su idioma original.', VER),
+       ('Menú con fotos', 'Cuatro capítulos grandes; al pasar sobre cada uno aparece una foto suya de ese tema.', ROJO),
+       ('Sin tropiezos', 'La página no salta mientras carga y cada foto tiene su descripción en español e inglés.', ISLA)]
+deth = ''.join(box(.55 + i * 3.1, 5.75, 2.85, f'<div class="bar" style="background:{c_}"></div><h3 class="t4">{t_}</h3><p class="p">{p_}</p>') for i, (t_, p_, c_) in enumerate(det))
+L.append(lam(NI, dots + phs + deth))
 
-# ======================= CIERRE =======================
-L.append(lamina_libre(nx(),
-  f'<img class="bleed" src="{raw("tenaun")}" style="object-position:50% 40%" alt="">',
-  f'''<div class="close">{MARK}
-  <p class="kick">Lo que sigue</p><h2>Hacerlo suyo</h2>
-  <p class="lead">Este sitio se hizo solo con lo que ya estaba publicado. Con un par de conversaciones podría ir mucho más lejos:</p>
-  <ul class="next"><li>Fotografía y video propios de cada tour, del equipo y de las vans</li>
-    <li>Precios, temporadas y políticas confirmados por ustedes, en vez de «por confirmar»</li>
+# 14 · CIERRE · foto a sangre y tarjeta
+L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed abs0" src="{raw("tenaun", 2600)}" style="object-position:50% 40%" alt="">' +
+  box(6.75, .5, 5.75, f'''{MARK}
+  <p class="k" style="color:{ISLA}">Lo que sigue</p><h2 class="t" style="color:{TI}">Hacerlo <em style="color:{ROJO}">suyo</em></h2>
+  <p class="p">Este sitio se hizo solo con lo que ya estaba publicado. Con un par de conversaciones podría ir mucho más lejos:</p>
+  <ul class="next2"><li>Fotografía y video propios de cada tour, del equipo y de las vans</li>
+    <li>Precios, temporadas y políticas confirmados por ustedes</li>
     <li>Dominio propio .cl y alojamiento a nombre de Chiloé Mágico</li>
     <li>Reservas que lleguen a su WhatsApp ordenadas por fecha, tour y cupos</li></ul>
-  <p class="invite">Cuando quieran, lo conversamos.</p>
-  <p class="who">Pablo Figueroa G.</p>
-  <p class="role">Director de estudio</p>
-  <p class="contact"><a href="mailto:pablo@bergerac.cl">pablo@bergerac.cl</a> · <a href="tel:+56975892096">+56 9 7589 2096</a></p>
-  <p class="link"><a href="https://bergerac.cl">Bergerac.cl</a></p>
-  <p class="coords">{COORDS}</p></div>''', 'full'))
+  <p class="invite2">Cuando quieran, lo conversamos.</p>
+  <p class="who2">Pablo Figueroa G.</p><p class="role2">Director de estudio</p>
+  <p class="contact2"><a href="mailto:pablo@bergerac.cl">pablo@bergerac.cl</a> · <a href="tel:+56975892096">+56 9 7589 2096</a></p>
+  <p class="link2"><a href="https://bergerac.cl">Bergerac.cl</a></p>''', 'card', f'background:{NI};padding:.45in .5in;') +
+  f'<span class="no" style="color:rgba(255,255,255,.7)">{nx():02d}</span></article>')
 
 # ======================= CSS =======================
 CSS = f'''
@@ -290,122 +314,85 @@ CSS = f'''
 @font-face{{font-family:"Montserrat";font-weight:600;src:url({font("montserrat-latin-600-normal")}) format("woff2")}}
 @font-face{{font-family:"Montserrat";font-weight:700;src:url({font("montserrat-latin-700-normal")}) format("woff2")}}
 @page{{size:13in 8.5in;margin:0}}
-:root{{--niebla:#f2f1ec;--bruma:#dfe4e6;--tinta:#1d2421;--musgo:#46473b;--tierra:#a69775;--isla:#0e766c;--rojo:#d0342c;--rojoh:#b02a23;--gris:#6b6f68}}
 *{{box-sizing:border-box;margin:0;padding:0}}
 html,body{{background:#8b8f8a}}
-body{{font-family:"Montserrat",Arial,sans-serif;color:var(--tinta);-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-.lam{{width:13in;height:8.5in;display:grid;grid-template-columns:6.5in 6.5in;overflow:hidden;margin:0 auto .3in;background:var(--niebla);page-break-after:always;break-after:page;position:relative}}
+body{{font-family:"Montserrat",Arial,sans-serif;color:{TI};-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.lam{{width:13in;height:8.5in;overflow:hidden;margin:0 auto .3in;position:relative;page-break-after:always;break-after:page}}
 @media print{{html,body{{background:none}}.lam{{margin:0}}}}
-.L{{background:var(--tinta);color:var(--niebla);padding:.42in .4in .38in;display:flex;flex-direction:column;gap:.1in;overflow:hidden}}
-.L.full{{padding:0}}
 .bleed{{width:100%;height:100%;object-fit:cover;display:block}}
-.R{{position:relative;padding:.48in .52in .7in;display:flex;flex-direction:column;overflow:hidden}}
-.lab{{font-weight:600;font-size:6.4pt;letter-spacing:.22em;text-transform:uppercase;opacity:.8}}
-.desk,.desk2{{width:100%;display:block;outline:.5pt solid rgba(242,241,236,.22)}}
-.L.two .desk,.L.two .desk2{{width:88%}}
-.L.two .rec{{columns:4;font-size:5.4pt;line-height:1.7}}
-.Lrow{{display:flex;gap:.22in;align-items:flex-start;margin-top:.04in;min-height:0;flex:1}}
-.mobw{{display:flex;flex-direction:column;gap:.08in}}
-.mob{{width:1.35in;display:block;outline:.5pt solid rgba(242,241,236,.22)}}
-.Linfo{{flex:1;display:flex;flex-direction:column;gap:.08in}}
-.rec{{list-style:none;columns:2;column-gap:.14in;font-weight:600;font-size:6pt;letter-spacing:.12em;text-transform:uppercase;line-height:1.85}}
-.rec li{{opacity:.42;break-inside:avoid}}
-.rec li.on{{opacity:1;color:#fff}}
-.rec li.on::before{{content:"";display:inline-block;width:5pt;height:5pt;background:var(--rojo);margin-right:4pt;vertical-align:.5pt}}
-.lnote{{font-size:7.4pt;font-style:italic;opacity:.75;line-height:1.4;margin-top:.02in}}
-.kick{{font-weight:600;font-size:6.8pt;letter-spacing:.26em;text-transform:uppercase;color:var(--isla);margin-bottom:.1in}}
-h2{{font-family:"Anton";font-weight:400;font-size:26pt;line-height:1.02;text-transform:uppercase;margin-bottom:.12in;color:var(--tinta);letter-spacing:.005em}}
-.lead{{font-size:10.6pt;line-height:1.45;margin-bottom:.2in;max-width:5.4in;color:var(--musgo)}}
-.grid{{display:grid;grid-template-columns:1fr 1fr;gap:.18in .28in;align-content:start}}
-.bk h4{{font-weight:600;font-size:6.6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--rojoh);padding-bottom:4pt;border-bottom:.5pt solid #cfd3cf;margin-bottom:6pt}}
-.bk p{{font-size:9pt;line-height:1.45;margin-bottom:5pt}}
-.bk p.small{{font-size:7.2pt;color:var(--gris)}}
-.bk.wide{{grid-column:1/-1}}
-.q{{margin:0 0 6pt}}
-.q p{{font-size:9.2pt;font-style:italic;line-height:1.38;margin-bottom:1.5pt}}
-.q p::before{{content:"“"}}.q p::after{{content:"”"}}
-.q cite{{display:block;font-style:normal;font-weight:600;font-size:5.9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}}
-.ths{{display:flex;gap:5pt;flex-wrap:wrap;margin-bottom:4pt}}
-.th{{width:calc(33.3% - 4pt);min-width:.5in}}
-.ths .th:only-child{{width:1.4in}}
-.ths .th:first-child:nth-last-child(4),.ths .th:first-child:nth-last-child(4)~.th{{width:calc(25% - 4pt)}}
-.th img{{width:100%;height:.9in;object-fit:cover;display:block}}
-.th figcaption{{font-size:5.9pt;line-height:1.25;color:var(--gris);margin-top:2pt}}
-.chips{{display:flex;flex-wrap:wrap;gap:4pt 8pt;margin-bottom:4pt}}
-.chip{{display:inline-flex;align-items:center;gap:4pt;font-size:6.6pt}}
-.chip i{{width:11pt;height:11pt;display:inline-block;outline:.5pt solid rgba(29,36,33,.3)}}
-.chip b{{font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:5.8pt}}
-.pf{{position:absolute;left:.52in;right:.52in;bottom:.3in;display:flex;justify-content:space-between;font-weight:600;font-size:5.6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--gris);border-top:.5pt solid #cfd3cf;padding-top:6pt}}
-.mk{{width:.55in;display:block}}
-/* portada */
-.cover{{background:var(--niebla)}}
-.cover-in{{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;gap:.14in}}
-.cover-logo{{width:3.4in;margin-bottom:.15in}}
-.cover .sub{{font-family:"Anton";font-size:22pt;text-transform:uppercase;line-height:1.05;max-width:4.6in}}
-.cover .for{{font-size:12pt;font-style:italic;margin-top:.15in;color:var(--musgo)}}
-.cover .meta{{font-size:8.6pt;color:var(--gris)}}
-.coords{{font-weight:600;font-size:6.6pt;letter-spacing:.24em;color:var(--gris);margin-top:.24in}}
-.url{{font-weight:600;font-size:7.4pt;letter-spacing:.14em;color:var(--rojoh);margin-top:.05in}}
-/* carta */
-.letter p{{font-size:9.8pt;line-height:1.55;margin-bottom:7pt;max-width:5.3in}}
-.sign{{font-style:italic;margin-top:6pt}}
-/* fuentes y fotos */
-.igrid{{display:grid;grid-template-columns:repeat(5,1fr);gap:4pt}}
-.igrid img{{width:100%;aspect-ratio:1;object-fit:cover;display:block}}
-.vgrid{{display:grid;grid-template-columns:repeat(3,1fr);gap:4pt}}
-.vgrid img{{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}}
-.voice{{background:var(--rojoh);padding:.32in .3in}}
-.vbig{{font-family:"Anton";font-size:27pt;line-height:1.02;color:#fff}}
-.vsrc{{font-weight:600;font-size:6pt;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-top:.12in}}
-.pair{{display:grid;grid-template-columns:1fr .7fr;gap:6pt}}
-.pair img{{width:100%;height:2.25in;object-fit:cover;display:block}}
-.spec{{background:var(--niebla);color:var(--tinta);padding:.26in .28in}}
-.sp0{{font-weight:600;font-size:7pt;letter-spacing:.24em;text-transform:uppercase;color:var(--isla);margin-bottom:.08in}}
-.sp1{{font-family:"Anton";font-size:30pt;line-height:1;text-transform:uppercase}}
-.sp1s{{font-weight:600;font-size:13pt;color:var(--rojo);margin:.02in 0 .02in .05in}}
-.sp2{{font-size:10pt;line-height:1.45;margin-top:.14in;color:var(--musgo)}}
-.spec .cap{{font-weight:600;font-size:5.8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);margin-top:.12in}}
-.pgrid{{display:grid;grid-template-columns:repeat(3,1fr);gap:4pt}}
-.pgrid img{{width:100%;aspect-ratio:1;object-fit:cover;display:block}}
-.swatches{{display:grid;grid-template-columns:repeat(3,1fr);gap:4pt;margin-top:.1in}}
-.swatches span{{height:.62in;padding:6pt;font-weight:600;font-size:6pt;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:flex-end;line-height:1.5;outline:.5pt solid rgba(242,241,236,.2)}}
-.logos{{display:grid;grid-template-columns:1fr 1fr;gap:6pt;padding:.42in .4in;height:100%;align-content:center}}
-.lg{{display:grid;place-items:center;height:1.75in;padding:.22in;background-size:cover;background-position:center}}
-.lg.light{{background-color:var(--niebla)}}.lg.dark{{background-color:#121614}}
-.lg.wide{{grid-column:1/-1;height:1.05in}}
-.lg img{{max-width:100%;max-height:1.25in;width:auto;height:auto;display:block}}
-.lg.wide img{{max-height:.5in}}
-.strip{{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7pt}}
-.strip figure img{{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}}
-.strip figcaption{{font-weight:600;font-size:5.6pt;letter-spacing:.16em;text-transform:uppercase;margin-top:3pt;margin-bottom:5pt;opacity:.8}}
-.mrow{{display:grid;grid-template-columns:repeat(5,1fr);gap:5pt}}
-.mrow img{{width:100%;height:1.75in;object-fit:cover;object-position:top;display:block;outline:.5pt solid rgba(242,241,236,.22)}}
-/* portada a doble página */
-.lam.spread{{display:block}}
+.abs0{{position:absolute;inset:0}}
+.abs{{position:absolute;display:block}}
 .spread .bleed{{position:absolute;inset:0}}
-.spread-shade{{display:none}}
-.spread-in{{position:absolute;left:8.35in;right:.4in;top:.45in;bottom:.45in;padding:.32in;background:rgba(29,36,33,var(--masa,.8));border-radius:.24in;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.12in;color:#fff}}
 .spread-tab{{position:absolute;left:0;top:.45in;background:#fff;opacity:.75;padding:.17in .32in .17in .5in;border-radius:0 .18in .18in 0}}
 .spread-logo{{width:1.9in;display:block}}
-.spread .sub{{font-family:"Anton";font-size:26pt;text-transform:uppercase;line-height:1.05;text-shadow:0 2px 14px rgba(0,0,0,.45)}}
-.spread .for{{font-size:13pt;font-style:italic;margin-top:.1in;text-shadow:0 1px 8px rgba(0,0,0,.5)}}
-.spread .meta{{font-size:9pt;opacity:.9}}
-.spread .url{{font-weight:600;font-size:8pt;letter-spacing:.16em;color:#fff;margin-top:.06in}}
-.spread-coords{{position:absolute;left:.5in;bottom:.35in;font-weight:600;font-size:6.6pt;letter-spacing:.24em;color:rgba(255,255,255,.85)}}
-.spec-logo{{width:1.5in;margin-bottom:.14in;display:block}}
-.vsm{{font-size:19pt}}
-/* cierre */
-.close{{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%;gap:.08in}}
-.close .mk{{margin-bottom:.12in}}
-.next{{list-style:none;margin:.02in 0 .18in;width:100%}}
-.next li{{font-size:10pt;line-height:1.45;padding:5pt 0;border-bottom:.5pt solid #cfd3cf}}
-.close a{{color:inherit;text-decoration:none}}
-.close .invite{{font-size:13pt;font-style:italic;margin-bottom:.05in}}
-.close .who{{font-family:"Anton";font-size:11pt;letter-spacing:.14em;text-transform:uppercase}}
-.close .role{{font-size:9pt;margin-top:-3pt}}
-.close .contact{{font-size:8.2pt;color:var(--gris)}}
-.close .link{{font-family:"Anton";font-size:15pt;letter-spacing:.16em;text-transform:uppercase;color:var(--rojo);margin-top:.1in}}
-.close .coords{{margin-top:.12in}}
+.no{{position:absolute;right:.4in;bottom:.28in;font-weight:600;font-size:7pt;letter-spacing:.2em;z-index:20}}
+.tx{{position:absolute;z-index:4}}
+.card{{border-radius:.22in;padding:.3in .34in;box-shadow:0 10pt 30pt rgba(0,0,0,.18)}}
+.k{{font-weight:600;font-size:7.4pt;letter-spacing:.24em;text-transform:uppercase;margin-bottom:.1in}}
+.t{{font-family:"Anton";font-weight:400;font-size:36pt;line-height:1;text-transform:uppercase;margin-bottom:.18in}}
+.t em{{font-family:"Montserrat";font-weight:600;font-style:normal;text-transform:none;font-size:.5em;letter-spacing:0;vertical-align:.18em;margin:0 .06em}}
+.tline{{font-size:34pt;white-space:nowrap}}
+.t3{{font-family:"Anton";font-weight:400;font-size:24pt;text-transform:uppercase;margin-bottom:.06in}}
+.t4{{font-family:"Anton";font-weight:400;font-size:17pt;text-transform:uppercase;margin:.1in 0 .05in}}
+.p{{font-size:9.6pt;line-height:1.5;margin-bottom:.08in}}
+.p.sm{{font-size:7.6pt;color:{MU}}}
+.q2{{margin:.04in 0 .1in}}
+.q2 p{{font-style:italic;font-size:10.4pt;line-height:1.42;margin-bottom:3pt}}
+.q2 cite{{font-style:normal;font-weight:600;font-size:6.4pt;letter-spacing:.16em;text-transform:uppercase;color:{MU}}}
+.q2.light p{{color:#fff}}.q2.light cite{{color:rgba(255,255,255,.75)}}
+.letter2 p{{font-size:10.2pt;line-height:1.58;margin-bottom:.1in}}
+.sign2{{font-style:italic;color:{MU}}}
+.wave{{position:absolute;left:0;width:100%;display:block;z-index:0}}
+.gull{{position:absolute;z-index:3}}
+.pic{{position:absolute;overflow:hidden;box-shadow:0 12pt 34pt rgba(0,0,0,.22)}}
+.pic img{{width:100%;height:100%;object-fit:cover;display:block}}
+.fr{{position:absolute;border-radius:8pt;overflow:hidden;box-shadow:0 14pt 34pt rgba(0,0,0,.3);background:#fff}}
+.fr img{{width:100%;display:block}}
+.ph{{position:absolute;border-radius:16pt;overflow:hidden;border:4pt solid #111;box-shadow:0 14pt 30pt rgba(0,0,0,.32);background:#111}}
+.ph img{{width:100%;display:block;border-radius:12pt}}
+.md{{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:"Anton";text-transform:uppercase;line-height:1.02;padding:.1in;box-shadow:0 8pt 20pt rgba(0,0,0,.22)}}
+.md small{{font-family:"Montserrat";font-weight:600;text-transform:none;font-size:.62em}}
+.mdn{{font-size:30pt;font-weight:400}}
+.mds{{font-family:"Montserrat";font-weight:700;text-transform:uppercase;letter-spacing:.04em;line-height:1.25}}
+.pol{{position:absolute;width:1.85in;background:#fff;padding:.08in .08in .3in;box-shadow:0 10pt 24pt rgba(0,0,0,.3)}}
+.pol img{{width:100%;aspect-ratio:1;object-fit:cover;display:block}}
+.bigs{{display:grid;grid-template-columns:1fr 1fr;gap:.12in .3in;margin:.06in 0 .22in}}
+.bign b{{display:block;font-family:"Anton";font-weight:400;font-size:52pt;line-height:1;color:{NI}}}
+.bign span{{display:block;font-size:8.6pt;line-height:1.35;color:#fff;margin-top:.02in}}
+.stripes{{position:absolute;right:0;top:0;bottom:0;width:5.3in;display:flex}}
+.stripe{{flex:1;position:relative}}
+.stripe .sn{{position:absolute;left:50%;top:.55in;transform:translateX(-50%) rotate(180deg);writing-mode:vertical-rl;font-weight:700;font-size:8pt;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}}
+.stripe .sh{{position:absolute;left:0;right:0;bottom:.55in;text-align:center;font-weight:600;font-size:6.2pt;letter-spacing:.06em;writing-mode:vertical-rl;transform:rotate(180deg);margin:0 auto;width:100%;display:flex;align-items:center}}
+.spa{{font-family:"Anton";font-size:58pt;line-height:.98;text-transform:uppercase;color:{TI}}}
+.spb{{font-weight:600;font-size:22pt;color:{ROJO};margin:.02in 0 .02in .06in}}
+.cap2{{font-weight:600;font-size:7pt;letter-spacing:.18em;text-transform:uppercase;color:{MU};margin-top:.16in}}
+.cols3{{display:grid;grid-template-columns:repeat(3,1fr);gap:.28in}}
+.cols3 h4{{font-family:"Anton";font-weight:400;font-size:16pt;text-transform:uppercase;margin-bottom:.06in}}
+.cols3 p{{font-size:9.2pt;line-height:1.5}}
+.pills{{display:flex;flex-wrap:wrap;gap:6pt}}
+.pill{{display:inline-block;padding:5pt 11pt;border-radius:999px;font-weight:600;font-size:8.4pt}}
+.band{{position:absolute;left:0;right:0;top:0;height:1.35in}}
+.card-t{{position:absolute;width:1.4in;background:#fff;padding:.07in .07in .1in;border-radius:6pt;box-shadow:0 10pt 24pt rgba(0,0,0,.22)}}
+.card-t img{{width:100%;height:1.75in;object-fit:cover;display:block;border-radius:3pt}}
+.card-t span{{display:block;font-weight:700;font-size:6.6pt;letter-spacing:.12em;text-transform:uppercase;color:{ISLA};margin-top:.06in}}
+.pr{{font-family:"Anton";font-size:38pt;line-height:1;color:{VER};margin-bottom:.04in}}
+.qq{{position:absolute;font-family:"Anton";font-size:180pt;line-height:1;color:{ROJO};z-index:1}}
+.qbig{{font-style:italic;font-size:21pt;line-height:1.32;color:{NI}}}
+.stats{{display:flex;gap:.45in}}
+.stats b{{display:block;font-family:"Anton";font-weight:400;font-size:60pt;line-height:1}}
+.stats span{{display:block;font-size:9pt;color:rgba(255,255,255,.85);max-width:1.8in}}
+.remate{{font-family:"Anton";font-size:40pt;line-height:1.02;color:#fff;margin:.04in 0 .16in}}
+.dot{{position:absolute;width:2.6in;height:2.6in;border-radius:50%;opacity:.9;z-index:1}}
+.bar{{width:.6in;height:4pt;border-radius:2pt}}
+.mk{{width:.55in;display:block;margin-bottom:.12in}}
+.next2{{list-style:none;margin:.04in 0 .18in}}
+.next2 li{{font-size:9.6pt;line-height:1.45;padding:5pt 0;border-bottom:.5pt solid #cfd3cf}}
+.invite2{{font-size:13pt;font-style:italic;margin-bottom:.06in}}
+.who2{{font-family:"Anton";font-size:11pt;letter-spacing:.14em;text-transform:uppercase}}
+.role2{{font-size:9pt}}
+.contact2{{font-size:8.2pt;color:{MU}}}
+.card a{{color:inherit;text-decoration:none}}
+.link2{{font-family:"Anton";font-size:16pt;letter-spacing:.16em;text-transform:uppercase;color:{ROJO};margin-top:.1in}}
 '''
 
 DOC = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
