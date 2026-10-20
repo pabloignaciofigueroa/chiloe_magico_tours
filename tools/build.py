@@ -572,7 +572,7 @@ def tours_index():
     <p class="phead2__p">{L("Elige uno y cotízalo por WhatsApp. Todos incluyen traslado desde Castro, guía, almuerzo y bebestibles.", "Pick one and get a quote on WhatsApp. All include transport from Castro, guide, lunch and drinks.")}</p>
   </div>
 </section>
-<section class="tsec tsec--page" aria-label="Todos los tours" data-aria-en="All tours">
+<section class="tsec tsec--page" aria-label="Todos los tours" data-aria-en="All tours">{WAVE}
   {facts_strip(P)}
   {tour_list(P, D.TOURS, h='h2')}
 </section>

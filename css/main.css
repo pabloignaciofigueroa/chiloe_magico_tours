@@ -1322,3 +1322,7 @@ main:has(> .rsec:last-child) + .ftr{background:var(--turismo-hondo)}
 main:has(> .rsec:last-child) + .ftr .ftr__wave{display:none}
 main:has(> .rsec:last-child) + .ftr .ftr__gull{stroke:var(--turismo-hondo)}
 main:has(> .rsec:last-child) + .ftr .ftr__wa{--bg:#fff;--fg:var(--turismo-hondo)}
+/* Tours: la sección verde baja en ola directo al bloque rojo, sin franja clara entre medio */
+.tsec--page{--next:var(--turismo-hondo)}
+.tsec + .bcta{margin-top:0}
+.tsec--page{padding-bottom:calc(var(--wv) + clamp(40px,5vw,72px))}
