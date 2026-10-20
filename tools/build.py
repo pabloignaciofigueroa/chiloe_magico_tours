@@ -419,7 +419,7 @@ def price_short(t):
             if t.get('price_from') else f'<span class="u-muted">{L("Precio según fecha y grupo", "Price depends on date and group")}</span>')
 
 
-def trow(t, P, sizes='(max-width:560px) 132px, (max-width:1099px) 46vw, 25vw', h='h3'):
+def trow(t, P, sizes='(max-width:700px) 92vw, (max-width:1099px) 46vw, 25vw', h='h3'):
     """Fila de tour: foto + qué es + horario/almuerzo + precio. Toda la fila es el enlace."""
     d = det(t)
     return f'''<li class="tr" data-rv><a class="tr__a" href="{tour_href(t)}">

@@ -1282,3 +1282,14 @@ h1 em,h2 em{font-style:normal;color:var(--turismo)}
 .tl--mini .tr__foot{flex-wrap:wrap;gap:8px}
 @media (min-width:761px) and (max-width:1099px){.tl--mini .tr__tags li:nth-child(3){display:none}}
 @media (max-width:560px){.tr__price{white-space:normal}}
+/* celular: la foto del tour arriba, a todo el ancho de la tarjeta; el texto debajo con aire */
+@media (max-width:700px){
+  .tl{gap:18px}
+  .tr__a{grid-template-columns:1fr!important;grid-template-rows:auto 1fr}
+  .tr__img{aspect-ratio:16/10!important;min-height:0!important;height:auto!important;width:100%;grid-row:auto!important}
+  .tr__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .tr__txt{padding:18px 18px 20px}
+  .tr__t{font-size:24px}
+  .tr__tags li:nth-child(3){display:inline-block}
+}
+@media (max-width:700px){.tr__tags li:nth-child(3){display:none}}
