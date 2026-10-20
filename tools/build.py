@@ -430,9 +430,9 @@ def reviews_solid(page, items):
         slides += (f'<figure class="rev swiper-slide"><div class="rev__stars" role="img" aria-label="5 de 5 estrellas" data-aria-en="5 out of 5 stars">{STARS}</div>'
                    f'<blockquote lang="{r["lang"]}">“{q(r["text"], page)}”</blockquote>'
                    f'<figcaption><strong>{e(r["name"])}</strong>{frm} · {L("vía Google", "via Google")}{tour}</figcaption></figure>')
-    return f'''<section class="rsec" aria-labelledby="rsec-t">
+    return f'''<section class="rsec" aria-labelledby="rsec-t">{WAVE}
   <header class="rsec__head" data-rv>
-    <h2 class="h2 h2--light" id="rsec-t">{L(f"{SITE['rating']} en Google", f"{SITE['rating_en']} on Google")}</h2>
+    <h2 class="h2 h2--light" id="rsec-t">{L(f"{SITE['rating']} <em>en</em> Google", f"{SITE['rating_en']} <em>on</em> Google")}</h2>
     <p class="rsec__sub">{STARS} {L(f"{SITE['reviews_count']} reseñas de viajeros. Las citas van en su idioma original.", f"{SITE['reviews_count']} traveller reviews. Quotes in their original language.")}</p>
   </header>
   <div class="swiper rsec__sw" data-swiper="reviews" data-drag><div class="swiper-wrapper">{slides}</div></div>
@@ -444,11 +444,11 @@ def reviews_solid(page, items):
 def closing(page, text, key='punihuil-bahia'):
     """Cierre: una foto, una frase corta, WhatsApp y dónde estamos."""
     COPY.append((page, '¡No dejes que te lo cuenten! / Ven a disfrutar de esta mágica isla junto a nosotros', '[IG-007]', 'remate partido en dos: título y frase'))
-    return f'''<section class="bcta" aria-labelledby="bcta-t">
-  <div class="bcta__media" data-parallax>{bimg(key)}</div>
-  <div class="bcta__shade" aria-hidden="true"></div>
+    return f'''<section class="bcta bcta--red" aria-labelledby="bcta-t">
+  {GULL}
+  <div class="bcta__pols" aria-hidden="true"><div class="pol2 pol2--a">{bimg(key, "(max-width:760px) 60vw, 26vw")}</div><div class="pol2 pol2--b">{bimg("muelle-luz-oceano", "(max-width:760px) 50vw, 22vw")}</div><div class="pol2 pol2--c">{bimg("curanto-destape", "(max-width:760px) 44vw, 18vw")}</div></div>
   <div class="bcta__in">
-    <h2 class="bcta__big" id="bcta-t" lang="es">¡No dejes que te lo cuenten!</h2>
+    <h2 class="bcta__big" id="bcta-t" lang="es">¡No dejes que te lo <em>cuenten</em>!</h2>
     <p class="bcta__p" lang="es">Ven a disfrutar de esta mágica isla junto a nosotros.</p>
     <div class="cta__row">{btn(L("Cotizar por WhatsApp", "Get a quote on WhatsApp"), wa_link(text), "btn btn--red", True)}</div>
     <p class="bcta__addr" lang="es">{q(SITE["address_short"], page)} · {q(SITE["hours"], page)}</p>
@@ -456,12 +456,30 @@ def closing(page, text, key='punihuil-bahia'):
 </section>'''
 
 
+WAVE = '<svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,70 C360,10 820,0 1440,58 L1440,120 Z"/></svg>'
+GULL = '<svg class="gull" viewBox="0 0 100 100" aria-hidden="true"><path d="M4,4 C22,16 42,36 56,55 C62,53 70,52 78,53 C82,53.5 85,55 86,57 C83,59 79,60 75,61 C82,72 90,85 97,98 C86,88 75,76 66,65 C58,66 50,67 44,69 C47,66 50,63 52,61 C40,42 22,20 4,4 Z"/></svg>'
+
+
+def wave(fill, flip=False):
+    """Ola entre dos campos de color (la misma curva del logo y del footer)."""
+    return (f'<svg class="wave{" wave--top" if flip else ""}" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">'
+            f'<path d="M0,120 L0,70 C360,10 820,0 1440,58 L1440,120 Z" fill="{fill}"/></svg>')
+
+
+def seal(top, bottom, ring):
+    return f'''<svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sr" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+  <circle cx="100" cy="100" r="98" fill="#d0342c"/><circle cx="100" cy="100" r="91" fill="none" stroke="#fff" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <text font-family="Montserrat, sans-serif" font-weight="700" font-size="11" fill="#fff"><textPath href="#sr" textLength="462" lengthAdjust="spacing">{ring}</textPath></text>
+  <text x="100" y="97" text-anchor="middle" font-family="Anton, sans-serif" font-size="30" fill="#fff">{top}</text>
+  <text x="100" y="128" text-anchor="middle" font-family="Anton, sans-serif" font-size="30" fill="#fff">{bottom}</text></svg>'''
+
+
 def facts_strip(P):
-    return f'''<ul class="facts2" data-rv aria-label="Datos de la agencia" data-aria-en="Agency facts">
-  <li><strong>{SITE["rating"]} / 5</strong> {L(f"en Google ({SITE['reviews_count']} reseñas)", f"on Google ({SITE['reviews_count']} reviews)")}</li>
-  <li><strong>{L("Todos los días", "Every day")}</strong> {L("salida 10:00, regreso 19:00 aprox.", "leave 10am, back 7pm approx.")}</li>
-  <li><strong>{L("Desde Castro", "From Castro")}</strong> {L("frente a la Plaza de Armas", "facing the main square")}</li>
-  <li><strong>{L("Máx. 16", "Max. 16")}</strong> {L("pasajeros por van, con guía", "passengers per van, with guide")}</li>
+    return f'''<ul class="meds2" data-rv aria-label="Datos de la agencia" data-aria-en="Agency facts">
+  <li class="md2 md2--red"><strong>{SITE["rating"]}</strong><span>{L(f"en Google · {SITE['reviews_count']} reseñas", f"on Google · {SITE['reviews_count']} reviews")}</span></li>
+  <li class="md2 md2--cream"><strong>10:00</strong><span>{L("salida todos los días", "departure every day")}</span></li>
+  <li class="md2 md2--blue"><strong>16</strong><span>{L("pasajeros máx. por van", "passengers max. per van")}</span></li>
+  <li class="md2 md2--sand"><strong>{L("Castro", "Castro")}</strong><span>{L("frente a la Plaza de Armas", "facing the main square")}</span></li>
 </ul>'''
 
 
@@ -469,7 +487,8 @@ def home():
     P = '/'
     COPY.append((P, 'Tours en Chiloé desde Castro', 'título de interfaz', None))
     content = f'''
-<section class="hero" data-hero>
+<section class="hero" data-hero>{WAVE}
+  <a class="hero__seal" href="#tours" aria-label="Ver los tours" data-aria-en="See the tours">{seal("TOURS", "DIARIOS", "DESDE CASTRO ★ CHILOÉ MÁGICO ★ 10:00 A 19:00 ★ ")}</a>
   <div class="hero__media" data-parallax-hero>{img("huillinco-columpio", "100vw", "", True)}</div>
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="hero__in">
@@ -481,9 +500,9 @@ def home():
 
 
 
-<section class="tsec" id="tours" aria-labelledby="tours-t">
+<section class="tsec" id="tours" aria-labelledby="tours-t">{WAVE}
   <header class="tsec__head" data-rv>
-    <h2 class="h2" id="tours-t">{L("Elige tu tour", "Choose your tour")}</h2>
+    <h2 class="h2" id="tours-t">{L("Elige <em>tu</em> tour", "Choose <em>your</em> tour")}</h2>
     <p class="tsec__lead">{L("Tours de día completo desde Castro.", "Full-day tours from Castro.")} {L("Todos incluyen traslado, guía, almuerzo y bebestibles.", "All include transport, guide, lunch and drinks.")}</p>
   </header>
   {facts_strip(P)}
@@ -569,7 +588,7 @@ def tour_page(t):
     season = f'<p class="note">{L(d["season"])}</p>' if d.get('season') else ''
     guide = [g for g in D.GUIA if g['slug'] in d.get('guia', [])]
     guide_html = ''.join(f'<li><a class="u-link" href="/guia/{g["slug"]}/">{L(g["title"])}</a></li>' for g in guide)
-    content = f'''<section class="th th--split" data-hero>
+    content = f'''<section class="th th--split" data-hero>{WAVE}
   <div class="th__media" data-parallax-hero>{bimg(t["hero"], "100vw", True)}</div>{credit(t["hero"])}
   <div class="th__shade" aria-hidden="true"></div>
   <a class="back" href="/tours/"><span aria-hidden="true">←</span> {L("Todos los tours", "All tours")}</a>
@@ -580,7 +599,7 @@ def tour_page(t):
   </div>
 </section>
 
-<section class="tq" id="detalle" aria-label="Datos del tour" data-aria-en="Tour facts">
+<section class="tq" id="detalle" aria-label="Datos del tour" data-aria-en="Tour facts">{WAVE}
   <dl class="tq__dl" data-rv>
     <div><dt>{L("Duración", "Duration")}</dt><dd>{L("Día completo, 10:00 a 19:00 aprox.", "Full day, 10am to 7pm approx.")}</dd></div>
     <div><dt>{L("Salida", "Departure")}</dt><dd>{L("Agencia frente a la Plaza de Armas de Castro", "Agency facing Castro's main square")}</dd></div>
@@ -589,13 +608,13 @@ def tour_page(t):
   </dl>
 </section>
 
-<section class="tw" aria-labelledby="tw-t">
+<section class="tw" aria-labelledby="tw-t">{WAVE}
   <div class="tw__in">
     <div class="tw__main">
-      <h2 class="h2" id="tw-t">{L("Lo que harás", "What you'll do")}</h2>
+      <h2 class="h2" id="tw-t">{L("Lo que <em>harás</em>", "What you'll <em>do</em>")}</h2>
       <ul class="tw__list" data-rv>{pts}</ul>
       {lead}
-      <h2 class="h2 tw__h2" id="tin-t">{L("Qué incluye", "What\'s included")}</h2>
+      <h2 class="h2 tw__h2" id="tin-t">{L("Qué <em>incluye</em>", "What\'s <em>included</em>")}</h2>
       <div class="tin__grid" data-rv>
       <div><h3 class="h4">{L("Incluye", "Included")}</h3><ul class="inclist"><li>{L("Traslado en van desde Castro, ida y vuelta", "Return van transport from Castro")}</li><li>{L("Guía durante todo el día", "Guide for the whole day")}</li><li>{L("Almuerzo y bebestibles", "Lunch and drinks")}</li></ul></div>
       <div>{f'<h3 class="h4">{L("No incluye", "Not included")}</h3><ul class="nolist">{no}</ul>' if no else ''}
@@ -616,17 +635,17 @@ def tour_page(t):
   </div>
 </section>
 
-{f"""<section class="tfotos" aria-labelledby="tf-t">
-  <header class="tfotos__head" data-rv><h2 class="h2 h2--light" id="tf-t">{L("Así se vive", "What it looks like")}</h2><p>{L("Fotos de la agencia en este tour. Desliza para ver más.", "The agency's photos on this tour. Swipe for more.")}</p></header>
+{f"""<section class="tfotos" aria-labelledby="tf-t">{WAVE}
+  <header class="tfotos__head" data-rv><h2 class="h2 h2--light" id="tf-t">{L("Así se <em>vive</em>", "What it <em>looks</em> like")}</h2><p>{L("Fotos de la agencia en este tour. Desliza para ver más.", "The agency's photos on this tour. Swipe for more.")}</p></header>
   <div class="swiper tfsw" data-swiper="gallery" data-drag><div class="swiper-wrapper">{gallery}</div></div>
   <div class="snav snav--light"><button class="arrow arrow--light" type="button" data-prev aria-label="Foto anterior" data-aria-en="Previous photo">←</button><button class="arrow arrow--light" type="button" data-next aria-label="Foto siguiente" data-aria-en="Next photo">→</button></div>
 </section>""" if photos else ''}
 
 
 
-<section class="meet" aria-labelledby="meet-t">
+<section class="meet" aria-labelledby="meet-t">{WAVE}
   <div class="meet__txt" data-rv>
-    <h2 class="h2" id="meet-t">{L("Punto de encuentro", "Meeting point")}</h2>
+    <h2 class="h2" id="meet-t">{L("Punto de <em>encuentro</em>", "Meeting <em>point</em>")}</h2>
     <p lang="es">{q(SITE["address_short"], P)}</p>
     <p lang="es">{q(SITE["salida"], P)}.</p>
     <a class="u-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=-42.4816941,-73.7642726" target="_blank" rel="noopener">{L("Cómo llegar en Google Maps", "Directions on Google Maps")}</a>
@@ -634,11 +653,11 @@ def tour_page(t):
   {map_block(P)}
 </section>
 
-{f"""<section class="trev" aria-labelledby="trev-t"><div class="trev__in"><h2 class="h2" id="trev-t">{L("Lo que cuentan de este tour", "What travellers say about this tour")}</h2><div class="trev__grid" data-rv>""" + ''.join(f'<figure class="rev"><div class="rev__stars" role="img" aria-label="5 de 5 estrellas" data-aria-en="5 out of 5 stars">{STARS}</div><blockquote lang="{r["lang"]}">“{q(r["text"], P)}”</blockquote><figcaption><strong>{e(r["name"])}</strong> · {L("vía Google", "via Google")}</figcaption></figure>' for r in revs) + "</div></div></section>" if revs else ''}
+{f"""<section class="trev" aria-labelledby="trev-t">{WAVE}<div class="trev__in"><h2 class="h2" id="trev-t">{L("Lo que <em>cuentan</em> de este tour", "What travellers <em>say</em>")}</h2><div class="trev__grid" data-rv>""" + ''.join(f'<figure class="rev"><div class="rev__stars" role="img" aria-label="5 de 5 estrellas" data-aria-en="5 out of 5 stars">{STARS}</div><blockquote lang="{r["lang"]}">“{q(r["text"], P)}”</blockquote><figcaption><strong>{e(r["name"])}</strong> · {L("vía Google", "via Google")}</figcaption></figure>' for r in revs) + "</div></div></section>" if revs else ''}
 
-<section class="tcot" id="cotizar" aria-labelledby="cot-t">
+<section class="tcot" id="cotizar" aria-labelledby="cot-t">{WAVE}
   <div class="tcot__in" data-rv>
-    <h2 class="h2" id="cot-t">{L("Cotiza este tour", "Get a quote")}</h2>
+    <h2 class="h2" id="cot-t">{L("Cotiza <em>este</em> tour", "Get a <em>quote</em>")}</h2>
     <p class="tcot__sub">{L("Elige fecha y cuántas personas. Se abre WhatsApp con tu mensaje listo y te respondemos ahí.", "Pick a date and how many people. WhatsApp opens with your message ready and we reply there.")}</p>
     <form class="tcot__f" data-wa-form data-tour="{e(t["short"])}">
       <label>{L("Fecha", "Date")}<input type="date" name="fecha" required></label>{f'<p class="tcot__warn">{L(d["season"])}</p>' if d.get('season') else ''}
@@ -651,7 +670,7 @@ def tour_page(t):
 
 <section class="other" aria-labelledby="other-t">
   <div class="other__in" data-rv>
-    <h2 class="h2" id="other-t">{L("¿Buscas otro tour?", "Looking for another tour?")}</h2>
+    <h2 class="h2" id="other-t">{L("¿Buscas <em>otro</em> tour?", "Looking for <em>another</em> tour?")}</h2>
     <p class="other__p">{L("Estos se parecen a este. También puedes ver los 8.", "These are similar to this one. You can also see all 8.")}</p>
     {tour_list(P, rel, "tl--mini")}
     <p class="other__all">{btn(L("Ver los 8 tours", "See all 8 tours"), "/tours/", "btn btn--ink")}</p>
