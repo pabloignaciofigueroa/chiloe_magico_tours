@@ -123,6 +123,7 @@ def exp_href(x): return f'/experiencias/{x["slug"]}/'
 
 
 NAV = [
+    ('/', U('Inicio', 'Home'), 'huillinco-pareja'),
     ('/tours/', U('Tours', 'Tours'), 'punihuil-bahia'),
     ('/paquetes/', U('Paquetes', 'Packages'), 'valdivia'),
     ('/nosotros/', U('Nosotros', 'About us'), 'nicolas-enrique'),
@@ -131,7 +132,7 @@ NAV = [
 
 
 def header(current, wa_text):
-    links = ''.join(f'<li><a href="{h}"{" aria-current=page" if current.startswith(h) else ""}>{L(lbl)}</a></li>' for h, lbl, _ in NAV)
+    links = ''.join(f'<li><a href="{h}"{" aria-current=page" if (current == h if h == "/" else current.startswith(h)) else ""}>{L(lbl)}</a></li>' for h, lbl, _ in NAV)
     menu_links = ''.join(
         f'<li><a href="{h}" data-menu-img="{k}" class="menu__link"><span class="menu__n">0{i+1}</span>{L(lbl)}</a></li>'
         for i, (h, lbl, k) in enumerate(NAV))
