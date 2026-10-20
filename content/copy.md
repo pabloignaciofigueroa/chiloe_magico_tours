@@ -4,7 +4,6 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 
 - `/` título de interfaz: «Tours en Chiloé desde Castro»
 - `/` [BIO]: «Nuestro archipiélago es mágico ¡Ven a descubrirlo!»
-- `/` [IG-007]: «Todos nuestros tours incluyen traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos» — corrección: sin emojis
 - `/` [IG-015]: «¿Vamos a navegar?» — corrección: se agrega el signo de apertura ¿; sin emojis
 - `/` [RESEÑA Javiera Blanco, Google]: «…Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día.…» — corrección: sin emojis
 - `/` [RESEÑA Zarana Bayona, Google]: «Sandra was a great tour guide and really showed us the charm of chiloe. The agency has great communication and were very accommodating with our last minute reservation. Everything ran smoothly. They were able to add vegetarian meals at the restaurant.»

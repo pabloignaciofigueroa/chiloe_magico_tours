@@ -1073,3 +1073,45 @@ p,li,blockquote{text-wrap:pretty}
   .ssplit--sm .ssplit__stick{position:sticky;top:110px;height:auto;aspect-ratio:1/1;max-height:72svh;border-radius:var(--r)}
   .ssplit--sm{align-items:center}
 }
+.u-muted{color:var(--tinta);font-weight:600}
+
+/* =========== v8 · tercera ronda =========== */
+/* tarjetas en escritorio: nada se corta, todo alineado */
+@media (min-width:1100px){
+  .tr__t{font-size:clamp(20px,1.55vw,26px);min-height:2em;text-wrap:balance}
+  .tr__tags li:nth-child(3){display:none}
+  .tr__foot{flex-wrap:wrap;gap:10px}
+}
+.tr__txt{min-width:0}
+.tr__t{overflow-wrap:anywhere}
+.tr__go{flex:none}
+/* isla: fondo azul de mar, el islote dentro de la silueta desde el comienzo */
+.isla__stick{background:linear-gradient(180deg,#6aa8d8 0%,#2f6f9e 55%,#173f5c 100%)}
+.isla__blur{background:linear-gradient(180deg,#7fb6e0 0%,#3a7cae 50%,#1d4d70 100%);filter:none;transform:none;inset:0}
+.isla__v{object-position:50% 72%}
+.isla__cover{--h:84svh}
+/* ritmo vertical: un solo espacio entre secciones */
+.tfotos{padding:var(--gap) 0}
+.tfotos .snav{margin-top:24px}
+.trev{padding:var(--gap) var(--g) 0}
+.trev + .tcot{padding-top:var(--gap)}
+.tin{padding-top:calc(var(--gap) * .8);padding-bottom:calc(var(--gap) * .8)}
+/* portada de la ficha: foto al 60 %, texto centrado en su panel */
+@media (min-width:761px){
+  .th--split{min-height:min(74svh,720px)}
+  .th--split .th__media{inset:0 0 0 40%}
+  .th--split .th__shade{background:linear-gradient(90deg,var(--tinta) 0%,rgba(29,36,33,.94) 34%,rgba(29,36,33,.3) 46%,rgba(29,36,33,0) 56%)}
+  .th--split .th__in{padding-right:62%;padding-top:96px;padding-bottom:56px}
+}
+/* cierre: los datos del local siempre legibles */
+.bcta__addr{display:inline-block;background:rgba(9,22,34,.62);border-radius:999px;padding:10px 18px;font-size:var(--t5)}
+/* lo que falta confirmar: una nota discreta, no un sello */
+.pending{border:0;padding:0;border-radius:0;font-weight:500;color:var(--musgo);font-size:var(--t5)}
+.pending__dot{display:none}
+.tw__h2{margin:clamp(48px,6vw,88px) 0 clamp(20px,2.4vw,32px)}
+.tw__main .tin__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,48px)}
+@media (max-width:700px){.tw__main .tin__grid{grid-template-columns:1fr}}
+.kicker,.h5,.contact__lbl,.ssplit .kicker{font-size:13px}
+.btn--sm{font-size:13px}
+.rsec figcaption a{min-height:44px;display:inline-flex;align-items:center;padding-block:0;margin-block:-12px}
+a.credit{min-height:44px;display:inline-flex;align-items:center}

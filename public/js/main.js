@@ -87,7 +87,7 @@
   } else vids.forEach(loadVideo);
 
   /* ---------- el botón flotante no se superpone a los botones del hero ni del cierre ---------- */
-  const waF = $('.wa'); const covers = $$('.hero, .bcta, .th, footer');
+  const waF = $('.wa'); const covers = $$('.hero, .bcta, .th, footer, .tl');
   if (waF && covers.length && 'IntersectionObserver' in window) {
     const vis = new Set();
     const io2 = new IntersectionObserver(es => { es.forEach(en => en.isIntersecting ? vis.add(en.target) : vis.delete(en.target)); waF.classList.toggle('is-off', vis.size > 0); }, { threshold: .25 });
@@ -188,12 +188,13 @@
   });
 
   /* ---------- formularios → WhatsApp ---------- */
+  { const t = new Date(); const iso = new Date(t.getTime() - t.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); $$('input[type="date"]').forEach(i => i.min = iso); }
   $$('[data-wa-form]').forEach(f => f.addEventListener('submit', e => {
     e.preventDefault();
     const d = new FormData(f);
     const parts = [];
     const fmt = v => { if (!/^\d{4}-\d{2}-\d{2}$/.test(v)) return v; const [y, m, dd] = v.split('-').map(Number); return new Date(y, m - 1, dd).toLocaleDateString('es-CL', { weekday: 'long', day: 'numeric', month: 'long' }); };
-    if (f.dataset.tour) parts.push(`Hola! Quiero cotizar el ${f.dataset.tour}.`); else parts.push(`Hola! Quiero cotizar (${f.dataset.kind || 'web'}).`);
+    if (f.dataset.tour) parts.push(`¡Hola! Quiero cotizar el ${f.dataset.tour}.`); else parts.push(f.dataset.kind === 'a medida' ? '¡Hola! Quiero cotizar un viaje a medida.' : '¡Hola! Quiero cotizar un tour.');
     if (d.get('nombre')) parts.push(`Nombre: ${d.get('nombre')}`);
     if (d.get('fecha')) parts.push(`Fecha: ${fmt(d.get('fecha'))}`);
     if (d.get('personas')) parts.push(`Personas: ${d.get('personas')}`);

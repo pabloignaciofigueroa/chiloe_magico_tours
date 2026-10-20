@@ -255,7 +255,7 @@ FOCUS = {
     'mechuque': '50% 55%', 'palafitos': '50% 78%', 'punihuil-navega': '50% 40%', 'tenaun': '50% 35%', 'brujos-vuelo': '50% 45%',
     'yayanes-puente': '50% 45%', 'huillinco-columpio': '50% 40%', 'aucar-isla': '50% 55%', 'curanto-fuego': '50% 50%',
     'nercon': '50% 40%', 'brujos-alas': '50% 40%', 'punihuil-islote': '50% 50%', 'minga': '50% 55%',
-    'palafitos': '50% 78%', 'vans': '50% 70%', 'nicolas-enrique': '30% 45%', 'muelle-luz-grupo': '60% 40%', 'parque-muelle': '50% 55%',
+    'palafitos': '50% 92%', 'vans': '50% 70%', 'nicolas-enrique': '30% 45%', 'muelle-luz-grupo': '60% 40%', 'parque-muelle': '50% 55%',
 }
 
 
@@ -379,10 +379,10 @@ def map_block(page):
 </div>'''
 
 
-def sticky_split(key, inner_html, side='right', extra_keys=()):
+def sticky_split(key, inner_html, side='right', extra_keys=(), force_sm=False):
     """Texto que corre junto a un paisaje fijo que toca el borde de la pantalla (sticky, sin pin)."""
     more = trio([f'<div class="tile tile--pic" data-parallax>{bimg(k, "(max-width:760px) 100vw, 50vw")}</div>' for k in extra_keys]) if extra_keys else ''
-    sm = ' ssplit--sm' if META[key]['w'] < 1000 else ''
+    sm = ' ssplit--sm' if META[key]['w'] < 1000 or force_sm else ''
     return f'''<section class="ssplit ssplit--{side}{sm}">
   <div class="ssplit__media"><div class="ssplit__stick" data-parallax>{bimg(key, "(max-width:760px) 100vw, 50vw")}</div>{credit(key)}</div>
   <div class="ssplit__txt" data-rv>{inner_html}</div>
@@ -481,7 +481,7 @@ def home():
 <section class="tsec" id="tours" aria-labelledby="tours-t">
   <header class="tsec__head" data-rv>
     <h2 class="h2" id="tours-t">{L("Elige tu tour", "Choose your tour")}</h2>
-    <p class="tsec__lead">{L("Tours de día completo desde Castro.", "Full-day tours from Castro.")} <span lang="es">{q(Q("Todos nuestros tours incluyen traslado, guiado, almuerzo y bebestibles, y visitas a distintos atractivos turísticos 🌿", "[IG-007]"), P)}</span></p>
+    <p class="tsec__lead">{L("Tours de día completo desde Castro.", "Full-day tours from Castro.")} {L("Todos incluyen traslado, guía, almuerzo y bebestibles.", "All include transport, guide, lunch and drinks.")}</p>
   </header>
   {facts_strip(P)}
   {tour_list(P, D.TOURS)}
@@ -532,7 +532,7 @@ def tours_index():
   {facts_strip(P)}
   {tour_list(P, D.TOURS, h='h2')}
 </section>
-{closing(P, "Hola! Quiero consultar por los tours", "ancud-atardecer")}'''
+{closing(P, "Hola! Quiero consultar por los tours")}'''
     page(P, 'Tours en Chiloé desde Castro · Turismo Chiloé Mágico', 'Chiloé tours from Castro · Turismo Chiloé Mágico',
          'Tours de día completo desde Castro con traslado, guiado, almuerzo y bebestibles.',
          'Full-day tours from Castro with transport, guiding, lunch and drinks.', content)
@@ -592,6 +592,14 @@ def tour_page(t):
       <h2 class="h2" id="tw-t">{L("Lo que harás", "What you'll do")}</h2>
       <ul class="tw__list" data-rv>{pts}</ul>
       {lead}
+      <h2 class="h2 tw__h2" id="tin-t">{L("Qué incluye", "What\'s included")}</h2>
+      <div class="tin__grid" data-rv>
+      <div><h3 class="h4">{L("Incluye", "Included")}</h3><ul class="inclist"><li>{L("Traslado en van desde Castro, ida y vuelta", "Return van transport from Castro")}</li><li>{L("Guía durante todo el día", "Guide for the whole day")}</li><li>{L("Almuerzo y bebestibles", "Lunch and drinks")}</li></ul></div>
+      <div>{f'<h3 class="h4">{L("No incluye", "Not included")}</h3><ul class="nolist">{no}</ul>' if no else ''}
+      {season}
+      {f'<h3 class="h4">{L("Para saber más", "Learn more")}</h3><ul class="guidelist">{guide_html}</ul>' if guide_html else ''}
+      <p class="note">{L("Mínimo de pasajeros, niños y cancelación: pregúntanos por WhatsApp.", "Minimum group, children and cancellation: ask us on WhatsApp.")}</p></div>
+      </div>
     </div>
     <aside class="tbox" aria-label="Cotizar" data-aria-en="Get a quote">
       <div class="tbox__in">
@@ -599,7 +607,7 @@ def tour_page(t):
         <p class="tbox__price">{price_short(t)}</p>
         <ul class="tbox__list"><li>{L("Día completo, 10:00 a 19:00", "Full day, 10am to 7pm")}</li><li>{L("Traslado, guía, almuerzo y bebestibles", "Transport, guide, lunch and drinks")}</li><li>{L("Sale frente a la Plaza de Armas de Castro", "Leaves from Castro's main square")}</li></ul>
         {btn(L("Cotizar este tour", "Get a quote"), "#cotizar", "btn btn--red btn--full")}
-        <p class="tbox__alt"><a class="u-link" href="{wa_link(wa_t)}" target="_blank" rel="noopener">{L("o escríbenos por WhatsApp", "or message us on WhatsApp")}</a></p>
+        <p class="tbox__alt">{L("¿Dudas? Escríbenos:", "Questions? Message us:")} <a class="u-link" href="{wa_link(wa_t)}" target="_blank" rel="noopener">{SITE["wa_display"]}</a></p>
       </div>
     </aside>
   </div>
@@ -611,18 +619,7 @@ def tour_page(t):
   <div class="snav snav--light"><button class="arrow arrow--light" type="button" data-prev aria-label="Foto anterior" data-aria-en="Previous photo">←</button><button class="arrow arrow--light" type="button" data-next aria-label="Foto siguiente" data-aria-en="Next photo">→</button></div>
 </section>""" if photos else ''}
 
-<section class="tin" aria-labelledby="tin-t">
-  <div class="tin__in">
-    <h2 class="h2" id="tin-t">{L("Qué incluye", "What's included")}</h2>
-    <div class="tin__grid" data-rv>
-      <div><h3 class="h4">{L("Incluye", "Included")}</h3><ul class="inclist"><li>{L("Traslado en van desde Castro, ida y vuelta", "Return van transport from Castro")}</li><li>{L("Guía durante todo el día", "Guide for the whole day")}</li><li>{L("Almuerzo y bebestibles", "Lunch and drinks")}</li></ul></div>
-      <div><h3 class="h4">{L("No incluye", "Not included")}</h3>{f'<ul class="nolist">{no}</ul>' if no else f'<p>{L("Por confirmar: pregúntanos por WhatsApp.", "To be confirmed: ask us on WhatsApp.")}</p>'}
-      {season}
-      {f'<h3 class="h4">{L("Para saber más", "Learn more")}</h3><ul class="guidelist">{guide_html}</ul>' if guide_html else ''}
-      <p class="note">{L("Mínimo de pasajeros, niños y cancelación: pregúntanos por WhatsApp.", "Minimum group, children and cancellation: ask us on WhatsApp.")}</p></div>
-    </div>
-  </div>
-</section>
+
 
 <section class="meet" aria-labelledby="meet-t">
   <div class="meet__txt" data-rv>
@@ -746,7 +743,7 @@ def paquetes():
 <p class="note">{L("Itinerario y precio: te los enviamos por WhatsApp.", "Itinerary and price: we send them on WhatsApp.")}</p>
 <p>{btn(L("Cotizar", "Get a quote"), wa_link(f"Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--ink", True)}</p>'''
         if p['imgs']:
-            items += sticky_split(p['imgs'][0], inner, 'right' if items.count('ssplit--') % 2 == 0 else 'left')
+            items += sticky_split(p['imgs'][0], inner, 'right' if items.count('<section class="ssplit') % 2 == 0 else 'left', force_sm=True)
         else:
             items += f'<section class="ssplit ssplit--flat"><div class="ssplit__media ssplit__media--flat" aria-hidden="true"><span>❄</span></div><div class="ssplit__txt">{inner}</div></section>'
     content = f'''{bleed_hero("valdivia-2" if META["valdivia-2"]["w"] > 1200 else "ancud-atardecer", h1_lines((L("Viajes de varios días", "Multi-day trips"), False)), L("Paquetes", "Packages"),
@@ -782,17 +779,16 @@ def nosotros():
     inner = f'''<p lang="es">{q(SITE["anos"], P)}</p><p lang="es">{q(SITE["magia"], P)}</p><p lang="es">{q(SITE["magia2"], P)}</p>
   <blockquote class="pull" lang="es">“{q(SITE["marketing"], P)}”</blockquote><p lang="es">{q(SITE["irrepetible"], P)}</p>
   <h2 class="h3">{L("Flota", "Fleet")}</h2><p lang="es">{q(SITE["van16"], P)}</p>
-  <h2 class="h3">{L("Registro Sernatur y sellos", "Sernatur registry and certifications")}</h2>
-  <p>{L("Número de registro Sernatur, razón social y sellos:", "Sernatur registry number, legal name and seals:")}</p>{pending(P)}'''
-    content = f'''{bleed_hero("grupo-van", '<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>SOMOS CHILOÉ MÁGICO</span></span></h1>', L("Nosotros", "About us"), f'<p lang="es">{q(SITE["somos"], P)}</p>')}
-{sticky_split("nicolas-enrique", inner, "left", ("vans",))}
+'''
+    content = f'''{bleed_hero("tocoihue-viajeros", '<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>SOMOS CHILOÉ MÁGICO</span></span></h1>', L("Nosotros", "About us"), f'<p lang="es">{q(SITE["somos"], P)}</p>')}
+{sticky_split("nicolas-enrique", inner, "left")}
 <section class="sec team"><header class="sec__head"><p class="kicker">{L("Equipo", "Team")}</p><h2 class="h2">{L("Guías y conductores", "Guides and drivers")}</h2>
-<p class="lead">{L("Nombres tal como aparecen en sus publicaciones y en las reseñas de Google. Fotos del equipo: por confirmar.", "Names as they appear in the agency's posts and Google reviews. Team photos: to be confirmed.")}</p></header>
+<p class="lead">{L("Los nombres que los viajeros mencionan en sus reseñas de Google.", "The names travellers mention in their Google reviews.")}</p></header>
 <ul class="team__list">{team}</ul>
 <p class="team__cap" lang="es">{q(Q("Nuestro guía Nicolás junto a don Enrique siempre enfocados en brindarle la mejor experiencia a nuestros turistas!", "[IG-023]"), P)}</p></section>
 {reviews_solid(P, D.REVIEWS[:6])}'''
     page(P, 'Nosotros · Turismo Chiloé Mágico', 'About us · Turismo Chiloé Mágico',
-         'Agencia local de turismo en Castro, Chiloé: guías, conductores y vans para recorrer el archipiélago.', 'Local travel agency in Castro, Chiloé.', content, preload=preload_img('muelle-luz-grupo'))
+         'Agencia local de turismo en Castro, Chiloé: guías, conductores y vans para recorrer el archipiélago.', 'Local travel agency in Castro, Chiloé.', content, preload=preload_img('tocoihue-viajeros'))
 
 
 def guia():
@@ -837,7 +833,7 @@ def contacto():
   {wa_form(P, "contacto")}
 </section>
 <section class="visit visit--full">{map_block(P)}</section>'''
-    page(P, 'Contacto y reservas · Turismo Chiloé Mágico', 'Contact and bookings · Turismo Chiloé Mágico',
+    page(P, 'Cotiza tu tour · Turismo Chiloé Mágico', 'Get a quote · Turismo Chiloé Mágico',
          'WhatsApp +56 9 7890 2625, Gamboa 351, Local Interior 116, frente a la Plaza de Armas de Castro. Lunes a domingo 9:00 a 19:30.',
          'WhatsApp +56 9 7890 2625, Gamboa 351, Castro. Mon–Sun 9:00–19:30.', content, preload=preload_img('chonchi'))
 
