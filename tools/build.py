@@ -217,6 +217,11 @@ def page(path, title, title_en, desc, desc_en, content, body_class='', wa_text='
     for rel in ('css/main.css', 'js/main.js'):
         v = hashlib.sha1((ROOT / rel).read_bytes()).hexdigest()[:10]
         out = out.replace(f'"/{rel}"', f'"/{rel}?v={v}"')
+    def brand_first(t):
+        for s in (' · Turismo Chiloé Mágico', 'Turismo Chiloé Mágico · '):
+            t = t.replace(s, '')
+        return 'Chiloé Mágico Tour · ' + t
+    title, title_en = brand_first(title), brand_first(title_en)
     rep = {'title': e(title), 'title_en': e(title_en), 'desc': e(desc), 'desc_en': e(desc_en), 'url': url, 'domain': DOMAIN,
            'jsonld': json.dumps(ld or ld_business(), ensure_ascii=False).replace('</', '<\\/'), 'body_class': body_class,
            'header': header(path, wa_text), 'footer': footer(path), 'wa': wa_float(wa_text), 'content': content, 'preload': preload}
@@ -692,7 +697,7 @@ def tour_page(t):
   </div>
 </section>
 <div class="mbar" data-mbar><span class="mbar__t">{price_short(t)}</span>{btn(L("Cotizar", "Quote"), "#cotizar", "btn btn--red btn--sm")}</div>'''
-    page(P, f'{t["short"]} desde Castro · Turismo Chiloé Mágico', f'{t["short"]} from Castro · Turismo Chiloé Mágico',
+    page(P, f'{t["short"]} desde Castro · Turismo Chiloé Mágico', f'{EN.get(t["short"], t["short"])} from Castro · Turismo Chiloé Mágico',
          f'{t["short"]}: {d["que"].es} Día completo desde Castro con traslado, guiado, almuerzo y bebestibles.',
          f'{t["short"]}: {d["que"].en} Full day from Castro with transport, guiding, lunch and drinks.', content, 'tour', wa_t, ld, preload_img(t['hero']))
 
