@@ -298,13 +298,15 @@ def credit(key, cls='credit'):
 
 
 def wide(key):
-    m = META[key]; return m['w'] / m['h'] >= 1.25 and m['w'] >= 1100
+    """Solo una foto panorámica soporta la franja de encabezado (≈2:1 o más) sin perder el paisaje."""
+    m = META[key]; return m['w'] / m['h'] >= 1.7 and m['w'] >= 1100
 
 
 def bleed_hero(key, title_html, kicker='', lead='', crumbs='', size='full', extra=''):
     """Encabezado de página a pantalla completa, con el título sobre el paisaje.
     Si la foto es vertical o cuadrada no se estira a lo ancho: ocupa la mitad derecha a altura completa."""
-    split = '' if wide(key) else ' bhero--split'
+    m = META[key]
+    split = '' if wide(key) else (' bhero--split bhero--land' if m['w'] / m['h'] >= 1.2 else ' bhero--split')
     return f'''<section class="bhero bhero--{size}{split}" data-hero>
   <div class="bhero__media" data-parallax-hero>{bimg(key, "100vw" if not split else "(max-width:760px) 100vw, 50vw", True)}</div>{credit(key)}
   <div class="bhero__shade" aria-hidden="true"></div>

@@ -24,8 +24,11 @@ for k, m in M.items():
     if len(boxes):
         b = np.array(boxes); x0, y0 = b[:, 0].min(), b[:, 1].min(); x1, y1 = (b[:, 0] + b[:, 2]).max(), (b[:, 1] + b[:, 3]).max()
         cx = (x0 + x1) / 2 / w
-        # ventana horizontal típica muestra ~la mitad de la foto: arrancarla un poco sobre las cabezas
-        cy = min(max(2 * (y0 / h - .07), 0), 1)
+        # sujeto = caras + cuerpos (≈3 alturas de cara bajo la barbilla); se centra un poco bajo el medio
+        # de la ventana (que muestra ~la mitad de la foto) para dejar arriba el paisaje: horizonte, cerros, cielo
+        fh = (b[:, 3]).max()
+        c = (y0 + min(y1 + 3 * fh, h)) / 2 / h
+        cy = min(max(2 * c - .55, .25), .75)
     else:
         cx, cy = .5, .42; kind = 'centro'
     cx = min(max(cx, .12), .88)
