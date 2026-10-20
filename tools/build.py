@@ -785,7 +785,7 @@ def paquetes():
         extra = q(p['extra'], P, 'p') if p.get('extra') else ''
         inner = f'''<p class="kicker">{L(p["days"])}</p><h2 class="h2" lang="es">{e(p["name"])}</h2>{q(p["text"], P, "p")}{extra}
 <p class="note">{L("Itinerario y precio: te los enviamos por WhatsApp.", "Itinerary and price: we send them on WhatsApp.")}</p>
-<p>{btn(L("Cotizar", "Get a quote"), wa_link(f"¡Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--ink", True)}</p>'''
+<p>{btn(f'{L("Cotizar", "Get a quote")} <span aria-hidden="true">→</span>', wa_link(f"¡Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--red btn--pkg", True)}</p>'''
         if p['imgs']:
             items += sticky_split(p['imgs'][0], inner, 'right' if items.count('<section class="ssplit') % 2 == 0 else 'left', force_sm=True)
         else:
