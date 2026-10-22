@@ -354,20 +354,22 @@
         const inner = c.children; [...inner].forEach(k => k.animate([{ opacity: 0 }, { opacity: 0 }, { opacity: 1 }], { duration: 750, easing: 'ease-out' }));
       });
     };
-    const toList = () => {
-      const y = list.getBoundingClientRect().top + scrollY - 110;
-      window.__lenis ? window.__lenis.scrollTo(y, { immediate: true, force: true }) : scrollTo(0, y);
+    const toTop = smooth => {
+      if (window.__lenis) window.__lenis.scrollTo(0, smooth && !still ? { duration: .9 } : { immediate: true, force: true });
+      else scrollTo({ top: 0, behavior: smooth && !still ? 'smooth' : 'auto' });
     };
     const want = new URLSearchParams(location.search).get('p') || location.hash.slice(1);
     if (want && list.querySelector(`[data-pk="${want}"]`)) {
-      if (location.hash) history.replaceState(null, '', location.pathname + '?p=' + want);
-      const go = () => { toList(); setTimeout(() => feature(want, true), 350); };
-      document.readyState === 'complete' ? go() : addEventListener('load', go, { once: true });
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      history.replaceState(null, '', location.pathname + '?p=' + want);
+      feature(want, false); toTop(false);
+      const el = list.querySelector(`[data-pk="${want}"]`);
+      if (!still) el.animate([{ opacity: 0, transform: 'translateY(28px)' }, { opacity: 1, transform: 'none' }], { duration: 800, easing: 'cubic-bezier(.16,1,.3,1)' });
     }
     list.addEventListener('click', e => {
       const c = e.target.closest('.pk'); if (!c || c.classList.contains('pk--feat') || e.target.closest('a,button')) return;
       history.replaceState(null, '', location.pathname + '?p=' + c.dataset.pk);
-      toList(); feature(c.dataset.pk, true);
+      toTop(true); setTimeout(() => feature(c.dataset.pk, true), still ? 0 : 450);
     });
   })();
 })();
