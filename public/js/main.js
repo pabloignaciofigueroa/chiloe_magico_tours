@@ -331,4 +331,43 @@
     ScrollTrigger.addEventListener('refreshInit', () => onScrollHdr(scrollY));
     ScrollTrigger.addEventListener('refresh', restore);
   });
+
+  /* ---------- paquetes: el elegido pasa al primer lugar, destacado, y los otros se reordenan (FLIP) ---------- */
+  (() => {
+    const list = $('[data-pks]'); if (!list) return;
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cards = () => $$('.pk', list);
+    const order = $$('.pk', list).map(c => c.dataset.pk);
+    const feature = (slug, animate) => {
+      const el = list.querySelector(`[data-pk="${slug}"]`); if (!el) return;
+      const first = new Map(cards().map(c => [c, c.getBoundingClientRect()]));
+      cards().forEach(c => c.classList.toggle('pk--feat', c === el));
+      list.classList.add('has-feat');
+      order.forEach(s => { const c = list.querySelector(`[data-pk="${s}"]`); if (c && c !== el) list.append(c); }); list.prepend(el);
+      if (!animate || still) return;
+      cards().forEach(c => {
+        const a = first.get(c), b = c.getBoundingClientRect();
+        if (!a || !b.width) return;
+        const dx = a.left - b.left, dy = a.top - b.top, sx = a.width / b.width, sy = a.height / b.height;
+        c.animate([{ transform: `translate(${dx}px,${dy}px) scale(${sx},${sy})`, transformOrigin: 'top left' }, { transform: 'none', transformOrigin: 'top left' }],
+          { duration: 750, easing: 'cubic-bezier(.16,1,.3,1)' });
+        const inner = c.children; [...inner].forEach(k => k.animate([{ opacity: 0 }, { opacity: 0 }, { opacity: 1 }], { duration: 750, easing: 'ease-out' }));
+      });
+    };
+    const toList = () => {
+      const y = list.getBoundingClientRect().top + scrollY - 110;
+      window.__lenis ? window.__lenis.scrollTo(y, { immediate: true, force: true }) : scrollTo(0, y);
+    };
+    const want = new URLSearchParams(location.search).get('p') || location.hash.slice(1);
+    if (want && list.querySelector(`[data-pk="${want}"]`)) {
+      if (location.hash) history.replaceState(null, '', location.pathname + '?p=' + want);
+      const go = () => { toList(); setTimeout(() => feature(want, true), 350); };
+      document.readyState === 'complete' ? go() : addEventListener('load', go, { once: true });
+    }
+    list.addEventListener('click', e => {
+      const c = e.target.closest('.pk'); if (!c || c.classList.contains('pk--feat') || e.target.closest('a,button')) return;
+      history.replaceState(null, '', location.pathname + '?p=' + c.dataset.pk);
+      toList(); feature(c.dataset.pk, true);
+    });
+  })();
 })();

@@ -861,13 +861,13 @@ def pkg_card(p, P, mini=False):
     inset = f'<div class="pk__inset" aria-hidden="true">{img(v["inset"], "160px")}</div>' if v['inset'] and not mini else ''
     chips = ''.join(f'<li>{L(c)}</li>' for c in v['chips'])
     if mini:
-        return f'''<li class="pk pk--mini" data-rv><a class="pk__a" href="/paquetes/#{p["slug"]}">
+        return f'''<li class="pk pk--mini" data-rv><a class="pk__a" href="/paquetes/?p={p["slug"]}">
   <div class="pk__img">{bimg(v["img"], "(max-width:760px) 92vw, 30vw")}</div>
   <div class="pk__txt"><h3 class="pk__t" lang="es">{e(p["name"])}</h3><ul class="pk__chips">{chips}</ul>
   <p class="pk__q" lang="es">{quote}</p>
   <span class="pk__go">{L("Ver paquete", "See package")} <span aria-hidden="true">→</span></span></div>
 </a></li>'''
-    return f'''<li class="pk" id="{p["slug"]}" data-rv>
+    return f'''<li class="pk" id="{p["slug"]}" data-pk="{p["slug"]}">
   <div class="pk__img">{bimg(v["img"], "(max-width:760px) 92vw, 31vw")}{inset}{credit(v["img"])}</div>
   <div class="pk__txt">
     <h2 class="pk__t" lang="es">{e(p["name"])}</h2>
@@ -905,7 +905,7 @@ def paquetes():
   </div>
 </section>
 <section class="pksec" aria-label="Paquetes" data-aria-en="Packages">{WAVE}
-  <ul class="pks">{cards}</ul>
+  <ul class="pks" data-pks>{cards}</ul>
   <p class="pksec__note">{L("Viajes que ya hemos realizado. Próximas salidas y valores: por confirmar.", "Trips we have already run. Next departures and prices: to be confirmed.")}</p>
 </section>
 <section class="medida2" id="a-medida" aria-labelledby="medida-t">

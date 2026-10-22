@@ -1464,3 +1464,19 @@ main:has(> .medida2:last-child) + .ftr{margin-top:0}
 .isla__topwave path{fill:var(--mar-hondo)!important}
 /* precio "según fecha y grupo": mismo color que el texto que lo rodea (en bandas de color quedaba negro) */
 .u-muted{color:inherit}
+/* paquete elegido: primero y destacado; los otros dos debajo */
+.pks.has-feat{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pks.has-feat .pk:not(.pk--feat){cursor:pointer}
+.pks.has-feat .pk:not(.pk--feat) .pk__img{aspect-ratio:16/10}
+.pk--feat{grid-column:1/-1}
+@media (min-width:761px){
+  .pk--feat{flex-direction:row}
+  .pk--feat .pk__img{flex:0 0 56%;aspect-ratio:auto;min-height:clamp(380px,38vw,560px)}
+  .pk--feat .pk__txt{padding:clamp(28px,3.4vw,56px);justify-content:center}
+  .pk--feat .pk__t{font-size:clamp(40px,4.2vw,68px)}
+  .pk--feat .pk__q{font-size:clamp(18px,1.5vw,22px)}
+  .pk--feat .pk__note{margin-top:8px}
+  .pk--feat .pk__inset{width:28%;right:24px;bottom:24px}
+  .pk--feat .pk__btn{max-width:360px}
+}
+@media (max-width:760px){.pks.has-feat{grid-template-columns:1fr}.pk--feat .pk__t{font-size:36px}}
