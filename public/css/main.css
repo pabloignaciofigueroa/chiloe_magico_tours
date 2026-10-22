@@ -1429,3 +1429,7 @@ main:has(> .medida2:last-child) + .ftr{margin-top:0}
 @media (max-width:860px){.ab3__pol{width:46%;right:0}}
 .abh .wave--top path{fill:#173f5c}
 .abh{padding-top:calc(var(--gap)*.8 + var(--wv))}
+/* video de la isla → bloque Nosotros: la ola nace del borde del video, sin franja */
+.isla:has(+ .abh){--next:var(--niebla)}
+.isla > .wave{z-index:5}
+.abh{padding-top:var(--gap)}

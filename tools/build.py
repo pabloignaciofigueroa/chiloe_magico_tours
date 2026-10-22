@@ -541,7 +541,7 @@ def home():
   <p class="pksec__cta">{btn(f'{L("Ver paquetes", "See packages")} <span aria-hidden="true">→</span>', "/paquetes/", "btn btn--light")}</p>
 </section>
 
-<section class="isla" aria-labelledby="isla-t" data-isla>
+<section class="isla" aria-labelledby="isla-t" data-isla>{WAVE}
   <div class="isla__stick">
     <div class="isla__blur" aria-hidden="true"><video class="isla__vbg" muted playsinline loop preload="none" data-lazy-video aria-hidden="true" tabindex="-1"><source data-src="/assets/video/isla.webm" type="video/webm"><source data-src="/assets/video/isla.mp4" type="video/mp4"></video></div>
     <video class="isla__v" muted playsinline loop preload="none" data-lazy-video data-poster="/assets/video/isla-poster.jpg" aria-label="{e(META['_videos']['isla']['alt'])}" data-aria-en="{e(ALT_EN['vid:isla'])}">
@@ -556,7 +556,7 @@ def home():
   </div>
 </section>
 
-<section class="abh" aria-labelledby="abh-t">{wave("#173f5c", True)}{WAVE}
+<section class="abh" aria-labelledby="abh-t">{WAVE}
   <div class="bcta__pols abh__pols" aria-hidden="true"><div class="pol2 pol2--a">{bimg("nicolas-enrique", "(max-width:760px) 60vw, 26vw")}</div><div class="pol2 pol2--b">{bimg("grupo-van", "(max-width:760px) 50vw, 22vw")}</div><div class="pol2 pol2--c">{bimg("brujos-vuelo", "(max-width:760px) 44vw, 18vw")}</div></div>
   <div class="abh__txt" data-rv>
     <h2 class="h2" id="abh-t" lang="es">{qx(SITE["somos"], "Somos Chiloé Mágico", P, em="Mágico")}</h2>
