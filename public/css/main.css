@@ -1462,3 +1462,5 @@ main:has(> .medida2:last-child) + .ftr{margin-top:0}
 .pksec--home{padding-bottom:calc(var(--gap)*.6)}
 .isla > .isla__topwave{z-index:6}
 .isla__topwave path{fill:var(--mar-hondo)!important}
+/* precio "según fecha y grupo": mismo color que el texto que lo rodea (en bandas de color quedaba negro) */
+.u-muted{color:inherit}
