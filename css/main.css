@@ -1440,3 +1440,20 @@ main:has(> .medida2:last-child) + .ftr{margin-top:0}
 .pk--mini .pk__a:hover .pk__go{background:var(--tinta)}
 .pk--mini .pk__chips{margin-bottom:6px}
 @media (min-width:1100px){.pk__go{min-height:54px;font-size:16px}}
+/* tablet: polaroids con alto propio cuando la sección pasa a una columna (no tapan el título ni la sección siguiente) */
+@media (max-width:860px){
+  .abh__pols,.ab1__pols{width:100%;max-width:560px;height:min(78vw,440px);margin:0 auto;justify-self:center}
+  .abh{gap:24px}
+}
+/* tablet: los 3 paquetes siguen en 3 columnas hasta 760px; abajo, una columna centrada */
+@media (max-width:900px) and (min-width:761px){
+  .pks,.pks--mini{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;gap:14px}
+  .pk__img,.pk--mini .pk__img{aspect-ratio:1}
+  .pk__txt,.pk--mini .pk__txt{padding:16px}
+  .pk__t,.pk--mini .pk__t{font-size:22px}
+  .pk__chips li{font-size:12px;padding:7px 10px}
+  .pk__btn,.pk--mini .pk__go{min-height:50px;font-size:15px}
+  .pk__inset{width:40%;right:10px;bottom:10px}
+}
+@media (max-width:760px){.pks,.pks--mini{max-width:560px}}
+@media (max-width:900px) and (min-width:761px){.pk__inset{display:none}}
