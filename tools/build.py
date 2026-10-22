@@ -798,7 +798,34 @@ def qx(src, part, P, em=None, fix='recorte del texto original'):
     h = e(part)
     if em:
         h = h.replace(e(em), f'<em>{e(em)}</em>', 1)
-    return h
+    if part not in TR_EN:
+        raise SystemExit(f'qx: falta la traducción al inglés de «{part}»')
+    en, en_em = TR_EN[part]
+    he = e(en)
+    if en_em:
+        he = he.replace(e(en_em), f'<em>{e(en_em)}</em>', 1)
+    return f'<span data-l="es" lang="es">{h}</span><span data-l="en" lang="en">{he}</span>'
+
+
+# Traducción fiel de los recortes de la agencia (mismo sentido, sin agregar nada).
+TR_EN = {
+    'Servicio de turismo, traslado y viajes privados': ('Tourism, transfer and private trip services', None),
+    'Otra salida marcada por innumerable recuerdos': ('Another trip full of countless memories', None),
+    'La nieve, paisajes hermosos y todo lo que San Carlos de Bariloche puede ofrecer': ('The snow, beautiful landscapes and everything San Carlos de Bariloche has to offer', None),
+    'Somos Chiloé Mágico': ('We are Chiloé Mágico', 'Mágico'),
+    'Somos una empresa dedicada al rubro turístico, con más de 20 años de servicio': ('We are a tourism company with more than 20 years of service', None),
+    'Una empresa dedicada a entregarte la mejor experiencia en nuestro archipiélago.': ('A company devoted to giving you the best experience in our archipelago.', None),
+    'Magia también es ver la sonrisa de nuestros amigos turistas': ('Magic is also seeing the smiles of our traveller friends', 'smiles'),
+    'No sólo nos referimos a las mil y un historias que se cuentan sobre mitos, leyendas y brujería': ("We don't just mean the thousand and one stories told about myths, legends and witchcraft", None),
+    'Conductores que además de profesionales son wena onda!': ('Drivers who, besides being professionals, are great fun!', 'great fun'),
+    'Un máximo de 16 pasajeros y su propio guía': ('A maximum of 16 passengers and their own guide', None),
+    'Con aire acondicionado': ('Air-conditioned', None),
+    'Asientos reclinables para la siesta post almuerzo': ('Reclining seats for the after-lunch nap', None),
+    'Transmite el amor por la tierra y la cultura chilota': ('Conveys a love for the land and Chilote culture', 'Chilote culture'),
+    'Nuestro marketing y publicidad más grande son nuestros turistas': ('Our biggest marketing and advertising are our travellers', 'travellers'),
+    'Servicios privados': ('Private services', 'services'),
+    'Para consultas y programaciones pueden hablarnos a nuestro WhatsApp': ('For questions and bookings, message us on WhatsApp', None),
+}
 
 
 PKG_VIEW = {
@@ -819,7 +846,8 @@ def pkg_card(p, P, mini=False):
     txt, fix = v['quote']
     if fix:
         COPY.append((P, txt, {'nieve-volcan-osorno': '[IG-031]'}[p['slug']], fix))
-        quote = e(txt)
+        quote = (f'<span data-l="es" lang="es">{e(txt)}</span><span data-l="en" lang="en">'
+                 'A trip from Castro to Osorno Volcano, visiting Petrohué Falls and Todos los Santos Lake</span>')
     else:
         quote = qx(p['text'], txt, P)
     inset = f'<div class="pk__inset" aria-hidden="true">{img(v["inset"], "160px")}</div>' if v['inset'] and not mini else ''
@@ -988,7 +1016,7 @@ def faq():
 
 def contacto():
     P = '/contacto/'
-    content = f'''{bleed_hero("chonchi", f'<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>{L("Cotiza tu tour", "Get a quote")}</span></span></h1>', L("Contacto", "Contact"), f'<p>{L("Escríbenos por WhatsApp:", "Message us on WhatsApp:")} {SITE["wa_display"]}</p>', '', "tall")}
+    content = f'''{bleed_hero("chonchi", f'<h1 class="h1 h1--light" data-lines><span class="line"><span>{L("Cotiza tu tour", "Get a quote")}</span></span></h1>', L("Contacto", "Contact"), f'<p>{L("Escríbenos por WhatsApp:", "Message us on WhatsApp:")} {SITE["wa_display"]}</p>', '', "tall")}
 <section class="sec split">
   <div class="contact__list">
     <p><span class="kicker">WhatsApp</span><a class="big-link" href="{wa_link('¡Hola! Quiero cotizar un tour.')}" target="_blank" rel="noopener">{SITE["wa_display"]}</a></p>
