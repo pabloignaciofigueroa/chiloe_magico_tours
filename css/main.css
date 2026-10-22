@@ -1433,3 +1433,10 @@ main:has(> .medida2:last-child) + .ftr{margin-top:0}
 .isla:has(+ .abh){--next:var(--niebla)}
 .isla > .wave{z-index:5}
 .abh{padding-top:var(--gap)}
+/* paquetes en la home: mismo formato que las tarjetas de Tours (foto arriba, botón rojo grande) */
+@media (max-width:900px){.pk--mini .pk__a{display:flex;flex-direction:column}.pk--mini .pk__img{aspect-ratio:16/10;min-height:0}.pk--mini .pk__txt{padding:18px 18px 20px}.pk--mini .pk__t{font-size:26px}}
+.pk__go{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:58px;margin-top:auto;padding:0 24px;border-radius:999px;background:var(--turismo-hondo);color:#fff;font:700 17px/1 var(--f-text);letter-spacing:.02em;transition:background .3s var(--ease)}
+.pk__go [aria-hidden]{font-size:20px}
+.pk--mini .pk__a:hover .pk__go{background:var(--tinta)}
+.pk--mini .pk__chips{margin-bottom:6px}
+@media (min-width:1100px){.pk__go{min-height:54px;font-size:16px}}
