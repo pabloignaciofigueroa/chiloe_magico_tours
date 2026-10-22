@@ -10,14 +10,14 @@
   const WA = '56978902625';
 
   /* ---------- idioma (solo interfaz; el contenido de la marca queda en su idioma) ---------- */
-  const ATTRS = [['alt', 'data-alt-en'], ['aria-label', 'data-aria-en'], ['title', 'data-title-en']];
+  const ATTRS = [['alt', 'data-alt-en'], ['aria-label', 'data-aria-en'], ['title', 'data-title-en'], ['placeholder', 'data-ph-en']];
   const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
   const titleEs = document.title;
   const metaDesc = $('meta[name="description"]');
   const descEs = metaDesc ? metaDesc.content : '';
   function applyLang(lang) {
     root.lang = lang;
-    $$('[data-alt-en],[data-aria-en],[data-title-en]').forEach(el => {
+    $$('[data-alt-en],[data-aria-en],[data-title-en],[data-ph-en]').forEach(el => {
       ATTRS.forEach(([a, d]) => {
         if (!el.hasAttribute(d) || (a === 'title' && el === root)) return;
         const keep = 'data-' + a.replace('-', '') + '-es';

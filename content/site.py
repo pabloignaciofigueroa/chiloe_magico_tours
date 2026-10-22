@@ -343,7 +343,7 @@ DETAIL = {
     'la-costa-curanto': {
         'guia': ['que-es-el-curanto', 'iglesias-patrimonio'],
         'tags': [U('Curanto','Curanto'), U('Iglesias patrimonio','Heritage churches'), U('Cascadas','Waterfalls')],
-        'corto': U('Ves cómo destapan un curanto en hoyo, visitas Tenaún y cruzas a Isla Aucar.', 'Watch a pit curanto being uncovered, visit Tenaún and cross to Aucar Island.'),
+        'corto': U('Ves cómo destapan un curanto en hoyo, visitas Tenaún y cruzas a Isla Aucar.', 'Watch a pit-cooked curanto being uncovered, visit Tenaún and cross to Aucar Island.'),
         'que': U('Curanto en hoyo frente a las Islas Chauques, la iglesia de Tenaún, las cascadas de Tocoihue y la pasarela a Isla Aucar.',
                  'Pit-cooked curanto facing the Chauques Islands, Tenaún church, Tocoihue falls and the footbridge to Aucar Island.'),  # [DEST-H7_002] + IG
         'lunch': U('curanto en hoyo', 'pit-cooked curanto'),
@@ -352,7 +352,7 @@ DETAIL = {
                 U('Cascadas de Tocoihue, donde según la leyenda se iniciaban los brujos', 'Tocoihue falls, where legend says the witches were initiated'),
                 U('Pasarela de 437 metros sobre el mar hasta la Isla Aucar', 'A 437-metre footbridge over the sea to Aucar Island'),
                 U('Feria Artesanal de Dalcahue', 'Dalcahue craft market')],
-        'no': [U('$3.000 por persona: entrada a las cascadas', 'CLP 3,000 per person: falls entrance')],  # [DEST-H7_002]
+        'no': [U('$3.000 por persona: entrada a las cascadas', 'CLP 3,000 per person: entry fee for the falls')],  # [DEST-H7_002]
         'rel': ['isla-mechuque', 'isla-quinchao', 'isla-lemuy-asado'],
     },
     'isla-lemuy-asado': {
@@ -375,7 +375,7 @@ DETAIL = {
         'corto': U('Caminas por bosque nativo hasta la playa del Parque Nacional Chiloé.', 'Walk through native forest to the beach in Chiloé National Park.'),
         'que': U('Caminas por el bosque nativo del Parque Nacional Chiloé hasta la playa, con paradas en Nercón, Chonchi y el columpio de Huillinco.',
                  'Walk through the native forest of Chiloé National Park to the beach, stopping at Nercón, Chonchi and the Huillinco swing.'),  # [DEST-H7_003]
-        'lunch': U('restorán tradicional', 'traditional restaurant'),
+        'lunch': U('restorán tradicional', 'at a traditional restaurant'),
         'pts': [U('Senderos del Parque Nacional Chiloé y la playa Chanquín', 'Chiloé National Park trails and Chanquín beach'),
                 U('Iglesia Patrimonio de Nercón', 'Nercón heritage church'),
                 U('Columpio de los Enamorados en el lago Huillinco', 'The Lovers\' Swing on Lake Huillinco'),
@@ -388,7 +388,7 @@ DETAIL = {
         'corto': U('Caminas por los cerros de Cucao hasta el Muelle de las Almas.', 'Walk over the Cucao hills to the Pier of Souls.'),
         'que': U('Caminata por la cordillera de Piruil hasta el Muelle de las Almas, sobre los acantilados de Cucao, y el lago Huillinco.',
                  'A walk over the Piruil range to the Pier of Souls above the Cucao cliffs, then Lake Huillinco.'),  # [DEST-H7_004]
-        'lunch': U('restorán tradicional', 'traditional restaurant'),
+        'lunch': U('restorán tradicional', 'at a traditional restaurant'),
         'pts': [U('Caminata por la cordillera de Piruil', 'Walk over the Piruil range'),
                 U('Muelle de las Almas, frente al Pacífico', 'The Pier of Souls, facing the Pacific'),
                 U('La leyenda del balsero que lleva las almas al más allá', 'The legend of the ferryman who carries souls to the afterlife'),
@@ -401,7 +401,7 @@ DETAIL = {
         'corto': U('Navegas el río Chepu y caminas al muelle frente al Pacífico.', 'Sail the Chepu river and walk to the pier facing the Pacific.'),
         'que': U('Navegas el río Chepu, caminas al Muelle de la Luz frente al océano y terminas en Puñihuil y Ancud.',
                  'Sail the Chepu river, walk to the Muelle de la Luz facing the ocean and finish at Puñihuil and Ancud.'),  # [DEST-H7_005]
-        'lunch': U('restorán panorámico', 'panoramic restaurant'),
+        'lunch': U('restorán panorámico', 'at a restaurant with a view'),
         'pts': [U('Navegación por el río Chepu', 'Sailing the Chepu river'),
                 U('Muelle Mirador de la Luz, sobre el Pacífico', 'Muelle de la Luz lookout over the Pacific'),
                 U('Caleta Puñihuil y la escultura de la Pincoya', 'Puñihuil cove and the Pincoya sculpture'),
@@ -414,7 +414,7 @@ DETAIL = {
         'corto': U('Navegas entre los islotes de Puñihuil para ver pingüinos.', 'Sail among the Puñihuil islets to see penguins.'),
         'que': U('Navegas entre los islotes de Puñihuil para ver pingüinos de Magallanes y de Humboldt, y sigues al Muelle El Caleuche y Ancud.',
                  'Sail among the Puñihuil islets to see Magellanic and Humboldt penguins, then the Caleuche pier and Ancud.'),  # [DEST-H7_006] + IG
-        'lunch': U('restorán panorámico', 'panoramic restaurant'),
+        'lunch': U('restorán panorámico', 'at a restaurant with a view'),
         'pts': [U('Navegación por 3 islotes del Monumento Natural Puñihuil', 'Boat trip around 3 islets of the Puñihuil Natural Monument'),
                 U('Pingüinos de Magallanes y de Humboldt en su temporada de verano', 'Magellanic and Humboldt penguins in their summer season'),
                 U('Muelle El Caleuche', 'El Caleuche pier'),
@@ -438,7 +438,7 @@ DETAIL = {
     'isla-mechuque': {
         'guia': ['que-es-el-curanto'],
         'tags': [U('Navegación','Boat'), U('Curanto','Curanto'), U('Palafitos','Stilt houses')],
-        'corto': U('Navegas a Isla Mechuque y almuerzas curanto en hoyo.', 'Sail to Mechuque Island and have pit curanto for lunch.'),
+        'corto': U('Navegas a Isla Mechuque y almuerzas curanto en hoyo.', 'Sail to Mechuque Island and have pit-cooked curanto for lunch.'),
         'que': U('Navegas a la Isla Mechuque y almuerzas curanto en hoyo.', 'Sail to Mechuque Island and have pit-cooked curanto for lunch.'),  # [PIEZA IG-017]
         'lunch': U('curanto en hoyo', 'pit-cooked curanto'),
         'pts': [U('Navegación a la Isla Mechuque', 'Boat trip to Mechuque Island'),

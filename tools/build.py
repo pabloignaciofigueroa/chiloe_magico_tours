@@ -113,8 +113,13 @@ def title_afiche(parts, page, tag='h1', cls='afiche'):
             f'<span class="line"><span>{e(b)}</span></span></{tag}>')
 
 
-def clp(n):
-    return '$' + f'{n:,}'.replace(',', '.')
+DEST_EN = {'Ancud y Puñihuil': 'Ancud and Puñihuil', 'Chonchi e Isla Lemuy': 'Chonchi and Lemuy Island', 'Cucao y Parque Nacional': 'Cucao and the National Park', 'Cucao y Parque Nacional Chiloé': 'Cucao and Chiloé National Park', 'Dalcahue y Quinchao': 'Dalcahue and Quinchao'}
+
+
+def clp(n, unit=False):
+    """Precio: $35.000 (CLP) en español, CLP 35,000 en inglés."""
+    es = '$' + f'{n:,}'.replace(',', '.') + (' CLP' if unit else '')
+    return f'<span data-l="es">{es}</span><span data-l="en">CLP {n:,}</span>'
 
 
 def tour_href(t): return f'/tours/{t["slug"]}/'
@@ -246,7 +251,7 @@ def preload_img(key):
 
 # ------------------------------------------------------------------ bloques
 def tour_card(t, page, sizes='(max-width: 760px) 80vw, 30vw'):
-    price = (f'<span class="card__price">{L("Desde", "From")} {clp(t["price_from"])} <abbr title="pesos chilenos" data-title-en="Chilean pesos">CLP</abbr></span>'
+    price = (f'<span class="card__price">{L("Desde", "From")} {clp(t["price_from"])}<span data-l="es"> <abbr title="pesos chilenos">CLP</abbr></span></span>'
              if t.get('price_from') else f'<span class="card__price card__price--p">{L("Precio por confirmar", "Price to be confirmed")}</span>')
     return f'''<article class="card" data-card>
   <a class="card__link" href="{tour_href(t)}">
@@ -295,7 +300,8 @@ def credit(key, cls='credit'):
     c = META[key].get('credit')
     if not c: return ''
     txt, url = c.split('|')
-    return f'<a class="{cls}" href="{url}" target="_blank" rel="noopener">{e(txt)}</a>'
+    lab = L(e(txt), e(txt.replace('Foto:', 'Photo:', 1))) if txt.startswith('Foto:') else e(txt)
+    return f'<a class="{cls}" href="{url}" target="_blank" rel="noopener">{lab}</a>'
 
 
 def wide(key):
@@ -346,7 +352,7 @@ def tour_title_inline(t):
 
 def tour_price_inline(t):
     if t.get('price_from'):
-        return f'{clp(t["price_from"])} CLP'
+        return clp(t["price_from"], unit=True)
     return L('Precio por confirmar', 'Price to be confirmed')
 
 
@@ -376,13 +382,13 @@ def reviews_block(page, items, title=True, key='ancud-atardecer'):
     slides = ''
     for r in items:
         frm = f' · <span lang="es">desde {e(r["from"])}</span>' if r.get('from') else ''
-        tour = f' · <a href="{tour_href(TOURS[r["tour"]])}">{e(TOURS[r["tour"]]["short"])}</a>' if r.get('tour') else ''
+        tour = f' · <a href="{tour_href(TOURS[r["tour"]])}">{L(e(TOURS[r["tour"]]["short"]), e(EN.get(TOURS[r["tour"]]["short"], TOURS[r["tour"]]["short"])))}</a>' if r.get('tour') else ''
         slides += (f'<figure class="rev swiper-slide"><div class="rev__stars" role="img" aria-label="5 de 5 estrellas" data-aria-en="5 out of 5 stars">{STARS}</div>'
                    f'<blockquote lang="{r["lang"]}">“{q(r["text"], page)}”</blockquote>'
                    f'<figcaption><strong>{e(r["name"])}</strong>{frm} · {L("vía Google", "via Google")}{tour}</figcaption></figure>')
     head = (f'<header class="reviews__head"><p class="kicker kicker--light">{L("Testimonios", "Reviews")}</p>'
             f'<h2 class="h2 h2--light" data-lines><span class="line"><span>{SITE["rating"]} ★ </span></span><span class="line"><span>{L("en Google", "on Google")}</span></span></h2>'
-            f'<p class="lead lead--light">{L(f"{SITE["reviews_count"]} reseñas leídas el 19 de octubre de 2026. Las citas van en su idioma original.", f"{SITE["reviews_count"]} reviews read on 19 October 2026. Quotes are shown in their original language.")}</p></header>') if title else ''
+            f'<p class="lead lead--light">{L(f"{SITE["reviews_count"]} reseñas leídas el 19 de octubre de 2026. Las citas van en su idioma original.", f"{SITE["reviews_count"]} reviews read on 19 October 2026. Reviews written in Spanish are translated; read the originals on Google Maps.")}</p></header>') if title else ''
     return f'''<section class="reviews" aria-label="Testimonios" data-aria-en="Reviews">
   <div class="reviews__media" data-parallax>{bimg(key)}</div>
   <div class="reviews__shade" aria-hidden="true"></div>
@@ -401,7 +407,7 @@ def map_block(page):
     {bimg("palafitos", "(max-width: 760px) 100vw, 50vw")}
     <span class="map__cta">{L("Abrir mapa · Gamboa 351, Castro", "Open map · Gamboa 351, Castro")}</span>
   </a>
-  <button class="map__lock" type="button" data-map-lock><span>{L("Toca para mover el mapa", "Tap to move the map")}</span></button>
+  <button class="map__lock" type="button" data-map-lock><span>{L("Toca para mover el mapa", "Tap to use the map")}</span></button>
   <iframe title="Mapa: Gamboa 351, Castro" data-title-en="Map: Gamboa 351, Castro" data-src="https://www.openstreetmap.org/export/embed.html?bbox=-73.7702%2C-42.4846%2C-73.7582%2C-42.4786&amp;layer=mapnik&amp;marker=-42.4816941%2C-73.7642726" loading="lazy" referrerpolicy="no-referrer"></iframe>
 </div>'''
 
@@ -450,14 +456,14 @@ def reviews_solid(page, items, head=None):
     slides = ''
     for r in items:
         frm = f' · <span lang="es">desde {e(r["from"])}</span>' if r.get('from') else ''
-        tour = f' · <a href="{tour_href(TOURS[r["tour"]])}">{e(TOURS[r["tour"]]["short"])}</a>' if r.get('tour') else ''
+        tour = f' · <a href="{tour_href(TOURS[r["tour"]])}">{L(e(TOURS[r["tour"]]["short"]), e(EN.get(TOURS[r["tour"]]["short"], TOURS[r["tour"]]["short"])))}</a>' if r.get('tour') else ''
         slides += (f'<figure class="rev swiper-slide"><div class="rev__stars" role="img" aria-label="5 de 5 estrellas" data-aria-en="5 out of 5 stars">{STARS}</div>'
                    f'<blockquote lang="{r["lang"]}">“{q(r["text"], page)}”</blockquote>'
                    f'<figcaption><strong>{e(r["name"])}</strong>{frm} · {L("vía Google", "via Google")}{tour}</figcaption></figure>')
     return f'''<section class="rsec" aria-labelledby="rsec-t">{WAVE}
   <header class="rsec__head" data-rv>
     {head or f'''<h2 class="h2 h2--light" id="rsec-t">{L(f"{SITE['rating']} <em>en</em> Google", f"{SITE['rating_en']} <em>on</em> Google")}</h2>
-    <p class="rsec__sub">{STARS} {L(f"{SITE['reviews_count']} reseñas de viajeros. Las citas van en su idioma original.", f"{SITE['reviews_count']} traveller reviews. Quotes in their original language.")}</p>'''}
+    <p class="rsec__sub">{STARS} {L(f"{SITE['reviews_count']} reseñas de viajeros. Las citas van en su idioma original.", f"{SITE['reviews_count']} traveller reviews. Reviews written in Spanish are translated.")}</p>'''}
   </header>
   <div class="swiper rsec__sw" data-swiper="reviews" data-drag><div class="swiper-wrapper">{slides}</div></div>
   <div class="snav snav--light"><button class="arrow arrow--light" type="button" data-prev aria-label="Reseña anterior" data-aria-en="Previous review">←</button><button class="arrow arrow--light" type="button" data-next aria-label="Reseña siguiente" data-aria-en="Next review">→</button>
@@ -499,8 +505,8 @@ def seal(top, bottom, ring, sid='sr'):
 
 def facts_strip(P):
     return f'''<ul class="meds2" data-rv aria-label="Datos de la agencia" data-aria-en="Agency facts">
-  <li class="md2 md2--red"><strong>{SITE["rating"]}</strong><span>{L(f"en Google · {SITE['reviews_count']} reseñas", f"on Google · {SITE['reviews_count']} reviews")}</span></li>
-  <li class="md2 md2--cream"><strong>10:00</strong><span>{L("salida todos los días", "departure every day")}</span></li>
+  <li class="md2 md2--red"><strong>{L(SITE["rating"], SITE["rating_en"])}</strong><span>{L(f"en Google · {SITE['reviews_count']} reseñas", f"on Google · {SITE['reviews_count']} reviews")}</span></li>
+  <li class="md2 md2--cream"><strong>{L("10:00", "10am")}</strong><span>{L("salida todos los días", "departure every day")}</span></li>
   <li class="md2 md2--blue"><strong>16</strong><span>{L("pasajeros máx. por van", "passengers max. per van")}</span></li>
   <li class="md2 md2--sand"><strong>{L("Castro", "Castro")}</strong><span>{L("frente a la Plaza de Armas", "facing the main square")}</span></li>
 </ul>'''
@@ -657,7 +663,7 @@ def tour_page(t):
       {lead}
       <h2 class="h2 tw__h2" id="tin-t">{L("Qué <em>incluye</em>", "What\'s <em>included</em>")}</h2>
       <div class="tin__grid" data-rv>
-      <div><h3 class="h4">{L("Incluye", "Included")}</h3><ul class="inclist"><li>{L("Traslado en van desde Castro, ida y vuelta", "Return van transport from Castro")}</li><li>{L("Guía durante todo el día", "Guide for the whole day")}</li><li>{L("Almuerzo y bebestibles", "Lunch and drinks")}</li></ul></div>
+      <div><h3 class="h4">{L("Incluye", "Included")}</h3><ul class="inclist"><li>{L("Traslado en van desde Castro, ida y vuelta", "Round-trip van transport from Castro")}</li><li>{L("Guía durante todo el día", "Guide for the whole day")}</li><li>{L("Almuerzo y bebestibles", "Lunch and drinks")}</li></ul></div>
       <div>{f'<h3 class="h4">{L("No incluye", "Not included")}</h3><ul class="nolist">{no}</ul>' if no else ''}
       {season}
       {f'<h3 class="h4">{L("Para saber más", "Learn more")}</h3><ul class="guidelist">{guide_html}</ul>' if guide_html else ''}
@@ -677,7 +683,7 @@ def tour_page(t):
 </section>
 
 {f"""<section class="tfotos" aria-labelledby="tf-t">{WAVE}
-  <header class="tfotos__head" data-rv><h2 class="h2 h2--light" id="tf-t">{L("Así se <em>vive</em>", "What it <em>looks</em> like")}</h2><p>{L("Fotos de la agencia en este tour. Desliza para ver más.", "The agency's photos on this tour. Swipe for more.")}</p></header>
+  <header class="tfotos__head" data-rv><h2 class="h2 h2--light" id="tf-t">{L("Así se <em>vive</em>", "What it <em>looks</em> like")}</h2><p>{L("Fotos de la agencia en este tour. Desliza para ver más.", "Our photos from this tour.")}</p></header>
   <div class="swiper tfsw" data-swiper="gallery" data-drag><div class="swiper-wrapper">{gallery}</div></div>
   <div class="snav snav--light"><button class="arrow arrow--light" type="button" data-prev aria-label="Foto anterior" data-aria-en="Previous photo">←</button><button class="arrow arrow--light" type="button" data-next aria-label="Foto siguiente" data-aria-en="Next photo">→</button></div>
 </section>""" if photos else ''}
@@ -699,7 +705,7 @@ def tour_page(t):
 <section class="tcot" id="cotizar" aria-labelledby="cot-t">{WAVE}
   <div class="tcot__in" data-rv>
     <h2 class="h2" id="cot-t">{L("Cotiza <em>este</em> tour", "Get a <em>quote</em>")}</h2>
-    <p class="tcot__sub">{L("Elige fecha y cuántas personas. Se abre WhatsApp con tu mensaje listo y te respondemos ahí.", "Pick a date and how many people. WhatsApp opens with your message ready and we reply there.")}</p>
+    <p class="tcot__sub">{L("Elige fecha y cuántas personas. Se abre WhatsApp con tu mensaje listo y te respondemos ahí.", "Choose a date and the number of people. WhatsApp opens with your message ready and we reply there.")}</p>
     <form class="tcot__f" data-wa-form data-tour="{e(t["short"])}">
       <label>{L("Fecha", "Date")}<input type="date" name="fecha" required></label>{f'<p class="tcot__warn">{L(d["season"])}</p>' if d.get('season') else ''}
       <label>{L("Personas", "People")}<input type="number" name="personas" min="1" max="16" value="2" required></label>
@@ -712,7 +718,7 @@ def tour_page(t):
 <section class="other" aria-labelledby="other-t">
   <div class="other__in" data-rv>
     <h2 class="h2" id="other-t">{L("¿Buscas <em>otro</em> tour?", "Looking for <em>another</em> tour?")}</h2>
-    <p class="other__p">{L("Estos se parecen a este. También puedes ver los 8.", "These are similar to this one. You can also see all 8.")}</p>
+    <p class="other__p">{L("Estos se parecen a este. También puedes ver los 8.", "Similar tours, or browse all 8.")}</p>
     {tour_list(P, rel, "tl--mini")}
     <p class="other__all">{btn(L("Ver los 8 tours", "See all 8 tours"), "/tours/", "btn btn--ink")}</p>
   </div>
@@ -720,7 +726,7 @@ def tour_page(t):
 <div class="mbar" data-mbar><span class="mbar__t">{price_short(t)}</span>{btn(L("Cotizar", "Quote"), "#cotizar", "btn btn--red btn--sm")}</div>'''
     page(P, f'{t["short"]} desde Castro · Turismo Chiloé Mágico', f'{EN.get(t["short"], t["short"])} from Castro · Turismo Chiloé Mágico',
          f'{t["short"]}: {d["que"].es} Día completo desde Castro con traslado, guiado, almuerzo y bebestibles.',
-         f'{t["short"]}: {d["que"].en} Full day from Castro with transport, guiding, lunch and drinks.', content, 'tour', wa_t, ld, preload_img(t['hero']))
+         f'{EN.get(t["short"], t["short"])}: {d["que"].en} Full day from Castro with transport, guiding, lunch and drinks.', content, 'tour', wa_t, ld, preload_img(t['hero']))
 
 
 def faq_items(P, items):
@@ -730,10 +736,12 @@ def faq_items(P, items):
         for a in answers:
             if a == '__pending__': parts += pending(P)
             elif a == '__pending_prices__': parts += f'<p>{L("Los demás tours: precio por confirmar con la agencia.", "Other tours: price to be confirmed with the agency.")}</p>'
-            elif a == '__costa__': parts += f'<p><a href="/tours/la-costa-curanto/">Tour La Costa</a>:</p>'
+            elif a == '__costa__': parts += f'<p><a href="/tours/la-costa-curanto/">{L("Tour La Costa", "La Costa Tour")}</a>:</p>'
             elif a == '__es_only__': parts += f'<p>{L("Español.", "Spanish.")}</p>'
             elif a == '__wa__': parts += f'<p>WhatsApp <a href="{wa_link("¡Hola! Quiero reservar un tour")}" target="_blank" rel="noopener">{SITE["wa_display"]}</a> · <a href="tel:+56998833946">{SITE["phone2"]}</a></p>'
-            else: parts += f'<p lang="{"en" if "RESEÑA" in getattr(a, "src", "") and a.isascii() else "es"}">{q(a, P)}</p>'
+            elif "RESEÑA" in getattr(a, "src", ""):
+                parts += f'<p><span lang="{"en" if a.isascii() else "es"}">“{q(a, P)}”</span> <small class="u-muted">{L("Reseña en Google", "Google review")}</small></p>'
+            else: parts += f'<p lang="es">{q(a, P)}</p>'
         out += f'<details class="faq"><summary>{L(qq)}</summary><div class="faq__a">{parts}</div></details>'
     return out
 
@@ -762,7 +770,7 @@ def destinos():
 <section class="related"><header class="pkgs__head"><p class="kicker">{L("Tours que pasan por aquí", "Tours that stop here")}</p></header>{trio([tour_tile(t, P, sizes="(max-width:760px) 100vw, 34vw") for t in ts])}</section>
 {booking_cta(P, f"¡Hola! Quiero conocer {d['name']}", d["imgs"][-1])}'''
         page(P, f'{d["name"]} · Turismo Chiloé Mágico', f'{d["name"]} · Turismo Chiloé Mágico',
-             f'Qué hacer en {d["name"]}, Chiloé: {", ".join(d["must"])}. Tours desde Castro.', f'Things to do in {d["name"]}, Chiloé. Tours from Castro.',
+             f'Qué hacer en {d["name"]}, Chiloé: {", ".join(d["must"])}. Tours desde Castro.', f'Things to do in {DEST_EN.get(d["name"], d["name"])}, Chiloé. Tours from Castro.',
              content, preload=preload_img(d['img']))
 
 
@@ -822,7 +830,7 @@ TR_EN = {
     'Con aire acondicionado': ('Air-conditioned', None),
     'Asientos reclinables para la siesta post almuerzo': ('Reclining seats for the after-lunch nap', None),
     'Transmite el amor por la tierra y la cultura chilota': ('Conveys a love for the land and Chilote culture', 'Chilote culture'),
-    'Nuestro marketing y publicidad más grande son nuestros turistas': ('Our biggest marketing and advertising are our travellers', 'travellers'),
+    'Nuestro marketing y publicidad más grande son nuestros turistas': ('Our travellers are our best advertising', 'travellers'),
     'Servicios privados': ('Private services', 'services'),
     'Para consultas y programaciones pueden hablarnos a nuestro WhatsApp': ('For questions and bookings, message us on WhatsApp', None),
 }
@@ -921,7 +929,7 @@ def servicios():
         (U('Grupos', 'Groups'), Q('Tremendo grupo nos tocó … que disfrutaron el Tour de La Costa🤩', '[IG-006]', fix='se omite «ayer»'), 'grupo-columpios'),
     ]
     tiles = [tile(k, wa_link("¡Hola! Quiero cotizar: " + t.es), L(t), f'<span lang="es">{q(x, P)}</span> · {L("Cotizar", "Get a quote")}', '', '', '(max-width:760px) 100vw, 34vw', 'target="_blank" rel="noopener"') for t, x, k in cards]
-    content = f'''{bleed_hero("vans", h1_lines((L("Traslados, privados", "Transfers, private"), False), (L("y grupos", "and groups"), True)), L("Servicios", "Services"), f'<p lang="es">{q(SITE["vans"], P)}</p>')}
+    content = f'''{bleed_hero("vans", h1_lines((L("Traslados, privados", "Transfers, private trips"), False), (L("y grupos", "and groups"), True)), L("Servicios", "Services"), f'<p lang="es">{q(SITE["vans"], P)}</p>')}
 {trio(tiles, "trio--tall")}
 <section class="sec narrow"><p class="note">{L("Recorridos, vehículos y tarifas de cada servicio: por confirmar con la agencia.", "Routes, vehicles and rates for each service: to be confirmed with the agency.")}</p></section>
 {booking_cta(P, "¡Hola! Quiero cotizar un servicio privado", "muelle-luz-grupo")}'''
@@ -937,13 +945,13 @@ def nosotros():
     meds = f'''<ul class="meds2 meds2--ab" data-rv aria-label="Datos de la agencia" data-aria-en="Agency facts">
   <li class="md2 md2--cream"><strong>+20</strong><span>{L("años de servicio", "years in service")}</span></li>
   <li class="md2 md2--sand"><strong>16</strong><span>{L("pasajeros máx. por van", "passengers max. per van")}</span></li>
-  <li class="md2 md2--blue"><strong>{SITE["rating"]}</strong><span>{L(f"en Google · {SITE['reviews_count']} reseñas", f"on Google · {SITE['reviews_count']} reviews")}</span></li>
+  <li class="md2 md2--blue"><strong>{L(SITE["rating"], SITE["rating_en"])}</strong><span>{L(f"en Google · {SITE['reviews_count']} reseñas", f"on Google · {SITE['reviews_count']} reviews")}</span></li>
 </ul>'''
     COPY.append((P, '+20 años de servicio', SITE['anos'].src, 'cifra tomada de «con más de 20 años de servicio»'))
     vid = f'''<video class="flota__v" muted playsinline loop preload="none" data-lazy-video data-poster="/assets/video/vans-poster.jpg" aria-label="{e(META['_videos']['vans']['alt'])}" data-aria-en="{e(ALT_EN['vid:vans'])}">
       <source data-src="/assets/video/vans.webm" type="video/webm"><source data-src="/assets/video/vans.mp4" type="video/mp4"></video>'''
     head = f'''<h2 class="h2 h2--light" id="rsec-t" lang="es">{qx(SITE["marketing"], "Nuestro marketing y publicidad más grande son nuestros turistas", P, em="turistas", fix="recorte; mayúscula inicial")}</h2>
-    <p class="rsec__sub">{STARS} {L(f"{SITE['rating']} en Google · {SITE['reviews_count']} reseñas. Las citas van en su idioma original.", f"{SITE['rating_en']} on Google · {SITE['reviews_count']} reviews. Quotes in their original language.")}</p>'''
+    <p class="rsec__sub">{STARS} {L(f"{SITE['rating']} en Google · {SITE['reviews_count']} reseñas. Las citas van en su idioma original.", f"{SITE['rating_en']} on Google · {SITE['reviews_count']} reviews. Reviews written in Spanish are translated.")}</p>'''
     content = f'''<section class="ab1" aria-labelledby="ab1-t">{WAVE}
   <div class="ab1__in">
     <div class="ab1__txt">
@@ -998,12 +1006,12 @@ def guia():
         P = f'/guia/{g["slug"]}/'
         ts = [TOURS[s] for s in g['tours']]
         crumbs = crumbs_html([f'<a href="/">{L("Inicio", "Home")}</a>', f'<a href="/guia/">{L("Guía", "Guide")}</a>', f'<span aria-current="page">{L(g["title"])}</span>'])
-        inner = ''.join(q(p, P, 'p') for p in g["paras"]) + f'<p class="note">{L("Fuente: publicaciones de @chiloemagicotour.", "Source: @chiloemagicotour posts.")}</p>'
+        inner = ''.join(q(p, P, 'p') for p in g["paras"]) + f'<p class="note">{L("Fuente: publicaciones de @chiloemagicotour.", "Source: posts by @chiloemagicotour.")}</p>'
         content = f'''{bleed_hero(g["img"], h1_lines((L(g["title"]), False)), L("Guía de Chiloé", "Chiloé guide"), '', crumbs, "tall")}
 <article class="art"><div class="art__body narrow">{inner}</div></article>
 {f'<section class="related"><header class="pkgs__head"><p class="kicker">{L("Vívelo en", "Experience it on")}</p></header>' + trio([tour_tile(t, P, sizes="(max-width:760px) 100vw, 34vw") for t in ts]) + '</section>' if ts else ''}'''
         page(P, f'{g["title"].es} · Guía de Chiloé', f'{g["title"].en} · Chiloé guide', f'{g["title"].es}: guía de Chiloé de Turismo Chiloé Mágico.',
-             f'{g["title"].en}: Chiloé guide by Turismo Chiloé Mágico.', content, preload=preload_img(g['img']))
+             f'{g["title"].en}{" " if g["title"].en.endswith("?") else ": "}Chiloé guide by Turismo Chiloé Mágico.', content, preload=preload_img(g['img']))
 
 
 def faq():
