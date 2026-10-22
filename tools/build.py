@@ -828,6 +828,7 @@ def pkg_card(p, P, mini=False):
         return f'''<li class="pk pk--mini" data-rv><a class="pk__a" href="/paquetes/#{p["slug"]}">
   <div class="pk__img">{bimg(v["img"], "(max-width:760px) 92vw, 30vw")}</div>
   <div class="pk__txt"><h3 class="pk__t" lang="es">{e(p["name"])}</h3><ul class="pk__chips">{chips}</ul>
+  <p class="pk__q" lang="es">{quote}</p>
   <span class="pk__go">{L("Ver paquete", "See package")} <span aria-hidden="true">→</span></span></div>
 </a></li>'''
     return f'''<li class="pk" id="{p["slug"]}" data-rv>
