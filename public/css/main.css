@@ -1457,3 +1457,8 @@ main:has(> .medida2:last-child) + .ftr{margin-top:0}
 }
 @media (max-width:760px){.pks,.pks--mini{max-width:560px}}
 @media (max-width:900px) and (min-width:761px){.pk__inset{display:none}}
+/* paquetes (azul) → video de la isla: la ola azul cae sobre el video, sin franja oscura */
+.pksec--home > .wave{display:none}
+.pksec--home{padding-bottom:calc(var(--gap)*.6)}
+.isla > .isla__topwave{z-index:6}
+.isla__topwave path{fill:var(--mar-hondo)!important}

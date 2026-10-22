@@ -547,7 +547,7 @@ def home():
   <p class="pksec__cta">{btn(f'{L("Ver paquetes", "See packages")} <span aria-hidden="true">→</span>', "/paquetes/", "btn btn--light")}</p>
 </section>
 
-<section class="isla" aria-labelledby="isla-t" data-isla>{WAVE}
+<section class="isla" aria-labelledby="isla-t" data-isla>{WAVE}<svg class="wave wave--top isla__topwave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,70 C360,10 820,0 1440,58 L1440,120 Z"/></svg>
   <div class="isla__stick">
     <div class="isla__blur" aria-hidden="true"><video class="isla__vbg" muted playsinline loop preload="none" data-lazy-video aria-hidden="true" tabindex="-1"><source data-src="/assets/video/isla.webm" type="video/webm"><source data-src="/assets/video/isla.mp4" type="video/mp4"></video></div>
     <video class="isla__v" muted playsinline loop preload="none" data-lazy-video data-poster="/assets/video/isla-poster.jpg" aria-label="{e(META['_videos']['isla']['alt'])}" data-aria-en="{e(ALT_EN['vid:isla'])}">
