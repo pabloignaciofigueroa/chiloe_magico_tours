@@ -1326,3 +1326,106 @@ main:has(> .rsec:last-child) + .ftr .ftr__wa{--bg:#fff;--fg:var(--turismo-hondo)
 .tsec--page{--next:var(--turismo-hondo)}
 .tsec + .bcta{margin-top:0}
 .tsec--page{padding-bottom:calc(var(--wv) + clamp(40px,5vw,72px))}
+
+/* ================= Paquetes, Nosotros y sus bloques en la home (oct-2026) ================= */
+.wave--top{top:-1px;bottom:auto;transform:scaleY(-1)}
+/* tarjetas de paquete */
+.pks{list-style:none;margin:0 auto;padding:0 var(--g);max-width:calc(var(--max) + 2*var(--g));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px);align-items:stretch}
+.pk{position:relative;min-width:0;background:#fff;color:var(--tinta);border-radius:var(--r);overflow:clip;display:flex;flex-direction:column;box-shadow:0 18px 40px -22px rgba(0,0,0,.45);scroll-margin-top:100px}
+.pk__img{position:relative;aspect-ratio:4/5;background:var(--bruma);overflow:clip}
+.pk__img .bleed__img{position:absolute;inset:0;transition:transform 1.2s var(--ease)}
+.pk__inset{position:absolute;right:18px;bottom:18px;width:36%;background:#fff;padding:7px 7px 24px;transform:rotate(5deg);box-shadow:0 14px 30px -12px rgba(0,0,0,.55);z-index:2}
+.pk__inset img{width:100%;aspect-ratio:1;object-fit:cover}
+.pk .credit{left:12px;right:auto;text-align:left}
+.pk__txt{display:flex;flex-direction:column;gap:14px;flex:1;padding:clamp(20px,2vw,30px)}
+.pk__t{font:400 clamp(28px,2.5vw,40px)/1 var(--f-display);text-transform:uppercase;margin:0;text-wrap:balance}
+.pk__chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.pk__chips li{background:var(--niebla);border-radius:999px;padding:8px 13px;font:600 13px/1 var(--f-text)}
+.pk__q{margin:0;font-size:var(--t4);line-height:1.55}
+.pk__note{margin:auto 0 0;padding-top:6px;font:600 14px/1.3 var(--f-text);color:var(--musgo)}
+.pk__btn{width:100%;min-height:58px;padding:0 24px;font:700 17px/1 var(--f-text);letter-spacing:.02em;text-transform:none}
+.pk__btn [aria-hidden]{font-size:20px;margin-left:8px}
+@media (min-width:1100px){.pk__btn{min-height:54px;font-size:16px}}
+.pk:hover .pk__img .bleed__img{transform:scale(1.04)}
+.pksec{position:relative;background:var(--mar-hondo);color:#fff;--next:var(--turismo-hondo);padding:clamp(24px,3vw,48px) 0 calc(var(--gap)*.8 + var(--wv))}
+.pksec__note{margin:clamp(24px,3vw,40px) var(--g) 0;text-align:center;font-size:14px;opacity:.88}
+.phead2--pk{background:var(--mar-hondo)}
+@media (max-width:900px){.pks{grid-template-columns:1fr;max-width:620px}.pk__img{aspect-ratio:4/3}.pk__inset{width:30%}}
+/* paquetes en la home: tarjeta corta, todo es enlace */
+.tsec:has(+ .pksec){--next:var(--mar-hondo)}
+.pksec--home{--next:#173f5c;padding-top:clamp(56px,7vw,110px)}
+.pksec .h2{color:#fff}.pksec .tsec__lead{color:#fff}
+.pk--mini .pk__a{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none}
+.pk--mini .pk__img{aspect-ratio:4/3}
+.pk--mini .pk__txt{gap:12px}
+.pk--mini .pk__t{font-size:clamp(24px,2vw,32px)}
+.pk__go{margin-top:auto;font:700 16px/1 var(--f-text);color:var(--turismo-hondo)}
+.pk--mini:hover .pk__img .bleed__img{transform:scale(1.04)}
+.pksec__cta{text-align:center;margin:clamp(28px,3vw,48px) 0 0}
+@media (max-width:900px){.pks--mini{max-width:none}.pk--mini .pk__a{display:grid;grid-template-columns:132px minmax(0,1fr)}.pk--mini .pk__img{aspect-ratio:auto;min-height:150px}.pk--mini .pk__txt{padding:16px}.pk--mini .pk__t{font-size:22px}}
+/* servicios privados: banda roja con el formulario */
+.medida2{position:relative;background:var(--turismo-hondo);color:#fff;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,5vw,88px);align-items:center;padding:var(--gap) max(var(--g),calc((100% - var(--max))/2)) calc(var(--gap) + 20px);overflow:clip}
+.medida2 .h2{color:#fff;max-width:10ch}
+.medida2 .h2 em{color:var(--sol)}
+.medida2__p{font-size:var(--t4);max-width:34ch;margin:20px 0 0}
+.medida2 .form{box-shadow:0 24px 50px -24px rgba(0,0,0,.5);color:var(--tinta)}
+.medida2 .gull{position:absolute;width:clamp(60px,7vw,110px);left:clamp(24px,38vw,560px);top:clamp(24px,5vw,70px);transform:rotate(-12deg)}
+main:has(> .medida2:last-child) + .ftr{margin-top:0}
+@media (max-width:860px){.medida2{grid-template-columns:1fr}.medida2 .gull{left:auto;right:24px}}
+/* nosotros 1: portada roja con datos y polaroids */
+.ab1{position:relative;background:var(--turismo-hondo);color:#fff;--next:var(--isla);padding:clamp(120px,15vh,170px) var(--g) calc(var(--gap)*.75 + var(--wv))}
+.ab1__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.ab1 .h1{color:#fff;max-width:9ch}
+.ab1 .h1 em{color:var(--sol)}
+.ab1__p{font-size:var(--t4);max-width:38ch;margin:20px 0 clamp(28px,3vw,44px)}
+.meds2--ab{padding:0;margin:0;max-width:none}
+@media (max-width:860px){.ab1__in{grid-template-columns:1fr}}
+/* nosotros 2: la magia, título grande y polaroids */
+.ab2{position:relative;background:var(--isla);color:#fff;--next:var(--mar-hondo);padding:var(--gap) 0 calc(var(--gap) + var(--wv));overflow:clip}
+.ab2__head{max-width:calc(var(--max) + 2*var(--g));margin:0 auto;padding:0 var(--g)}
+.ab2 .h2{color:#fff;max-width:17ch}
+.ab2 .h2 em{color:var(--sol)}
+.ab2__p{font-size:var(--t4);max-width:52ch;margin:22px 0 0}
+.pstrip{list-style:none;margin:clamp(44px,5vw,80px) auto 0;padding:0 var(--g);max-width:calc(var(--max) + 2*var(--g));display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2.2vw,36px)}
+.pol3{background:#fff;padding:10px 10px 36px;box-shadow:0 18px 40px -16px rgba(0,0,0,.5)}
+.pol3 img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.pol3:nth-child(1){transform:rotate(-4deg)}.pol3:nth-child(2){transform:rotate(3deg) translateY(28px)}.pol3:nth-child(3){transform:rotate(-2deg)}.pol3:nth-child(4){transform:rotate(5deg) translateY(22px)}
+@media (max-width:760px){.pstrip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* nosotros 3: la flota, video vertical tipo celular */
+.ab3{position:relative;background:var(--mar-hondo);color:#fff;--next:var(--niebla);padding:var(--gap) var(--g) calc(var(--gap) + var(--wv))}
+.ab3__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,96px);align-items:center}
+.ab3__phone{width:min(330px,68vw);aspect-ratio:9/16;margin:0 auto;border:10px solid #fff;border-radius:38px;overflow:clip;background:#173f5c url(/assets/video/vans-poster.jpg) center/cover;box-shadow:0 30px 60px -24px rgba(0,0,0,.6);transform:rotate(-4deg)}
+.flota__v{width:100%;height:100%;object-fit:cover}
+.ab3 .h2{color:#fff;max-width:14ch}
+.ab3 .h2 em{color:var(--sol)}
+.ab3__list{list-style:none;margin:clamp(24px,3vw,40px) 0 0;padding:0;display:grid;gap:14px}
+.ab3__list li{display:flex;align-items:center;gap:14px;font:600 clamp(17px,1.4vw,21px)/1.35 var(--f-text)}
+.ab3__list li::before{content:"";flex:none;width:14px;height:14px;border-radius:50%;background:var(--sol)}
+@media (max-width:860px){.ab3__in{grid-template-columns:1fr}.ab3__txt{order:-1}}
+/* nosotros 4: el equipo */
+.ab4{position:relative;background:var(--niebla);--next:var(--tinta);padding:var(--gap) var(--g) calc(var(--gap) + var(--wv))}
+.ab4__head{max-width:var(--max);margin:0 auto clamp(32px,4vw,60px)}
+.ab4 .h2{max-width:17ch}
+.ab4__by{margin:16px 0 0;font:600 14px/1.4 var(--f-text);color:var(--musgo)}
+.team2{list-style:none;max-width:var(--max);margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.4vw,18px)}
+.team2 li{background:#fff;border-radius:var(--r);padding:clamp(18px,2vw,26px);display:flex;flex-direction:column;gap:8px;border-top:6px solid var(--isla);box-shadow:0 14px 30px -22px rgba(0,0,0,.4)}
+.team2 li:nth-child(4n+2){border-top-color:var(--turismo)}.team2 li:nth-child(4n+3){border-top-color:var(--mar)}.team2 li:nth-child(4n+4){border-top-color:var(--sol)}
+.team2__n{font:400 clamp(26px,2.4vw,38px)/1 var(--f-display);text-transform:uppercase}
+.team2__r{font:700 12px/1 var(--f-text);letter-spacing:.14em;text-transform:uppercase;color:var(--musgo)}
+@media (max-width:760px){.team2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ab4 + .rsec .h2{max-width:20ch}
+/* nosotros en la home */
+.abh{position:relative;background:var(--niebla);--next:var(--tinta);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,88px);align-items:center;padding:calc(var(--gap) + var(--wv)) max(var(--g),calc((100% - var(--max))/2)) calc(var(--gap) + var(--wv))}
+.abh .h2{max-width:9ch}
+.abh__p{font-size:var(--t4);max-width:36ch;margin:20px 0 0}
+.abh__cta{margin:clamp(24px,3vw,36px) 0 0}
+@media (max-width:860px){.abh{grid-template-columns:1fr}}
+.pk__img{aspect-ratio:1}
+.pksec{padding-bottom:calc(var(--gap)*.5 + var(--wv))}
+.medida2 .gull{left:auto;right:calc(50% + 40px);top:clamp(40px,9vw,140px)}
+.ab3__media{position:relative;max-width:520px;margin:0 auto;width:100%}
+.ab3__pol{position:absolute;width:52%;right:-4%;bottom:-6%;transform:rotate(6deg);z-index:2}
+.ab3__pol img{aspect-ratio:4/3}
+@media (max-width:860px){.ab3__pol{width:46%;right:0}}
+.abh .wave--top path{fill:#173f5c}
+.abh{padding-top:calc(var(--gap)*.8 + var(--wv))}

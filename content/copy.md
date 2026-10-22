@@ -4,7 +4,13 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 
 - `/` título de interfaz: «Tours en Chiloé desde Castro»
 - `/` [BIO]: «Nuestro archipiélago es mágico. ¡Ven a descubrirlo!» — corrección: se agrega el punto antes de ¡
+- `/` [IG-016]: «Servicio de turismo, traslado y viajes privados» — corrección: recorte; mayúscula inicial
+- `/` [IG-016]: «Otra salida marcada por innumerable recuerdos» — corrección: recorte del texto original
+- `/` [IG-031]: «Recorrido de Castro al volcán Osorno, visitando Salto de Petrohué y el Lago Todos los Santos» — corrección: mayúsculas y tilde en nombres propios; sin emoji
+- `/` [IG-030]: «La nieve, paisajes hermosos y todo lo que San Carlos de Bariloche puede ofrecer» — corrección: recorte del texto original
 - `/` [IG-015]: «¿Vamos a navegar?» — corrección: se agrega el signo de apertura ¿; sin emojis
+- `/` [IG-017]: «Somos Chiloé Mágico» — corrección: recorte del texto original
+- `/` [IG-032]: «Somos una empresa dedicada al rubro turístico, con más de 20 años de servicio» — corrección: recorte del texto original
 - `/` [RESEÑA Javiera Blanco, Google]: «…Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día.…» — corrección: sin emojis
 - `/` [RESEÑA Zarana Bayona, Google]: «Sandra was a great tour guide and really showed us the charm of chiloe. The agency has great communication and were very accommodating with our last minute reservation. Everything ran smoothly. They were able to add vegetarian meals at the restaurant.»
 - `/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota.…» — corrección: sin emojis
@@ -189,11 +195,13 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/experiencias/mitos/` [BIO]: «Chiloé Mágico te espera. ¡Ven a descubrirlo!» — corrección: puntuación: «te espera, Ven a descubrirlo!»
 - `/experiencias/mitos/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/experiencias/mitos/` [BIO]: «Lu a Do | 9:00 a 19:30»
-- `/paquetes/` [IG-016]: «Otra salida marcada por innumerable recuerdos, una agradecimiento a nuestros amigos por contar con nosotros, excursión Valdivia y Niebla 4 días - 3 noches» — corrección: sin emojis
-- `/paquetes/` [IG-031]: «recorrido de castro al volcán Osorno, visitando salto de petrohue y el lago todos los santos, no te pierdas de esta increíble experiencia para vivirla junto a tus familiares y amigos» — corrección: sin emojis
-- `/paquetes/` [IG-030]: «La nieve, paisajes hermosos y todo lo que San Carlos de Bariloche puede ofrecer....... los esperamos para repetir esta experiencia»
-- `/paquetes/` [IG-016]: «Chiloe Magico Tour, servicio de turismo, traslado y viajes privados»
-- `/paquetes/` [IG-033]: «Contamos con salidas diarias a distintos paramos de este fantástico archipiélago, para consultas y programaciones pueden hablarnos a nuestro WhatsApp»
+- `/paquetes/` título de interfaz (nombre del menú): «Paquetes»
+- `/paquetes/` [IG-016]: «Otra salida marcada por innumerable recuerdos» — corrección: recorte del texto original
+- `/paquetes/` [IG-031]: «Recorrido de Castro al volcán Osorno, visitando Salto de Petrohué y el Lago Todos los Santos» — corrección: mayúsculas y tilde en nombres propios; sin emoji
+- `/paquetes/` [IG-030]: «La nieve, paisajes hermosos y todo lo que San Carlos de Bariloche puede ofrecer» — corrección: recorte del texto original
+- `/paquetes/` [IG-016]: «Servicio de turismo, traslado y viajes privados» — corrección: recorte; mayúscula inicial
+- `/paquetes/` [BIO]: «Servicios privados»
+- `/paquetes/` [IG-033]: «Para consultas y programaciones pueden hablarnos a nuestro WhatsApp» — corrección: recorte; mayúscula inicial
 - `/paquetes/` [BIO]: «Chiloé Mágico te espera. ¡Ven a descubrirlo!» — corrección: puntuación: «te espera, Ven a descubrirlo!»
 - `/paquetes/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/paquetes/` [BIO]: «Lu a Do | 9:00 a 19:30»
@@ -207,14 +215,17 @@ Cada texto visible de la marca, la página donde aparece y su fuente. La interfa
 - `/servicios/` [DEST-H7]: «Gamboa 351, Local Interior 116 (Frente a Plaza de Armas Castro)»
 - `/servicios/` [BIO]: «Lu a Do | 9:00 a 19:30»
 - `/nosotros/` nombres en posts y reseñas: [IG-023][IG-070][RESEÑA] [RESEÑA] [IG-004][RESEÑA] [RESEÑA] [IG-069] [IG-060][RESEÑA] [RESEÑA] [RESEÑA]: «Nicolás, Alberto, Meli, Sandra, Rodolfo, Don Enrique, Marcelo, Marco»
-- `/nosotros/` [IG-032]: «Somos una empresa dedicada al rubro turístico, con más de 20 años de servicio, en la cuál, trabajamos con los más altos estandares y productos de calidad....»
-- `/nosotros/` [IG-042]: «Cuando hablamos de Chiloé Mágico, no sólo nos referimos a las mil y un historias que se cuentan sobre mitos, leyendas y brujería» — corrección: sin emojis
-- `/nosotros/` [IG-042]: «Magia también es ver la sonrisa de nuestros amigos turistas al final de un largo día de tour» — corrección: sin emojis
-- `/nosotros/` [IG-002]: «nuestro marketing y publicidad más grande son nuestros turistas que cuentan sus experiencias con nosotros y por eso les agradecemos.» — corrección: sin emojis
-- `/nosotros/` [IG-002]: «Chiloe es inolvidable y lo puedes sentir por qué aunque se repita el viaje la experiencia es única e irrepetible»
-- `/nosotros/` [IG-007]: «Cada van viaja con un máximo de 16 pasajeros y su propio guía, para entregarles un servicio aún más personalizado!»
-- `/nosotros/` [IG-017]: «Somos Chiloé Mágico! Una empresa dedicada a entregarte la mejor experiencia en nuestro archipiélago. Ven a conocer esta majestuosa zona insular junto a nosotros!»
-- `/nosotros/` [IG-023]: «Nuestro guía Nicolás junto a don Enrique siempre enfocados en brindarle la mejor experiencia a nuestros turistas!»
+- `/nosotros/` [IG-032]: «+20 años de servicio» — corrección: cifra tomada de «con más de 20 años de servicio»
+- `/nosotros/` [IG-002]: «Nuestro marketing y publicidad más grande son nuestros turistas» — corrección: recorte; mayúscula inicial
+- `/nosotros/` [IG-017]: «Somos Chiloé Mágico» — corrección: recorte del texto original
+- `/nosotros/` [IG-017]: «Una empresa dedicada a entregarte la mejor experiencia en nuestro archipiélago.» — corrección: recorte del texto original
+- `/nosotros/` [IG-042]: «Magia también es ver la sonrisa de nuestros amigos turistas» — corrección: recorte del texto original
+- `/nosotros/` [IG-042]: «No sólo nos referimos a las mil y un historias que se cuentan sobre mitos, leyendas y brujería» — corrección: recorte; mayúscula inicial; sin emoji
+- `/nosotros/` [IG-007]: «Conductores que además de profesionales son wena onda!» — corrección: recorte; mayúscula inicial
+- `/nosotros/` [IG-007]: «Un máximo de 16 pasajeros y su propio guía» — corrección: recorte del texto original
+- `/nosotros/` [IG-007]: «Con aire acondicionado» — corrección: recorte del texto original
+- `/nosotros/` [IG-007]: «Asientos reclinables para la siesta post almuerzo» — corrección: recorte; mayúscula inicial
+- `/nosotros/` [RESEÑA]: «Transmite el amor por la tierra y la cultura chilota» — corrección: recorte de reseña de Google
 - `/nosotros/` [RESEÑA Javiera Blanco, Google]: «…Respecto a los lugares que conocimos, todos tenían un sentido, todos los lugares maravillosos. Nuestros favoritos, la casa de don Hugo con el asado de cordero y el perrito Simón, la Isla Aucar, Chonchi y su museo del acordeón, pero muy especialmente ese exquisito Curanto al Hoyo inolvidable del segundo día.…» — corrección: sin emojis
 - `/nosotros/` [RESEÑA Zarana Bayona, Google]: «Sandra was a great tour guide and really showed us the charm of chiloe. The agency has great communication and were very accommodating with our last minute reservation. Everything ran smoothly. They were able to add vegetarian meals at the restaurant.»
 - `/nosotros/` [RESEÑA Andrea Della Penna, Google]: «Tuvimos un día completo de tour a la isla de Lemuy. Super puntuales, muy agradable el trato en todo momento. Alberto, el guía lo da todo, explica y atiende cada pregunta, está atento a todo. Transmite el amor por la tierra y la cultura chilota.…» — corrección: sin emojis

@@ -446,7 +446,7 @@ def tour_list(P, items, cls='', h='h3'):
     return f'<ul class="tl {cls}">' + ''.join(trow(t, P, h=h) for t in items) + '</ul>'
 
 
-def reviews_solid(page, items):
+def reviews_solid(page, items, head=None):
     slides = ''
     for r in items:
         frm = f' · <span lang="es">desde {e(r["from"])}</span>' if r.get('from') else ''
@@ -456,8 +456,8 @@ def reviews_solid(page, items):
                    f'<figcaption><strong>{e(r["name"])}</strong>{frm} · {L("vía Google", "via Google")}{tour}</figcaption></figure>')
     return f'''<section class="rsec" aria-labelledby="rsec-t">{WAVE}
   <header class="rsec__head" data-rv>
-    <h2 class="h2 h2--light" id="rsec-t">{L(f"{SITE['rating']} <em>en</em> Google", f"{SITE['rating_en']} <em>on</em> Google")}</h2>
-    <p class="rsec__sub">{STARS} {L(f"{SITE['reviews_count']} reseñas de viajeros. Las citas van en su idioma original.", f"{SITE['reviews_count']} traveller reviews. Quotes in their original language.")}</p>
+    {head or f'''<h2 class="h2 h2--light" id="rsec-t">{L(f"{SITE['rating']} <em>en</em> Google", f"{SITE['rating_en']} <em>on</em> Google")}</h2>
+    <p class="rsec__sub">{STARS} {L(f"{SITE['reviews_count']} reseñas de viajeros. Las citas van en su idioma original.", f"{SITE['reviews_count']} traveller reviews. Quotes in their original language.")}</p>'''}
   </header>
   <div class="swiper rsec__sw" data-swiper="reviews" data-drag><div class="swiper-wrapper">{slides}</div></div>
   <div class="snav snav--light"><button class="arrow arrow--light" type="button" data-prev aria-label="Reseña anterior" data-aria-en="Previous review">←</button><button class="arrow arrow--light" type="button" data-next aria-label="Reseña siguiente" data-aria-en="Next review">→</button>
@@ -532,6 +532,15 @@ def home():
   {tour_list(P, D.TOURS)}
 </section>
 
+<section class="pksec pksec--home" aria-labelledby="pkh-t">{WAVE}
+  <header class="tsec__head" data-rv>
+    <h2 class="h2" id="pkh-t">{L("Paquetes", "Packages")}</h2>
+    <p class="tsec__lead" lang="es">{qx(SITE["privados"], "Servicio de turismo, traslado y viajes privados", P, fix="recorte; mayúscula inicial")}</p>
+  </header>
+  <ul class="pks pks--mini">{''.join(pkg_card(p, P, mini=True) for p in D.PAQUETES)}</ul>
+  <p class="pksec__cta">{btn(f'{L("Ver paquetes", "See packages")} <span aria-hidden="true">→</span>', "/paquetes/", "btn btn--light")}</p>
+</section>
+
 <section class="isla" aria-labelledby="isla-t" data-isla>
   <div class="isla__stick">
     <div class="isla__blur" aria-hidden="true"><video class="isla__vbg" muted playsinline loop preload="none" data-lazy-video aria-hidden="true" tabindex="-1"><source data-src="/assets/video/isla.webm" type="video/webm"><source data-src="/assets/video/isla.mp4" type="video/mp4"></video></div>
@@ -544,6 +553,15 @@ def home():
       <h2 class="isla__h" id="isla-t" lang="es">{q(Q("¿Vamos a navegar? 🌊", "[IG-015]", fix="se agrega el signo de apertura ¿"), P)}</h2>
       <p class="isla__q">{L("Entre los islotes de Puñihuil, donde anidan los pingüinos.", "Among the Puñihuil islets, where the penguins nest.")} <a href="{tour_href(TOURS["pinguineras-punihuil"])}">{L("Ver el tour", "See the tour")} →</a></p>
     </div>
+  </div>
+</section>
+
+<section class="abh" aria-labelledby="abh-t">{wave("#173f5c", True)}{WAVE}
+  <div class="bcta__pols abh__pols" aria-hidden="true"><div class="pol2 pol2--a">{bimg("nicolas-enrique", "(max-width:760px) 60vw, 26vw")}</div><div class="pol2 pol2--b">{bimg("grupo-van", "(max-width:760px) 50vw, 22vw")}</div><div class="pol2 pol2--c">{bimg("brujos-vuelo", "(max-width:760px) 44vw, 18vw")}</div></div>
+  <div class="abh__txt" data-rv>
+    <h2 class="h2" id="abh-t" lang="es">{qx(SITE["somos"], "Somos Chiloé Mágico", P, em="Mágico")}</h2>
+    <p class="abh__p" lang="es">{qx(SITE["anos"], "Somos una empresa dedicada al rubro turístico, con más de 20 años de servicio", P)}</p>
+    <p class="abh__cta">{btn(f'{L("Conócenos", "About us")} <span aria-hidden="true">→</span>', "/nosotros/", "btn btn--red")}</p>
   </div>
 </section>
 
@@ -768,6 +786,66 @@ def experiencias():
 
 
 # ------------------------------------------------------------------ PAQUETES, SERVICIOS, NOSOTROS, GUÍA, FAQ, CONTACTO
+def _norm(t):
+    return re.sub(r'\s+', ' ', noemoji(str(t))).strip().lower()
+
+
+def qx(src, part, P, em=None, fix='recorte del texto original'):
+    """Recorte literal de un texto de la marca: debe estar contenido tal cual en la fuente."""
+    if _norm(part).strip(' .!¡?¿') not in _norm(src):
+        raise SystemExit(f'qx: «{part}» no está en la fuente {src.src}')
+    COPY.append((P, part, src.src, fix))
+    h = e(part)
+    if em:
+        h = h.replace(e(em), f'<em>{e(em)}</em>', 1)
+    return h
+
+
+PKG_VIEW = {
+    'valdivia-niebla': dict(img='valdivia', inset='valdivia-2',
+        quote=('Otra salida marcada por innumerable recuerdos', None),
+        chips=[U('4 días · 3 noches', '4 days · 3 nights')]),
+    'nieve-volcan-osorno': dict(img='osorno', inset=None,
+        quote=('Recorrido de Castro al volcán Osorno, visitando Salto de Petrohué y el Lago Todos los Santos', 'mayúsculas y tilde en nombres propios; sin emoji'),
+        chips=[U('Salto de Petrohué', 'Petrohué Falls'), U('Lago Todos los Santos', 'Todos los Santos Lake')]),
+    'bariloche': dict(img='nieve', inset='nieve-2',
+        quote=('La nieve, paisajes hermosos y todo lo que San Carlos de Bariloche puede ofrecer', None),
+        chips=[U('Nieve', 'Snow'), U('Argentina', 'Argentina')]),
+}
+
+
+def pkg_card(p, P, mini=False):
+    v = PKG_VIEW[p['slug']]
+    txt, fix = v['quote']
+    if fix:
+        COPY.append((P, txt, {'nieve-volcan-osorno': '[IG-031]'}[p['slug']], fix))
+        quote = e(txt)
+    else:
+        quote = qx(p['text'], txt, P)
+    inset = f'<div class="pk__inset" aria-hidden="true">{img(v["inset"], "160px")}</div>' if v['inset'] and not mini else ''
+    chips = ''.join(f'<li>{L(c)}</li>' for c in v['chips'])
+    if mini:
+        return f'''<li class="pk pk--mini" data-rv><a class="pk__a" href="/paquetes/#{p["slug"]}">
+  <div class="pk__img">{bimg(v["img"], "(max-width:760px) 92vw, 30vw")}</div>
+  <div class="pk__txt"><h3 class="pk__t" lang="es">{e(p["name"])}</h3><ul class="pk__chips">{chips}</ul>
+  <span class="pk__go">{L("Ver paquete", "See package")} <span aria-hidden="true">→</span></span></div>
+</a></li>'''
+    return f'''<li class="pk" id="{p["slug"]}" data-rv>
+  <div class="pk__img">{bimg(v["img"], "(max-width:760px) 92vw, 31vw")}{inset}{credit(v["img"])}</div>
+  <div class="pk__txt">
+    <h2 class="pk__t" lang="es">{e(p["name"])}</h2>
+    <ul class="pk__chips">{chips}</ul>
+    <p class="pk__q" lang="es">{quote}</p>
+    <p class="pk__note">{L("Itinerario y precio por WhatsApp", "Itinerary and price on WhatsApp")}</p>
+    {btn(f'{L("Cotizar", "Get a quote")} <span aria-hidden="true">→</span>', wa_link(f"¡Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--red pk__btn", True)}
+  </div>
+</li>'''
+
+
+def polaroids(keys, cls='pstrip'):
+    return f'<ul class="{cls}" aria-hidden="true">' + ''.join(f'<li class="pol3">{img(k, "(max-width:760px) 44vw, 22vw")}</li>' for k in keys) + '</ul>'
+
+
 def wa_form(P, kind):
     return f'''<form class="form" data-wa-form data-kind="{kind}">
   <label>{L("Nombre", "Name")}<input name="nombre" autocomplete="name" required></label>
@@ -781,24 +859,29 @@ def wa_form(P, kind):
 
 def paquetes():
     P = '/paquetes/'
-    items = ''
-    for p in D.PAQUETES:
-        extra = q(p['extra'], P, 'p') if p.get('extra') else ''
-        inner = f'''<p class="kicker">{L(p["days"])}</p><h2 class="h2" lang="es">{e(p["name"])}</h2>{q(p["text"], P, "p")}{extra}
-<p class="note">{L("Itinerario y precio: te los enviamos por WhatsApp.", "Itinerary and price: we send them on WhatsApp.")}</p>
-<p>{btn(f'{L("Cotizar", "Get a quote")} <span aria-hidden="true">→</span>', wa_link(f"¡Hola! Quiero cotizar el viaje {p['name']}"), "btn btn--red btn--pkg", True)}</p>'''
-        if p['imgs']:
-            items += sticky_split(p['imgs'][0], inner, 'right' if items.count('<section class="ssplit') % 2 == 0 else 'left', force_sm=True)
-        else:
-            items += f'<section class="ssplit ssplit--flat"><div class="ssplit__media ssplit__media--flat" aria-hidden="true"><span>❄</span></div><div class="ssplit__txt">{inner}</div></section>'
-    content = f'''{bleed_hero("valdivia-2" if META["valdivia-2"]["w"] > 1200 else "ancud-atardecer", h1_lines((L("Viajes de varios días", "Multi-day trips"), False)), L("Paquetes", "Packages"),
-        f'<p lang="es">{q(SITE["privados"], P)}</p><p class="note note--light">{L("Viajes que ya hemos realizado. Próximas salidas y valores: por confirmar.", "Trips we have already run. Next departures and prices: to be confirmed.")}</p>')}
-{items}
-<section class="sec medida" id="a-medida"><div><p class="kicker">{L("A medida", "Custom")}</p><h2 class="h2">{L("Arma tu viaje", "Plan your trip")}</h2>
-<p lang="es">{q(SITE["diarias"], P)}</p></div>{wa_form(P, "a medida")}</section>'''
+    COPY.append((P, 'Paquetes', 'título de interfaz (nombre del menú)', None))
+    cards = ''.join(pkg_card(p, P) for p in D.PAQUETES)
+    content = f'''<section class="phead2 phead2--pk">
+  <div class="phead2__in">
+    <h1 class="h1">{L("Paquetes", "Packages")}</h1>
+    <p class="phead2__p" lang="es">{qx(SITE["privados"], "Servicio de turismo, traslado y viajes privados", P, fix="recorte; mayúscula inicial")}</p>
+  </div>
+</section>
+<section class="pksec" aria-label="Paquetes" data-aria-en="Packages">{WAVE}
+  <ul class="pks">{cards}</ul>
+  <p class="pksec__note">{L("Viajes que ya hemos realizado. Próximas salidas y valores: por confirmar.", "Trips we have already run. Next departures and prices: to be confirmed.")}</p>
+</section>
+<section class="medida2" id="a-medida" aria-labelledby="medida-t">
+  {GULL}
+  <div class="medida2__txt" data-rv>
+    <h2 class="h2" id="medida-t" lang="es">{qx(Q("Servicios privados", "[BIO]"), "Servicios privados", P, em="privados", fix=None)}</h2>
+    <p class="medida2__p" lang="es">{qx(SITE["diarias"], "Para consultas y programaciones pueden hablarnos a nuestro WhatsApp", P, fix="recorte; mayúscula inicial")}</p>
+  </div>
+  <div class="medida2__f" data-rv>{wa_form(P, "a medida")}</div>
+</section>'''
     page(P, 'Paquetes y viajes de varios días · Turismo Chiloé Mágico', 'Multi-day packages · Turismo Chiloé Mágico',
-         'Excursión Valdivia y Niebla 4 días, circuito a la nieve al Volcán Osorno, Bariloche y viajes a medida desde Castro.',
-         'Valdivia and Niebla 4-day trip, snow circuit to Osorno Volcano, Bariloche and custom trips from Castro.', content)
+         'Excursión Valdivia y Niebla 4 días, circuito a la nieve al Volcán Osorno, Bariloche y viajes privados desde Castro.',
+         'Valdivia and Niebla 4-day trip, snow circuit to Osorno Volcano, Bariloche and private trips from Castro.', content)
 
 
 def servicios():
@@ -819,21 +902,59 @@ def servicios():
 
 def nosotros():
     P = '/nosotros/'
-    team = ''.join(f'<li><span class="team__n" lang="es">{e(m["name"])}</span><span class="team__r">{L(m["role"])}</span></li>' for m in D.TEAM)
+    team = ''.join(f'<li><span class="team2__n" lang="es">{e(m["name"])}</span><span class="team2__r">{L(m["role"])}</span></li>' for m in D.TEAM)
     COPY.append((P, ', '.join(m['name'] for m in D.TEAM), 'nombres en posts y reseñas: ' + ' '.join(m['src'] for m in D.TEAM), None))
-    inner = f'''<p lang="es">{q(SITE["anos"], P)}</p><p lang="es">{q(SITE["magia"], P)}</p><p lang="es">{q(SITE["magia2"], P)}</p>
-  <blockquote class="pull" lang="es">“{q(SITE["marketing"], P)}”</blockquote><p lang="es">{q(SITE["irrepetible"], P)}</p>
-  <h2 class="h3">{L("Flota", "Fleet")}</h2><p lang="es">{q(SITE["van16"], P)}</p>
-'''
-    content = f'''{bleed_hero("tocoihue-viajeros", '<h1 class="h1 h1--light" lang="es" data-lines><span class="line"><span>SOMOS CHILOÉ MÁGICO</span></span></h1>', L("Nosotros", "About us"), f'<p lang="es">{q(SITE["somos"], P)}</p>')}
-{sticky_split("nicolas-enrique", inner, "left")}
-<section class="sec team"><header class="sec__head"><p class="kicker">{L("Equipo", "Team")}</p><h2 class="h2">{L("Guías y conductores", "Guides and drivers")}</h2>
-<p class="lead">{L("Los nombres que los viajeros mencionan en sus reseñas de Google.", "The names travellers mention in their Google reviews.")}</p></header>
-<ul class="team__list">{team}</ul>
-<p class="team__cap" lang="es">{q(Q("Nuestro guía Nicolás junto a don Enrique siempre enfocados en brindarle la mejor experiencia a nuestros turistas!", "[IG-023]"), P)}</p></section>
-{reviews_solid(P, D.REVIEWS[:6])}'''
+    andrea = next(r for r in D.REVIEWS if r['name'] == 'Andrea')
+    meds = f'''<ul class="meds2 meds2--ab" data-rv aria-label="Datos de la agencia" data-aria-en="Agency facts">
+  <li class="md2 md2--cream"><strong>+20</strong><span>{L("años de servicio", "years in service")}</span></li>
+  <li class="md2 md2--sand"><strong>16</strong><span>{L("pasajeros máx. por van", "passengers max. per van")}</span></li>
+  <li class="md2 md2--blue"><strong>{SITE["rating"]}</strong><span>{L(f"en Google · {SITE['reviews_count']} reseñas", f"on Google · {SITE['reviews_count']} reviews")}</span></li>
+</ul>'''
+    COPY.append((P, '+20 años de servicio', SITE['anos'].src, 'cifra tomada de «con más de 20 años de servicio»'))
+    vid = f'''<video class="flota__v" muted playsinline loop preload="none" data-lazy-video data-poster="/assets/video/vans-poster.jpg" aria-label="{e(META['_videos']['vans']['alt'])}" data-aria-en="{e(ALT_EN['vid:vans'])}">
+      <source data-src="/assets/video/vans.webm" type="video/webm"><source data-src="/assets/video/vans.mp4" type="video/mp4"></video>'''
+    head = f'''<h2 class="h2 h2--light" id="rsec-t" lang="es">{qx(SITE["marketing"], "Nuestro marketing y publicidad más grande son nuestros turistas", P, em="turistas", fix="recorte; mayúscula inicial")}</h2>
+    <p class="rsec__sub">{STARS} {L(f"{SITE['rating']} en Google · {SITE['reviews_count']} reseñas. Las citas van en su idioma original.", f"{SITE['rating_en']} on Google · {SITE['reviews_count']} reviews. Quotes in their original language.")}</p>'''
+    content = f'''<section class="ab1" aria-labelledby="ab1-t">{WAVE}
+  <div class="ab1__in">
+    <div class="ab1__txt">
+      <h1 class="h1" id="ab1-t" lang="es">{qx(SITE["somos"], "Somos Chiloé Mágico", P, em="Mágico")}</h1>
+      <p class="ab1__p" lang="es">{qx(SITE["somos"], "Una empresa dedicada a entregarte la mejor experiencia en nuestro archipiélago.", P)}</p>
+      {meds}
+    </div>
+    <div class="bcta__pols ab1__pols" aria-hidden="true"><div class="pol2 pol2--a">{bimg("nicolas-enrique", "(max-width:760px) 60vw, 26vw")}</div><div class="pol2 pol2--b">{bimg("grupo-van", "(max-width:760px) 50vw, 22vw")}</div><div class="pol2 pol2--c">{bimg("enrique", "(max-width:760px) 44vw, 18vw")}</div></div>
+  </div>
+</section>
+<section class="ab2" aria-labelledby="ab2-t">{WAVE}
+  <header class="ab2__head" data-rv>
+    <h2 class="h2" id="ab2-t" lang="es">{qx(SITE["magia2"], "Magia también es ver la sonrisa de nuestros amigos turistas", P, em="sonrisa")}</h2>
+    <p class="ab2__p" lang="es">{qx(SITE["magia"], "No sólo nos referimos a las mil y un historias que se cuentan sobre mitos, leyendas y brujería", P, fix="recorte; mayúscula inicial; sin emoji")}</p>
+  </header>
+  {polaroids(["brujos-vuelo", "grupo-almuerzo", "almas-grupo", "yayanes-cascada"])}
+</section>
+<section class="ab3" aria-labelledby="ab3-t">{WAVE}
+  <div class="ab3__in">
+    <div class="ab3__media" data-rv><div class="ab3__phone">{vid}</div><div class="pol3 ab3__pol" aria-hidden="true">{img("vans", "(max-width:760px) 40vw, 18vw")}</div></div>
+    <div class="ab3__txt" data-rv>
+      <h2 class="h2" id="ab3-t" lang="es">{qx(SITE["vans"], "Conductores que además de profesionales son wena onda!", P, em="wena onda", fix="recorte; mayúscula inicial")}</h2>
+      <ul class="ab3__list" lang="es">
+        <li>{qx(SITE["van16"], "Un máximo de 16 pasajeros y su propio guía", P)}</li>
+        <li>{qx(SITE["vans"], "Con aire acondicionado", P)}</li>
+        <li>{qx(SITE["vans"], "Asientos reclinables para la siesta post almuerzo", P, fix="recorte; mayúscula inicial")}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="ab4" aria-labelledby="ab4-t">{WAVE}
+  <header class="ab4__head" data-rv>
+    <h2 class="h2" id="ab4-t" lang="es">{qx(Q(andrea["text"], "[RESEÑA]"), "Transmite el amor por la tierra y la cultura chilota", P, em="cultura chilota", fix="recorte de reseña de Google")}</h2>
+    <p class="ab4__by">{L("Andrea, sobre su guía Alberto · vía Google", "Andrea, about her guide Alberto · via Google")}</p>
+  </header>
+  <ul class="team2" data-rv>{team}</ul>
+</section>
+{reviews_solid(P, D.REVIEWS[:6], head)}'''
     page(P, 'Nosotros · Turismo Chiloé Mágico', 'About us · Turismo Chiloé Mágico',
-         'Agencia local de turismo en Castro, Chiloé: guías, conductores y vans para recorrer el archipiélago.', 'Local travel agency in Castro, Chiloé.', content, preload=preload_img('tocoihue-viajeros'))
+         'Agencia local de turismo en Castro, Chiloé: más de 20 años de servicio, guías, conductores y vans para recorrer el archipiélago.', 'Local travel agency in Castro, Chiloé.', content, preload=preload_img('nicolas-enrique'))
 
 
 def guia():
