@@ -343,6 +343,8 @@
       const first = new Map(cards().map(c => [c, c.getBoundingClientRect()]));
       cards().forEach(c => c.classList.toggle('pk--feat', c === el));
       list.classList.add('has-feat');
+      const msg = el.dataset.waText;
+      if (msg) $$('a.wa, a.hdr__cta, a.ftr__wa-l, a.menu__wa-l').forEach(x => { x.href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`; });
       order.forEach(s => { const c = list.querySelector(`[data-pk="${s}"]`); if (c && c !== el) list.append(c); }); list.prepend(el);
       if (!animate || still) return;
       cards().forEach(c => {
