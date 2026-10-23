@@ -192,7 +192,7 @@ def wa_float(text):
 
 
 def ld_business():
-    return {"@context": "https://schema.org", "@type": "TravelAgency", "name": SITE['name'], "url": DOMAIN + '/',
+    return {"@context": "https://schema.org", "@type": "TravelAgency", "name": "Chiloé Mágico Tour", "alternateName": SITE['name'], "url": DOMAIN + '/',
             "image": DOMAIN + '/assets/og.jpg', "logo": DOMAIN + '/brand/logo/logo-color.png', "telephone": '+' + SITE['wa'],
             "email": SITE['email'], "address": {"@type": "PostalAddress", "streetAddress": "Av. Gamboa 351, Galería Alonso de Ercilla, Local Interior 116",
             "addressLocality": "Castro", "addressRegion": "Los Lagos", "addressCountry": "CL"},
